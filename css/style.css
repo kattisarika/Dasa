@@ -35,11 +35,11 @@ h1{
 .midsec{
 	 width:100%; 	
 	 height:100%;	 
-	 margin:10px 0px 10px 0px;
+	
 }
 
 .leftsec {
-  width: 30%;
+  width: 20%;
   height:100%;
   float:left;
   background:lightgreen;
@@ -74,8 +74,8 @@ text-transform:uppercase;
 	line-height:2em;
 	margin-top: 25px;
 	color:darkgreen;
-	white-space: nowrap;
-    overflow: hidden;
+	font-size:20px;
+	
 
 }
 
@@ -93,17 +93,14 @@ a:hover{
 }
  .mainsec{	
  	font-family: 'Didact Gothic', sans-serif;
-	width: 69%;
+	width: 80%;
 	height:100%;
 	float:right;
-	border: 2px solid rgba(0, 0, 0, 0.5);
-	bottom: 0;
-	
 }
 
 #mainsongs{
 	 color: black;
-	font-size: 1rem;
+	font-size: 1.3rem;
 	font-weight: 900;
 	margin-top:100px;
 	text-align:center;
@@ -113,10 +110,8 @@ a:hover{
 }
 
 #mainsongs .english p{
-	font-family: 'Didact Gothic', sans-serif;
+   font-family: 'Didact Gothic', sans-serif;
    text-align:left;
-  
-
 }
 
 #lakshmisong, #ramanama, #ada{
@@ -141,20 +136,40 @@ a:hover{
 }
 
 
+
 @media only screen and (max-width: 600px) {
     body {
-        background-color: lightblue;
-        font-size: 10px;
-    }
-}
-
-@media only screen and (min-device-width: 320px){
-	  body {
-        background-color: lightblue;
+       background-color: lightblue;
         font-size: 9px;
         height:100%;
         width:100%;
         text-align:left;
-       
+        
+    }
+
+    .leftsec {
+    	 font-size: 9px;
+    	overflow: hidden;
     }
 }
+
+
+
+
+
+@media only screen and (min-width: 320px) {
+    body {
+        
+        font-size: 9px;
+        height:100%;
+        width:100%;
+        text-align:left;
+        white-space: nowrap;
+        overflow: hidden;
+        overflow-wrap: break-word;
+        text-overflow: ellipsis;
+
+    }
+}
+
+
