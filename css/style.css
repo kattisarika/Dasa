@@ -6,7 +6,7 @@
 }
 
 body{
-	width:960px;
+	
 	height:100%;
 	font-family: 'Bubblegum Sans', cursive;
     font-family: 'Archivo', sans-serif;
@@ -138,4 +138,12 @@ a:hover{
 	background:red;
 	width:100%;
 	height:100px; 
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+        font-size: 10px;
+    }
 }
