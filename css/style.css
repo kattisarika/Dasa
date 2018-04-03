@@ -147,3 +147,14 @@ a:hover{
         font-size: 10px;
     }
 }
+
+@media only screen and (min-device-width: 320px){
+	  body {
+        background-color: lightblue;
+        font-size: 9px;
+        height:100%;
+        width:100%;
+        text-align:left;
+       
+    }
+}
