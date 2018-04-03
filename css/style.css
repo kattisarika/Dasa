@@ -1,0 +1,141 @@
+
+*{	
+	box-sizing:border-box;
+	margin:0 auto;
+	padding:0;
+}
+
+body{
+	width:960px;
+	height:100%;
+	font-family: 'Bubblegum Sans', cursive;
+    font-family: 'Archivo', sans-serif;
+    font-family: 'Didact Gothic', sans-serif;
+
+}
+
+
+.headersec{
+   background:red;
+   width:100%;
+   height: 100px;
+}
+
+h1{
+	font-family: 'Bubblegum Sans', cursive;
+	font-size: 28px;
+	color:white;
+	text-transform:uppercase;
+	vertical-align:middle;
+	text-align:center;
+	padding:30px;
+
+}
+
+.midsec{
+	 width:100%; 	
+	 height:100%;	 
+	 margin:10px 0px 10px 0px;
+}
+
+.leftsec {
+  width: 30%;
+  height:100%;
+  float:left;
+  background:lightgreen;
+}
+
+
+h3{
+font-family: 'Didact Gothic', sans-serif;
+font-size: 20px;
+text-align:center;
+text-transform:uppercase;
+}
+
+.leftsec img{
+	width:100%;
+	height:40%;
+	margin-bottom:30px;
+	margin-top:15px;
+	
+
+}
+
+.leftsec ul li{
+	list-style-type:none;
+}
+
+
+
+.leftsec ul li a{
+	font-family: 'Bubblegum Sans', cursive;
+	text-decoration:underline;
+	line-height:2em;
+	margin-top: 25px;
+	color:darkgreen;
+	white-space: nowrap;
+    overflow: hidden;
+
+}
+
+a:link{
+	color:darkgreen;
+}
+
+
+a:active{
+	color:black;
+}
+
+a:hover{
+	color:red;
+}
+ .mainsec{	
+ 	font-family: 'Didact Gothic', sans-serif;
+	width: 69%;
+	height:100%;
+	float:right;
+	border: 2px solid rgba(0, 0, 0, 0.5);
+	bottom: 0;
+	
+}
+
+#mainsongs{
+	 color: black;
+	font-size: 1rem;
+	font-weight: 900;
+	margin-top:100px;
+	text-align:center;
+	vertical-align:center;
+	
+
+}
+
+#mainsongs .english p{
+	font-family: 'Didact Gothic', sans-serif;
+   text-align:left;
+  
+
+}
+
+#lakshmisong, #ramanama, #ada{
+	font-family: 'Didact Gothic', sans-serif;
+	text-align:center;
+	vertical-align:center;
+	margin-top:100px;
+	
+
+}
+
+ #mahaastakam{
+ 	font-family: 'Didact Gothic', sans-serif;
+	text-align:center;
+	vertical-align:center;
+ }
+
+.footersec{
+	background:red;
+	width:100%;
+	height:100px; 
+}
