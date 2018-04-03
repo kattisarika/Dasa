@@ -137,7 +137,7 @@ a:hover{
 
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     body {
        background-color: lightblue;
         font-size: 9px;
@@ -149,6 +149,11 @@ a:hover{
 
     .leftsec {
     	 font-size: 9px;
+    	overflow: hidden;
+    }
+
+    #mainsongs{{
+ 		font-size: 9px;
     	overflow: hidden;
     }
 }
@@ -169,6 +174,15 @@ a:hover{
         overflow-wrap: break-word;
         text-overflow: ellipsis;
 
+    }
+     .leftsec {
+    	 font-size: 9px;
+    	overflow: hidden;
+    }
+
+    #mainsongs{{
+ 		font-size: 9px;
+    	overflow: hidden;
     }
 }
 
