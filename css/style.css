@@ -151,8 +151,14 @@ a:hover{
     	 font-size: 9px;
     	overflow: hidden;
     }
+    .mainsec{	
+ 	font-family: 'Didact Gothic', sans-serif;
+	width: 80%;
+	height:100%;
+	float:right;
+}
 
-    #mainsongs{{
+    #mainsongs{
  		font-size: 9px;
     	overflow: hidden;
     }
@@ -184,6 +190,11 @@ a:hover{
  		font-size: 9px;
     	overflow: hidden;
     }
+    .footersec{
+	background:red;
+	width:100%;
+	height:100px; 
+}
 }
 
 
