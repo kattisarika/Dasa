@@ -6,12 +6,10 @@
 }
 
 body{
-	
 	height:100%;
 	font-family: 'Bubblegum Sans', cursive;
     font-family: 'Archivo', sans-serif;
     font-family: 'Didact Gothic', sans-serif;
-
 }
 
 
@@ -75,8 +73,6 @@ text-transform:uppercase;
 	margin-top: 25px;
 	color:darkgreen;
 	font-size:20px;
-	
-
 }
 
 a:link{
@@ -105,8 +101,6 @@ a:hover{
 	margin-top:100px;
 	text-align:center;
 	vertical-align:center;
-	
-
 }
 
 #mainsongs .english p{
@@ -119,8 +113,6 @@ a:hover{
 	text-align:center;
 	vertical-align:center;
 	margin-top:100px;
-	
-
 }
 
  #mahaastakam{
@@ -139,80 +131,45 @@ a:hover{
 
 @media only screen and (max-width: 800px) {
     body {
-       background-color: lightblue;
-        font-size: 9px;
-        height:100%;
-        width:100%;
-        text-align:left;   
+       	  background-color: lightblue;
+          font-size: 12px;
+          height:100%;
+          width:100%;
+          text-align:left;   
        }
-    .leftsec {
-    	 font-size: 9px;
-    	overflow: hidden;
+
+       .leftsec {
+	      font-size: 9px;
+	      overflow: hidden;
        }
-    .leftsec img{
-		width:50%;
-		height:20%;
+    img{
+		width:100px;
+		height:100px;
 		margin-bottom:30px;
 		margin-top:15px;	
      }
     .mainsec{	
- 	font-family: 'Didact Gothic', sans-serif;
-	width: 80%;
-	height:100%;
-	float:right;
+	 	font-family: 'Didact Gothic', sans-serif;
+		width: 80%;
+		height:100%;
+		float:right;
       }
     #mainsongs{
  		font-size: 9px;
     	overflow: hidden;
-    }
+    	}
     .footersec{
-	background:red;
-	width:100%;
-	height:100px; 
-    }
+		background:red;
+		width:100%;
+		height:100px; 
+    	}
+    
 }
 
 
 
 
 
-@media only screen and (min-width: 320px)  {
-    body {     
-        font-size: 9px;
-        height:100%;
-        width:100%;
-        text-align:left;
-        white-space: nowrap;
-        overflow: hidden;
-        overflow-wrap: break-word;
-        text-overflow: ellipsis;
-    }
-     .leftsec {
-    	 font-size: 9px;
-    	overflow: hidden;
-    }
 
-    .leftsec img{
-		width:50%;
-		height:20%;
-		margin-bottom:30px;
-		margin-top:15px;	
-     }
-    .mainsec{	
- 	font-family: 'Didact Gothic', sans-serif;
-	width: 80%;
-	height:100%;
-	float:right;
-    }
-    #mainsongs{
- 		font-size: 9px;
-    	overflow: hidden;
-    }
-    .footersec{
-	background:red;
-	width:100%;
-	height:100px; 
-   }
-}
 
 
