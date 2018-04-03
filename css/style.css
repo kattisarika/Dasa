@@ -149,6 +149,12 @@ a:hover{
     	 font-size: 9px;
     	overflow: hidden;
        }
+    .leftsec img{
+		width:50%;
+		height:20%;
+		margin-bottom:30px;
+		margin-top:15px;	
+     }
     .mainsec{	
  	font-family: 'Didact Gothic', sans-serif;
 	width: 80%;
