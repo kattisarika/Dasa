@@ -5,151 +5,97 @@
 }
 
 body {
+    background-color: #fff;
     height: 100%;
-    font-family: 'Bubblegum Sans', cursive;
-    font-family: 'Archivo', sans-serif;
-    font-family: 'Didact Gothic', sans-serif;
 }
 
-.headersec {
-    background: red;
-    width: 100%;
+header {
+    background-color: rgba(0, 0, 0, 0.5);
     height: 100px;
 }
 
-h1 {
-    font-family: 'Bubblegum Sans', cursive;
-    font-size: 28px;
-    color: white;
-    text-transform: uppercase;
-    vertical-align: middle;
-    text-align: center;
-    padding: 30px;
+.bgimage {
+    background-image: url('../images/him-image.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: 1000px;
 }
 
-.midsec {
-    width: 100%;
-    height: 100%;
+header h1 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    padding: 15px;
+}
+
+header h2 {
+    color: yellow;
+    font-weight: bold;
+    line-height: 8em;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .leftsec {
     width: 20%;
     height: 100%;
     float: left;
-    background: lightgreen;
+}
+
+.rightsec {
+    float: right;
+    width: 80%;
+    height: 100%;
 }
 
 h3 {
-    font-family: 'Didact Gothic', sans-serif;
-    font-size: 20px;
-    text-align: center;
-    text-transform: uppercase;
+    padding: 25px;
+    color: black;
+    font-weight: bold;
+    ;
 }
 
-.leftsec img {
-    width: 100%;
-    height: 40%;
-    margin-bottom: 30px;
-    margin-top: 15px;
+.leftsec ol li a {
+    line-height: 3em;
+    color: darkgreen;
 }
 
-.leftsec ul li {
-    list-style-type: none;
-}
-
-.leftsec ul li a {
-    font-family: 'Bubblegum Sans', cursive;
-    text-decoration: underline;
+.mainsec h1 {
+    color: white;
     line-height: 2em;
-    margin-top: 25px;
-    color: darkgreen;
-    font-size: 20px;
 }
 
-a:link {
-    color: darkgreen;
+.mainsec p {
+    color: grey;
+    line-height: 2em;
 }
 
-a:active {
-    color: black;
+.login-form {
+    width: 500px;
+    margin-top: 50px;
 }
 
-a:hover {
-    color: red;
-}
-
-.mainsec {
-    font-family: 'Didact Gothic', sans-serif;
-    width: 80%;
-    height: 100%;
-    float: right;
-}
-
-#mainsongs {
-    color: black;
-    font-size: 1.3rem;
-    font-weight: 900;
-    margin-top: 100px;
+.login-form form {
+    margin-bottom: 15px;
+    background: #493B0F;
+    color: white;
     text-align: center;
-    vertical-align: center;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
 }
 
-#mainsongs .english p {
-    font-family: 'Didact Gothic', sans-serif;
-    text-align: left;
+.footercontainer {
+    position: relative;
+    min-height: 100%;
 }
 
-#lakshmisong,
-#ramanama,
-#ada {
-    font-family: 'Didact Gothic', sans-serif;
-    text-align: center;
-    vertical-align: center;
-    margin-top: 100px;
-}
-
-#mahaastakam {
-    font-family: 'Didact Gothic', sans-serif;
-    text-align: center;
-    vertical-align: center;
-}
-
-.footersec {
-    background: red;
+#footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 100px;
-}
-
-@media only screen and (max-width: 800px) {
-    body {
-        font-size: 12px;
-        height: 100%;
-        width: 100%;
-        text-align: left;
-    }
-    .leftsec {
-        font-size: 9px;
-        overflow: hidden;
-    }
-    img {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 30px;
-        margin-top: 15px;
-    }
-    .mainsec {
-        font-family: 'Didact Gothic', sans-serif;
-        width: 80%;
-        height: 100%;
-        float: right;
-    }
-    #mainsongs {
-        font-size: 12px;
-        overflow: hidden;
-    }
-    .footersec {
-        background: red;
-        width: 100%;
-        height: 100px;
-    }
+    height: 40px;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
