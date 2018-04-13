@@ -17,7 +17,11 @@ module.exports = function(app){
 		res.render("sign.ejs");
 	});
 
+  app.get('/register',function(req,res){
+  		res.send("success");
+		res.render("register.ejs")
 
+	});
 
 
 	app.get('/yoursong', function(req,res){

@@ -15,10 +15,12 @@ header {
 }
 
 .bgimage {
-    background-image: url('../images/him-image.jpg');
+
+
+    background-image:  linear-gradient(rgba(88,121,218,.75),rgba(88,121,218,.75)),url('../images/him-image.jpg');
     background-position: center center;
     background-size: cover;
-    height: 350px;
+    height: 250px;
 }
 
 header h1 {
@@ -32,7 +34,7 @@ header h1 {
 header h2 {
     color: yellow;
     font-weight: bold;
-    line-height: 2em;
+    line-height: 1em;
     text-align: center;
     vertical-align: middle;
 }
