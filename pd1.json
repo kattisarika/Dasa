@@ -1,0 +1,40 @@
+{
+  "categoryName": "Purandara Dasa Song List",
+  "songlist": [
+    {
+      "songID": "101",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+      "songElementId":"olithe",
+      "songTitle":"olithe ayithu"
+    },
+    {
+      "songID": "102",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"ambiga",
+      "songTitle":"ambiga nA ninna - shankarAbharaNa"
+    },
+    {
+       "songID": "103",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"sudda",
+      "songTitle":"aanalEkara (geetam) - sudda saavEri"
+    },
+    {
+       "songID": "104",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"abhimanavake",
+      "songTitle":"AbhimAnavEke - kEdAragauLa"
+    },
+    {
+       "songID": "105",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"aacravillada",
+      "songTitle":"AcAravillada - kAmbhOji"
+    }
+  ]
+}

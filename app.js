@@ -44,6 +44,9 @@ require('./app/routes.js')(app);
  console.log(req.expressSession)
 });*/
 
+app.locals.pd1data=require('./pd1.json');
+
+
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
 // Facebook will redirect the user to this URL after approval.  Finish the

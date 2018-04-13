@@ -12,6 +12,11 @@ module.exports = function(app){
 	});
 
 
+	app.get('/pd1',function(req, res){
+		res.render("pd1.ejs")
+	});
+
+
    
 	app.get('/login',function(req,res){
 		res.render("login.ejs")

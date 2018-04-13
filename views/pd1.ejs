@@ -40,49 +40,39 @@
     </header>
 
 
-        <a href="/" class="btn  btn-lg" id="signup" style="width:120px;height:50px;background-color:blue;margin-left:20px;margin-right:10px;margin-top:10px;color:white"> Home</a>
-        <a href="/login" class="btn  btn-lg" id="signup" style="width:120px;height:50px;background-color:purple;margin-right:10px;margin-top:10px;color:white"> Login</a>
-        <a href="/yoursong" class="btn  btn-lg" id="signup" style="width:120px;height:50px;background-color:green;margin-right:10px;margin-top:10px;color:white"> Your Song</a>
-        <a href="/songs" class="btn  btn-lg" id="songs" style="width:120px;height:50px;background-color:red;margin-right:10px;margin-top:10px;color:white">Song List</a>
-        <a href="/aboutus" class="btn  btn-lg" id="aboutus" style="width:120px;height:50px;background-color:blue;margin-right:10px;margin-top:10px;color:white"> About Us</a>
-        <a href="/sign" class="btn  btn-lg" id="sign" style="width:120px;height:50px;background-color:purple;margin-right:10px;margin-top:10px;color:white"> Sign Up</a>
-        <a href="/contact" class="btn btn-lg" id="contactus" style="width:120px;height:50px;background-color:black;margin-right:10px;margin-top:10px;color:white">Contact Us</a>
-
-<!---->
-
-
 <div class="row" style="margin-left:20px;margin-top:20px;padding:0;">
 <div class="col-sm-2" style="padding:0">
     <div class="musiclist" style="padding:0;margin-left:20px;">
     <div class="table-responsive"> 
-        <table class="table table-bordered">
+        
+           
+            
+                   <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th style="text-align:center">Song List</th>    
+                    <th style="text-align:center"><%= pd1data.categoryName%></th>    
                 </tr>
+
+               
             </thead>
-            <tbody>
-
-
-
+                  <tbody>  
                 <tr>     
-                    <td><a class="toggle" href="#mahaastakam">Mahalakshmi Astakam ...</a></td>      
+                    <td><a class="toggle" href="#<%= pd1data.songlist[0].songElementId%>"><%= pd1data.songlist[0].songTitle%></a></td>      
                 </tr>
                 <tr>
-                  <td><a class="toggle" href="#lakshmisong" >ಏನು ಧನ್ಯಳೋ ಲಕುಮಿ...</a></td>                
+                  <td><a class="toggle" href="#<%= pd1data.songlist[1].songElementId%>" ><%= pd1data.songlist[1].songTitle%></a></td>                
                 </tr>
                 <tr>  
-                     <td><a class="toggle" href="#jaya">Jaya Mangalam ...</a></td>          
+                     <td><a class="toggle" href="#<%= pd1data.songlist[2].songElementId%>"><%= pd1data.songlist[2].songTitle%></a></td>          
                 </tr>
                 <tr>          
-                    <td><a class="toggle" href="#ada">Adalu Pogona ...</a></td>                   
+                    <td><a class="toggle" href="#<%= pd1data.songlist[3].songElementId%>"><%= pd1data.songlist[3].songTitle%></a></td>                   
                 </tr>
                 <tr>
-                    <td><a class="toggle" href="#ramanama">Rama Naama Paaysakke ...</a></td>
+                    <td><a class="toggle" href="#<%= pd1data.songlist[4].songElementId%>"><%= pd1data.songlist[4].songTitle%></a></td>
                      
                 </tr>
-                <tr><td><a class="toggle" href="#olithe">Olithe Aayithu ...</a></td></tr>
-                <tr><td><a class="toggle" href="#baagilanu">Baagilanu teredu ...</a></td></tr>
+               
             </tbody>
         </table>
     </div>
@@ -180,14 +170,17 @@
 
 
                     <div class="showsong1" id="olithe">
-                        <div class="row" style="margin-top:10px;padding:20px">
-                            <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
-                                <h1>Adadella olithe aayithu</h1>
-                                <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                        <div class="row">
+                            <div class="col-sm-9">
+
+                                <h1 style="text-align:center">Adadella olithe aayithu</h1>
+                                <div style="margin:100px 0px 100px 0px;text-align:center;background:#e6e6e6">
+                                <p><b>Play your song and catch up with the lyrics in the languages mentioned below</b></p>
                                 <audio controls>
                                     <source src="mp3/Navakoti.mp3" type="audio/mpeg">
                                 </audio>
                                 <br>
+                            </div>
                             </div>
                        
 
