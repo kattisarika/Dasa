@@ -17,10 +17,10 @@ header {
 .bgimage {
 
 
-    background-image:  linear-gradient(rgba(88,121,218,.75),rgba(88,121,218,.75)),url('../images/him-image.jpg');
+    background-image: url('../images/him-image.jpg');
     background-position: center center;
     background-size: cover;
-    height: 250px;
+    height: 300px;
 }
 
 header h1 {
