@@ -13,23 +13,11 @@ module.exports = function(app){
 
 	});
 
-	app.get('/signup', function(req,res){
-		var newUser = new User();
-		newUser.local.username = req.body.email;
-		newUser.local.password = req.body.password;
-		console.log(newUser.local.username + " " + newUser.local.password);
-		newUser.save(function(err){
-			if(err)
-				throw err;
-		});
-
-		res.redirect('/');
+	app.get('/sign', function(req,res){
+		res.render("sign.ejs");
 	});
 
 
-	app.post('/signup', function(req,res){
-		res.render("signup.ejs");
-	});
 
 
 	app.get('/yoursong', function(req,res){
@@ -39,6 +27,10 @@ module.exports = function(app){
 	app.get('/aboutus', function(req,res){
 		res.render("aboutus.ejs");
 	});
+
+	app.get('/songs',function(req,res){
+		res.render("songlist.ejs");
+	})
 
 
 
