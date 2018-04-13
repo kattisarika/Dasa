@@ -44,22 +44,23 @@
                             <form action="/sign" method="post">
                                 <h2 class="text-center">Sign Up</h2>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Username" required="required">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Username" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password" required="required">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Confirm Password" required="required">
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="required">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="password" name="confpassword" id="confpassword" class="form-control" placeholder="Confirm Password" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                                    <button type="submit" id="submit" class="btn btn-primary btn-block">Sign Up</button>
                                 </div>
-                                <div class="clearfix">
-                                    <label class="pull-left checkbox-inline">
-                                        <input type="checkbox"> Remember me</label>
-                                    <a href="#" class="pull-right">Forgot Password?</a>
-                                </div>
+                                <p style="text-align:center">Already have an account? <b><a href="/login">Login</a></b></p>
+            <p style="text-align:center">Or go <b><a href="/">home</a> page</b></p>
                             </form>
                         </div>
                     </div>
