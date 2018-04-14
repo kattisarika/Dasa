@@ -14,6 +14,10 @@ header {
     height: 100px;
 }
 
+.col-md-4{
+    background-color:white;
+}
+
 .bgimage {
 
 
@@ -74,7 +78,7 @@ h3 {
     line-height: 2em;
 }
 
-.login-form , .signup-form{
+.login-form , .signup-form, .search-form{
     width: 500px;
     margin-top: 50px;
 }

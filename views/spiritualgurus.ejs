@@ -21,6 +21,14 @@
 
 <body>
 
+    <script type="text/javascript">
+        $(document).ready(function(){ 
+            $("#myTab a").click(function(e){
+                e.preventDefault();
+                $(this).tab('show');
+            });
+    });
+</script>
     <header class="bgimage">
         <div class="container">
             <h1>DEVOTIONAL SONGS</h1>
@@ -29,6 +37,8 @@
 
     </header>
 
+ 
+</div>
 
 
     <div class="jumbotron jumbotron-billboard" style="padding:0;">
@@ -41,66 +51,272 @@
         <a href="/sign" class="btn btn-dark btn-lg" id="sign" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white"> Sign Up</a>
         <a href="/contact" class="btn btn-dark btn-lg" id="contactus" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Contact Us</a>
 
-       <div class="row " style="margin-top:100px" id="mainpics">
 
-            
 
-             <section class="col-md-3" style="text-align:center;">
+          <div  class="searchbar">
+    <form class="form-search">
+                            <label for="inputsearch"> </label>
+                            <input class="inputsearch" id="inputsearch" type="text" placeholder="Spiritual Master's Name" style="width:550px;margin-top:30px;margin-left:20px;text-align:center">
+<button class="searchbutton" id="search" name="search" value="search" style="background-color:lightblue;width:100px">Search</button>
+</form>
+
+
+      <!--  <ul class="nav nav-pills nav-stacked">
+
+            <li ><a href="#GlobalGurus" data-toggle="tab">Global Gurus</a></li>
+             <li><a href="#India" data-toggle="tab">India</a></li>
+            <li><a href="#Japan" data-toggle="tab">Japan</a></li>
+            <li><a href="#China" data-toggle="tab">China</a></li>
+            <li><a href="#USA" data-toggle="tab">USA</a></li>
+            <li><a href="#London" data-toggle="tab">London</a></li>
+        </ul>
+       
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="#GlobalGurus">
+
+                 <section class="col-md-3" style="text-align:center;">
                <div class="imagebox"> 
-                  <img class="img-responsive" src="images/Gnanak.jpg" alt="Icon" style="width:250px;height:250px;">
+                  <img class="img-responsive" src="images/ravishankar.jpeg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
-                <p>Guru Nanak</p>
+                <p>Sri Sri RaviShankar</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-              <section class="col-md-3" style="text-align:center;">
+              </div>  
+
+           -->
+              <div class="row" style="margin-left:20px;padding:0;" id="mainpage">
+                 <p>Note:- We have added those about whom we have got information, incase you are searching for someone who is not present in our columns, please do write to us through the "Contact Us" form with some relevant information and we will add it in the below section.
+                    </p>  
+
+                 
+                </div>              
+
+           <div style="margin-top:100px">
+
+             <section class="col-md-3"  style="text-align:center;">
                <div class="imagebox"> 
-                  <img class="img-responsive" src="images/Ramanujacharya.jpg" alt="Icon" style="width:250px;height:250px;">
+                  <img class="img-responsive" src="images/kunda.jpg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
-                <p>Sri Ramanujacharya</p>
+                <p>Kunda Kunda</p>
+                <p>1st century B.C.- 1st century C.E.</p>
+                <p>
+                    <button type="info" data-toggle="modal" data-target="#kunda"  class="btn btn-info">Read More</button>
+<a href="/racharya"></a>
+                </p>
+            </section>
+
+            <div class="modal fade" id="kunda" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" style="position:absolute;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Kunda Kunda</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Acharya Kundakunda is a revered Digambara Jain monk and philosopher. He authored many Jain texts such as: Samayasara, Niyamasara, Pancastikayasara, Pravachanasara, Atthapahuda and Barasanuvekkha.All Digambara Jains say his name before starting to read the scripture. </p>
+                    <p>The works attributed to Kundakunda, all of them in Prakrit,[5] can be divided in three groups. The first group comprises four original works described as "The Essence" (sara)— namely, the Niyamasara (The Essence of the Restraint, in 187 verses), the Pancastikayasara (The Essence of the Five Existents, in 153 verses), the Samayasara (The Essence of the Self, in 439 verses), and the Pravachanasara (The Essence of the Teaching, in 275 verses).[4] The second group is a collection of ten bhaktis (devotional prayers), short compositions in praise of the acharya (Acharyabhakti), the scriptures (Srutabhakti), the mendicant conduct (Charitrabhakti), and so forth. They form the standard liturgical texts used by the Digambara in their daily rituals and bear close resemblance to similar texts employed by the Śvētāmbara, suggesting the possibility of their origin in the canonical period prior to the division of the community.[citation needed] The last group consists of eight short texts called Prabhrta (Pkt. pahuda, i.e., a gift or a treatise), probably compilations from some older sources, on such topics as the right view (Darsanaprabhrta, in 36 verses), right conduct (Charitraprabhrta, in 44 verses), the scripture (Sutraprabhrta, in 27 verses), and so forth. Pancastikayasara of Kundakunda Niyamsara (The Perfect Law) Various Jain texts mention that Acharya Kundkunda wrote '84 Pahurs', and only some of them are available at present</p>
+
+                    <p>For detailed information :- <a href="https://en.wikipedia.org/wiki/Kundakunda" target="_blank">Kunda Kunda</a> </p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+             <section  class="col-md-3" style="text-align:center;">
+               <div class="imagebox"> 
+                  <img class="img-responsive" src="images/bhadrabahu.jpg" alt="Icon" style="width:250px;height:250px;">
+                  
+                 </div>
+                <p>Bhadra Bahu</p>
+                <p>433 BC - 357 BC</p>
+                <p>
+                    <button type="info" data-toggle="modal" data-target="#bahu"  class="btn btn-info">Read More</button>
+                </p>
+            </section>
+
+             <div class="modal fade" id="bahu" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" style="position:absolute;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Bhadra Bahu</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Bhadrabahu was, according to the Digambara sect of Jainism, the last Shruta Kevalin(hearsay).He was the last acharya of the undivided Jain sangha. He was the last spiritual teacher of Chandragupta Maurya. </p>
+                    <p>His works in Sanskrit discuss the unity of the ātman and Nirguna Brahman "brahman without attributes".[9] He wrote copious commentaries on the Vedic canon (Brahma Sutras, Principal Upanishads and Bhagavad Gita) in support of his thesis.[10] His works elaborate on ideas found in the Upanishads. Shankara's publications criticised the ritually-oriented Mīmāṃsā school of Hinduism.[11] He also explained the key difference between Hinduism and Buddhism, stating that Hinduism asserts "Atman (Soul, Self) exists", while Buddhism asserts that there is "no Soul, no Self"</p>
+                    <p>According to the Digambara sect of Jainism, there were five Shruta Kevalins in Jainism - Govarddhana Mahamuni, Vishnu, Nandimitra, Aparajita and Bhadrabahu.</p>
+                   
+                    <p>All the material is from Wikipedia</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+            <section class="col-md-3"  style="text-align:center;">
+               <div class="imagebox"> 
+                  <img class="img-responsive" src="images/siddhasena.jpg" alt="Icon" style="width:250px;height:250px;">
+                  
+                 </div>
+                <p>Siddhasena</p>
+                <p>500 CE to 610 CE</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
-
-
-             <section class="col-md-3" style="text-align:center;">
-               <div class="imagebox"> 
-                  <img class="img-responsive" src="images/Shri_Madhvacharya.jpg" alt="Icon" style="width:250px;height:250px;">
-                  
-                 </div>
-                <p>Sri Madhvacharya</p>
-                <p>
-                    <button type="info" class="btn btn-info">Read More</button>
-                </p>
-            </section>
-
-
-            <section class="col-md-3" style="text-align:center;">
+              <section class="col-md-3"  style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/shankaracharya_new.jpg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
                 <p>Shankaracharya</p>
+                <p>788 CE- 820 CE</p>
+                <p>
+                    <button type="info" data-toggle="modal" data-target="#shankara"  class="btn btn-info">Read More</button>
+
+                </p>
+            </section>
+
+            <div class="modal fade" id="shankara" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" style="position:absolute;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Adi Shankaracharya</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Adi Shankaracharya Shankara, was an early 8th century Indian philosopher and theologian who consolidated the doctrine of Advaite Vedanta. He is credited with unifying and establishing the main currents of thought in Hinduism </p>
+                    <p>His works in Sanskrit discuss the unity of the ātman and Nirguna Brahman "brahman without attributes".[9] He wrote copious commentaries on the Vedic canon (Brahma Sutras, Principal Upanishads and Bhagavad Gita) in support of his thesis.[10] His works elaborate on ideas found in the Upanishads. Shankara's publications criticised the ritually-oriented Mīmāṃsā school of Hinduism.[11] He also explained the key difference between Hinduism and Buddhism, stating that Hinduism asserts "Atman (Soul, Self) exists", while Buddhism asserts that there is "no Soul, no Self"</p>
+
+                    <p>Watch the movie on Adi Sankracharya :- <a href="https://www.youtube.com/watch?v=IYAOs-9NCsM" target="_blank">Adi Sankracharya</a> </p>
+                    <p>All the material is from Wikipedia</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+              <section class="col-md-3" style="text-align:center;">
+               <div class="imagebox"> 
+                <a href="/racharya"></a>
+                  <img class="img-responsive" src="images/Ramanujacharya.jpg" alt="Icon" style="width:250px;height:250px;">
+                  </a>
+                 </div>
+                <p>Sri Ramanujacharya</p>
+                <p>1017–1137 CE</p>
+                <p>
+                    <button type="info" data-toggle="modal" data-target="#ramac"  class="btn btn-info">Read More</button>
+                </p>
+            </section>
+
+            <div class="modal fade" id="ramac" role="dialog">
+            <div class="modal-dialog">
+    
+                <!-- Modal content-->
+            <div class="modal-content" style="position:absolute;">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title">Sri Ramanujacharya</h4>
+            </div>
+            <div class="modal-body">
+              <p>Ramanuja was a Hindu theologian, philosopher, and one of the most important exponents of the Sri Vaishnavism tradition within Hinduism.[2][3] He was born in a Tamil Brāhmin family in the village of Sriperumbudur, Tamil Nadu.[4] His philosophical foundations for devotionalism were influential to the Bhakti movement.
+            Rāmānuja's theory posits both Brahman and the world of matter are two different absolutes, both metaphysically real, neither should be called false or illusive, and saguna Brahman with attributes is also real.God, like man, states Rāmānuja, has both soul and body, and all of the world of matter is the glory of God's body.The path to Brahman (Vishnu), asserted Rāmānuja, is devotion to godliness and constant remembrance of the beauty and love of personal god (saguna Brahman, Vishnu), one which ultimately leads one to the oneness with nirguna Brahman. Rāmānuja's philosophical foundation was qualified monism, and is called Vishishtadvaita in the Hindu tradition
+                </p>
+                <p>To read more :- <a href="https://en.wikipedia.org/wiki/Ramanuja" target="_blank"> Sri Ramanujacharya(wiki) </a>
+            </p>
+                
+            </div>
+            <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            </div>        
+         </div>
+     </div>
+
+             <section class="col-md-3" style="text-align:center;">
+               <div class="imagebox">
+                  <img class="img-responsive" src="images/basavanna.jpeg" alt="Icon" style="width:250px;height:250px;">
+                 
+               </div>
+                <p>Basavanna</p>
+                <p>1105 - 1168</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
-            <section class="col-md-3" style="text-align:center;">
+
+
+
+             <section  class="col-md-3" style="text-align:center;">
+               <div class="imagebox"> 
+                  <img class="img-responsive" src="images/Shri_Madhvacharya.jpg" alt="Icon" style="width:250px;height:250px;">
+                  
+                 </div>
+                <p>Sri Madhvacharya</p>
+                <p>1238 - 1317</p>
+                <p>
+                    <button type="info" class="btn btn-info">Read More</button>
+                </p>
+            </section>
+
+             <div class="tab-pane fade in active" id="India">
+                <section class="col-md-3" style="text-align:center;">
+               <div class="imagebox"> 
+                  <img class="img-responsive" src="images/Gnanak.jpg" alt="Icon" style="width:250px;height:250px;">
+                  
+                 </div>
+                <p>Guru Nanak</p>
+                <p>1469 to 1539</p>
+                <p>
+                    <button type="info" class="btn btn-info">Read More</button>
+                </p>
+            </section>
+
+
+             <section  class="col-md-3" style="text-align:center;">
+               <div class="imagebox"> 
+                <a href="/rs1">
+                  <img class="img-responsive" src="images/vyasaraja.jpg" alt="Icon" style="width:250px;height:250px;">
+                  </a>
+                 </div>
+                <p>Vyasa Tirtha</p>
+                <p>1460 - 1539</p>
+                <p>
+                    <button  type="info" data-toggle="modal" data-target="#rs1"class="btn btn-info">Read More</button>
+                </p>
+            </section>
+            
+
+            <section  class="col-md-3" style="text-align:center;">
                <div class="imagebox"> 
                 <a href="/rs1">
                   <img class="img-responsive" src="images/GRaghavendraSwamy.jpg" alt="Icon" style="width:250px;height:250px;">
                   </a>
                  </div>
                 <p>Guru Raghavendra Swamy</p>
+                <p>1595 - 1671</p>
                 <p>
                     <button  type="info" data-toggle="modal" data-target="#rs1"class="btn btn-info">Read More</button>
                 </p>
             </section>
+
+           
 
             <section class="col-md-3" style="text-align:center;">
               <div class="imagebox"> 
@@ -109,36 +325,36 @@
                 </a>
                  </div>
                 <p>Purandara dasa</p>
+                <p>1484 - 1564</p>
                 <p>
                     <button type="info" data-toggle="modal" data-target="#pd1"class="btn btn-info">Read More</button>
                 </p>
             </section>
             
             <div class="modal fade" id="pd1" role="dialog">
-    <div class="modal-dialog">
+            <div class="modal-dialog">
     
-      <!-- Modal content-->
-      <div class="modal-content" style="position:absolute;">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Purandara Dasa</h4>
-        </div>
-        <div class="modal-body">
-          <p>Purandara Dasa (ಪುರಂದರ ದಾಸ) was a Haridasa, a great devotee of Lord Krishna. He was a singer and composer of many songs on Madhwa philosophy. Purandara Dasa was pioneers of Dasa Sahithya, which is a Bhakti movement and propagated Hari Sarvottama and Vayu Jeevottamatva though his 475,000 keerthanas (songs). He wrote all his compositions with Ankita "Purandara Vittala". He is as an avatara (incarnation) of the great sage Narada.
-            His Guru, Sri Vyasatirtha himself glorified Purandara Dasa in a song thus: Dāsarendare purandara dāsarayya (ದಾಸರೆಂದರೆ ಪುರಂದರ ದಾಸರಯ್ಯ). </p>
-            <p>Brief Story:
-                Before becoming Haridasa, Purandara Dasa was a wealthy diamond merchant. His name was Srinivasa Nayaka and everyone used to call him Navakoti Narayana as he was very rich worth of ninety millions. His parents are Varadappa Nayaka and Leelavathi. He was born around year 1484  in Kshemapura, near Tirthahalli, Shivamogga district, Karnataka state from Karnataka. He received good education and became proficient in caranatic music, Kannada and Sanskrit languages. 
-                One day Lord Krishna approached Srinivasa in the guise of a poor man to request for money to perform upanayanam (sacred thread ceremony) to his son. For which, Srinivasa mocked and rejected him without offering any money. Therefor to bring change in him, Lord approached Srinivasa's wife, Saraswathi who is a pious and spiritual person,she gave her precious nose rings.
-                Lord Krishna then met Srinivasa to exchange the nose ring with money. But the shrewd Srinivasa immediately identified the nose ring as his wife's and hurried home anxiously to ascertain the truth of the matter, he demanded his wife to show him the nose ring immediately. Realizing that Srinivasa got to know about her secret donation, the wife decided to end her life with poison. She prayed Lord before drinking poison, she was shocked to see a nose ring inside the poison cup. With blissful happiness she elucidated the entire episode to her husband, who was bewildered. 
-                The entire episode brought change in Srinivasa Nayaka, who gave away all his material riches to become a Haridasa, a devotional singer. He became disciple of Madhwa Saint Shri Vyasatirtha. He is contemporary of Kanakadasaru and has inspired many people like Vijaya dasaru, Gopala Dasaru and so on. He died in 1564 at the age of 80.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+                <!-- Modal content-->
+            <div class="modal-content" style="position:absolute;">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title">Purandara Dasa</h4>
+            </div>
+            <div class="modal-body">
+              <p>Purandara Dasa (ಪುರಂದರ ದಾಸ) was a Haridasa, a great devotee of Lord Krishna. He was a singer and composer of many songs on Madhwa philosophy. Purandara Dasa was pioneers of Dasa Sahithya, which is a Bhakti movement and propagated Hari Sarvottama and Vayu Jeevottamatva though his 475,000 keerthanas (songs). He wrote all his compositions with Ankita "Purandara Vittala". He is as an avatara (incarnation) of the great sage Narada.
+                His Guru, Sri Vyasatirtha himself glorified Purandara Dasa in a song thus: Dāsarendare purandara dāsarayya (ದಾಸರೆಂದರೆ ಪುರಂದರ ದಾಸರಯ್ಯ). </p>
+                <p>Brief Story:
+                    Before becoming Haridasa, Purandara Dasa was a wealthy diamond merchant. His name was Srinivasa Nayaka and everyone used to call him Navakoti Narayana as he was very rich worth of ninety millions. His parents are Varadappa Nayaka and Leelavathi. He was born around year 1484  in Kshemapura, near Tirthahalli, Shivamogga district, Karnataka state from Karnataka. He received good education and became proficient in caranatic music, Kannada and Sanskrit languages. 
+                    One day Lord Krishna approached Srinivasa in the guise of a poor man to request for money to perform upanayanam (sacred thread ceremony) to his son. For which, Srinivasa mocked and rejected him without offering any money. Therefor to bring change in him, Lord approached Srinivasa's wife, Saraswathi who is a pious and spiritual person,she gave her precious nose rings.
+                    Lord Krishna then met Srinivasa to exchange the nose ring with money. But the shrewd Srinivasa immediately identified the nose ring as his wife's and hurried home anxiously to ascertain the truth of the matter, he demanded his wife to show him the nose ring immediately. Realizing that Srinivasa got to know about her secret donation, the wife decided to end her life with poison. She prayed Lord before drinking poison, she was shocked to see a nose ring inside the poison cup. With blissful happiness she elucidated the entire episode to her husband, who was bewildered. 
+                    The entire episode brought change in Srinivasa Nayaka, who gave away all his material riches to become a Haridasa, a devotional singer. He became disciple of Madhwa Saint Shri Vyasatirtha. He is contemporary of Kanakadasaru and has inspired many people like Vijaya dasaru, Gopala Dasaru and so on. He died in 1564 at the age of 80.</p>
+            </div>
+            <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            </div>        
+         </div>
+     </div>
 
 
 
@@ -163,94 +379,155 @@
 
                 Raghavendra Thirtha enterted brindavana alive on shraavana bahula bidige. He was succeeded by his disciple Yogeendra Tirtha.
 
-                </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+                            </p>
+                    </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
 
 
 
-             <section class="col-md-3" style="text-align:center;">
+             <section  class="col-md-3" style="text-align:center;">
                <div class="imagebox"> 
                 <a href="views/contact.ejs">
                 <img class="img-responsive" src="images/kd1.jpeg" alt="Icon" style="width:250px;height:250px;">
                   </a>
                  </div>
                 <p>Kanakadasa</p>
+                <p>1509 - 1609</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
             <section class="col-md-3" style="text-align:center;">
-               <div class="imagebox"> 
+               <div class="imagebox">
+                <a href="/gdasa">
                   <img class="img-responsive" src="images/gopal_p.jpg" alt="Icon" style="width:250px;height:250px;">
-               
+               </a>
                  </div>
                 <p>Gopal Dasaru</p>
+                <p>1721 - 1769</p>
                 <p>
-                    <button type="info" class="btn btn-info">Read More</button>
+                    <button type="info" data-toggle="modal" data-target="#gdasa"  class="btn btn-info">Read More</button>
+               
                 </p>
             </section>
 
-            <section class="col-md-3" style="text-align:center;">
+
+
+             <div class="modal fade" id="gdasa" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="position:absolute;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Gopala Dasaru</h4>
+        </div>
+        <div class="modal-body">
+          <p>Gopala Dasa (1721–1769) was a prominent Haridasa from the 18th-century. Along with other Haridasas such as Vijaya Dasa and Jagannatha Dasa, Gopala Dasa propagated the Dvaita philosophy of Madhvacharya through his devaranamas/dasara padagalu with ankita "Gopala Vittala".
+
+          </p>
+
+            <p> Brief Story:
+
+            Gopala Dasa was born as Bhaganna in Mosarakallu a village in Raichur district of Karnataka state. He was the disciple of Vijaya  dasaru and composed many songs that emphasise on Hari Sarvottama and Vayu Jeevottama . He was an astrologer as well. 
+
+            Gopala dasa was a great Haridasa,who gave 40 years of his life to Sri Jagannatha dasa, as per orders of Sri Vijayadasa.He has composed thousands of Suladhis,Ugabhogas.Hisdasarapadha extols the Supremacy of  Lord Sri Hari strongly and proved Sri Madhva siddhanta to such a great extent.Its commonly believed that Sri Gopala Dasaru is an amsha of Sri Ganesha.
+
+            Gopala dasaru left his mortal body on On the eighth day of the dark half of the lunar month of Pushya of the year Chitrabhanu, 
+
+
+
+                            </p>
+                    </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+
+
+
+            <section  class="col-md-3" style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/jagganath-dasa.jpg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
                 <p>Sri Jagannath Dasa</p>
+                <p>1491 - 1550</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
 
-             <section class="col-md-3" style="text-align:center;">
+             <section  class="col-md-3" style="text-align:center;">
                <div class="imagebox">          
                      <img class="img-responsive" src="images/pvenkat.jpg" alt="Icon" style="width:250px;height:250px;">
                      
                  </div>
 
                 <p>Prasanna Venkata Dasa</p>
+                <p>1680 - 1752</p>
                   <p>
                       <button type="info" class="btn btn-info">Read More</button>
                   </p>
             
             </section>
 
-            <section class="col-md-3" style="text-align:center;">
+            <section  class="col-md-3" style="text-align:center;">
                <div class="imagebox">
+                <a href="">
                   <img class="img-responsive" src="images/vidasa.jpg" alt="Icon" style="width:250px;height:250px;">
-                 
+                 </a>
                </div>
                 <p>Vijaya Dasa</p>
+                <p>1682- 1755</p>
                 <p>
-                    <button type="info" class="btn btn-info">Read More</button>
-                </p>
-            </section>
-
-             <section class="col-md-3" style="text-align:center;">
-               <div class="imagebox">
-                  <img class="img-responsive" src="images/basavanna.jpeg" alt="Icon" style="width:250px;height:250px;">
-                 
-               </div>
-                <p>Basavanna</p>
-                <p>
-                    <button type="info" class="btn btn-info">Read More</button>
+                   <button type="info" data-toggle="modal" data-target="#vidasa"  class="btn btn-info">Read More</button>
+<a href="/racharya"></a>
                 </p>
             </section>
 
 
-             <section class="col-md-3" style="text-align:center;">
+            <div class="modal fade" id="vidasa" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" style="position:absolute;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Gopala Dasaru</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Vijaya Dasaru (ವಿಜಯದಾಸರು) (1682–1755) was another prominent saint from the Haridasa tradition and a scholar of the Dvaita philosophy. Just like Purandara Dasaru, he also propagated the virtues of the philosophy of Madhwacharya, Hari Sarvottama Vayu Jeevothama, through his devotional songs called devaranama or dasara padagalu written in the Kannada language. He was known as suladi dasaru as he composed many keertanas, suladis, ugabhogas along with several devaranamas. They were easy to sing, memorize and these devaranamas help an individual immensely to attain bhakti (devotion), gnana (knowledge), and vairagya (non-attachment) and subsequently go towards moksha (salvation). Brief Story: Vijaya Dasaru was born in a poor Brahmin family in Cheekalaparvi, Raichur district, Karnataka state. His parents were Sri Srinivasappa and Kusamma. One night, he had a dream in which Purandara Dasa initiated him into the Haridasa tradition and gave him the ankita nama Vijaya Vittala. From that day he was called Vijaya Dasaru and dedicated his life to preaching Dvaita philosophy. He is regarded as Dasa Sreshta and composed about 25,000 devaranamas.
+                    </p>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+             <section class="col-md-3"  style="text-align:center;">
                <div class="imagebox">
                 <img class="img-responsive" src="images/APS.jpg" alt="Icon" style="width:250px;height:250px;">
               </div>
                 <p>Allama Prabhu</p>
+                <p>12th or 13th century</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
@@ -258,21 +535,23 @@
 
 
 
-            <section class="col-md-3" style="text-align:center;">
+            <section  class="col-md-3" style="text-align:center;">
                <div class="imagebox">
                 <img class="img-responsive" src="images/dnyaneshwar.jpg" alt="Icon" style="width:250px;height:250px;">
               </div>
                 <p>Dyaneshwar</p>
+                <p>1275 - 1296</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-            <section class="col-md-3" style="text-align:center;">
+            <section class="col-md-3"  style="text-align:center;">
               <div class="imagebox">
                 <img class="img-responsive" src="images/tukaram.jpg" alt="Icon" style="width:250px;height:250px;">
               </div>
                 <p>Tukaram</p>
+                <p>1568 or 1608 - 1649 or 1650</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
@@ -280,130 +559,99 @@
 
            
 
-            <section class="col-md-3" style="text-align:center;">
+            <section class="col-md-3"  style="text-align:center;">
                <div class="imagebox">
                 <img class="img-responsive" src="images/tdasa.jpg" alt="Icon" style="width:250px;height:250px;">
               </div>
                 <p>TulsiDasa</p>
+                <p>1511 - 1623</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-            <section class="col-md-3" style="text-align:center;">
+            <section class="col-md-3"  style="text-align:center;">
                <div class="imagebox">
                 <img class="img-responsive" src="images/Surdas.jpg" alt="Icon" style="width:250px;height:250px;">
               </div>
                 <p>Surdas</p>
+                <p>1478- 1573</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-            <section class="col-md-3" style="text-align:center;">
+            <section class="col-md-3"  style="text-align:center;">
                <div class="imagebox">
                 <img class="img-responsive" src="images/Thyagaraja.jpg" alt="Icon" style="width:250px;height:250px;">
               </div>
                 <p>Thyagaraja</p>
+                <p>May 4, 1767 - January 6, 1847</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-              <section class="col-md-3" style="text-align:center;">
-               <div class="imagebox"> 
-                  <img class="img-responsive" src="images/kunda.jpg" alt="Icon" style="width:250px;height:250px;">
-                  
-                 </div>
-                <p>Kunda Kunda</p>
-                <p>
-                    <button type="info" class="btn btn-info">Read More</button>
-                </p>
-            </section>
 
-            <section class="col-md-3" style="text-align:center;">
-               <div class="imagebox"> 
-                  <img class="img-responsive" src="images/bhadrabahu.jpg" alt="Icon" style="width:250px;height:250px;">
-                  
-                 </div>
-                <p>Bhadra Bahu</p>
-                <p>
-                    <button type="info" class="btn btn-info">Read More</button>
-                </p>
-            </section>
 
-            <section class="col-md-3" style="text-align:center;">
-               <div class="imagebox"> 
-                  <img class="img-responsive" src="images/siddhasena.jpg" alt="Icon" style="width:250px;height:250px;">
-                  
-                 </div>
-                <p>Siddhasena</p>
-                <p>
-                    <button type="info" class="btn btn-info">Read More</button>
-                </p>
-            </section>
 
-             <section class="col-md-3" style="text-align:center;">
+
+             <section class="col-md-3"  style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/ramdas.jpg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
-                <p>Ramdas</p>
+                <p>Shree Samarth Ramdas</p>
+                <p>1608 (Saka Era) - 1601 (Saka Era)</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-             <section class="col-md-3" style="text-align:center;">
+             <section class="col-md-3"  style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/GGobindSingh.jpg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
                 <p>Guru Gobind Singh</p>
+                <p>1666 - 1708</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-             <section class="col-md-3" style="text-align:center;">
+             <section  class="col-md-3" style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/GGRamdas.jpg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
                 <p>Guru Ramdas</p>
+                <p>1534 - 1581</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-             <section class="col-md-3" style="text-align:center;">
-               <div class="imagebox"> 
-                  <img class="img-responsive" src="images/GGranth.jpg" alt="Icon" style="width:250px;height:250px;">
-                  
-                 </div>
-                <p>Guru Granth</p>
-                <p>
-                    <button type="info" class="btn btn-info">Read More</button>
-                </p>
-            </section>
-
-            <section class="col-md-3" style="text-align:center;">
+            
+            <section  class="col-md-3" style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/chaitanyaprabhu.jpeg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
                 <p>Chaitanya Maha Prabhu</p>
+                <p>1486- 1534</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-             <section class="col-md-3" style="text-align:center;">
+             <section class="col-md-3"  style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/swamisamarth.jpg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
                 <p>Swami Samarth</p>
+                <p>19th century AD</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
@@ -415,17 +663,19 @@
                   
                  </div>
                 <p>Shirdi Sai baba</p>
+                <p>Died in 1918</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-            <section class="col-md-3" style="text-align:center;">
+            <section  class="col-md-3" style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/BabaRamdev.jpg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
                 <p>Baba Ramdev</p>
+                <p>Born in 1965 </p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
@@ -439,87 +689,104 @@
                   
                  </div>
                 <p>Sri Sri RaviShankar</p>
+                <p>Born in 1956</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
              
-           <section class="col-md-3" style="text-align:center;">
+           <section class="col-md-3"  style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/sadhguru1.jpg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
                 <p>Jaggi Vasudev</p>
+                <p>Born in 1957</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-              <section class="col-md-3" style="text-align:center;">
+              <section  class="col-md-3" style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/Maharishi.jpg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
                 <p>Maharishi Mahesh Yogi</p>
+                <p>1918 - 2008</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-             <section class="col-md-3" style="text-align:center;">
+             <section  class="col-md-3" style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/ramana.jpg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
                 <p>Ramana Maharishi</p>
+                <p>1879 - 1950</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-             <section class="col-md-3" style="text-align:center;">
+             <section  class="col-md-3" style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/Brahmananda.gif" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
                 <p>Brahmananada Sarawati</p>
+                <p>1870 - 1953</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
-              <section class="col-md-3" style="text-align:center;">
+              <section class="col-md-3"  style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/Paramahansa_Yogananda.jpg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
                 <p>Paramahansa Yogananda</p>
+                <p>January 5, 1893 - March 7, 1952</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
 
 
-              <section class="col-md-3" style="text-align:center;">
+              <section class="col-md-3"  style="text-align:center;">
                <div class="imagebox"> 
                   <img class="img-responsive" src="images/acbsp.jpeg" alt="Icon" style="width:250px;height:250px;">
                   
                  </div>
-                <p>A. C. Bhaktivedanta Swami Prabhupada</p>
+                <p >A. C. Bhaktivedanta Swami Prabhupada</p>
+                <p>1 Sep 1896 - 14 Nov1977</p>
                 <p>
                     <button type="info" class="btn btn-info">Read More</button>
                 </p>
             </section>
-  
 
+              <section class="col-md-3"  style="text-align:center;">
+               <div class="imagebox"> 
+                  <img class="img-responsive" src="images/Ram-Dass.jpg" alt="Icon" style="width:250px;height:250px;">
+                  
+                 </div>
+                <p>Ram Dass (Richard Alpert )</p>
+                <p>Born in 1937 </p>
+                <p>
+                    <button type="info" class="btn btn-info">Read More</button>
+                </p>
+            </section>
+            </div>
 
-        </div>
+             
+            </div>
+
     </div>
-     <footer class="container-fluid bg-4 text-center" style="background:red;color:white;padding:20px;bottom:0;margin-bottom:0px;">
-        <p> <span>&copy; Copyright 2018
-            </span></p>
-    </footer>
+     
 
 </body>
 
