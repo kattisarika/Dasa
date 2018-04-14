@@ -16,6 +16,9 @@ module.exports = function(app){
 		res.render("pd1.ejs")
 	});
 
+	app.get('/spiritualgurus',function(req, res){
+		res.render("spiritualgurus.ejs")
+	});
 
    
 	app.get('/login',function(req,res){
