@@ -1,0 +1,145 @@
+{
+  "categoryName": "General Song List",
+  "songlist": [
+    {
+      "songID": "101",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+      "songElementId":"olithe",
+      "songTitle":"olithe ayithu"
+    },
+    {
+      "songID": "102",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"ambiga",
+      "songTitle":"ambiga na ninna nambide"
+    },
+    {
+       "songID": "103",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"sakala",
+      "songTitle":"sakala graha bala neene"
+    },
+    {
+       "songID": "1001",
+      "songCategory": "Madhvacharya songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"dwadasha",
+      "songTitle":"Dwadasha Stotram"
+    },
+    {
+       "songID": "2001",
+      "songCategory": "Shankaracharya  songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"kanakadhara",
+      "songTitle":"kanakadhara-stotram-mahalakshmi"
+    },
+     {
+       "songID": "5001",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"mahaastakam",
+      "songTitle":"Mahalakshmi Astakam "
+    },
+     {
+       "songID": "5002",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"lakshmisong",
+      "songTitle":"ಏನು ಧನ್ಯಳೋ ಲಕುಮಿ"
+    },
+     {
+       "songID": "5003",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"jaya",
+      "songTitle":"Jaya Mangalam ..."
+    },
+     {
+       "songID": "5004",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"ada",
+      "songTitle":"Adalu Pogona ..."
+    },
+     {
+       "songID": "5005",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"ramanama",
+      "songTitle":"Rama Naama Paaysakke ..."
+    },
+     {
+       "songID": "5006",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"baagilanu",
+      "songTitle":"Baagilanu teredu"
+    },
+     {
+       "songID": "104",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"kagada",
+      "songTitle":"kagada bandide"
+    },
+    {
+       "songID": "105",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"devabandha",
+      "songTitle":"Deva bandha Namma"
+    },
+    {
+       "songID": "106",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"aacravillada",
+      "songTitle":"kandena govindana"
+    },
+    {
+       "songID": "5007",
+      "songCategory": "Raghavendra Swamy",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"aacravillada",
+      "songTitle":"Bandeya Gururaaya"
+    },
+    {
+       "songID": "5008",
+      "songCategory": "Purandara dasa songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"renniri",
+      "songTitle":"Raghavendra Raghavendra Enniri"
+    },
+    {
+       "songID": "5009",
+      "songCategory": "Allama Prabhu",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"sutti",
+      "songTitle":"Sutti Sutti Bandadilla Vachana"
+    },
+    {
+       "songID": "5010",
+      "songCategory": "Basavanna",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"brahmapadavi",
+      "songTitle":"Brahma Padaviyanolle Vachana"
+    },
+    {
+       "songID": "5011",
+      "songCategory": "Kaviratna Kalidasa",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"maanikyaveena",
+      "songTitle":"maanikyaveena - Kaviratna Kalidasa"
+    },
+     {
+       "songID": "5012",
+      "songCategory": "Kannada Dasara Pada",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"nsharade",
+      "songTitle":"Nammamma Sharade"
+    }
+  ]
+}

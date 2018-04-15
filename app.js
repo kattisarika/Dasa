@@ -46,6 +46,8 @@ require('./app/routes.js')(app);
 
 app.locals.pd1data=require('./pd1.json');
 
+app.locals.gmusicdata=require('./generalmusiclist.json');
+
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
