@@ -20,6 +20,10 @@ module.exports = function(app){
 		res.render("spiritualgurus.ejs")
 	});
 
+	app.get('/randomlist',function(req,res){
+		res.render("songlist-working.ejs")
+	});
+
    
 	app.get('/login',function(req,res){
 		res.render("login.ejs")

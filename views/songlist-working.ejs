@@ -1,0 +1,1532 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Dasa</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- load fontawesome -->
+
+    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
+
+</head>
+
+<body>
+    <script>
+        jQuery(document).ready(function ($) {
+
+
+                    $('.toggle').click(function () {
+                        var $toggled = $(this).attr('href');
+                        alert($toggled)
+                        $($toggled).siblings(':visible').hide();
+                        $($toggled).toggle("slide", {
+                            direction: 'up'
+                        }, 1000);
+                        $($toggled).toggle();
+                        //return false;
+                    });
+    </script>
+
+
+    <header class="bgimage">
+        <div class="container">
+            <h1>DEVOTIONAL SONGS</h1>
+            <h2>Prayers + Actions = Services To The Almighty</h2>
+        </div>
+
+    </header>
+    <a href="/" class="btn btn-dark btn-lg" id="signup" style="width:120px;height:50px;margin-left:20px;margin-right:10px;margin-top:10px;color:white"> Home</a>
+    <a href="/login" class="btn btn-dark btn-lg" id="signup" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white"> Login</a>
+    <a href="/yoursong" class="btn btn-dark btn-lg" id="signup" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white"> Your Song</a>
+    <a href="/songs" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Song List</a>
+    <a href="/aboutus" class="btn btn-dark btn-lg" id="aboutus" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white"> About Us</a>
+    <a href="/spiritualgurus" class="btn btn-dark btn-lg" id="aboutus" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Gurus</a>
+    <a href="/sign" class="btn btn-dark btn-lg" id="sign" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white"> Sign Up</a>
+    <a href="/contact" class="btn btn-dark btn-lg" id="contactus" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Contact Us</a>
+
+    <div class="row" style="margin-left:20px;margin-top:20px;padding:0;">
+
+        <div class="col-sm-2" style="padding:0">
+            <div class="musiclist" style="padding:0;margin-left:20px;">
+
+                <div class="table-responsive">
+
+
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center">
+                                    <%= gmusicdata.categoryName%>
+                                </th>
+                            </tr>
+
+
+                        </thead>
+                        <tbody>
+
+                            <%  for(var i=0; i<gmusicdata.songlist.length; i++) {%>
+
+                                <tr>
+                                    <td>
+                                        <a class="toggle" href="#<%= gmusicdata.songlist[i].songElementId%>">
+                                            <%=gmusicdata.songlist[i].songTitle%>
+                                                </li>
+                                    </td>
+                                </tr>
+                                <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-10" style="padding:0">
+            <div class="contentarea" style="padding:0">
+
+
+
+
+                <div class="showsong1" id="devabandha">
+                    <div class="row" style="margin-top:10px;padding:20px">
+                         <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>Deva bandha Namma</h1>
+                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                            <audio controls>
+                                <source src="mp3/Deva.mp3" type="audio/mpeg">
+                            </audio>
+                            <br>
+                        </div>
+
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/Oh1m1VoMoAA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+
+
+
+
+
+                
+                 <div class="showsong1" id="kagada">
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>kagada bandide</h1>
+                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                            <audio controls>
+                                <source src="mp3/kagada.mp3" type="audio/mpeg">
+                            </audio>
+                            <br>
+                        </div>
+
+
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/IMH7Yvdh2dQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+                    </div>
+
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#englishe" aria-controls="home" role="tab" data-toggle="tab">English</a></li>
+                        <li role="presentation"><a href="#malyalame" aria-controls="profile" role="tab" data-toggle="tab">Malyalam</a></li>
+                        <li role="presentation"><a href="#hindie" aria-controls="messages" role="tab" data-toggle="tab">Hindi</a></li>
+                        <li role="presentation"><a href="#gujuratie" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#kannadae" aria-controls="settings" role="tab" data-toggle="tab">Kannada</a></li>
+                        <li role="presentation"><a href="#tamile" aria-controls="settings" role="tab" data-toggle="tab">Tamil</a></li>
+                        <li role="presentation"><a href="#telugue" aria-controls="settings" role="tab" data-toggle="tab">Telugu</a></li>
+                        <li role="presentation"><a href="#marathie" aria-controls="settings" role="tab" data-toggle="tab">Marathi</a></li>
+                        <li role="presentation"><a href="#sanskrite" aria-controls="settings" role="tab" data-toggle="tab">Sanskrit</a></li>
+
+                    </ul>
+
+                     <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="englishe">
+
+                         
+                        </div>
+
+                        <div class="tab-pane fade" id="malyalame">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="hindie">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="gujuratie">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="kannadae">
+                           
+                         
+                        </div>
+                        <div class="tab-pane fade" id="tamile">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="telugue">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="marathie">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="sanskrite">
+                            translieration coming soon
+                        </div>
+                    </div> 
+                    <!--End of Tabbed panes-->
+                </div>
+
+
+
+
+                 <div class="showsong1" id="baagilanu">
+
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>Baagilanu Teredu</h1>
+                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                            <audio controls>
+                                <source src="mp3/Baagilanu.mp3" type="audio/mpeg">
+                            </audio>
+                            <br>
+                        </div>
+                        <p><b>Watch the song on youtube by click the link <a href="https://www.youtube.com/watch?v=UTdGJE0-v3w" target="_blank">Baagilanu Teredu</a></b></p>
+                    </div>
+
+
+
+                    <ul id="mytabs" class="nav nav-tabs" role="tablist">
+                        <li class="active">
+                            <a href="#english3" role="tab" data-toggle="tab">
+                                    English
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#malyalam3" role="tab" data-toggle="tab">
+                                    Malyalam
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#hindi3" role="tab" data-toggle="tab">
+                                    Hindi
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#gujurati3" role="tab" data-toggle="tab">
+                                    Gujurati
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#kannada3" role="tab" data-toggle="tab">
+                                    Kannada
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#tamil3" role="tab" data-toggle="tab">
+                                    Tamil
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#telugu3" role="tab" data-toggle="tab">
+                                    Telugu
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#marathi3" role="tab" data-toggle="tab">
+                                    Marathi
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#sanskrit3" role="tab" data-toggle="tab">
+                                    Sanskrit
+                                </a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="english3">
+
+                        </div>
+
+                        <div class="tab-pane fade active in" id="malyalam3">
+                        </div>
+                        <div class="tab-pane fade active in" id="hindi3">
+                        </div>
+                        <div class="tab-pane fade active in" id="gujurati3">
+                        </div>
+                        <div class="tab-pane fade active in" id="kannada3">
+                            <p> ರಚನೆ: ಕನಕದಾಸರು </p>
+
+                            <p>ಬಾಗಿಲನು ತೆರೆದು ಸೇವೆಯನು ಕೊಡೊ ಹರಿಯೆ</p>
+                            <p>ಕೂಗಿದರು ಧ್ವನಿ ಕೇಳಲಿಲ್ಲವೇ ನರಹರಿಯೇ</p>
+
+                            <p>ಪರಮಪದದೊಳಗೆ ವಿಷಧರನ ತಲ್ಪದಲಿ ನೀ</p>
+                            <p>ಸಿರಿಸಹಿತ ಕ್ಷೀರವಾರುಧಿಯೊಳಿರಲು</p>
+                            <p>ಕರಿರಾಜ ಕಷ್ಟದಲಿ ಆದಿಮೂಲಾ ಎಂದು</p>
+                            <p>ಕರೆಯಲಾಕ್ಷಣ ಬಂದು ಒದಗಿದೆಯೋ ನರಹರಿಯೇ ೧</p>
+
+                            <p>ಕಡು ಕೋಪದಲಿ ಖಳನು ಖಡುಗವನು ಹಿಡಿದು</p>
+                            <p>ನಿನ್ನೊಡೆಯನೆಲ್ಲಿಹನು ಎಂದು ನುಡಿಯೇ</p>
+                            <p>ದೃಢ ಭಕಿಯಲಿ ಶಿಶುವು ಬಿಡದೆ ನಿನ್ನನು ಭಜಿಸೆ</p>
+                            <p>ಸಡಗರದಿ ಕಂಭದಿಂದೊಡೆದೆಯೋ ನರಹರಿಯೇ೨</p>
+
+                            <p>ಯಮಸುತನ ರಾಣಿಗೆ ಅಕ್ಷಯವಸನವಿತ್ತೆ</p>
+                            <p>ಸಮಯದಲಿ ಅಜಮಿಳನ ಪೊರೆದೆ</p>
+                            <p>ಸಮಯಾಸಮಯವುಂಟೆ ಭಕ್ತವತ್ಸಲ ನಿನಗೆ</p>
+                            <p>ಕಮಲಾಕ್ಷ ಕಾಗಿನೆಲೆಯಾದಿ ಕೇಶವನೆ೩</p>
+                        </div>
+                        <div class="tab-pane fade active in" id="tamil3">
+                        </div>
+                        <div class="tab-pane fade active in" id="telugu3">
+                        </div>
+                        <div class="tab-pane fade active in" id="marathi3">
+                        </div>
+                        <div class="tab-pane fade active in" id="sanskrit3">
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 <div class="showsong1" id="kanakadhara">
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>kanakadhara-stotram-mahalakshmi</h1>
+                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                            <audio controls>
+                                <source src="mp3/kanakadhara.mp3" type="audio/mpeg">
+                            </audio>
+                            <br>
+                        </div>
+
+
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/lQsyYpxIzmg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                    </div>
+
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#englishc" aria-controls="home" role="tab" data-toggle="tab">English</a></li>
+                        <li role="presentation"><a href="#malyalamd" aria-controls="profile" role="tab" data-toggle="tab">Malyalam</a></li>
+                        <li role="presentation"><a href="#hindiad" aria-controls="messages" role="tab" data-toggle="tab">Hindi</a></li>
+                        <li role="presentation"><a href="#gujuratid" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#kannadad" aria-controls="settings" role="tab" data-toggle="tab">Kannada</a></li>
+                        <li role="presentation"><a href="#tamild" aria-controls="settings" role="tab" data-toggle="tab">Tamil</a></li>
+                        <li role="presentation"><a href="#telugud" aria-controls="settings" role="tab" data-toggle="tab">Telugu</a></li>
+                        <li role="presentation"><a href="#marathid" aria-controls="settings" role="tab" data-toggle="tab">Marathi</a></li>
+                        <li role="presentation"><a href="#sanskritd" aria-controls="settings" role="tab" data-toggle="tab">Sanskrit</a></li>
+
+                    </ul>
+
+
+
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="englishd">
+
+                          <p>Angam hare pulaka bhooshanamasrayanthi,
+                            Bhringanga neva mukulabharanam thamalam,
+                            Angikrithakhila vibhuthirapanga leela,
+                            Mangalyadasthu mama mangala devathaya.
+                            To the Hari who wears supreme happiness as Ornament,
+                            The Goddess Lakshmi is attracted,
+                            Like the black bees getting attracted,
+                            To the unopened buds of black Tamala[1] tree,
+                            Let her who is the Goddess of all good things,
+                            Grant me a glance that will bring prosperity.</p>
+                           <p>2
+                            Mugdha muhurvidhadhadathi vadhane Murare,
+                            Premathrapapranihithani gathagathani,
+                            Mala dhrishotmadhukareeva maheth pale ya,
+                            Sa ne sriyam dhisathu sagarasambhavaya.
+                            Again and again return ,those glances,
+                            Filled with hesitation and love,
+                            Of her who is born to the ocean of milk,
+                            To the face of Murari[2],
+                            Like the honey bees to the pretty blue lotus,
+                            And let those glances shower me with wealth.</p>
+                          <p>  3
+                            Ameelithaksha madhigamya mudha Mukundam
+                            Anandakandamanimeshamananga thanthram,
+                            Akekara stiththa kaninika pashma nethram,
+                            Bhoothyai bhavenmama bhjangasayananganaya.
+                            With half closed eyes stares she on Mukunda[3],
+                            Filled with happiness , shyness and the science of love,
+                            On the ecstasy filled face with closed eyes of her Lord,
+                            And let her , who is the wife of Him who sleeps on the snake,
+                            Shower me with wealth.</p>
+                           <p>4
+                            Bahwanthare madhujitha srithakausthube ya,
+                            Haravaleeva nari neela mayi vibhathi,
+                            Kamapradha bhagavatho api kadaksha mala,
+                            Kalyanamavahathu me kamalalayaya
+                            He who has won over Madhu[4],
+                            Wears the Kousthuba[5] as ornament,
+                            And also the garland of glances, of blue Indraneela[6],
+                            Filled with love to protect and grant wishes to Him,
+                            Of her who lives on the lotus,
+                            And let those also fall on me,
+                            And grant me all that is good..</p>
+                            <p>5
+                            <a href="../files/kanakadharam.pdf" download="kanakadharam.pdf">Download the entire song</a>
+
+
+                        </div>
+
+                        <div class="tab-pane fade" id="malyalamd">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="hindid">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="gujuratid">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="kannadad">
+                           Yet to add
+                        </div>
+                        <div class="tab-pane fade" id="tamild">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="telugud">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="marathid">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="sanskritd">
+                            translieration coming soon
+                        </div>
+                    </div>
+                    <!--End of Tabbed panes-->
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="showsong1" id="dwadasha">
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>Dwadasha Stotram / Preenayamo Vasudevam</h1>
+                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                            <audio controls>
+                                <source src="mp3/preenayamo.mp3" type="audio/mpeg">
+                            </audio>
+                            <br>
+                        </div>
+
+
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/yUcZSRpxlSE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                    </div>
+
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#englishc" aria-controls="home" role="tab" data-toggle="tab">English</a></li>
+                        <li role="presentation"><a href="#malyalamc" aria-controls="profile" role="tab" data-toggle="tab">Malyalam</a></li>
+                        <li role="presentation"><a href="#hindiac" aria-controls="messages" role="tab" data-toggle="tab">Hindi</a></li>
+                        <li role="presentation"><a href="#gujuratic" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#kannadac" aria-controls="settings" role="tab" data-toggle="tab">Kannada</a></li>
+                        <li role="presentation"><a href="#tamilc" aria-controls="settings" role="tab" data-toggle="tab">Tamil</a></li>
+                        <li role="presentation"><a href="#teluguc" aria-controls="settings" role="tab" data-toggle="tab">Telugu</a></li>
+                        <li role="presentation"><a href="#marathic" aria-controls="settings" role="tab" data-toggle="tab">Marathi</a></li>
+                        <li role="presentation"><a href="#sanskritc" aria-controls="settings" role="tab" data-toggle="tab">Sanskrit</a></li>
+
+                    </ul>
+
+
+
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="englishc">
+
+                           <p>vande vandyam sadanandam vasudevam nirajanamh |
+                           indirapatimadyadi varadesha varapradamh || 1</p>
+                            <p>namami nikhiladhisha kiritaghrishhtapithavath |
+                            hrittamah shamanearkabham shripateh padapankajamh || 2</p>
+                           <p>jambunadambaradharam nitambam chintyamishituh |
+                            svarnamaJnjirasamvitam arudham jagadambaya || 3</p>
+                            <p>udaram chintyam ishasya tanutveapi akhilambharam |
+                            valitrayankitam nityam arudham shriyaikaya || 4</p>
+                           <p> smaraniyamuro vishhnoh indiravasamuttamaih |
+                            anantam antavadiva bhujayorantarangatamh || 5</p>
+                            <p>shankhachakragadapadmadharashchintya harerbhujah |
+                            pinavritta jagadraxa kevalodyoginoanishamh || 6</p>
+                            <p>santatam chintayetkantham bhasvatkaustubhabhasakamh |
+                            vaikunthasyakhila veda udgiryanteanisham yatah || 7</p>
+                            <p>smareta yamininatha sahasramitakantimath |
+                            bhavatapapanodidhyam shripateh mukhapankajamh || 8</p>
+                            <p>purnananyasukhodbhasim andasmitamadhishituh |
+                            govindasya sada chintyam nityanandapadapradamh || 9</p>
+                            <p>smarami bhavasantapa hanidamritasagaramh |
+                            purnanandasya ramasya sanuragavalokanamh || 10</p>
+                            <p>dhyayedajasramishasya padmajadipratixitamh |
+                            bhrubhangam parameshhthhyadi padadayi vimuktidamh || 11</p>
+                            <p>santatam chintayeanantam antakale visheshhatah |
+                            naivodapuh grinantoantam yadgunanam ajadayah || 12</p>
+
+
+                        </div>
+
+                        <div class="tab-pane fade" id="malyalamc">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="hindic">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="gujuratic">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="kannadac">
+                           Yet to add
+                        </div>
+                        <div class="tab-pane fade" id="tamilc">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="teluguc">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="marathic">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="sanskritc">
+                            translieration coming soon
+                        </div>
+                    </div>
+                    <!--End of Tabbed panes-->
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 <div class="showsong1" id="sakala">
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>sakala graha bala neene</h1>
+                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                            <audio controls>
+                                <source src="mp3/sakala.mp3" type="audio/mpeg">
+                            </audio>
+                            <br>
+                        </div>
+
+
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/Z6pc2hfa4dU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#englisha" aria-controls="home" role="tab" data-toggle="tab">English</a></li>
+                        <li role="presentation"><a href="#malyalamb" aria-controls="profile" role="tab" data-toggle="tab">Malyalam</a></li>
+                        <li role="presentation"><a href="#hindiab" aria-controls="messages" role="tab" data-toggle="tab">Hindi</a></li>
+                        <li role="presentation"><a href="#gujuratib" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#kannadab" aria-controls="settings" role="tab" data-toggle="tab">Kannada</a></li>
+                        <li role="presentation"><a href="#tamilb" aria-controls="settings" role="tab" data-toggle="tab">Tamil</a></li>
+                        <li role="presentation"><a href="#telugub" aria-controls="settings" role="tab" data-toggle="tab">Telugu</a></li>
+                        <li role="presentation"><a href="#marathib" aria-controls="settings" role="tab" data-toggle="tab">Marathi</a></li>
+                        <li role="presentation"><a href="#sanskritb" aria-controls="settings" role="tab" data-toggle="tab">Sanskrit</a></li>
+
+                    </ul>
+
+
+
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="englishb">
+
+                            <p>sakala graha bala neenE sarasijAkSha ||
+                            nikhila rakShaka neenE vishwavyApakanE |p|</p>
+
+                            <p>ravi chaMdra budha neenE rAhu kEtuvu neenE
+                            kavi guru shaniyu maMgaLanu neenE
+                            divarAtriyu neenE nava vidhAnavu neenE
+                            bhavarOgahara neenE bhEShajanu neenE ||1||</p>
+
+                            <p>pakshamAsavu neenE parva kAlavu neenE
+                            nakshatra yOga tithi karaNagaLu neenE
+                            akshayaveMdu draupadiya mAnava kAyda
+                            pakShivAhana deena rakShakanu neenE ||2||</p>
+
+                            <p>Rutu vatsaravu neenE vrata yugAdiyu neenE
+                            kratu hOma yaj~jna sadgatiyu neenE
+                            jitavAgi yennoDeya puraMdara viThalane
+                            stutige silukada mahAmahimanu neenE ||3||</p>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="malyalamb">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="hindib">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="gujuratib">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="kannadab">
+                           <p> ಸಕಲ ಗ್ರಹ ಬಲ ನೀನೇ ಸರಸಿಜಾಕ್ಷ
+                            ನಿಖಿಲ ರಕ್ಷಕ ನೀನೆ ವಿಶ್ವವ್ಯಾಪಕನೇ ||ಪ||</p>
+
+                            <p>ರವಿಚಂದ್ರ ಬುಧ ನೀನೇ ರಾಹು ಕೇತುವು ನೀನೇ
+                            ಕವಿ ಗುರುವು ಶನಿಯು ಮಂಗಳನು ನೀನೇ
+                            ದಿವ ರಾತ್ರಿಯು ನೀನೇ ನವ ವಿಧಾನವು ನೀನೇ
+                            ಭವರೋಗ ಹರ ನೀನೇ ಭೇಷಜನು ನೀನೇ ||೧||</p>
+
+                            <p>ಪಕ್ಷಮಾಸವು ನೀನೇ ಪರ್ವ ಕಾಲವು ನೀನೇ
+                            ನಕ್ಷತ್ರ ಯೋಗ ತಿಥಿ ಕರಣಗಳು ನೀನೇ
+                            ಅಕ್ಷಯವೆಂದು ದ್ರೌಪದಿಯ ಮಾನವ ಕಾಯ್ದ
+                            ಪಕ್ಷಿವಾಹನ ದೀನರಕ್ಷಕನು ನೀನೆ ||೨||</p>
+
+                            <p>ಋತುವತ್ಸರವು ನೀನೆ ವ್ರತ ಯುಗಾದಿಯು ನೀನೇ
+                            ಕ್ರತುವು ಹೋಮ ಯಜ್ಞ ಸದ್ಗತಿಯು ನೀನೇ
+                            ಜಿತವಾಗಿ ಎನ್ನೊಡೆಯ ಪುರಂದರ ವಿಠಲನೆ
+                            ಸ್ತುತಿಗೇ ಸಿಲುಕದ ಮಹಾಮಹಿಮನು ನೀನೇ ||೩||</p>
+                        </div>
+                        <div class="tab-pane fade" id="tamilb">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="telugub">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="marathib">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="sanskritb">
+                            translieration coming soon
+                        </div>
+                    </div>
+                    <!--End of Tabbed panes-->
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="showsong1" id="ambiga">
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>Ambiga Na Ninna Nambide</h1>
+                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                            <audio controls>
+                                <source src="mp3/Ambiga.mp3" type="audio/mpeg">
+                            </audio>
+                            <br>
+                        </div>
+
+
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/qGGgf4W3PXA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#englisha" aria-controls="home" role="tab" data-toggle="tab">English</a></li>
+                        <li role="presentation"><a href="#malyalama" aria-controls="profile" role="tab" data-toggle="tab">Malyalam</a></li>
+                        <li role="presentation"><a href="#hindia" aria-controls="messages" role="tab" data-toggle="tab">Hindi</a></li>
+                        <li role="presentation"><a href="#gujuratia" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#kannadaa" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#tamila" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#telugua" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#marathia" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#sanskrita" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+
+                    </ul>
+
+
+
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="englisha">
+
+                            <p>aMbigA nA ninna naMbidE jagadaMba ramaNa ninna naMbidE</p>
+
+                            <p>tuMbida harigOlaMbiga ada koMbattu Chidravu aMbigA saMbhramadiM noDaMbiga adariMbu noDI naDesaMbigA || 1 ||</p>
+
+                            <p>hoLeya bharava noDaMbigA adake seLavu ghanavaiyya aMbigA suLiyoLu muLugide aMbiga enna seLedukoMDoyyo nInaMbiga || 2 ||</p>
+
+                            <p>aaru tereya nODaMbiga adu mIri barutalide aMbiga yAriMdalAgadu aMbiga ada nivArisi dATiso aMbiga || 3 ||</p>
+
+                            <p> satyaveMbude huTTaMbiga sadA bhaktiyeMbude pathavaMbigA nitya muruti puraMdara viTThala nammaa muktimaMTapakoyyo aMbiga || 4 ||</p>
+
+
+
+                        </div>
+
+                        <div class="tab-pane fade" id="malyalama">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="hindia">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="gujuratia">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="kannadaa">
+                            <p> ಅಂಬಿಗಾ ನಾ ನಿನ್ನ ನಂಬಿದೇ ಜಗದಂಬರಮಣ ನಿನ್ನ ನಂಬಿದೇ</p>
+
+                            <p>ತುಂಬಿದ ಹರಿಗೋಲಂಬಿಗ ಅದ ಕೊಂಬತ್ತು ಛಿದ್ರವು ಅಂಬಿಗಾ ಸಂಭ್ರಮದಿಂ ನೊಡಂಬಿಗ ಅದರಿಂಬು ನೊಡೀ ನಡೆಸಂಬಿಗಾ || 1 ||</p>
+
+                            <p>ಹೊಳೆಯ ಭರವ ನೊಡಂಬಿಗಾ ಅದಕೆ ಸೆಳವು ಘನವೈಯ್ಯ ಅಂಬಿಗಾ ಸುಳಿಯೊಳು ಮುಳುಗಿದೆ ಅಂಬಿಗ ಎನ್ನ ಸೆಳೆದುಕೊಂಡೊಯ್ಯೊ ನೀನಂಬಿಗ || 2 ||</p>
+
+                            <p>ಆರು ತೆರೆಯ ನೋಡಂಬಿಗ ಅದು ಮೀರಿ ಬರುತಲಿದೆ ಅಂಬಿಗ ಯಾರಿಂದಲಾಗದು ಅಂಬಿಗ ಅದ ನಿವಾರಿಸಿ ದಾಟಿಸೊ ಅಂಬಿಗ || 3 ||</p>
+
+                            <p>ಸತ್ಯವೆಂಬುದೆ ಹುಟ್ಟಂಬಿಗ ಸದಾ ಭಕ್ತಿಯೆಂಬುದೆ ಪಥವಂಬಿಗಾ ನಿತ್ಯ ಮುರುತಿ ಪುರಂದರ ವಿಟ್ಠಲ ನಮ್ಮಾ ಮುಕ್ತಿಮಂಟಪಕೊಯ್ಯೊ ಅಂಬಿಗ || 4 ||</p>
+                        </div>
+                        <div class="tab-pane fade" id="tamila">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="telugua">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="marathia">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="sanskrita">
+                            translieration coming soon
+                        </div>
+                    </div>
+                    <!--End of Tabbed panes-->
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <div class="showsong1" id="jaya">
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>Jaya Mangalam</h1>
+                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                            <audio controls>
+                                <source src="mp3/Jayamangalam.mp3" type="audio/mpeg">
+                            </audio>
+                            <br>
+                        </div>
+
+
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/S7Fy6rsq6rs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#english1" aria-controls="home" role="tab" data-toggle="tab">English</a></li>
+                        <li role="presentation"><a href="#malyalam1" aria-controls="profile" role="tab" data-toggle="tab">Malyalam</a></li>
+                        <li role="presentation"><a href="#hindi1" aria-controls="messages" role="tab" data-toggle="tab">Hindi</a></li>
+                        <li role="presentation"><a href="#gujurati1" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#kannada1" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#tamil1" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#telugu1" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#marathi1" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#sanskrit1" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+
+                    </ul>
+
+
+
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="english1">
+
+                            <p> Jaya Mangalam nithya subha mangalam </p>
+
+                            <p>Indeevarakshage/ibharaajavaradage/</p>
+                            <p>Indira ramana/govinda harige/</p>
+                            <p>nandanakandage/navaneetha chorage/</p>
+                            <p>vrundara kendra/udupiya krishnage/ |jaya|</p>
+
+                            <p>ksheerabdivaasage / kshithijana paalage/</p>
+                            <p>maarana padedha / mangala moorthige/</p>
+                            <p>chaarucharanagalinda / cheluva gangeya padedha/</p>
+                            <p>kaarunya moorthy / kausthubha daarige/ |jaya|</p>
+
+                            <p>vyasaavatharage / veda udharage /</p>
+                            <p>vaasithanantha pada/ sakaleshage/</p>
+                            <p>vaasudevamoorthy purandara vittalage/</p>
+                            <p>daasara kaayva / rukminee ramanage/ |jaya|</p>
+
+
+
+                        </div>
+
+                        <div class="tab-pane fade" id="malyalam1">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="hindi1">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="gujurati1">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="kannada1">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="tamil1">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="telugu1">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="marathi1">
+                            translieration coming soon
+                        </div>
+                        <div class="tab-pane fade" id="sanskrit1">
+                            translieration coming soon
+                        </div>
+                    </div>
+                    <!--End of Tabbed panes-->
+                </div>
+
+
+
+                <div class="showsong1" id="olithe">
+                    <div class="row">
+                        <div class="col-sm-9">
+
+                            <h1 style="text-align:center">Adadella olithe aayithu</h1>
+                            <div style="margin:100px 0px 100px 0px;text-align:center;background:#e6e6e6">
+                                <p><b>Play your song and catch up with the lyrics in the languages mentioned below</b></p>
+                                <audio controls>
+                                    <source src="mp3/Navakoti.mp3" type="audio/mpeg">
+                                </audio>
+                                <br>
+                            </div>
+                        </div>
+
+
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/1Et_FziAXPI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <!-- Nav tabs -->
+                    <ul id="mytabs" class="nav nav-tabs" role="tablist">
+                        <li class="active">
+                            <a href="#english" role="tab" data-toggle="tab">
+                                    English
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#malyalam" role="tab" data-toggle="tab">
+                                    Malyalam
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#hindi" role="tab" data-toggle="tab">
+                                    Hindi
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#gujurati" role="tab" data-toggle="tab">
+                                    Gujurati
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#kannada" role="tab" data-toggle="tab">
+                                    Kannada
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#tamil" role="tab" data-toggle="tab">
+                                    Tamil
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#telugu" role="tab" data-toggle="tab">
+                                    Telugu
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#marathi" role="tab" data-toggle="tab">
+                                    Marathi
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#sanskrit" role="tab" data-toggle="tab">
+                                    Sanskrit
+                                </a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="english">
+                            <div id="English">
+
+                                <p>Pallavi</p>
+                                <p>aadaddella oLithE aayithu namma Sreedharana sEvege saadhana sampaththaayithu</p>
+                                <p>Anupallavi</p>
+                                <p>danDige beththa hiDiyuvudakke</p>
+                                <p>manDe maachi naachuthalidde</p>
+                                <p>henDathhi santhathi saaviravaagali</p>
+                                <p>danDige beththa hiDisidaLayya</p>
+                                <p>(aadadella)</p>
+
+                                <p>Charanam</p>
+                                <p>gopaLa butti hiDiyuvudakke</p>
+                                <p>bhoopathiyanthe garvisuthidde</p>
+                                <p>gopaLa butti hidisidaLayya</p>
+                                <p>(aadadella)</p>
+                                <p>thuLasee maleya haakuvudakke</p>
+                                <p>arasanaagi naachuthalidde</p>
+                                <p>sarasijaaksha Sree purandara viThalanu</p>
+                                <p>thuLasee maleya haakidanayya</p>
+                                <p>(aadadella)</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade active in" id="malyalam">
+                            <p> പല്ലവി ആദദ്ദെല്ല ഒളിതേ ആയിതു നമ്മ ശ്രീധരന സേവെഗെ സാധന സമ്പത്തായിതു അനുപല്ലവി ദന്‍ഡിഗെ ബെത്ത ഹിഡിയുവുദക്കെ മന്‍ഡെ മാചി നാചുതലിദ്ദെ ഹെന്‍ഡഥി സന്തതി സാവിരവാഗലി ദന്‍ഡിഗെ ബെത്ത ഹിഡിസിദളയ്യ (ആദദെല്ല)
+                            </p>
+
+                            <p>ചരണം ഗൊപള ബുട്ടി ഹിഡിയുവുദക്കെ ഭൂപതിയന്തെ ഗര്‍വിസുതിദ്ദെ ഗൊപള ബുട്ടി ഹിദിസിദളയ്യ (ആദദെല്ല) തുളസീ മലെയ ഹാകുവുദക്കെ അരസനാഗി നാചുതലിദ്ദെ സരസിജാക്ഷ ശ്രീ പുരന്ദര വിഠലനു തുളസീ മലെയ ഹാകിദനയ്യ (ആദദെല്ല)
+                            </p>
+                        </div>
+
+                        <div id="hindi">
+                        </div>
+                        <div id="gujurati">
+                        </div>
+                        <div id="kannada">
+                        </div>
+                        <div id="tamil">
+                        </div>
+                        <div id="telugu">
+                        </div>
+
+                        <div id="marathi" class="tabcontent">
+                        </div>
+                        <div id="sanskrit" class="tabcontent">
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="showsong1" id="mahaastakam">
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>MAHA LAKSHMI ASTAKAM</h1>
+                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                            <audio controls>
+                                <source src="mp3/MAHALAKSHMI STUTHI.mp3" type="audio/mpeg">
+                            </audio>
+                            <br>
+                        </div>
+                    </div>
+
+                    <ul id="mytabs" class="nav nav-tabs" role="tablist">
+                        <li class="active">
+                            <a href="#english2" role="tab" data-toggle="tab">
+                                    English
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#malyalam2" role="tab" data-toggle="tab">
+                                    Malyalam
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#hindi2" role="tab" data-toggle="tab">
+                                    Hindi
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#gujurati2" role="tab" data-toggle="tab">
+                                    Gujurati
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#kannada2" role="tab" data-toggle="tab">
+                                    Kannada
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#tamil2" role="tab" data-toggle="tab">
+                                    Tamil
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#telugu2" role="tab" data-toggle="tab">
+                                    Telugu
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#marathi2" role="tab" data-toggle="tab">
+                                    Marathi
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#sanskrit2" role="tab" data-toggle="tab">
+                                    Sanskrit
+                                </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="english2">
+                            <p>Namastestu Mahaa-Maaye Shrii-Piitthe Sura-Puujite |</p>
+                            <p> Shangkha-Cakra-Gadaa-Haste Mahaalakssmi Namostute ||1||</p>
+                            <br>
+                            <p>Namaste Garudda-Aaruuddhe Kola-Aasura-Bhayamkari |</p>
+                            <p>Sarva-Paapa-Hare Devi Mahaalakssmi Namostute ||2||</p>
+                            <br>
+                            <p>Sarvajnye Sarva-Varade Sarva-Dusstta-Bhayamkari |</p>
+                            <p>Sarva-Duhkha-Hare Devi Mahaalakssmi Namostute ||3||</p>
+                            <br>
+                            <p>Siddhi-Buddhi-Prade Devi Bhukti-Mukti-Pradaayini |</p>
+                            <p>Mantra-Muurte Sadaa Devi Mahaalakssmi Namostute ||4||</p>
+                            <br>
+                            <p>Aad-Anta-Rahite Devi Aadya-Shakti-Maheshvari |</p>
+                            <p>Yogaje Yoga-Sambhuute Mahaalakssmi Namostute ||5||</p>
+                            <br>
+                            <p>Sthuula-Suukssma-Mahaaroudre Mahaa-Shakti-Mahodare |</p>
+                            <p>Mahaa-Paapa-Hare Devi Mahaalakssmi Namostute ||6||</p>
+                            <br>
+                            <p>Padma-Aasana-Sthite Devi Para-Brahma-Svaruupinni |</p>
+                            <p>Parameshi Jagan-Maatar-Mahaalakssmi Namostute ||7||</p>
+                            <br>
+                            <p>Shveta-Ambara-Dhare Devi Naana-Alangkaara-Bhuussite |</p>
+                            <p>Jagatsthite Jagan-Maatar-Mahaalakssmi Namostute ||8||</p>
+                            <br>
+                            <p>Mahaalakssmyassttakam Stotram Yah Patthedbhaktimaannarah |</p>
+                            <p>Sarvasiddhimavaapnoti Raajyam Praapnoti Sarvadaa ||9||</p>
+                            <br>
+                            <p>Ekakaale Patthennityam Mahaapaapavinaashanam |</p>
+                            <p>Dvikaalam Yah Patthennityam Dhanadhaanyasamanvitah ||10||</p>
+                            <br>
+
+                            <p>Trikaalam Yah Patthennityam Mahaashatruvinaashanam |</p>
+                            <p>Mahaalakssmirbhavennityam Prasannaa Varadaa Shubhaa ||11||</p>
+
+                        </div>
+
+
+                        <div class="tab-pane fade active in" id="hindi2">
+
+                        </div>
+
+                        <div class="tab-pane fade active in" id="gujurati2">
+
+                        </div>
+
+                        <div class="tab-pane fade active in" id="kannada2">
+                        </div>
+
+                        <div class="tab-pane fade active in" id="tamil2">
+
+                        </div>
+
+                        <div class="tab-pane fade active in" id="telugu2">
+
+
+                        </div>
+
+                        <div class="tab-pane fade active in" id="malyalam2">
+
+                        </div>
+                        <div class="tab-pane fade active in" id="marathi2">
+
+                        </div>
+
+                        <div class="tab-pane fade active in" id="sanskrit2">
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!--mahaastakam-->
+
+
+
+               
+
+
+
+                <div class="showsong1" id="lakshmisong">
+
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>ಏನು ಧನ್ಯಳೋ ಲಕುಮಿ</h1>
+                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                            <audio controls>
+                                <source src="mp3/EnuDhanyaLoLakumi.mp3" type="audio/mpeg">
+                            </audio>
+                            <br>
+                        </div>
+
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Lmt4kxCpayU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+
+
+
+                    <ul id="mytabs" class="nav nav-tabs" role="tablist">
+                        <li class="active">
+                            <a href="#english4" role="tab" data-toggle="tab">
+                                    English
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#malyalam4" role="tab" data-toggle="tab">
+                                    Malyalam
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#hindi4" role="tab" data-toggle="tab">
+                                    Hindi
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#gujurati4" role="tab" data-toggle="tab">
+                                    Gujurati
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#kannada4" role="tab" data-toggle="tab">
+                                    Kannada
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#tamil4" role="tab" data-toggle="tab">
+                                    Tamil
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#telugu4" role="tab" data-toggle="tab">
+                                    Telugu
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#marathi4" role="tab" data-toggle="tab">
+                                    Marathi
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#sanskrit4" role="tab" data-toggle="tab">
+                                    Sanskrit
+                                </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="english4">
+                            <p>Enu dhanyalo lakumi yentha maanyalo</p>
+                            <p>saanuraagadinda hariya taane seve maadu tihalu||p||</p>
+
+                            <p>koti koti bhrityariralu | haatakaambarana seve |</p>
+                            <p>saatiyillade maadi | poorna nootadindha sukhisutihalu ||1||</p>
+
+                            <p>chhatra chaamara vyajana pariyanka | paatra roopadalli nintu |</p>
+                            <p>chitra charita naada hariya | nithya seve maadutihalu ||2||</p>
+
+                            <p>sarvasthaladhi vyaaptanaada | sarva dosharahitanaada |</p>
+                            <p>sarva vandhyanaada purandara vittalanna sevisuvalo ||3||</p>
+                        </div>
+
+                        <div class="tab-pane fade active in" id="hindi4">
+                            Translation coming soon!
+                        </div>
+
+                        <div class="tab-pane fade active in" id="gujurati4">
+                            Translation coming soon!
+                        </div>
+
+                        <div class="tab-pane fade active in" id="kannada4">
+                            <h3>ಏನು ಧನ್ಯಳೋ ಲಕುಮಿ</h3>
+                            <p>ಏನು ಧನ್ಯಳೋ ಲಕುಮಿ</p>
+                            <p> ಎಂಥ ಮಾನ್ಯಳೋ</p>
+                            <p> ಸಾನುರಾಗದಿಂದ ಹರಿಯ</p>
+                            <p>ತಾನೆ ಸೇವೆ ಮಾಡುತಿಹಳೋ ||ಪ|</p>
+                            <br>
+                            <p>ಕೋಟಿ ಕೋಟಿ ಭೃತ್ಯರಿರಲು</p>
+                            <p> ಹಾಟಕಾಂಬರನ ಸೇವೆ </p>
+                            <p>ಸಾಟಿಯಿಲ್ಲದೆ ಮಾಡಿ</p>
+                            <p>ಪೂರ್ಣನೋಟದಿಂದ ಸುಖಿಸುತಿಹಳೋ || ೧||</p>
+                            <br>
+                            <p>ಛತ್ರ ಚಾಮರ ವ್ಯಜನ ಪರ್ಯಂಕ </p>
+                            <p>ಪಾತ್ರರೂಪದಲ್ಲಿ ನಿಂತು </p>
+                            <p>ಚಿತ್ರಚರಿತನಾದ ಹರಿಯ</p>
+                            <p>ನಿತ್ಯಸೇವೆ ಮಾಡುತಿಹಳೋ ||೨||</p>
+                            <br>
+                            <p>ಸರ್ವಸ್ಥಳದಿ ವ್ಯಾಪ್ತನಾದ </p>
+                            <p> ಸರ್ವದೋಷರಹಿತನಾದ </p>
+                            <p>ಸರ್ವವಂದ್ಯನಾದ ಪುರಂದರ</p>
+                            <p>ವಿಟ್ಠಲನ್ನ ಸೇವಿಸುವಳೋ ||೩||</p>
+                        </div>
+
+                        <div class="tab-pane fade active in" id="tamil4">
+                            Translation coming soon!
+                        </div>
+
+                        <div class="tab-pane fade active in" id="telugu4">
+                            Translation coming soon!
+                        </div>
+
+                        <div class="tab-pane fade active in" id="malyalam4">
+                            Translation coming soon!
+                        </div>
+
+                        <div class="tab-pane fade active in" id="marathi4">
+                            Translation coming soon!
+                        </div>
+
+                        <div class="tab-pane fade active in" id="sanskrit4">
+                            Translation coming soon!
+                        </div>
+                    </div>
+
+                </div>
+                <!--lakshmi song-->
+
+                <div class="showsong1" id="ada">
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>Aada Pogona Baro Ranga</h1>
+                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                            <audio controls>
+                                <source src="mp3/Ada Pogona Baro Ranga.mp3" type="audio/mpeg">
+                            </audio>
+                            <br>
+                        </div>
+                    </div>
+
+
+                    <ul id="mytabs" class="nav nav-tabs" role="tablist">
+                        <li class="active">
+                            <a href="#english5" role="tab" data-toggle="tab">
+                                    English
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#malyalam5" role="tab" data-toggle="tab">
+                                    Malyalam
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#hindi5" role="tab" data-toggle="tab">
+                                    Hindi
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#gujurati5" role="tab" data-toggle="tab">
+                                    Gujurati
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#kannada5" role="tab" data-toggle="tab">
+                                    Kannada
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#tamil5" role="tab" data-toggle="tab">
+                                    Tamil
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#telugu5" role="tab" data-toggle="tab">
+                                    Telugu
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#marathi5" role="tab" data-toggle="tab">
+                                    Marathi
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#sanskrit5" role="tab" data-toggle="tab">
+                                    Sanskrit
+                                </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="english5">
+                            <p>aada pogona baro ranga</p>
+                            <p>kudi yamuna teeradalli| </p>
+                            <br>
+                            <p>aada pogona baaro [p] </p>
+                            <p>chini kolu cendu buguri </p>
+                            <br>
+                            <p>banna bannada atagalanu[a.p]</p>
+                            <p>jahnaviya tiravante janakarayana kuvariyante</p>
+                            <br>
+                            <p>janaki vivahavante jana ni barabekante[c1] </p>
+                            <p>kumdiniya nagaravamte bhishmakana kuvariyante </p>
+                            <br>
+                            <p>shishupalana ballaLante ninage ole baredaLante[c2] </p>
+                            <p>pandavaru kauravarige lettavaaDi sotarante</p>
+                            <br>
+                            <p>rajyavannu bidabekante ramgavittala barabekante[c3]</p>
+                            <br>
+                        </div>
+
+                        <div class="tab-pane fade active in" id="hindi5">
+
+                        </div>
+
+                        <div class="tab-pane fade active in" id="gujurati5">
+
+                        </div>
+
+                        <div class="tab-pane fade active in" id="kannada5">
+                        </div>
+
+                        <div class="tab-pane fade active in" id="tamil5">
+
+                        </div>
+
+                        <div class="tab-pane fade active in" id="telugu5">
+
+                        </div>
+
+                        <div class="tab-pane fade active in" id="malyalam5">
+
+                        </div>
+                        <div class="tab-pane fade active in" id="marathi5">
+
+                        </div>
+
+                        <div class="tab-pane fade active in" id="sanskrit5">
+
+                        </div>
+
+                        <p>Watch the song on youtube by click the link
+                            <a href="https://www.youtube.com/watch?v=N7CC5Wgtzd0" target="_blank">Ada Pogona</a> </p>
+                    </div>
+                </div>
+                <!--ada -->
+                <div class="showsong1" id="ramanama">
+
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>Rama Nama Payasakke</h1>
+                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
+                            <audio controls>
+                                <source src="mp3/rAmanAmapAyasake.mp3" type="audio/mpeg">
+                            </audio>
+                            <br>
+                        </div>
+                    </div>
+
+                    <ul id="mytabs" class="nav nav-tabs" role="tablist">
+                        <li class="active">
+                            <a href="#english6" role="tab" data-toggle="tab">
+                                    English
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#malyalam6" role="tab" data-toggle="tab">
+                                    Malyalam
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#hindi6" role="tab" data-toggle="tab">
+                                    Hindi
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#gujurati6" role="tab" data-toggle="tab">
+                                    Gujurati
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#kannada6" role="tab" data-toggle="tab">
+                                    Kannada
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#tamil6" role="tab" data-toggle="tab">
+                                    Tamil
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#telugu6" role="tab" data-toggle="tab">
+                                    Telugu
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#marathi6" role="tab" data-toggle="tab">
+                                    Marathi
+                                </a>
+                        </li>
+
+                        <li>
+                            <a href="#sanskrit6" role="tab" data-toggle="tab">
+                                    Sanskrit
+                                </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="english6">
+
+                            <br>
+                            <p>RaMa nama payasake</p>
+                            <p>krishna nama sakkare</p>
+                            <p>viTala nama thuppava</p>
+                            <p>kalasi baya chapparisirO</p>
+                            <br>
+                            <p>Anupallavi :</p>
+                            <p>omman- a gOdhiya thandu</p>
+                            <p>vairagya kallali beesi</p>
+                            <p>summane sajjige thegedu</p>
+                            <p>gammana shavige hosedu....... ||RaMa||</p>
+                            <br>
+                            <p>Charanam :</p>
+                            <p>hrudayavenb- O madikeyali</p>
+                            <p>bhavavenbO hesarali</p>
+                            <p>harivaNake badisikondu ....... ||RaMa||</p>
+                            <br>
+                            <p>ananda, anandavembO thengu</p>
+                            <p>bandidu kaNirO</p>
+                            <p>Ananda mooruthi namma purandara</p>
+                            <p>viTalana neneyirO ....... ||RaMa||</p>
+                            <br>
+                        </div>
+
+                        <div class="tab-pane fade active in" id="hindi6">
+                        </div>
+                        <div class="tab-pane fade active in" id="gujurati6">
+                        </div>
+                        <div class="tab-pane fade active in" id="kannada6">
+                        </div>
+                        <div class="tab-pane fade active in" id="tamil6">
+                        </div>
+                        <div class="tab-pane fade active in" id="telugu6">
+                        </div>
+                        <div class="tab-pane fade active in" id="malyalam6">
+                        </div>
+                        <div class="tab-pane fade active in" id="marathi6">
+                        </div>
+                        <div class="tab-pane fade active in" id="sanskrit6">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--Who are Dasas-->
+
+    <!-- <div class="row" style="padding:0;">-->
+
+    <footer class="container-fluid bg-4 text-center" style="background:red;color:white;padding:20px;bottom:0;margin-bottom:0px;">
+        <p> <span>&copy; Copyright 2018
+                    </span></p>
+    </footer>
+
+</body>
+
+</html>
