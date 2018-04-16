@@ -261,14 +261,14 @@ img{
 
 
 .panel{
-  background: linear-gradient(rgba(0,100,108,.75),rgba(80,120,208,.15));
+background:#fff;  
 
 }
 
 #overlay {
  
   text-align: center;
-  
+  background: linear-gradient(rgba(180,100,108,.75),rgba(80,120,208,.15));
   -webkit-transition: opacity 0.25s ease;
   -moz-transition: opacity 0.25s ease;
 }
