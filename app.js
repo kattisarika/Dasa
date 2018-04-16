@@ -1,7 +1,7 @@
 var express = require('express');
 
 var path = require('path');
-var bodyParser = require('body-Parser');
+
 var cookieParser = require('cookie-Parser');
 var expressSession = require('express-session');
 var passport = require('passport');
