@@ -1,14 +1,16 @@
 var express = require('express');
-
 var path = require('path');
+var nodemailer = require("nodemailer");
 
-var cookieParser = require('cookie-Parser');
+var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
 var passport = require('passport');
 var passportLocal = require('passport-local');
 var bcrypt = require('bcryptjs');
 var passport = require('passport');
 var passportLocal = require('passport-local');
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 
 
 
