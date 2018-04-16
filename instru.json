@@ -1,0 +1,54 @@
+{
+  "categoryName": "Instrumental Music List",
+  "songlist": [
+    {
+      "songID": "10000",
+      "songCategory": "Instrumental Music, Tabla , harmonium, classical",
+      "songDescription": "All instrumental music",
+      "songElementId":"teentaal",
+      "songTitle":"Teen Taal"
+    },
+    {
+      "songID": "10001",
+      "songCategory": "Instrumental Music, Sitar, Tabla, Flute, classical",
+      "songDescription": "All instrumental music",
+       "songElementId":"fusionmusic1",
+      "songTitle":"Fusion Music - Sitar, Tabla, Flute, B.Shivaramakrishna Rao"
+    },
+    {
+       "songID": "10002",
+      "songCategory": "Instrumental Music, Mridangam, Tabla, saxophone, classical",
+      "songDescription": "All instrumental music",
+       "songElementId":"fmusic2",
+      "songTitle":"Instrumental music by Kadri Gopalnath"
+    },
+    {
+       "songID": "10003",
+      "songCategory": "Instrumental Music, Sitar, Tabla, Violin, Anushka Shankar, Anoushka Shankar Ensemble, Patricia Kopatchinskaja, classical",
+      "songDescription": "All instrumental music",
+       "songElementId":"fmusic3",
+      "songTitle":"Raga Puriya Kalyan, Raga Pilu (with Patricia Kopatchinskaja), Raga Pancham Seghara (with Pirashanna Thevarajah), Raga Manj-Khammaj (brief encore)"
+    },
+    {
+       "songID": "10004",
+      "songCategory": "Schubert, Cello, piano, classical",
+      "songDescription":"Sonata en a minor Arpeggione",
+       "songElementId":"sonata",
+      "songTitle":"Sonata en a minor Arpeggione"
+    },
+     {
+       "songID": "10005",
+      "songCategory": "Janine Jansen, Tchaikovsky violin,classical ",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"tviolin",
+      "songTitle":"Janine Jansen Violin "
+    },
+     {
+       "songID": "10006",
+      "songCategory": "The Best Baroque Music, trumpet, classical",
+      "songDescription": "All songs sung by him and others in praises of him",
+       "songElementId":"bbaroque",
+      "songTitle":"The Best Baroque Music. 1 Hour with The Most Rare Classical Recording for Trumpet"
+    }
+  ]
+}

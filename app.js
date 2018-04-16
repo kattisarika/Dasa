@@ -48,6 +48,8 @@ app.locals.pd1data=require('./pd1.json');
 
 app.locals.gmusicdata=require('./generalmusiclist.json');
 
+app.locals.instrumusicdata=require('./instru.json');
+
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 

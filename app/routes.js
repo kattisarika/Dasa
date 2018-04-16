@@ -24,6 +24,16 @@ module.exports = function(app){
 		res.render("songlist-working.ejs")
 	});
 
+	app.get('/medimusic',function(req,res){
+		res.render("medimusic.ejs")
+	});
+
+
+	app.get('/instrumusic',function(req,res){
+		res.render("instrumusic.ejs")
+	});
+
+
    
 	app.get('/login',function(req,res){
 		res.render("login.ejs")
