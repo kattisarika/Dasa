@@ -15,7 +15,7 @@ var bodyParser = require('body-parser');
 
 
 var methodOverride = require('method-override');
-var configAuth= require('./app/models/auth');
+//var configAuth= require('./app/models/auth');
 
 var app = express();
 
