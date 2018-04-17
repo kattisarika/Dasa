@@ -296,5 +296,9 @@ background:#fff;
   
   font-size:26px;
 }
-
-
+.list{
+  list-style-type: none
+}
+.list li  {
+  list-style-type: none
+}

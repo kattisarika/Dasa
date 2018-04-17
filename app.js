@@ -196,7 +196,7 @@ app.get('/index',function(req, res){
 
 
 app.get('/mysonglist',function(req, res){
-        res.render('songlist.ejs', {
+        res.render('mysonglist.ejs', {
         isAuthenticated: req.isAuthenticated(),
         user: req.user
     });
@@ -229,6 +229,9 @@ app.get('/spiritualtalks',function(req, res){
         user: req.user
     });
   });
+
+
+
 
 
 app.get('/logout',function(req,res){
@@ -284,7 +287,7 @@ app.get('/contact',function(req, res){
     });
 
     app.get('/songs',function(req,res){
-        res.render("songlist.ejs");
+        res.render("songlist-working.ejs");
     });
 
 passport.serializeUser(function (username, done) {
