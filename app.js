@@ -177,27 +177,69 @@ app.post('/login', passport.authenticate('local', {
     console.log("In POST LOGIN /login", req.isAuthenticated());
     //console.log("In  POST LOGIN /login", req.body);
     retStatus = 'Success';
-    res.redirect("index");
+    res.redirect("mywelcomepage");
 });
 
-app.get('/index',function(req,res){
-  res.render('index', {
+app.get('/mywelcomepage',function(req, res){
+        res.render('mywelcomepage', {
         isAuthenticated: req.isAuthenticated(),
         user: req.user
     });
-
 });
 
+app.get('/index',function(req, res){
+        res.render('index', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+});
+
+
+app.get('/mysonglist',function(req, res){
+        res.render('songlist.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+});
+
+app.get('/guidedtours',function(req, res){
+        res.render('guidedtours.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+});
+
+app.get('/dailyplanner',function(req, res){
+        res.render('dailyplanner.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+        });
+  });
+
+app.get('/dashboard',function(req, res){
+        res.render('dashboard.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+  });
+
+
 app.get('/logout',function(req,res){
-  if (req.session.user && req.cookies.user_sid) {
-        res.clearCookie('user_sid');
-        res.redirect('/');
-    } else {
-        res.redirect('/login');
-    }
+
+    req.logout();
+  res.redirect('/');
    
 
 });
+
+
+app.get('/spiritualbooks',function(req, res){
+        res.render('spiritualbooks', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+});
+
 
 
 app.get('/contact',function(req, res){
