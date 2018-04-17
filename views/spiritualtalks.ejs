@@ -1,0 +1,122 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Dasa</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+
+    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+  <script type="text/javascript">
+    $(function()
+      {
+           
+          $('.list > li a').click(function() {
+          $(this).parent().find('ul').toggle();
+        });
+       
+      });
+
+  </script>
+
+   <header style="height:80px">
+        <div class="container">
+          <h1>Spiritual Talks</h1>
+        </div>
+
+    </header>
+
+
+   <div class="jumbotron jumbotron-billboard" style="padding:0;">
+
+        <!--Who are Dasas-->
+
+         <!-- <div class="row" style="padding:0;">-->
+        <a href="/mysonglist" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Song List</a>   
+         <a href="/spiritualgurus" class="btn btn-dark btn-lg" id="sgurus" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Gurus</a>
+          <a href="/spiritualtalks" class="btn btn-dark btn-lg" id="sbooks" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Talks</a>
+        <a href="/spiritualbooks" class="btn btn-dark btn-lg" id="sbooks" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Books</a>
+        <a href="/guidedtours" class="btn btn-dark btn-lg" id="sbooks" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Events </a>
+        
+            <nav style="display:inline-block;float:right;margin-right:20px">
+ 
+                      
+                        <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+                        <p style="font-size:14px;color:black">
+                            <b><%=user.username%></b>
+                        </p>
+                   
+              </nav>
+
+                <div style="margin-left:20px;padding:0;padding:50px">
+                  <p>Spirituality holds that no matter our ideological differences, all humans are one and the same consciousness expressed in different ways. In other words, our essence is of the same nature and our differences are only superficial — a realization that makes us want to embrace our fellow human beings and walk the path to enlightenment together as friends, by helping one another instead of putting obstacles on each other’s path.</p>
+                 
+
+                
+                   <div id="rsl">
+                    <ul  style="list-style-type:none">
+                      
+                      <li >
+                          <a><b>Indian Philosophy</b></a>
+                          <ul style="list-style-type:none">
+                              <li><a href="">Bhagvad Geeta</a></li>  
+                              <li><a href="">Pravachanams</a></li>  
+                              <li><a href="">Ramayana</a></li>  
+                              <li><a href="">Festivals And Significance</a></li>     
+                              <li><a href="">Short Stories </a></li> 
+                              <li><a href="">Deepak Chopra</a></li>  
+                              <li><a href="">Jaggi Vasudev</a></li>    
+                              <li><a href="">Sri Sri Ravi Shankar</a></li>
+                          </ul>                
+                      </li>
+                      
+                      <li>
+                          <a><b>Seek the Western way </b></a>
+                          <ul  style="list-style-type:none">
+                              <li><a href="">Hans Wilhelm</a></li>  
+                              <li><a href="">Echart Tolle</a></li>    
+                              <li><a href="">Dr Wayne W. Dyer</a></li>  
+                              <li><a href="">Pope Francis</a></li>
+                              <li><a href="">Paulo Coelho</a></li>
+                              <li><a href="">Oprah Winfrey</a></li>
+                              <li><a href="">Ram Dass</a></li>
+                              <li><a href="">Richard Bach</a></li>
+                          </ul>                
+                      </li>
+
+                      <li>
+                          <a><b>Seek the Eastern Way</b></a>
+                          <ul style="list-style-type:none">
+                              <li><a href="">Dalai Lama</a></li>  
+                               <li> <a href="">Thich Nhat Hanh</a></li>   
+                              
+                          </ul>                
+                      </li>
+                       <li>
+                          <a><b>Positive Affirmations</b></a>
+                          <ul style="list-style-type:none">
+                              <li><a href="">Positive Thinking</a></li>  
+                           
+                          </ul>                
+                      </li>
+                     </ul>
+                     
+
+                   </div>
+
+
+                  
+
+            </div>
+             <footer class="container-fluid bg-4 text-center" style="background:red;color:white;padding:20px;bottom:0;margin-bottom:0px;">
+        <p> <span>&copy; Copyright 2018
+            </span></p>
+    </footer>        
+</body>
+</html>

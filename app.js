@@ -223,6 +223,13 @@ app.get('/dashboard',function(req, res){
     });
   });
 
+app.get('/spiritualtalks',function(req, res){
+        res.render('spiritualtalks.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+  });
+
 
 app.get('/logout',function(req,res){
 
