@@ -171,7 +171,7 @@ app.get('/login', function (req, res) {
 
 /*passport.authenticate('local', { failureRedirect: '/login' }),*/
 app.post('/login', passport.authenticate('local', {
-    failureRedirect: '/blah'
+    failureRedirect: '/login'
 }), function (req, res) {
      console.log(req);
     console.log("In POST LOGIN /login", req.isAuthenticated());

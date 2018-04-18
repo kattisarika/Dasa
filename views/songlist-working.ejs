@@ -15,8 +15,8 @@
 
     <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+   
 
 </head>
 
@@ -24,24 +24,16 @@
     <script>
         jQuery(document).ready(function ($) {
 
-
+                     $('.showsong1').hide()
                     $('.toggle').click(function () {
                         var $toggled = $(this).attr('href');
-                        alert($toggled)
+                       
                         $($toggled).siblings(':visible').hide();
                         $($toggled).toggle("slide", {
                             direction: 'up'
                         }, 1000);
                         $($toggled).toggle();
                         //return false;
-                    });
-
-
-                   $("#selectLanguage").change(function() {
-                        var val = $(this).val();
-                         $("h5").html(val);
-                        
-
                     });
 
                 });
@@ -701,11 +693,11 @@
                         <li role="presentation"><a href="#malyalama" aria-controls="profile" role="tab" data-toggle="tab">Malyalam</a></li>
                         <li role="presentation"><a href="#hindia" aria-controls="messages" role="tab" data-toggle="tab">Hindi</a></li>
                         <li role="presentation"><a href="#gujuratia" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
-                        <li role="presentation"><a href="#kannadaa" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
-                        <li role="presentation"><a href="#tamila" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
-                        <li role="presentation"><a href="#telugua" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
-                        <li role="presentation"><a href="#marathia" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
-                        <li role="presentation"><a href="#sanskrita" aria-controls="settings" role="tab" data-toggle="tab">Gujurati</a></li>
+                        <li role="presentation"><a href="#kannadaa" aria-controls="settings" role="tab" data-toggle="tab">Kannada</a></li>
+                        <li role="presentation"><a href="#tamila" aria-controls="settings" role="tab" data-toggle="tab">Tamil</a></li>
+                        <li role="presentation"><a href="#telugua" aria-controls="settings" role="tab" data-toggle="tab">Telugu</a></li>
+                        <li role="presentation"><a href="#marathia" aria-controls="settings" role="tab" data-toggle="tab">Marathi</a></li>
+                        <li role="presentation"><a href="#sanskrita" aria-controls="settings" role="tab" data-toggle="tab">Sanskrit</a></li>
 
                     </ul>
 

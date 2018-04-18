@@ -13,6 +13,51 @@ jQuery(document).ready(function ($) {
         //return false;
   });
 
+
+    $("#login-form").submit(function(event){
+            console.log("All data captured from login page");
+            var username = $("#username").val();
+            var passwd = $("#password").val();
+           if(!$("#username").val()){
+            if(username === '' || username.length=== 0){
+              if ($("#username").parent().next(".validation").length == 0) {
+              $("#username").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Please enter email address</div>");
+                  }
+             }
+            }else {
+                $("#username").parent().next(".validation").remove(); // remove it
+            }
+
+            if(!$("#password").val()){
+           if(pass === '' || pass.length=== 0){
+            if ($("#password").parent().next(".validation").length == 0) {
+              $("#password").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Please enter password</div>");
+                 }
+              }
+            }else {
+                $("#password").parent().next(".validation").remove(); // remove it
+            }
+
+            event.preventDefault();
+            $("#username").focus();
+             $.ajax({
+                url: '/login',
+                cache: false,
+                type: 'POST',
+                data: {
+                    username: username,
+                    password: pass
+                },
+                dataType: 'json',
+                success: function (response) {
+                    if (response.redirectTo && response.msg == 'Just go there please') {
+                        window.location = '/mywelcomepage';
+                    }
+                    console.log("success");
+        }
+    });
+
+
    
 
      
