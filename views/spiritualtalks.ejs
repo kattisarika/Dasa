@@ -14,6 +14,23 @@
 </head>
 <body>
   <script type="text/javascript">
+
+     jQuery(document).ready(function ($) {
+
+                     $('.showtext1').hide()
+                    $('.toggle').click(function () {
+                        var $toggled = $(this).attr('href');
+                       
+                        $($toggled).siblings(':visible').hide();
+                        $($toggled).toggle("slide", {
+                            direction: 'up'
+                        }, 1000);
+                        $($toggled).toggle();
+                        //return false;
+                    });
+
+                });
+
     $(function()
       {
            
@@ -38,8 +55,8 @@
         <!--Who are Dasas-->
 
          <!-- <div class="row" style="padding:0;">-->
-        <a href="/mysonglist" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Song List</a>   
-         <a href="/spiritualgurus" class="btn btn-dark btn-lg" id="sgurus" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Gurus</a>
+       
+         <a href="/mywelcomepage" class="btn btn-dark btn-lg" id="sgurus" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Home</a>
           <a href="/spiritualtalks" class="btn btn-dark btn-lg" id="sbooks" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Talks</a>
         <a href="/spiritualbooks" class="btn btn-dark btn-lg" id="sbooks" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Books</a>
         <a href="/guidedtours" class="btn btn-dark btn-lg" id="sbooks" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Events </a>
@@ -54,77 +71,115 @@
                    
               </nav>
 
-                <div style="margin-left:20px;padding:0;padding:50px">
+               <div class="row" style="margin-left:20px;margin-top:20px;padding:0;">
                   <p>Spirituality holds that no matter our ideological differences, all humans are one and the same consciousness expressed in different ways. In other words, our essence is of the same nature and our differences are only superficial — a realization that makes us want to embrace our fellow human beings and walk the path to enlightenment together as friends, by helping one another instead of putting obstacles on each other’s path.</p>
                  
 
                 
-                  <div class="col-sm-4" style="margin-top:50px">
-                    <ul class="list">
+                  <div class="col-sm-2" style="padding:0;">
+                    <div class="toc" style="padding:0;margin-left:20px;" >
+                      <ul class="list">
                       
                       <li>
                           <a><b>Indian Philosophy</b></a>
                           <ul >
-                              <li><a href="#bgeeta">Bhagvad Geeta</a></li>  
-                              <li><a href="">Pravachanams</a></li>  
-                              <li><a href="">Ramayana</a></li>  
-                              <li><a href="">Festivals And Significance</a></li>     
-                              <li><a href="">Short Stories </a></li> 
-                              <li><a href="">Deepak Chopra</a></li>  
-                              <li><a href="">Jaggi Vasudev</a></li>    
-                              <li><a href="">Sri Sri Ravi Shankar</a></li>
+                              <li><a class="toggle" href="#bgeeta">Bhagvad Geeta</a></li>  
+                              <li><a class="toggle" href="#pravachanams">Pravachanams</a></li>  
+                              <li><a class="toggle" href="">Ramayana</a></li>  
+                              <li><a class="toggle" href="">Festivals And Significance</a></li>     
+                              <li><a class="toggle" href="">Short Stories </a></li> 
+                              <li><a class="toggle" href="">Deepak Chopra</a></li>  
+                              <li><a class="toggle" href="">Jaggi Vasudev</a></li>    
+                              <li><a class="toggle" href="">Sri Sri Ravi Shankar</a></li>
                           </ul>                
                       </li>
                       
                       <li>
                           <a><b>Seek the Western way </b></a>
                           <ul  >
-                              <li><a href="#hwilhelm">Hans Wilhelm</a></li>  
-                              <li><a href="">Echart Tolle</a></li>    
-                              <li><a href="">Dr Wayne W. Dyer</a></li>  
-                              <li><a href="">Pope Francis</a></li>
-                              <li><a href="">Paulo Coelho</a></li>
-                              <li><a href="">Oprah Winfrey</a></li>
-                              <li><a href="">Ram Dass</a></li>
-                              <li><a href="">Richard Bach</a></li>
+                              <li><a class="toggle" href="#hwilhelm">Hans Wilhelm</a></li>  
+                              <li><a class="toggle" href="">Echart Tolle</a></li>    
+                              <li><a class="toggle" href="">Dr Wayne W. Dyer</a></li>  
+                              <li><a class="toggle" href="">Pope Francis</a></li>
+                              <li><a class="toggle" href="">Paulo Coelho</a></li>
+                              <li><a class="toggle" href="">Oprah Winfrey</a></li>
+                              <li><a class="toggle" href="">Ram Dass</a></li>
+                              <li><a class="toggle"  href="">Richard Bach</a></li>
                           </ul>                
                       </li>
 
                       <li>
                           <a><b>Seek the Eastern Way</b></a>
                           <ul >
-                              <li><a href="">Dalai Lama</a></li>  
-                               <li> <a href="">Thich Nhat Hanh</a></li>   
+                              <li><a class="toggle" href="">Dalai Lama</a></li>  
+                               <li> <a class="toggle" href="">Thich Nhat Hanh</a></li>   
                               
                           </ul>                
                       </li>
                        <li>
                           <a><b>Positive Affirmations</b></a>
                           <ul >
-                              <li><a href="">Positive Thinking</a></li>  
+                              <li><a class="toggle" href="">Positive Thinking</a></li>  
                            
                           </ul>                
                       </li>
                      </ul>
-                     
-
-                   </div>
-                   <div class="col-md-7" style="display:inline-block;margin-top:50px;">
-                   <div id="bgeeta" >
-                     <p> The Bhagavad- Gita is considered by eastern and western scholars alike to be among the greatest spiritual books the world has ever known. In a very clear and wonderful way the Supreme Lord Krishna describes the science of self-realization and the exact process by which a human being can establish their eternal relationship with God. In terms of pure, spiritual knowledge the Bhagavad- Gita is incomparable. Its intrinsic beauty is that its knowledge applies to all human beings and does not postulate any sectarian idealogy or secular view. It is appproachable from the sanctified realms of all religions and is glorified as the epitome of all spiritual teachings. This is because proficiency in the Bhagavad- Gita reveals the eternal principles which are fundamental and essential for spiritual life from all perspectives and allows one to perfectly understand the esoteric truths hidden within all religious scriptures. Many great thinkers from our times such as Albert Einstein, Mahatma Gandhi and Albert Schweizer as well as Madhvacarya, Sankara and Ramanuja from bygone ages have all contemplated and deliberarted upon its timeless message. The primary purpose of the Bhagavad- Gita is to illuminate for all of humanity the realization of the true nature of divinity; for the highest spiritual conception and the greatest material perfection is to attain love of God!</p>
-
-                     <p>The website Gita.org, which has provided indetail explaining and meaning to each verse and is translated in different languages.
-
-                      <br><a href="http://www.bhagavad-gita.org/" target="_blank">Hear all about Bhagvad Gita</a></p>
-
-                      <iframe width="300" height="215" src="https://www.youtube.com/embed/_EqwlOeTj7Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                      <iframe width="300" height="215" src="https://www.youtube.com/embed/ckaEwJj2A1U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
+                     </div>
 
                    </div>
 
-                   <div id="hwilhelm">
+                     <div class="col-sm-10" style="padding:0">
+                      <div class="contentarea" style="padding:0">
+
+
+                     <div class="showtext1" id="bgeeta">
+                        <div class="row" style="margin-top:10px;">
+                          <div class="col-sm-10" >
+                            <h1>Bhagavad- Gita</h1>   
+                        </div>
+                       <div>
+                           <p > The Bhagavad- Gita is considered by eastern and western scholars alike to be among the greatest spiritual books the world has ever known. In a very clear and wonderful way the Supreme Lord Krishna describes the science of self-realization and the exact process by which a human being can establish their eternal relationship with God. In terms of pure, spiritual knowledge the Bhagavad- Gita is incomparable. Its intrinsic beauty is that its knowledge applies to all human beings and does not postulate any sectarian idealogy or secular view. It is appproachable from the sanctified realms of all religions and is glorified as the epitome of all spiritual teachings. This is because proficiency in the Bhagavad- Gita reveals the eternal principles which are fundamental and essential for spiritual life from all perspectives and allows one to perfectly understand the esoteric truths hidden within all religious scriptures. Many great thinkers from our times such as Albert Einstein, Mahatma Gandhi and Albert Schweizer as well as Madhvacarya, Sankara and Ramanuja from bygone ages have all contemplated and deliberarted upon its timeless message. The primary purpose of the Bhagavad- Gita is to illuminate for all of humanity the realization of the true nature of divinity; for the highest spiritual conception and the greatest material perfection is to attain love of God!</p>
+
+                           <p>The website Gita.org, which has provided indetail explaining and meaning to each verse and is translated in different languages.
+
+                          <br><a href="http://www.bhagavad-gita.org/" target="_blank">Hear all about Bhagvad Gita</a></p>
+
+                          <iframe width="300" height="215" src="https://www.youtube.com/embed/_EqwlOeTj7Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          <iframe width="300" height="215" src="https://www.youtube.com/embed/ckaEwJj2A1U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="showtext1" id="pravachanams">
+                        <div class="row" style="margin-top:10px;">
+                          <div class="col-sm-10" >
+                            <h1>Pravachanams</h1>   
+                        </div>
+                       <div>
+                           <p > </p>
+
+                           <p>The website Pravachanam.com,  has provided indetail explaining and meaning to each pravachanam and is translated in different languages.</p>
+
+                          <br><p><a href="https://www.pravachanam.com/" target="_blank">Hear all about Pravachanams</a></p>
+
+                          <iframe width="300" height="215" src="https://www.youtube.com/embed/_EqwlOeTj7Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          <iframe width="300" height="215" src="https://www.youtube.com/embed/ckaEwJj2A1U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                 <div class="showtext1" id="hwilhelm">
+                        <div class="row" style="margin-top:10px;padding:20px">
+                          <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>Hans Wilhelm</h1>   
+                        </div>
+
                     <iframe width="300" height="215" src="https://www.youtube.com/embed/EA5HLuvZNek" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
                     <iframe width="300" height="215" src="https://www.youtube.com/embed/VoJ2PSxmHMg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -135,14 +190,10 @@
 
                     <iframe width="300" height="215" src="https://www.youtube.com/embed/kSiYkGMmo4Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-
-                   </div>
-
-             </div>
-                  
-
             </div>
           </div>
+        </div>
+      </div>
             
 </body>
 </html>
