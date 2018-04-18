@@ -10,6 +10,7 @@
 
     <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
     
 </head>
 <body>
@@ -56,37 +57,41 @@
                 <section class="col-md-8"  style="text-align:left;padding:45px">
                <p>Welcome <%=user.username%>! Let us help you in your journey and if you don't find what you need, do write to us. We can help you find what you need. We will customize the solutions just for you , once we understand your goal. </p>
 
-               What are your goals? Why are you here ? What's your age group?
-               
-                <div style="width:500px">
-                    <form action="post" id="user-details">
-                  <div class="form-group">
-                    Age Group
-                  <label ><input type="radio" name="agegrp1radio">17 - 30</label>
-                  <label><input type="radio" name="agegrp2radio">31 - 45</label>
-                  <label ><input type="radio" name="agegrp3radio">46 - 59</label>
-                  <label ><input type="radio" name="agegrp4radio">60 and above</label>
-                </div>  
-                <select id="selectGoal" style="display:block;margin-top:40px;margin-left:40px;width:400px;height:48px">
-                  <option >Just exploring</option>
-                  <option>Improve my life</option>
-                   <option>Improve my grades</option>
-                   <option>Stuck mid way in career and looking inward</option>
-                  <option >Depressed</option>
-                  <option>Anxious</option>
-                  <option>Anxious and Depressed</option>
-                  <option>Anger management </option>
-                  <option>Addiction management </option>
-                   <option>Other</option>
+               What are your goals? Why are you here ? Understanding you on a deeper level.
 
-                 
-                  
-                 
-                </select>
-                <a href="/userdetails" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-left:40px;margin-top:10px;color:white">Submit</a> 
-                </form>
 
-  </div>
+               <div class="userdetails">
+                    <div class="row">
+                        <div class="userdetails-form">
+                        <!--    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>-->
+                            <form action="" method="post">
+                                <h2 class="text-center">User Details</h2>
+                                 <div class="form-group">
+                                  <label>Age Group</label> 
+                                  <label ><input type="radio" id="contactChoice1" name="agegrpradio" value="teens">17 - 30</label>
+                                  <label><input type="radio" id="contactChoice2" name="agegrpradio" value="thirty">31 - 45</label>
+                                  <label ><input type="radio" id="contactChoice3" name="agegrpradio" value="midforty">46 - 59</label>
+                                  <label ><input type="radio" id="contactChoice4" name="agegrpradio" value="oldage">60 and above</label>
+                                </div>  
+                                  <select id="selectGoal" style="display:block;margin-top:40px;margin-left:40px;width:400px;height:48px">
+                                  <option >Just exploring</option>
+                                  <option>Improve my life</option>
+                                   <option>Improve my grades</option>
+                                   <option>Stuck mid way in career and looking inward</option>
+                                  <option >Depressed</option>
+                                  <option>Anxious</option>
+                                  <option>Anxious and Depressed</option>
+                                  <option>Anger management </option>
+                                  <option>Addiction management </option>
+                                   <option>Other</option>
+                                 </select>
+                                  <div class="form-group">
+                                    <button type="submit" id="login" class="btn btn-dark btn-lg" style="width:120px;height:50px;margin-left:40px;margin-top:10px;color:white">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
            </section>
 
 
@@ -96,9 +101,9 @@
 
 
 
-            </div>
+           
         </div>
-             <footer class="container-fluid bg-4 text-center" style="position:absolute;background:red;color:white;padding:20px;bottom:0;margin-bottom:0px;">
+             <footer class="container-fluid bg-4 text-center" style="background:red;color:white;padding:20px;bottom:0;margin-bottom:0px;">
         <p> <span>&copy; Copyright 2018
             </span></p>
     </footer>        

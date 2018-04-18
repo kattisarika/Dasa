@@ -138,7 +138,7 @@ app.post('/sign', function (req, res) {
         if (req.body.password !== req.body.confpassword) {
             var err = new Error("passwords do not match");
             err.status = 400;
-            res.send(err);
+            res.redirect('sign');
         } else {
 
             var newUser = new User({
