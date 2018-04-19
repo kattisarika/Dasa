@@ -235,10 +235,24 @@ app.post('/login', passport.authenticate('local', {
 });
 
 app.get('/mywelcomepage',function(req, res){
-        res.render('mywelcomepage', {
+    var username= req.user.username;
+   UserDetails.getUserDetailsByUsername(username, function (err, username) {
+         console.log(username);  
+        if (username) {
+            console.log('existing user');
+            res.redirect("thanks");
+            /*resp.render('sign.ejs', {
+                    viewVariable: "User already exists, please choose another user."
+            })*/
+        } else {
+             res.render('mywelcomepage', {
         isAuthenticated: req.isAuthenticated(),
         user: req.user
-    });
+        });
+
+    }
+            
+  });
 });
 
 
@@ -362,16 +376,28 @@ app.get('/contact',function(req, res){
     });
 
     app.get('/randomlist',function(req,res){
-        res.render("songlist-working.ejs")
+         res.render('songlist-working.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+        
     });
 
     app.get('/medimusic',function(req,res){
-        res.render("medimusic.ejs")
+        res.render('medimusic.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+     });
+        
     });
 
 
     app.get('/instrumusic',function(req,res){
-        res.render("instrumusic.ejs")
+        res.render('instrumusic.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+     });
+       
     });
 
     app.get('/yoursong', function(req,res){

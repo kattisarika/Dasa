@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: rgba(100, 0, 0, 0.5);
+    background: linear-gradient(rgba(180,100,108,.75),rgba(80,120,208,.15));
     height: 100px;
 }
 
@@ -280,7 +280,7 @@ background:#fff;
 #overlay {
  
   text-align: center;
-  background: linear-gradient(rgba(180,100,108,.75),rgba(80,120,208,.15));
+  background: linear-gradient(rgba(180,10,10,0.9),rgba(180,10,10,0.9));
   -webkit-transition: opacity 0.25s ease;
   -moz-transition: opacity 0.25s ease;
 }
@@ -310,7 +310,13 @@ background:#fff;
 }
 .list{
   list-style-type: none
+
 }
 .list li  {
   list-style-type: none
+}
+
+.list li ul{
+  display: none;
+
 }
