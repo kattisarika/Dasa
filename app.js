@@ -22,6 +22,7 @@ var app = express();
 var mongoose = require('mongoose');
 
 User = require('./app/models/user');
+UserDetails = require('./app/models/userdetails')
 
 app.use(methodOverride());
 app.use(express.static(__dirname + '/public'));
@@ -127,13 +128,22 @@ app.get('/sign', function (req, res) {
 
 app.post('/sign', function (req, res) {
     console.log("In post /sign", req.body);
-
-    if (req.body.name &&
+   var username=req.body.name;
+    User.getUserByUsername(username, function (err, username) {
+         console.log(username);
+        
+        if (username) {
+            console.log('existing user');
+            return res.status(409).send("The specified username address already exists.");
+            /*resp.render('sign.ejs', {
+                    viewVariable: "User already exists, please choose another user."
+            })*/
+        } else {
+            console.log(username);
+            if (req.body.name &&
         req.body.email &&
         req.body.password &&
         req.body.confpassword)
-
-
 
         if (req.body.password !== req.body.confpassword) {
             var err = new Error("passwords do not match");
@@ -144,9 +154,10 @@ app.post('/sign', function (req, res) {
             var newUser = new User({
                 username: req.body.name,
                 email: req.body.email,
-                password: req.body.password
+                password: req.body.password,
+                created :Date.now()
             });
-            console.log("All data captured in backend" + newUser.username + "," + newUser.email + "," + newUser.password);
+            console.log("All data captured in backend" + newUser.username + "," + newUser.email + "," + newUser.password + Date.now());
 
             User.createUser(newUser, function (err, user) {
                 if (err) throw err;
@@ -156,16 +167,44 @@ app.post('/sign', function (req, res) {
 
         }
 
+        }
+    });
+    
+
+   /* if (req.body.name &&
+        req.body.email &&
+        req.body.password &&
+        req.body.confpassword)
+
+        if (req.body.password !== req.body.confpassword) {
+            var err = new Error("passwords do not match");
+            err.status = 400;
+            res.redirect('sign');
+        } else {
+
+            var newUser = new User({
+                username: req.body.name,
+                email: req.body.email,
+                password: req.body.password,
+                created :Date.now()
+            });
+            console.log("All data captured in backend" + newUser.username + "," + newUser.email + "," + newUser.password + Date.now());
+
+            User.createUser(newUser, function (err, user) {
+                if (err) throw err;
+                res.redirect('login');
+
+            });
+
+        }*/
+
 });
 
 
 app.get('/login', function (req, res) {
     console.log("In /login", req.isAuthenticated());
     console.log("In /login", req.body);
-    res.render('login', {
-        isAuthenticated: req.isAuthenticated(),
-        user: req.user
-    });
+    res.render('login.ejs');
 
 });
 
@@ -186,6 +225,7 @@ app.get('/mywelcomepage',function(req, res){
         user: req.user
     });
 });
+
 
 app.get('/index',function(req, res){
         res.render('index', {
@@ -230,9 +270,50 @@ app.get('/spiritualtalks',function(req, res){
     });
   });
 
+/*app.get('/userdetails',function(req, res){
+        res.render('mywelcomepage', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+  });*/
 
 
+app.post('/userdetails',function(req, res){
+        console.log("----------------Am I in the Users Details Post---------");
+        console.log(req.body);
 
+        var agegroup = req.body.ageradio;
+        var purpose= req.body.selectGoal;
+        var name = req.user.username;
+
+        var uDetails = new UserDetails({
+                username: req.user.username,
+                agegroup: req.body.ageradio,
+                purpose: req.body.selectGoal,  
+                created :Date.now()
+            });
+
+         
+         console.log("All data captured in backend" + uDetails.agegroup + "," + uDetails.purpose + "," + uDetails.username + Date.now());
+
+           UserDetails.createuserdetails(uDetails, function (err, user) {
+                if (err) throw err;
+                res.render('thanks',{
+                  isAuthenticated: req.isAuthenticated(),
+                   user: req.user  
+                });
+
+            });
+
+  });
+
+    app.get('/thanks',function(req,res){
+        res.render('thanks', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+
+    });
 
 app.get('/logout',function(req,res){
 

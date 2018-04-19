@@ -11,9 +11,10 @@
     <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/script.js"></script>
-    
+        
 </head>
 <body>
+
 
    <header >
         <div class="container">
@@ -46,34 +47,47 @@
                    
               </nav>
               <div class="row" style="margin-left:20px;padding:0;" id="mainwelcomepage">
-               <div  style="margin-left:20px;padding:50px;">
+                <section class="col-md-2"  style="text-align:left;padding:45px">
+               <div  style="margin-left:20px;">
                     <ul  style="list-style-type: none;">
                         <li class="active"> <a href="/dashboard">Dashboard</a></li>
                        <li> <a href="/dailyplanner"> Daily Planner</a></li>
                     </ul>
 
                 </div>
+              </section>
                
-                <section class="col-md-8"  style="text-align:left;padding:45px">
+                <section class="col-md-10"  style="text-align:left;padding:45px">
                <p>Welcome <%=user.username%>! Let us help you in your journey and if you don't find what you need, do write to us. We can help you find what you need. We will customize the solutions just for you , once we understand your goal. </p>
 
-               What are your goals? Why are you here ? Understanding you on a deeper level.
+              <p> What are your goals? Why are you here ? Understanding you on a deeper level.</p>
 
 
-               <div class="userdetails">
-                    <div class="row">
+               <div class="userdetails" >
+                    
                         <div class="userdetails-form">
                         <!--    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>-->
-                            <form action="" method="post">
-                                <h2 class="text-center">User Details</h2>
-                                 <div class="form-group">
-                                  <label>Age Group</label> 
-                                  <label ><input type="radio" id="contactChoice1" name="agegrpradio" value="teens">17 - 30</label>
-                                  <label><input type="radio" id="contactChoice2" name="agegrpradio" value="thirty">31 - 45</label>
-                                  <label ><input type="radio" id="contactChoice3" name="agegrpradio" value="midforty">46 - 59</label>
-                                  <label ><input type="radio" id="contactChoice4" name="agegrpradio" value="oldage">60 and above</label>
-                                </div>  
-                                  <select id="selectGoal" style="display:block;margin-top:40px;margin-left:40px;width:400px;height:48px">
+                            <form action="/userdetails" method="post">
+
+                                <p class="text-center">User Details</p>
+                                <div><li style="display:none" id="username" name="username"><%=user.username%> </li></div>
+                                <div>
+                                <label for="ageradio">Age Group</label> 
+                                <div>
+                                <label style="margin:0 auto" ><input type="radio"  id="contactChoice1" name="ageradio" value="teens"> 17 - 30</label>
+                                </div>
+                                <div>
+                                <label style="margin:0 auto"><input type="radio" id="contactChoice2" name="ageradio" value="thirty"> 31 - 45</label>
+                                 </div>
+                                <div>
+                                <label style="margin:0 auto"><input type="radio" id="contactChoice3" name="ageradio" value="midforty"> 46 - 59</label>
+                                </div>
+                                <div>
+                                <label style="margin:0 auto"><input type="radio" id="contactChoice4" name="ageradio" value="oldage"> 60 plus</label>
+                                </div>
+                                
+                                 <fieldset>  
+                                  <select id="selectGoal" name="selectGoal" style="margin-top:10px;margin-bottom:10px;height:48px">
                                   <option >Just exploring</option>
                                   <option>Improve my life</option>
                                    <option>Improve my grades</option>
@@ -85,12 +99,15 @@
                                   <option>Addiction management </option>
                                    <option>Other</option>
                                  </select>
-                                  <div class="form-group">
-                                    <button type="submit" id="login" class="btn btn-dark btn-lg" style="width:120px;height:50px;margin-left:40px;margin-top:10px;color:white">Submit</button>
+                                 <span class="validateError" id="reasonError" style="display: none;">You must select the reason you are here</span>  
+                                  </fieldset>  
+                                 
+                                  <div>
+                                    <button type="submit" id="login" class="btn btn-dark btn-lg" style="width:120px;height:50px;margin-left:40px;margin-top:10px;margin-bottom:25px;color:white">Submit</button>
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    
                 </div>
            </section>
 
