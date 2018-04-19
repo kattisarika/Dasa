@@ -216,7 +216,22 @@ app.post('/login', passport.authenticate('local', {
     console.log("In POST LOGIN /login", req.isAuthenticated());
     //console.log("In  POST LOGIN /login", req.body);
     retStatus = 'Success';
-    res.redirect("mywelcomepage");
+    var username= req.user.username;
+    console.log("In POST LOGIN /login", username);
+     UserDetails.getUserDetailsByUsername(username, function (err, username) {
+         console.log(username);
+        
+        if (username) {
+            console.log('existing user');
+            res.redirect("thanks");
+            /*resp.render('sign.ejs', {
+                    viewVariable: "User already exists, please choose another user."
+            })*/
+        } else {
+            res.redirect("mywelcomepage");
+        }
+    });
+    
 });
 
 app.get('/mywelcomepage',function(req, res){

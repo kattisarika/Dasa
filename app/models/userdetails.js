@@ -32,3 +32,11 @@ module.exports.createuserdetails = function(adduserdetails, callback) {
         // create user
         adduserdetails.save(callback);
     }
+
+
+module.exports.getUserDetailsByUsername = function (username, callback) {
+    var query = {
+        username: username
+    };
+    UserDetails.findOne(query, callback);
+}
