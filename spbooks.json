@@ -1,0 +1,70 @@
+{
+  "categoryName": "Spiritual Books",
+  "booklist": [
+    {
+      "bookID": "10000",
+      "bookCategory": "A Guide to Spiritual Enlightenment",
+      "bookTags" : "Spirituality , Self Empowerment, positive affirmation",
+      "bookDescription": "To make the journey into the Now we will need to leave our analytical mind and its false created self, the ego, behind. From the very first page of Eckhart Tolle's extraordinary book, we move rapidly into a significantly higher altitude where we breathe a lighter air. We become connected to the indestructible essence of our Being, “The eternal, ever present One Life beyond the myriad forms of life that are subject to birth and death.” Although the journey is challenging, Eckhart Tolle uses simple language and an easy question and answer format to guide us. ",
+      "bookAuthor":"Eckhart Tolle",
+      "bookTitle":"The Power of Now",
+      "booklink":"https://files.shroomery.org/cms/6584522-EckhartTolle-ThePowerOfNow.pdf",
+      "amazonlink":"https://www.amazon.com/Power-Now-Guide-Spiritual-Enlightenment-ebook/dp/B002361MLA"
+    },
+    {
+      "bookID": "10001",
+      "bookCategory": "positive affirmation",
+       "bookTags" : "Spirituality , Self Empowerment, positive affirmation",
+      "bookDescription": "A Guide to Spiritual Enlightenment",
+      "bookAuthor":"Michael J Losier",
+      "bookTitle":"The Law of Attraction",
+      "booklink":"",
+      "amazonlink":"https://www.amazon.com/Law-Attraction-Science-Attracting-More/dp/0446199737"
+    },
+    {
+       "bookID": "10002",
+      "bookCategory": "positive affirmation",
+      "bookDescription": "A Guide to Spiritual Enlightenment",
+      "bookAuthor":"Janet Mills",
+      "bookTitle":"The Voice of Knowledge",
+      "booklink":"https://questionnaire.app.co.id/portal.nsf/78d9e44a4f6c67d9472571f80017eaa8/840c0e463a19023e47257416000ca40c/$FILE/The%20Voice%20of%20Knowledge.pdf",
+      "amazonlink":"https://www.amazon.com/Voice-Knowledge-Practical-Guide-Inner/dp/1878424548"
+    },
+    {
+       "bookID": "10003",
+      "bookCategory": "positive affirmation",
+      "bookDescription": "A Guide to Spiritual Enlightenment",
+      "bookAuthor":"Bryce Courtenay",
+      "bookTitle":"The Power of One",
+      "booklink":"",
+      "amazonlink":"https://www.amazon.com/Power-Now-Guide-Spiritual-Enlightenment-ebook/dp/B002361MLA"
+    },
+    {
+       "bookID": "10004",
+      "bookCategory": "positive affirmation",
+      "bookDescription": "A Guide to Spiritual Enlightenment",
+      "bookAuthor":"DR. WAYNE W. DYER",
+      "bookTitle":"The Power of Intention",
+      "booklink":"https://www.hayhouse.com/the-power-of-intention-enhanced-ebook-gift-edition",
+      "amazonlink":"https://www.amazon.com/Power-Intention-Dr-Wayne-Dyer/dp/1401902162"
+    },
+     {
+       "bookID": "10005",
+      "bookCategory": "positive affirmation",
+      "bookDescription": "A Guide to Spiritual Enlightenment",
+      "bookAuthor":"Paulo Coelho",
+      "bookTitle":"The Alchemist",
+      "booklink":"https://mimispassion.files.wordpress.com/2016/12/paulo_coelho_-_the_alchemist.pdf",
+      "amazonlink":"https://www.amazon.com/Alchemist-Paulo-Coelho/dp/0061122416"
+    },
+     {
+       "bookID": "10006",
+      "bookCategory": "Instrumental Music, Tabla , harmonium, classical",
+      "bookDescription": "A Guide to Spiritual Enlightenment",
+      "bookAuthor":"Don Miguel Ruiz",
+      "bookTitle":"The Four Agreements",
+      "booklink":"http://wtf.tw/ref/ruiz.pdf",
+      "amazonlink":"https://www.amazon.com/Four-Agreements-Practical-Personal-Freedom/dp/1878424319"
+    }
+  ]
+}

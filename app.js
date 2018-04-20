@@ -58,6 +58,8 @@ app.locals.gmusicdata=require('./generalmusiclist.json');
 
 app.locals.instrumusicdata=require('./instru.json');
 
+app.locals.spbooksdata=require('./spbooks.json');
+
 
 
 passport.use(new passportLocal.Strategy(function (username, password, done) {

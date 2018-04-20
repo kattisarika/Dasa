@@ -42,7 +42,65 @@
                    
               </nav>
 
-                <div style="margin-left:20px;padding:0;padding:50px">Books Section Coming Soon!</div>
+               
+
+                <div class="row" style="margin-left:20px;margin-top:20px;padding:0;">
+
+        <div class="col-sm-12" style="padding:0">
+            <div class="musiclist" style="padding:0;margin-left:20px;">
+
+                <div class="table-responsive">
+
+
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center">
+                                   <h5></h5><p>Spiritual books</p> 
+                                </th>
+
+                                <th style="text-align:center">
+                                   <h5></h5><p>Author</p> 
+                                </th>
+
+                               
+                                 <th style="text-align:center">
+                                   <h5></h5><p>Amazon Link</p> 
+                                </th>
+                            </tr>
+
+
+                        </thead>
+                        <tbody>
+
+
+
+                            <%  for(var i=0; i<spbooksdata.booklist.length; i++) {%>
+
+                                <tr>
+                                    <td>
+                                        <a class="toggle" href="#">
+                                            <%=spbooksdata.booklist[i].bookTitle%>
+                                              
+                                    </td>
+                                     <td>
+                                        <a class="toggle" href="#">
+                                            <%=spbooksdata.booklist[i].bookAuthor%>
+                                              
+                                    </td>
+                                     <td>
+                                        <a class="toggle" href="#">
+                                            <%=spbooksdata.booklist[i].amazonlink%>
+                                              
+                                    </td>
+                                </tr>
+                                <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
             </div>
              <footer class="container-fluid bg-4 text-center" style="position:absolute;background:red;color:white;padding:20px;bottom:0;margin-bottom:0px;">
