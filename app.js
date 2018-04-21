@@ -62,6 +62,13 @@ app.locals.spbooksdata=require('./spbooks.json');
 
 app.locals.englishsonglistdata= require('./englishsonglist.json');
 
+app.locals.gujuratisonglistdata= require('./gujuratisonglist.json');
+
+app.locals.hindisonglistdata = require('./hindisonglist.json');
+
+app.locals.marathisonglistdata = require('./marathisonglist.json');
+
+
 
 passport.use(new passportLocal.Strategy(function (username, password, done) {
     console.log("In passport", username);

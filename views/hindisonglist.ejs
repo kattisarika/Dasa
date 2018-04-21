@@ -77,9 +77,9 @@
             <form id="form-languageselect"  action="/devlanguagedetails" method="post">
                 <select id="selectlanguage" name="selectlanguage" style="margin-left:20px;margin-bottom:10px;height:48px;width:200px">
                                  <option>select Language</option>  
-                                  <option selected="selected">English</option>
+                                  <option >English</option>
                                   <option>Bengali</option>
-                                   <option>Hindi</option>
+                                   <option selected="selected">Hindi</option>
                                    <option >Kannada</option>
                                   <option >Gujurati</option>
                                   <option>Marathi</option>
@@ -102,7 +102,7 @@
                         <thead>
                             <tr>
                                 <th style="text-align:center">
-                                   <h5></h5><p>Choirs</p> 
+                                   <h5></h5><p><%=hindisonglistdata.categoryName%></p> 
                                 </th>
                             </tr>
 
@@ -110,12 +110,12 @@
                         </thead>
                         <tbody>
 
-                            <%  for(var i=0; i<englishsonglistdata.songlist.length; i++) {%>
+                            <%  for(var i=0; i<hindisonglistdata.songlist.length; i++) {%>
 
                                 <tr>
                                     <td>
                                         <a class="toggle" href="#<%= englishsonglistdata.songlist[i].songElementId%>">
-                                            <%=englishsonglistdata.songlist[i].songTitle%>
+                                            <%=hindisonglistdata.songlist[i].songTitle%>
                                                 </li>
                                     </td>
                                 </tr>

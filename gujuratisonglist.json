@@ -1,0 +1,95 @@
+{
+  "categoryName": "Gujurati Song List",
+  "songlist": [
+    {
+      "songID": "101",
+      "songCategory": "Gujurati devotional Song",
+      "songDescription": "Morning Prayers, Gujurati Bhakti Songs",
+      "songElementId":"mprayers",
+      "youtubelink":"https://www.youtube.com/watch?v=dN6ml_Q5yWk",
+      "singers":"",
+      "composers":"",
+       "conductors":"",
+      "songTitle":"Mangal Mandir Kholo Dayamay"
+    },
+    {
+      "songID": "102",
+      "songCategory":"Gujurati devotional Song",
+      "songDescription":"Shrinathji Satsang",
+       "songElementId":"mbirajta",
+       "youtubelink":"https://www.youtube.com/watch?v=5ASl5QTXxVA",
+      "singers":"",
+      "composers":"",
+       "conductors":"",
+      "songTitle":"Maara Ghat Ma Birajta Shrinathji"
+    },
+    {
+      "songID": "103",
+      "songCategory": "Gujurati devotional Song",
+      "songDescription": "Sandhya Aarti Gujurati devotional Song  Navratri Songs",
+       "songElementId":"saarti",
+       "youtubelink":"https://www.youtube.com/watch?v=cmvjYgZcR0M",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"Sandhya Aarti"
+    },
+    {
+      "songID": "104",
+      "songCategory": "Gujurati Bhakti Songs",
+      "songDescription": "Shiv Tandav Stotra ,Shiv Stuti, Gujurati Bhakti Songs",
+       "songElementId":"sstuti",
+      "youtubelink":"https://www.youtube.com/watch?v=HeST91Fu6Z4",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"Shiv Stuti"
+    },
+    {
+      "songID": "105",
+      "songCategory":"Gujarati Devotional Songs",
+      "songDescription":"Suresh Raval Batuk Maharaj Jugalbandhi",
+       "songElementId":"mmahel",
+       "youtubelink":"https://www.youtube.com/watch?v=sZ6PxCs1EsI",
+       "singers":"Suresh Raval, Batuk Maharaj ",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"Meera Mahel Thi Utarya"
+    },
+    {
+      "songID": "106",
+      "songCategory": "Gujarati Devotional Songs",
+      "songDescription": "Gujarati Devotional Songs",
+      "songElementId":"prabhatiya",
+      "youtubelink":"https://www.youtube.com/watch?v=_wSShTzj_wg",
+      "singers":"HEMANT CHAUHAN",
+      "composers":"",
+      "conductors":"",
+      "songTitle":"PRABHATIYA-VAISHNAV JAN TO"
+    },
+
+    {
+      "songID": "107",
+      "songCategory":"Gujarati Devotional Songs, Jain Stavans",
+      "songDescription":"Gujarati Devotional Songs, Jain Stavans",
+       "songElementId":"jstavans",
+       "youtubelink":"https://www.youtube.com/watch?v=JGMlEwIMong",
+       "singers":"Vivek & Kavita Nikam",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"Jain Stavans - Aasro Tamaro"
+    },
+    {
+      "songID": "108",
+      "songCategory":"Gujarati Christian Worship Songs, Christian",
+      "songDescription":"Gujarati Devotional Songs",
+       "songElementId":"akaru",
+       "youtubelink":"https://www.youtube.com/watch?v=mn8Llt63__Y",
+       "singers":"",
+       "composers":"",
+       "conductors":"Adrian Peacock  piano Mark Austin",
+      "songTitle":"Arpan Karu Shu Tane"
+    }
+    
+  ]
+}

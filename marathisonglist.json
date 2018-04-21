@@ -1,0 +1,95 @@
+{
+  "categoryName": "Marathi Songs",
+  "songlist": [
+    {
+      "songID": "101",
+      "songCategory": "Marathi Bhajans",
+      "songDescription": "Marathi Bhajans",
+      "songElementId":"mpandhari",
+      "youtubelink": "https://www.youtube.com/watch?v=vmFqQseBtxk&list=RDQMN16EfTdf6bY",
+      "singers":"Bhimsen Joshi",
+      "composers":"",
+       "conductors":"",
+      "songTitle":"majhe maher pandhari"
+    },
+    {
+      "songID": "102",
+      "songCategory": "English choirs",
+      "songDescription": "choirs",
+       "songElementId":"ptula",
+       "youtubelink":"https://www.youtube.com/watch?v=F05H6IquGNg&list=RDQMN16EfTdf6bY&index=2",
+      "singers":"",
+      "composers":"",
+       "conductors":"",
+      "songTitle":"Pratham Tula Vandito Original"
+    },
+    {
+      "songID": "103",
+      "songCategory": "keshava madhava , marathi bhajans",
+      "songDescription": "keshava madhava,marathi bhajans",
+       "songElementId":"kmadhava",
+       "youtubelink":"https://www.youtube.com/watch?v=fa2SFPB0CTY&list=RDQMN16EfTdf6bY&index=4",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"keshava madhava"
+    },
+    {
+      "songID": "104",
+      "songCategory": "Marathi Devotional Songs",
+      "songDescription": "Marathi Devotional Songs",
+       "songElementId":"dshripad",
+       "youtubelink":"https://www.youtube.com/watch?v=P8QVDR8VdGc&list=RDQMN16EfTdf6bY&index=5",
+       "singers":"Pt Ajit Kadkade",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"Digambara Digambara Shripad Vallabh"
+    },
+    {
+      "songID": "105",
+      "songCategory": "Marathi Devotional Songs",
+      "songDescription": "Marathi Devotional Songs",
+       "songElementId":"tmagato",
+       "youtubelink":"https://www.youtube.com/watch?v=N4Ilw97aKn0&index=7&list=RDQMN16EfTdf6bY",
+       "singers":"Lata Mangeshkar",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"Tuz Magato Mee Aata"
+    },
+    {
+      "songID": "106",
+      "songCategory": "Marathi Devotional Songs, Sant tukaram abhang",
+      "songDescription": "Marathi Devotional Songs, Sant tukaram abhang",
+       "songElementId":"bhetilaga",
+       "youtubelink":"https://www.youtube.com/watch?v=itRpCs0Y2vw&index=11&list=RDQMN16EfTdf6bY",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"bheti lagi jeeva"
+    },
+
+    {
+      "songID": "107",
+      "songCategory":"Marathi Devotional Songs,,Ganpati Aarti",
+      "songDescription":"Ganpati Aarti",
+       "songElementId":"skarta",
+       "youtubelink":"https://www.youtube.com/watch?v=uXv8GdVFwWo&list=RDQMN16EfTdf6bY&index=25",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"Sukh Karta Dukh Harta"
+    },
+    {
+      "songID": "108",
+      "songCategory":"Marathi Devotional Songs,",
+      "songDescription":"Marathi Devotional Songs,",
+       "songElementId":"saibabasong1",
+       "youtubelink":"https://www.youtube.com/watch?v=DT5PaaxItzY&index=32&list=RDQMN16EfTdf6bY",
+       "singers":"",
+       "composers":"",
+       "conductors":"",
+      "songTitle":"Aarti Sai baba"
+    }
+    
+  ]
+}
