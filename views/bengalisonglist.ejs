@@ -77,8 +77,8 @@
             <form id="form-languageselect"  action="/devlanguagedetails" method="post">
                 <select id="selectlanguage" name="selectlanguage" style="margin-left:20px;margin-bottom:10px;height:48px;width:200px">
                                  <option>select Language</option>  
-                                  <option selected="selected">English</option>
-                                  <option>Bengali</option>
+                                  <option >English</option>
+                                  <option selected="selected">Bengali</option>
                                    <option>Hindi</option>
                                    <option >Kannada</option>
                                   <option >Gujurati</option>
@@ -86,7 +86,7 @@
                                   <option>Malyalam</option>
                                   <option>Tamil </option>
                                   <option>Telugu</option>
-                                   <option>Other</option>
+                                    
                                  </select>
 
                              </form>
@@ -102,7 +102,7 @@
                         <thead>
                             <tr>
                                 <th style="text-align:center">
-                                   <h5></h5><p>Choirs</p> 
+                                   <h5></h5><p><%=bengalisonglistdata.categoryName%></p> 
                                 </th>
                             </tr>
 
@@ -110,12 +110,12 @@
                         </thead>
                         <tbody>
 
-                            <%  for(var i=0; i<englishsonglistdata.songlist.length; i++) {%>
+                            <%  for(var i=0; i<bengalisonglistdata.songlist.length; i++) {%>
 
                                 <tr>
                                     <td>
-                                        <a class="toggle" href="#<%= englishsonglistdata.songlist[i].songElementId%>">
-                                            <%=englishsonglistdata.songlist[i].songTitle%>
+                                        <a class="toggle" href="#<%= bengalisonglistdata.songlist[i].songElementId%>">
+                                            <%=bengalisonglistdata.songlist[i].songTitle%>
                                                 </li>
                                     </td>
                                 </tr>

@@ -1,0 +1,95 @@
+{
+  "categoryName": "Bengali Songs",
+  "songlist": [
+    {
+      "songID": "101",
+      "songCategory": "Bengali Devotional Songs",
+      "songDescription": "Bengali Devotional Songs",
+      "songElementId":"bdevo",
+      "youtubelink": "https://www.youtube.com/watch?v=FcLQUgJAjl8",
+      "singers":"",
+      "composers":"",
+       "conductors":"",
+      "songTitle":"Sri Sarada Nam Sankrittan"
+    },
+    {
+      "songID": "102",
+      "songCategory": "Bengali Devotional Songs",
+      "songDescription": "Bengali Devotional Songs",
+       "songElementId":"shuddabram",
+       "youtubelink":"https://www.youtube.com/watch?v=oUCD7z4cErA",
+      "singers":"",
+      "composers":"",
+       "conductors":"",
+      "songTitle":"Shudda Bramha paratpara Ram"
+    },
+    {
+      "songID": "103",
+      "songCategory": "Bengali Devotional Songs",
+      "songDescription": "Bengali Devotional Songs",
+       "songElementId":"atumari",
+       "youtubelink":"https://www.youtube.com/watch?v=3cYjt6NAw7w",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"Arati Rama Tumari"
+    },
+    {
+      "songID": "104",
+      "songCategory": "Bengali Devotional Songs",
+      "songDescription": "Bengali Devotional Songs",
+       "songElementId":"dhoronir",
+       "youtubelink":"https://www.youtube.com/watch?v=O1oY1ZZtk5s",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"dhoronir bhar horite abar ele maa adya shakti"
+    },
+    {
+      "songID": "105",
+      "songCategory": "Bengali Devotional Songs",
+      "songDescription": "Bengali Devotional Songs",
+       "songElementId":"mtomake",
+       "youtubelink":"https://www.youtube.com/watch?v=Kx5Y4vmEeuY",
+       "singers":"Katy Perry",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"Mano chhanche tomake fele Shyama"
+    },
+    {
+      "songID": "106",
+      "songCategory": "Bengali Devotional Songs",
+      "songDescription": "Bengali Devotional Songs",
+       "songElementId":"ayigiri",
+       "youtubelink":"https://www.youtube.com/watch?v=bsM8GYrzTWI",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"Ayi giri nandini Ramakrishna Mission prayer during durga puja"
+    },
+
+    {
+      "songID": "107",
+      "songCategory":"Bengali Devotional Songs",
+      "songDescription":"Bengali Devotional Songs",
+       "songElementId":"mangaldip",
+       "youtubelink":"https://www.youtube.com/watch?v=HwOEMJx4vCw",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+      "songTitle":"MANGAL DIP JELE "
+    },
+    {
+      "songID": "108",
+      "songCategory":"Bengali Devotional Songs",
+      "songDescription":"Bengali Devotional Songs",
+       "songElementId":"tuina",
+       "youtubelink":"https://www.youtube.com/watch?v=cRKpPNvGfS4&index=24&list=RDHwOEMJx4vCw",
+       "singers":"",
+       "composers":"",
+       "conductors":"",
+      "songTitle":"Tui Na Ki Maa Dayamoyi"
+    }
+    
+  ]
+}
