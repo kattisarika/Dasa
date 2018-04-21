@@ -1,0 +1,99 @@
+{
+  "categoryName": "Tamil Songs",
+  "songlist": [
+    {
+      "songID": "101",
+      "songCategory": "Tamil Devotional Songs",
+      "songDescription": "Tamil devotional songs",
+      "songElementId":"psabarimala",
+    
+      "singers":"",
+      "composers":"",
+       "conductors":"",
+       "youtubelink":"https://www.youtube.com/watch?v=h7t22ZU5CmE",
+      "songTitle":"Pallikattu Sabarimalaikku"
+    },
+    {
+      "songID": "102",
+      "songCategory": "Tamil Devotional Songs",
+      "songDescription":"Tamil Devotional Songs",
+       "songElementId":"amadhavan",
+      "singers":"",
+      "composers":"",
+       "conductors":"",
+      "songTitle":"Azhaikiran Madhavan"
+    },
+    {
+      "songID": "103",
+      "songCategory": "Tamil Devotional Songs",
+      "songDescription":"Tamil Devotional Songs",
+       "songElementId":"harasivane",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+        "youtubelink":"https://www.youtube.com/watch?v=T7eXrxhlUhU",
+      "songTitle":"Hara Hara Sivane Arunachalane Annamalaye Potri"
+    },
+    {
+      "songID": "104",
+      "songCategory": "Tamil Devotional Songs",
+      "songDescription": "Tamil Devotional Songs",
+       "songElementId":"hvasanam",
+     
+       "singers":"Miley Cyrus",
+       "composers":"",
+        "conductors":"",
+        "youtubelink":"https://www.youtube.com/watch?v=iLVItaRiEQo",
+      "songTitle":"HARIVARASANAM"
+    },
+    {
+      "songID": "105",
+      "songCategory": "Tamil Devotional Songs",
+      "songDescription":"Tamil Devotional Songs",
+       "songElementId":"troar",
+       "singers":"Katy Perry",
+       "composers":"",
+        "conductors":"",
+        "youtubelink":"https://www.youtube.com/watch?v=VGCcbIlhoMY",
+      "songTitle":"Kanda Sashti Kavacham"
+    },
+    {
+      "songID": "106",
+      "songCategory": "Tamil Devotional Songs",
+      "songDescription": "motivational music",
+       "songElementId":"slakshmi",
+      
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+        "youtubelink":"https://www.youtube.com/watch?v=2Nbw4-LE6DE",
+      "songTitle":"Songs Of Lakshmi"
+    },
+
+    {
+      "songID": "107",
+      "songCategory":"Tamil motivational music",
+      "songDescription":"Tamil Devotional Songs",
+       "songElementId":"tdevo",
+      
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+        "youtubelink":"https://www.youtube.com/watch?v=i-fbKUz0gV8",
+      "songTitle":"Tamil devotional songs collection"
+    },
+    {
+      "songID": "108",
+      "songCategory":"choir",
+      "songDescription":"choir",
+       "songElementId":"kstrotram",
+      
+       "singers":"",
+       "composers":"",
+       "conductors":"",
+       "youtubelink":"https://www.youtube.com/watch?v=NbYVVNGnicI",
+      "songTitle":"KANAKADHARA STOTRAM"
+    }
+    
+  ]
+}

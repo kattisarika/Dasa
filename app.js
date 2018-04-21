@@ -60,6 +60,7 @@ app.locals.instrumusicdata=require('./instru.json');
 
 app.locals.spbooksdata=require('./spbooks.json');
 
+app.locals.englishsonglistdata= require('./englishsonglist.json');
 
 
 passport.use(new passportLocal.Strategy(function (username, password, done) {
@@ -382,8 +383,71 @@ app.get('/contact',function(req, res){
         isAuthenticated: req.isAuthenticated(),
         user: req.user
     });
-        
-    });
+  });       
+
+    app.post('/devlanguagedetails', function(req,res){
+
+        var language = req.body.selectlanguage;
+        console.log("Language is ----" , language);
+        if(language == "Kannada"){
+            res.render('songlist-working.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+          });
+        }else if(language == "English"){
+             res.render('englishsonglist.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+        });
+
+        }else if(language == "Hindi"){
+             res.render('hindisonglist.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+        });
+         }else if(language == "Tamil"){
+             res.render('tamilsonglist.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+        });
+      }else if(language == "Telugu"){
+             res.render('telugusonglist.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+        });
+       }else if(language == "Marathi"){
+             res.render('marathisonglist.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+        });
+       }else if(language == "Malyalam"){
+             res.render('malyalamsonglist.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+        });
+      }else if(language == "Gujurati"){
+             res.render('gujuratisonglist.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+        });
+       }else if(language == "Bengali"){
+             res.render('bengalisonglist.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+        });
+        }else {
+
+        }        
+    });     
+      
+    /*app.get('/englishsonglist', function(req,res){
+         res.render('englishsonglist.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+     });
+
+    });  */  
+    
 
     app.get('/medimusic',function(req,res){
         res.render('medimusic.ejs', {

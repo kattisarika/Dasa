@@ -24,8 +24,8 @@
     <script>
         jQuery(document).ready(function ($) {
 
-                     $('.showsong1').hide()
-                    $('.toggle').click(function () {
+            $('.showsong1').hide()
+             $('.toggle').click(function () {
                         var $toggled = $(this).attr('href');
                        
                         $($toggled).siblings(':visible').hide();
@@ -34,9 +34,70 @@
                         }, 1000);
                         $($toggled).toggle();
                         //return false;
+               });
+
+
+             $('#selectlanguage').change(function()
+                 {
+                     $('#form-languageselect').submit();
+                 });
+
+              
+           /* $("#selectlanguage").change(function() {
+                        var val = $(this).val();
+                        alert(val);
+                         $("h5").html(val);
+
+                          $.ajax({
+                    url: '/devlanguagedetails',
+                    cache: false,
+                    type: 'POST',
+                    data: {
+                        selectlanguage: selectlanguage
+                        
+                    },
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.redirectTo && response.msg == 'Just go there please') {
+                            window.location = '/devlanguagedetails';
+                        }
+                        console.log("success");
+                        }
+                    });
+                        
+
+                    });*/
+
+                
+
+
+               /* $("#form-languageselect").submit(function (event) {
+                    event.preventDefault();
+                    var selectlanguage = $("#selectlanguage").val();
+                    $.ajax({
+                    url: '/devlanguagedetails',
+                    cache: false,
+                    type: 'POST',
+                    data: {
+                        selectlanguage: selectlanguage
+                        
+                    },
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.redirectTo && response.msg == 'Just go there please') {
+                            window.location = '/devlanguagedetails';
+                        }
+                        console.log("success");
+                        }
                     });
 
+
+                });*/
+
+
                 });
+
+
     </script>
     
 
@@ -48,13 +109,44 @@
     </header>
    
  <a href="/mywelcomepage" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Home</a>
- <a href="/mysonglist" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Song List</a>   
+ <a href="/mysonglist" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Song List</a>  
+   <nav style="display:inline-block;float:right;margin-right:20px">
+ 
+                      
+                        <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+                        <p style="font-size:14px;color:black">
+                            <b><%=user.username%></b>
+                        </p>
+                   
+              </nav> 
    
   
 
     <div class="row" style="margin-left:20px;margin-top:20px;padding:0;">
 
+
+
         <div class="col-sm-2" style="padding:0">
+
+             <form id="form-languageselect" class="form-languageselect" action="/devlanguagedetails" method="post" >
+          
+                <select id="selectlanguage" name="selectlanguage"  style="margin-left:20px;margin-bottom:10px;height:48px;width:200px">
+                                  <option >select Language</option>  
+                                  <option >English</option>
+                                  <option>Bengali</option>
+                                   <option>Hindi</option>
+                                   <option selected="selected">Kannada</option>
+                                  <option >Gujurati</option>
+                                  <option>Marathi</option>
+                                  <option>Malyalam</option>
+                                  <option>Tamil </option>
+                                  <option>Telugu</option>
+                                   <option>Other</option>
+                                 </select>
+
+                 </form>           
+
+           
             <div class="musiclist" style="padding:0;margin-left:20px;">
 
                 <div class="table-responsive">
@@ -106,7 +198,7 @@
                             <br>
                         </div>
 
-                       <iframe width="560" height="315" src="https://www.youtube.com/embed/Oh1m1VoMoAA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/Oh1m1VoMoAA?autoplay=0&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
 
@@ -128,7 +220,7 @@
                         </div>
 
 
-                     <iframe width="560" height="315" src="https://www.youtube.com/embed/IMH7Yvdh2dQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/IMH7Yvdh2dQ?autoplay=0&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
                     </div>
@@ -196,7 +288,7 @@
                             </audio>
                             <br>
                         </div>
-                        <p><b>Watch the song on youtube by click the link <a href="https://www.youtube.com/watch?v=UTdGJE0-v3w" target="_blank">Baagilanu Teredu</a></b></p>
+                        <p><b>Watch the song on youtube by click the link <a href="https://www.youtube.com/watch?v=UTdGJE0-v3w?autoplay=0&rel=0" target="_blank">Baagilanu Teredu</a></b></p>
                     </div>
 
 
