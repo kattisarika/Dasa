@@ -8,15 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+   <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <!-- load fontawesome -->
 
     <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-   
     <script src="../js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="../js/script.js"></script>
+
 
 </head>
 
@@ -24,10 +23,10 @@
     <script>
         jQuery(document).ready(function ($) {
 
-
+                    $('.showsong1').hide();
                     $('.toggle').click(function () {
                         var $toggled = $(this).attr('href');
-                        alert($toggled)
+                       
                         $($toggled).siblings(':visible').hide();
                         $($toggled).toggle("slide", {
                             direction: 'up'
@@ -35,39 +34,151 @@
                         $($toggled).toggle();
                         //return false;
                     });
+
+                    $('#myTable').DataTable();
+
+                });
     </script>
-  <header >
+
+
+    <header >
         <div class="container">
             <h1> SONG LIST </h1> 
         </div>
     </header>
+<a href="/mywelcomepage" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Home</a>   
+<a href="/mysonglist" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Song List</a>  
+   
+    <div class="row" style="margin-left:20px;margin-top:20px;padding:0;">
 
-     <a href="/mywelcomepage" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Home</a>   
-        <a href="/mysonglist" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Song List</a>      
+        <div class="col-sm-4" style="padding:0">
+            
+            <div class="musiclist" style="padding:0;margin-left:20px;">
+
+                <div class="table-responsive">
 
 
-     <div  class="searchbar">
-    <form class="form-search" >
-        <label for="inputsearch"> </label>
-        <input class="inputsearch" id="inputsearch" type="text" placeholder="Search your song" style="width:550px;height:40px;margin-top:30px;margin-left:20px;text-align:center">
-        <button class="searchbutton" id="search" name="search" value="search" style="background-color:lightblue;width:100px;height:40px;">Search</button>
-  </form>
-</div>
-    <div class="row" style="margin-left:20px;margin-top:40px;padding:0;">
 
-       
-          
+                    <table class="table table-bordered" id="myTable">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center">
+                                    <%= instrumusicdata.categoryName%>
+                                </th>
+                            </tr>
 
-                   
-         
+
+                        </thead>
+                        <tbody>
+
+                            <%  for(var i=0; i<instrumusicdata.songlist.length; i++) {%>
+
+                                <tr>
+                                    <td>
+                                        <a class="toggle" href="#<%= instrumusicdata.songlist[i].songElementId%>">
+                                            <%=instrumusicdata.songlist[i].songTitle%>
+                                                </li>
+                                    </td>
+                                </tr>
+                                <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-8" style="padding:0">
+            <div class="contentarea" style="padding:0">
+
+                <div class="showsong1" id="teentaal">
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center;">
+                            <h1>Teen Taal</h1>
+                            <br>
+                        </div>
+
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/qpf32pHqmpY" style="margin-top:100px" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+
+                <div class="showsong1" id="fusionmusic1">
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>Fusion Music - Sitar, Tabla, Flute, B.Shivaramakrishna Rao</h1>
+                            <br>
+                        </div>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/qpf32pHqmpY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="showsong1" id="fmusic2">
+
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>Instrumental music by Kadri Gopalnath</h1>
+                        </div>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/2Ub98vlXPcg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                 <div class="showsong1" id="fmusic3">
+
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <p>Raga Puriya Kalyan, Raga Pilu (with Patricia Kopatchinskaja), Raga Pancham Seghara (with Pirashanna Thevarajah), Raga Manj-Khammaj (brief encore)</p>
+                        </div>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/94IGuku0v1k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                    </div>
+                </div>
+
+                <div class="showsong1" id="sonata">
+
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>Sonata en a minor Arpeggione</h1>
+                        </div>
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/NNcQuY1isEI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="showsong1" id="tviolin">
+
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>SJanine Jansen Violin</h1>
+                        </div>
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/VEbyyqyKtM0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                    </div>
+                </div>
+
+
+                 <div class="showsong1" id="bbaroque">
+
+                    <div class="row" style="margin-top:10px;padding:20px">
+                        <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
+                            <h1>The Best Baroque Music. 1 Hour with The Most Rare Classical Recording for Trumpet</h1>
+                        </div>
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/csOo44oXL0g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
     </div>
 
 
-  
 
-    <footer class="container-fluid bg-4 text-center" style="position:absolute;background:red;color:white;padding:20px;bottom:0;margin-bottom:0px;">
+
+    <!--Who are Dasas-->
+
+    <!-- <div class="row" style="padding:0;">-->
+
+    <footer class="container-fluid bg-4 text-center" style="background:red;color:white;padding:20px;bottom:0;margin-bottom:0px;">
         <p> <span>&copy; Copyright 2018
-                    </span></p>
+        </span></p>
     </footer>
 
 </body>

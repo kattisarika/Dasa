@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+   <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <!-- load fontawesome -->
 
     <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="../js/script.js"></script>
+
 
 </head>
 
@@ -23,10 +23,10 @@
     <script>
         jQuery(document).ready(function ($) {
 
-
+                    $('.showsong1').hide();
                     $('.toggle').click(function () {
                         var $toggled = $(this).attr('href');
-                        alert($toggled)
+                       
                         $($toggled).siblings(':visible').hide();
                         $($toggled).toggle("slide", {
                             direction: 'up'
@@ -34,6 +34,10 @@
                         $($toggled).toggle();
                         //return false;
                     });
+
+                    $('#myTable').DataTable();
+
+                });
     </script>
 
 
@@ -43,29 +47,11 @@
         </div>
     </header>
 <a href="/mywelcomepage" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Home</a>   
-<a href="/mysonglist" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Song List</a>   <div>
-
-            <form action="/languagedetails" method="post">
-                <select id="selectlanguage" name="selectlanguage" style="margin-top:10px;margin-bottom:10px;height:48px">
-                                  <option >English</option>
-                                  <option>German</option>
-                                   <option>Hindi</option>
-                                   <option>Kannada</option>
-                                  <option >Gujurati</option>
-                                  <option>Marathi</option>
-                                  <option>Malyalam</option>
-                                  <option>Tamil </option>
-                                  <option>Telugu</option>
-                                   <option>Other</option>
-                                 </select>
-
-                             </form>
-
-            </div>
+<a href="/mysonglist" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Song List</a>  
    
     <div class="row" style="margin-left:20px;margin-top:20px;padding:0;">
 
-        <div class="col-sm-2" style="padding:0">
+        <div class="col-sm-4" style="padding:0">
             
             <div class="musiclist" style="padding:0;margin-left:20px;">
 
@@ -73,7 +59,7 @@
 
 
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="myTable">
                         <thead>
                             <tr>
                                 <th style="text-align:center">
@@ -101,7 +87,7 @@
             </div>
         </div>
 
-        <div class="col-sm-10" style="padding:0">
+        <div class="col-sm-8" style="padding:0">
             <div class="contentarea" style="padding:0">
 
                 <div class="showsong1" id="teentaal">
