@@ -1,0 +1,96 @@
+{
+  "categoryName": "Telugu Songs",
+  "songlist": [
+    {
+      "songID": "101",
+      "songCategory": "Telugu Devotional Songs",
+      "songDescription": "Telugu Devotional Songs",
+      "songElementId":"bpaatalu",
+      "singers":"S. Janaki ",
+      "composers":"",
+       "conductors":"",
+       "youtubelink":"https://www.youtube.com/watch?v=_lrNjhmOq3A",
+      "songTitle":"Bhakti Paatalu, S. Janaki "
+    },
+    {
+      "songID": "102",
+      "songCategory": "Telugu Devotional Songs",
+      "songDescription":"Telugu Devotional Songs",
+      "songElementId":"nvenkatesha",
+      "singers":"",
+      "composers":"",
+      "conductors":"",
+      "youtubelink":"https://www.youtube.com/watch?v=adiOnuE4IQo",
+      "songTitle":"NAMO VENKATESA, VENKATESWARABHAKTHI"
+    },
+    {
+      "songID": "103",
+      "songCategory": "Lord Ayyappa Swamy Telugu Devotional Songs",
+      "songDescription":"Lord Ayyappa Swamy Telugu Devotional Songs",
+       "songElementId":"Irumudika",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+        "youtubelink":"https://www.youtube.com/watch?v=ZRYJdPrHiSM",
+      "songTitle":"Irumudikattu Sabarimalaikku "
+    },
+    {
+      "songID": "104",
+      "songCategory": "Telugu Devotional Songs",
+      "songDescription": "Telugu Devotional Songs",
+       "songElementId":"nannamayya",
+     
+       "singers":"Nitya Santhoshini",
+       "composers":"",
+        "conductors":"",
+        "youtubelink":"https://www.youtube.com/watch?v=f3qvcZO2mJM",
+      "songTitle":"Popular Annamayya Krithis"
+    },
+    {
+      "songID": "105",
+      "songCategory": "Telugu Devotional Songs",
+      "songDescription":"Telugu Devotional Songs",
+       "songElementId":"mlaxamison",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+        "youtubelink":"https://www.youtube.com/watch?v=Pv_wInvezds",
+      "songTitle":"Sri Lakshmi Devi | Mahalaxmi Divya Ganam Laxmi Songs"
+    },
+    {
+      "songID": "106",
+      "songCategory": "DURGADEVI SUPER HIT SONGS",
+      "songDescription": "DURGADEVI SUPER HIT SONGS",
+       "songElementId":"jvijaydurga",
+       "singers":"",
+       "composers":"",
+        "conductors":"",
+        "youtubelink":"https://www.youtube.com/watch?v=WenIvblZsLg",
+      "songTitle":"JAI VIJAYADURGA ||DURGADEVI SUPER HIT SONGS"
+    },
+
+    {
+      "songID": "107",
+      "songCategory":"Telugu Devotional Songs By Janaki",
+      "songDescription":"Telugu Devotional Songs By Janaki",
+       "songElementId":"rswamygeetha",
+       "singers":"S Janaki",
+       "composers":"",
+        "conductors":"",
+        "youtubelink":"https://www.youtube.com/watch?v=VFDXwFhvd-k",
+      "songTitle":"Sri Raghavendra Swamy Geethamrutham"
+    },
+    {
+      "songID": "108",
+      "songCategory":"Telugu Devotional Songs ",
+      "songDescription":"Telugu Devotional Songs ",
+       "songElementId":"bmandaramala",   
+       "singers":"S Janaki",
+       "composers":"",
+       "conductors":"",
+       "youtubelink":"https://www.youtube.com/watch?v=JLMP9TnWxGE",
+      "songTitle":"Bakthi Mandara Mala"
+    }
+    
+  ]
+}

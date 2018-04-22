@@ -70,6 +70,13 @@ app.locals.marathisonglistdata = require('./marathisonglist.json');
 
 app.locals.bengalisonglistdata = require('./bengalisonglist.json');
 
+app.locals.tamilsonglistdata = require('./tamilsonglist.json');
+
+app.locals.malyalamsonglistdata = require('./malyalamsonglist.json');
+
+app.locals.telugusonglistdata = require('./telugusonglist.json');
+
+
 
 
 passport.use(new passportLocal.Strategy(function (username, password, done) {
