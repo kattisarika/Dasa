@@ -46,8 +46,22 @@
             <h1> SONG LIST </h1> 
         </div>
     </header>
+
+    <div style="margin-left:20px">
 <a href="/mywelcomepage" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Home</a>   
 <a href="/mysonglist" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Song List</a>  
+
+   <nav style="display:inline-block;float:right;margin-right:20px">
+ 
+                      
+                        <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+                        <p style="font-size:14px;color:black">
+                            <b><%=user.username%></b>
+                        </p>
+                   
+              </nav> 
+
+</div>
    
     <div class="row" style="margin-left:20px;margin-top:20px;padding:0;">
 

@@ -454,7 +454,19 @@ app.get('/contact',function(req, res){
         }else {
 
         }        
-    });     
+    });   
+
+
+      
+
+    /* app.get('/createmyplaylist',function(req,res){
+        res.render('createmyplaylist.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+       });
+        
+    });*/
+
       
     /*app.get('/englishsonglist', function(req,res){
          res.render('englishsonglist.ejs', {
