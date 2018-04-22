@@ -59,58 +59,57 @@
               </section>
                
                 <section class="col-md-10"  style="text-align:left;padding:45px">
-               <p>Welcome <%=user.username%>! Let us help you in your journey and if you don't find what you need, do write to us. We can help you find what you need. We will customize the solutions just for you , once we understand your goal. </p>
+              
 
-              <p> What are your goals? Why are you here ? Understanding you on a deeper level.</p>
-
-
-               <div class="userdetails" >
+               <div class="userdayevents" >
                     
                         <div class="userdetails-form">
                         <!--    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>-->
-                            <form action="/userdetails" method="post">
+                            <form action="/userdayevents" method="post">
 
-                                <p class="text-center">User Details</p>
-                                <div><li style="display:none" id="username" name="username"><%=user.username%> </li></div>
-                                <div>
-                                <label for="ageradio">Age Group</label> 
-                                <div>
-                                <label style="margin:0 auto" ><input type="radio"  id="contactChoice1" name="ageradio" value="teens"> 17 - 30</label>
-                                </div>
-                                <div>
-                                <label style="margin:0 auto"><input type="radio" id="contactChoice2" name="ageradio" value="thirty"> 31 - 45</label>
-                                 </div>
-                                <div>
-                                <label style="margin:0 auto"><input type="radio" id="contactChoice3" name="ageradio" value="midforty"> 46 - 59</label>
-                                </div>
-                                <div>
-                                <label style="margin:0 auto"><input type="radio" id="contactChoice4" name="ageradio" value="oldage"> 60 plus</label>
-                                </div>
+                                <p class="text-center">How do you feel today?</p>
+                               
                                 
                                  <fieldset>  
-                                  <select id="selectGoal" name="selectGoal" style="margin-top:10px;margin-bottom:10px;height:48px">
-                                  <option >Just exploring</option>
-                                  <option>Improve my life</option>
-                                   <option>Improve my self esteem</option>
-                                   <option>Improve my grades</option>
-                                   <option>Stuck mid way in career and looking inward</option>
-                                  <option >Depressed</option>
-                                  <option>Anxious</option>
-                                  <option>Anxious and Depressed</option>
-                                  <option>Anger management </option>
-                                  <option>Addiction management </option>
+                                  <select id="selecttodaysGoal" name="selecttodaysGoal" style="margin-top:10px;margin-bottom:10px;height:48px">
+                                  <option>I am happy</option>
+                                   <option>I am very angry and upset</option>
+                                  <option>I feel anxious</option>
+                                   <option>I dislike my friends as they are mean</option>
+                                   <option>I dislike the food I am eating</option>
+                                   <option>I dont have anyone to talk to</option>
+                                  <option >I am bored</option>
+                                  <option>I am nervous as I dont have a boyfriend</option>
+                                  <option>I dont feel loved </option>
+                                  <option>I dont have enough money </option>
+                                  <option>I lost my job </option>
+                                  <option>I don't know what to do</option>
+                                   <option>I feel my friends are making fun of me</option>
                                    <option>Other</option>
                                  </select>
                                  <span class="validateError" id="reasonError" style="display: none;">You must select the reason you are here</span>  
-                                  </fieldset>  
+                                  </fieldset> 
+
+
                                  
                                   <div>
+                                    
                                     <button type="submit" id="login" class="btn btn-dark btn-lg" style="width:120px;height:50px;margin-left:40px;margin-top:10px;margin-bottom:25px;color:white">Submit</button>
                                 </div>
                             </form>
                         </div>
                     
                 </div>
+
+                <div class="col-md-8" class="result" style="text-align:center;margin-top:40px;text-align:left;background:red;color:white">
+                  
+                           <p><%=data%></p>
+                            <p><%=data1%></p>
+                            <p><%=data2%></p>
+                             <p><%=data3%></p>
+                             <p><%=data4%></p>
+                             <p><%=data5%></p>
+                     </div>
            </section>
 
 
@@ -122,7 +121,7 @@
 
            
         </div>
-             <footer class="container-fluid bg-4 text-center footer">
+             <footer class="container-fluid bg-4 text-center footer" >
         <p> <span>&copy; Copyright 2018
             </span></p>
     </footer>        

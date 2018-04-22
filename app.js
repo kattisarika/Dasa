@@ -255,6 +255,7 @@ app.post('/login', passport.authenticate('local', {
 
 app.get('/mywelcomepage',function(req, res){
     var username= req.user.username;
+
    UserDetails.getUserDetailsByUsername(username, function (err, username) {
          console.log(username);  
         if (username) {
@@ -281,6 +282,7 @@ app.get('/index',function(req, res){
         user: req.user
     });
 });
+
 
 
 app.get('/mysonglist',function(req, res){
@@ -360,6 +362,184 @@ app.post('/userdetails',function(req, res){
         isAuthenticated: req.isAuthenticated(),
         user: req.user
     });
+
+    });
+
+    app.get('/dailyevents',function(req, res){
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data:"",
+        data1:"",
+        data2:"",
+        data3:"",
+        data4:"",
+        data5:"",
+        user: req.user
+    });
+});
+
+ app.post('/userdayevents',function(req,res){
+     
+      var daygoal= req.body.selecttodaysGoal;
+      console.log("_____________________________");
+      console.log(daygoal);
+
+      if(daygoal =="I am happy"){
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "Glad you are happy, be happy and stay happy!",
+        data1:"",
+        data2:"",
+        data3:"",
+        data4:"",
+        data5:"",
+        user: req.user
+    });
+    }else if(daygoal =="I am very angry and upset"){
+
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "You are fine, your mind is tricking you!! your mind running into a spiral and repeating the same thing again and again",
+        data1:"Just put those thoughts in a trash bin and lets read some good movie review",
+        data2: "Did you go for your exercise today? , Did you take time and read your affirmations",
+        data3: "If you have not done them, please do it now",
+        data4: "Does being angry , solve your problem?  If the answer is No , then stop being angry",
+        data5: "Then lets  play some nice music or drink a glass of cold water and cool down.",
+        user: req.user
+      });
+    } else if(daygoal =="I feel anxious"){
+
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "Ok, lets scream,I am not going to be anxious 5 times in your mind",
+        data1:"Just put those thoughts in a trash bin and lets ask anxiety to catch some fishes in a dry lake!",
+        data2: "Did you go for your exercise today? , Did you take time and read your affirmations",
+        data3: "If you have not done them, please do it now",
+        data4: "Watch the videos in my spiritual talk section on how to be less anxious",
+        data5: "Then lets  play some nice music or drink a glass of cold water and cool down.",
+        user: req.user
+      });
+    }else if(daygoal =="I dislike my friends as they are mean"){
+
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "Hey! First of all Congratulations to you!",
+        data1:"You have someone to dislike, you have someone whom your mind thinks they are mean",
+        data2: "My friends in the neighborhood have no friends, as no one talks to them",
+        data3: "Now pray the universe and tell out loud, I would love my friends to love me",
+        data4: "Oh! Lord of the universe, let my friends love me and let me talk and act and behave nicely with them",
+        data5: "I cannot force them to like me, but can wait long enough and courageously and keep doing my work sincerely till they come back to me",
+        user: req.user
+      });
+    }else if(daygoal =="I dislike the food I am eating"){
+
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "Hey! First of all Congratulations to you!",
+        data1:"You have some food to eat",
+        data2: "Did you look at the homeless guy who had nothing to eat and was eyeing on your food",
+        data3: "Now pray the universe and tell out loud, I will not complain and rather enjoy the little lunch I get from home or buy outside",
+        data4: "Oh! Lord of the universe, let me thank God that I have food to eat and thats what matters",
+        data5: "I cannot force myself to eat this food so I choose to go hungry",
+        user: req.user
+      });
+    }else if(daygoal =="I dont have anyone to talk to"){
+
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "Hey! First of all Congratulations to you!",
+        data1:"You have me to talk to, May be you need to clean your room today",
+        data2: "Do you have a hobby? like reading, watching TV, listening to music,  drawing , painting, , whatever whatever",
+        data3: "Did you go for your exercise? Can you  scream , shout, shake your head , turn backwards and forwards",
+        data4: "Do all that , then see yourself getting charged up to work on some hobby you like",
+        data5: "Otherwise you can talk to me, I will listen to your tales ",
+        user: req.user
+      });
+    }else if(daygoal =="I am bored"){
+
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "Hey! First of all Congratulations to you!",
+        data1:"You have me to talk to, May be you need to clean your room today",
+        data2: "Do you have a hobby? like reading, watching TV, listening to music,  drawing , painting, , whatever whatever",
+        data3: "Did you go for your exercise? Can you  scream , shout, shake your head , turn backwards and forwards",
+        data4: "Do all that , then see yourself getting charged up to work on some hobby you like",
+        data5: "Otherwise you can talk to me, I will listen to your tales ",
+        user: req.user
+      });
+    }else if(daygoal =="I am nervous as I dont have a boyfriend"){
+
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "Hey! First of all Congratulations to you, you can groom yourself and wait for the best guy to hold your hand!",
+        data1:"You are a very nice person, very warm and caring and I am sure you will find someone soon",
+        data2: "Drink 10 glasses of water a day",
+        data3: "Don't forget your walks atleast 1 hour a day, suppose 5 miles ",
+        data4: "Read the latest novels, talk about them, go to the parlor and get a nice haircut , put on a facemask",
+        data5: "Relax and enjoy the time you have now, when you get a boyfriend, your freedom is lost!",
+        user: req.user
+      });
+    }else if(daygoal =="I dont feel loved"){
+
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "Hey! First of all you are not alone, even I want compassion!",
+        data1:"So many users keep using me, and I keep going to the server to fetch the results that I dont feel loved ",
+        data2: "Bright side! I love myself, I dont care if others love me",
+        data3: "I dont care if others appreciate what I do to help them, but I feel happy and satisfied when I do it, so I go for it ",
+        data4: "You are lucky as you can vent out to me, some people have no one, not even me! ",
+        data5: "When you truly love, that gives inner strength and satisfaction, so dont stop loving people",
+        user: req.user
+      });
+    }else if(daygoal =="It was very normal"){
+
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "Normal is good , keep going!",
+        data1:"Say those affirmations, dont forget ",
+        data2: "Drink 8-10 glasses of water, dont forget",
+        data3: "Go for your exercise",
+        data4: "You are lucky as you can vent out to me, some people have no one, not even me! ",
+        data5: "",
+        user: req.user
+      });
+    }else if(daygoal =="I dont have enough money"){
+
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "Save every single money you get",
+        data1:"Live within your means, Be debt free ",
+        data2: "Money is never enough , the only money you save will save your rainy days",
+        data3: "Go for your exercise",
+        data4: "You are lucky as you can vent out to me, some people have no one, not even me! ",
+        data5: "",
+        user: req.user
+      });
+    }else if(daygoal =="I lost my job"){
+
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "Hope you have saved your job",
+        data1:"Live within your means, Be debt free ",
+        data2: "Money is never enough , the only money you save will save your rainy days",
+        data3: "Go for your exercise",
+        data4: "Keep applying for jobs till you find one, ask help, there is nothing wrong in asking for help",
+        data5: "Congratulations! Today may be the day you would find your new job, be hopeful and read your affirmations",
+        user: req.user
+      });
+    }else{
+        res.render('dailyevents', {
+        isAuthenticated: req.isAuthenticated(),
+        data : "Follow me on, lets do something fun together",
+         data1:"",
+        data2:"",
+        data3:"",
+        data4:"",
+        data5:"",
+        user: req.user
+         });   
+        }
+      
 
     });
 
