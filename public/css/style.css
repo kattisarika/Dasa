@@ -22,10 +22,11 @@ header {
 .bgimage {
 
 
-    background-image: url('../images/him-image.jpg');
+   /* background-image: url('../images/him-image.jpg');*/
+   background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
     background-position: center center;
     background-size: cover;
-    height: 350px;
+    height: 100px;
 }
 
 header h1 {
