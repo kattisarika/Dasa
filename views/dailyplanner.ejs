@@ -5,18 +5,19 @@
     <title>Dasa</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-
+   
     <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    
+    <script src="/js/script.js"></script>
+        
 </head>
 <body>
 
+
    <header >
         <div class="container">
-            <h1>Activities</h1>
+            <h1><%=user.username%>'s Daily Events</h1>
+            
         </div>
 
     </header>
@@ -25,14 +26,15 @@
    <div class="jumbotron jumbotron-billboard" style="padding:0;">
 
         <!--Who are Dasas-->
-
-         <!-- <div class="row" style="padding:0;">-->
           <div style="margin-left:20px">
+         <!-- <div class="row" style="padding:0;">-->
+         <a href="/mywelcomepage" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Home</a>   
         <a href="/mysonglist" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Song List</a>   
-         <!-- <a href="/spiritualgurus" class="btn btn-dark btn-lg" id="sgurus" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Gurus</a>-->
+         <!--<a href="/spiritualgurus" class="btn btn-dark btn-lg" id="sgurus" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Gurus</a>-->
           <a href="/spiritualtalks" class="btn btn-dark btn-lg" id="sbooks" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Talks</a>
         <a href="/spiritualbooks" class="btn btn-dark btn-lg" id="sbooks" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Books</a>
         <a href="/guidedtours" class="btn btn-dark btn-lg" id="sbooks" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Events </a>
+        
         
             <nav style="display:inline-block;float:right;margin-right:20px">
  
@@ -41,14 +43,175 @@
                         <p style="font-size:14px;color:black">
                             <b><%=user.username%></b>
                         </p>
-                   
+              </div>     
               </nav>
-            </div>
+              <div class="row" style="margin-left:20px;padding:0;" id="mainwelcomepage">
+                <section class="col-md-2"  style="text-align:left;padding:45px">
+               <div  style="margin-left:20px;">
+                    <ul  class="sidelist">
 
-                <div style="margin-left:20px;padding:0;padding:50px">To Do List section will be added soon! Back to you <a href="/mywelcomepage">Your home</a></div>
+                        <li class="active"> <a href="/dashboard">Dashboard</a></li>
+                        <li> <a href="/dailyevents"> Daily Events</a></li>
+                       <li> <a href="/dailyplanner"> Daily Planner</a></li>
+                    </ul>
+                    
+                </div>
+              </section>
+              
+                <section class="col-sm-6">
+                    
+                  
+               <div class="userdayevents" >
+                    
+                        <div class="userdetails-form">
+                         
+                        <!--    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>-->
+                            <form action="/userdailyplanner" method="post">
+                              <div style="background:green;color:white;height:30px;padding:40px;"> <p id="date" ></p> </div>
+                                                 <table class="table table-bordered" id="myTable">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center">
+                                   <h5></h5><p>Time</p> 
+                                </th>
+                                <th style="text-align:center">
+                                   <h5></h5><p>Activity</p> 
+                                </th>
+                               
+                            </tr>
 
-            </div>
-             <footer class="container-fluid bg-4 text-center footer" style="position:absolute;">
+
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" name="four" id="four" style="text-align:center" class="form-control" placeholder="4-5" value="4am-5am" required="required">
+                                </div>
+                                </td>
+                                 <td> <div class="form-group">
+                                    <input type="text" name="activity1" id="activity1"  class="form-control" placeholder="Activity Name" required="required">
+                                </div>
+                                 </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                        <div class="form-group">
+                                   <input type="text" name="five" id="five" style="text-align:center" class="form-control" placeholder="5-6" value="5am-6am" required="required">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                    <input type="text" name="activity2" id="activity2"  class="form-control" placeholder="Activity Name" >
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <div class="form-group">
+                                    <input type="text" name="six" id="six"  style="text-align:center" class="form-control" placeholder="6-7" value="6am-7am">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                    <input type="text" name="activity2" id="activity2"  class="form-control" placeholder="Activity Name" >
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <div class="form-group">
+                                    <input type="text" name="seven" id="seven"  style="text-align:center" class="form-control" placeholder="7-8" value="7am-8am">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                   <input type="text" name="activity3" id="activity3"  class="form-control" placeholder="Activity Name" >
+                                      </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <div class="form-group">
+                                    <input type="text" name="eight" id="eight"  style="text-align:center" class="form-control" placeholder="8-9" value="8am-9am">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                   <input type="text" name="activity4" id="activity4"  class="form-control" placeholder="Activity Name" >
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <div class="form-group">
+                                    <input type="text" name="nine" id="nine"  style="text-align:center" class="form-control" placeholder="8-9" value="9am-10am">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                   <input type="text" name="activity5" id="activity5"  class="form-control" placeholder="Activity Name" >
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <div class="form-group">
+                                    <input type="text" name="ten" id="ten"  style="text-align:center" class="form-control" placeholder="8-9" value="10am-11am">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                   <input type="text" name="activity6" id="activity6"  class="form-control" placeholder="Activity Name" >
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <div class="form-group">
+                                    <input type="text" name="eleven" id="eleven"  style="text-align:center" class="form-control" placeholder="11-21" value="11am-12pm">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                   <input type="text" name="activity7" id="activity7"  class="form-control" placeholder="Activity Name" >
+                                      </div>
+                                    </td>
+                                  </tr>
+                             
+                        </tbody>
+                    </table>
+
+                              
+                               
+
+                                 
+                                  <div>
+                                    
+                                    <button type="submit" id="dailyplanner" class="btn btn-dark btn-lg" style="width:120px;height:50px;margin-left:40px;margin-top:10px;margin-bottom:25px;color:white">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    
+                </div>
+
+                
+           </section>
+
+             <section class="col-sm-4">
+             </section>
+
+                </div>
+
+    <div class="push1"  style="height:500px"></div>
+
+<script type="text/javascript">
+
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+
+</script>
+           
+        </div>
+        <div></div>
+             <footer class="container-fluid bg-4 text-center footer" >
         <p> <span>&copy; Copyright 2018
             </span></p>
     </footer>        

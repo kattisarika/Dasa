@@ -5,8 +5,8 @@
 }
 
 body {
-    background-color: #e9ecef;;
-    height: 100%;
+    background-color: #e9ecef;
+   
 }
 
 header {
@@ -143,12 +143,18 @@ body {
     border: 2px solid black;
 }*/
 
-h5,
-p {
-    style="text-align:center;
- margin-left: 30px;
-}
 
+
+
+#parap{
+  text-align:left;
+   margin-left: 30px;
+}
+ 
+ #footerp{
+  text-align:center;
+   margin-left: 30px;
+ }
 #footer {
     position: absolute;
     bottom: 0;
@@ -334,11 +340,17 @@ background:#fff;
   width:250px;
   word-wrap: break-word;"
   }
+  
+.push {
+  height: 150px;
+}
+
 
   .footer{
     background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
     color:white;
     padding:20px;
-    bottom:0;
-    margin-bottom:0px;
+    bottom:100;
+    right: 0;
+    left: 0;
   }
