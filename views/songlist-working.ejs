@@ -124,7 +124,7 @@
 
 
 
-        <div class="col-sm-4" style="padding:0">
+        <div class="col-sm-6" style="padding:0">
 
              <form id="form-languageselect" class="form-languageselect" action="/devlanguagedetails" method="post" >
           
@@ -139,7 +139,7 @@
                                   <option>Malyalam</option>
                                   <option>Tamil </option>
                                   <option>Telugu</option>
-                                   <option>Other</option>
+                                 
                                  </select>
 
                  </form>           
@@ -157,6 +157,12 @@
                                 <th style="text-align:center">
                                    <h5></h5><p>Devotional Songs</p> 
                                 </th>
+                                <th style="text-align:center">
+                                   <h5></h5><p>YouTube Link</p> 
+                                </th>
+                                <th style="text-align:center">
+                                   <h5></h5><p>My PlayList</p> 
+                                </th>
                             </tr>
 
 
@@ -169,10 +175,18 @@
                                     <td>
                                         <a class="toggle" href="#<%= gmusicdata.songlist[i].songElementId%>">
                                             <%=gmusicdata.songlist[i].songTitle%>
-                                            <a href="/createmyplaylist" class="btn btn-dark" style="float:right;" >Add To PlayList</a>
-                                                </li>
+
+                                        </td>
+                                        <td><a href="<%=gmusicdata.songlist[i].youtubelink%>" target="_blank"><%=gmusicdata.songlist[i].youtubelink%></a></td>
+
+                                        <td>
+                                            <a href="/createmyplaylist" class="btn btn-dark" style="float:right;" >Add</a>
+                                               
                                     </td>
+
                                 </tr>
+
+
                                 <% } %>
                         </tbody>
                     </table>
@@ -180,7 +194,7 @@
             </div>
         </div>
 
-        <div class="col-sm-8" style="padding:0">
+        <div class="col-sm-6" style="padding:0">
             <div class="contentarea" style="padding:0">
 
 
@@ -191,13 +205,10 @@
                          <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
                             <h1>Deva bandha Namma</h1>
                             <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
-                            <audio controls>
-                                <source src="mp3/Deva.mp3" type="audio/mpeg">
-                            </audio>
+                          
                             <br>
                         </div>
 
-                       <iframe width="560" height="315" src="https://www.youtube.com/embed/Oh1m1VoMoAA?autoplay=0&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
 
@@ -211,15 +222,11 @@
                     <div class="row" style="margin-top:10px;padding:20px">
                         <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
                             <h1>kagada bandide</h1>
-                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
-                            <audio controls>
-                                <source src="mp3/kagada.mp3" type="audio/mpeg">
-                            </audio>
-                            <br>
+                            
                         </div>
 
 
-                     <iframe width="560" height="315" src="https://www.youtube.com/embed/IMH7Yvdh2dQ?autoplay=0&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                   
 
 
                     </div>
@@ -282,10 +289,7 @@
                         <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
                             <h1>Baagilanu Teredu</h1>
                             <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
-                            <audio controls>
-                                <source src="mp3/Baagilanu.mp3" type="audio/mpeg">
-                            </audio>
-                            <br>
+                          
                         </div>
                         <p><b>Watch the song on youtube by click the link <a href="https://www.youtube.com/watch?v=UTdGJE0-v3w?autoplay=0&rel=0" target="_blank">Baagilanu Teredu</a></b></p>
                     </div>
@@ -416,15 +420,12 @@
                     <div class="row" style="margin-top:10px;padding:20px">
                         <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
                             <h1>kanakadhara-stotram-mahalakshmi</h1>
-                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
-                            <audio controls>
-                                <source src="mp3/kanakadhara.mp3" type="audio/mpeg">
-                            </audio>
-                            <br>
+                            
+                           
                         </div>
 
 
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/lQsyYpxIzmg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                     
 
                     </div>
 
@@ -545,15 +546,11 @@
                     <div class="row" style="margin-top:10px;padding:20px">
                         <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
                             <h1>Dwadasha Stotram / Preenayamo Vasudevam</h1>
-                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
-                            <audio controls>
-                                <source src="mp3/preenayamo.mp3" type="audio/mpeg">
-                            </audio>
-                            <br>
+                           
                         </div>
 
 
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/yUcZSRpxlSE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                     
 
                     </div>
 
@@ -659,15 +656,11 @@
                     <div class="row" style="margin-top:10px;padding:20px">
                         <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
                             <h1>sakala graha bala neene</h1>
-                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
-                            <audio controls>
-                                <source src="mp3/sakala.mp3" type="audio/mpeg">
-                            </audio>
-                            <br>
+                           
                         </div>
 
 
-                       <iframe width="560" height="315" src="https://www.youtube.com/embed/Z6pc2hfa4dU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    
                     </div>
 
                     <ul class="nav nav-tabs" role="tablist">
@@ -768,15 +761,11 @@
                     <div class="row" style="margin-top:10px;padding:20px">
                         <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
                             <h1>Ambiga Na Ninna Nambide</h1>
-                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
-                            <audio controls>
-                                <source src="mp3/Ambiga.mp3" type="audio/mpeg">
-                            </audio>
-                            <br>
+                           
                         </div>
 
 
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/qGGgf4W3PXA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                       
                     </div>
 
                     <ul class="nav nav-tabs" role="tablist">
@@ -862,15 +851,10 @@
                     <div class="row" style="margin-top:10px;padding:20px">
                         <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
                             <h1>Jaya Mangalam</h1>
-                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
-                            <audio controls>
-                                <source src="mp3/Jayamangalam.mp3" type="audio/mpeg">
-                            </audio>
-                            <br>
+                           
                         </div>
 
 
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/S7Fy6rsq6rs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
 
                     <ul class="nav nav-tabs" role="tablist">
@@ -950,16 +934,12 @@
 
                             <h1 style="text-align:center">Adadella olithe aayithu</h1>
                             <div style="margin:100px 0px 100px 0px;text-align:center;background:#e6e6e6">
-                                <p><b>Play your song and catch up with the lyrics in the languages mentioned below</b></p>
-                                <audio controls>
-                                    <source src="mp3/Navakoti.mp3" type="audio/mpeg">
-                                </audio>
-                                <br>
+                              
                             </div>
                         </div>
 
 
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/1Et_FziAXPI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        
                     </div>
                     <!-- Nav tabs -->
                     <ul id="mytabs" class="nav nav-tabs" role="tablist">
@@ -1078,11 +1058,7 @@
                     <div class="row" style="margin-top:10px;padding:20px">
                         <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
                             <h1>MAHA LAKSHMI ASTAKAM</h1>
-                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
-                            <audio controls>
-                                <source src="mp3/MAHALAKSHMI STUTHI.mp3" type="audio/mpeg">
-                            </audio>
-                            <br>
+                           
                         </div>
                     </div>
 
@@ -1227,14 +1203,10 @@
                     <div class="row" style="margin-top:10px;padding:20px">
                         <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
                             <h1>ಏನು ಧನ್ಯಳೋ ಲಕುಮಿ</h1>
-                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
-                            <audio controls>
-                                <source src="mp3/EnuDhanyaLoLakumi.mp3" type="audio/mpeg">
-                            </audio>
-                            <br>
+                           
                         </div>
 
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Lmt4kxCpayU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                       
                     </div>
 
 
@@ -1368,11 +1340,8 @@
                     <div class="row" style="margin-top:10px;padding:20px">
                         <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
                             <h1>Aada Pogona Baro Ranga</h1>
-                            <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
-                            <audio controls>
-                                <source src="mp3/Ada Pogona Baro Ranga.mp3" type="audio/mpeg">
-                            </audio>
-                            <br>
+                           <p>Watch the song on youtube by click the link
+                            <a href="https://www.youtube.com/watch?v=N7CC5Wgtzd0" target="_blank">Ada Pogona</a> </p>
                         </div>
                     </div>
 
@@ -1483,8 +1452,7 @@
 
                         </div>
 
-                        <p>Watch the song on youtube by click the link
-                            <a href="https://www.youtube.com/watch?v=N7CC5Wgtzd0" target="_blank">Ada Pogona</a> </p>
+                        
                     </div>
                 </div>
                 <!--ada -->
@@ -1494,10 +1462,7 @@
                         <div class="col-sm-9" style="padding:0;background:#e6e6e6;text-align:center">
                             <h1>Rama Nama Payasakke</h1>
                             <p>Play your song and catch up with the lyrics in the languages mentioned below</p>
-                            <audio controls>
-                                <source src="mp3/rAmanAmapAyasake.mp3" type="audio/mpeg">
-                            </audio>
-                            <br>
+                           
                         </div>
                     </div>
 
