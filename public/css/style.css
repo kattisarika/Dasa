@@ -345,6 +345,10 @@ background:#fff;
   height: 180px;
 }
 
+.error{
+  color:red;
+}
+
 
   .footer{
     background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
