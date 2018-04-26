@@ -9,22 +9,14 @@ var userSchema = mongoose.Schema({
         required: true,
         trim: true
     },
-    email: {
-        type: String,
-        unique: true,
-        required: true,
-        trim: true
-    },
     password: {
         type: String,
         required: true
     },
      created: {
-
       type: Date,
       required: true,
       default: new Date()
-
   }
     
 });
@@ -50,6 +42,10 @@ module.exports.getUserByUsername = function (username, callback) {
     User.findOne(query, callback);
 }
 
+
+
+
+
 module.exports.validatePassword = function (password, callback) {
     bcrypt.compareSync(password, this.password, function (err, isValid) {
         if (err) {
@@ -62,4 +58,16 @@ module.exports.validatePassword = function (password, callback) {
 
 module.exports.getUserById = function (id, callback) {
     User.findById(id, callback);
+}
+
+module.exports.updatePasswordByUsername = function (username, callback) {
+    var query = {
+        username: username
+    };
+    User.findOneAndUpdate(
+          { username: username },
+          { $set: { password: password } },
+          { new: true, upsert: true },
+          callback
+        );
 }
