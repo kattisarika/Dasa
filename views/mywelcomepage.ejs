@@ -16,7 +16,7 @@
 
    <header >
         <div class="container">
-            <h1><%=user.username%>'s Activities</h1>
+            <h1><%=user.username.substring(0, user.username.lastIndexOf("@"))%>'s Activities</h1>
             
         </div>
 
@@ -75,7 +75,7 @@
                                 <div>
                                 <label for="ageradio">Age Group</label> 
                                 <div>
-                                <label style="margin:0 auto" ><input type="radio"  id="contactChoice1" name="ageradio" value="teens"> 17 - 30</label>
+                                <label style="margin:0 auto" ><input type="radio"  id="contactChoice1" name="ageradio" value="teens" required> 17 - 30</label>
                                 </div>
                                 <div>
                                 <label style="margin:0 auto"><input type="radio" id="contactChoice2" name="ageradio" value="thirty"> 31 - 45</label>
@@ -89,6 +89,7 @@
                                 
                                  <fieldset>  
                                   <select id="selectGoal" name="selectGoal" style="margin-top:10px;margin-bottom:10px;height:48px">
+
                                   <option >Just exploring</option>
                                   <option>Improve my life</option>
                                    <option>Improve my self esteem</option>
@@ -99,13 +100,14 @@
                                   <option>Anxious and Depressed</option>
                                   <option>Anger management </option>
                                   <option>Addiction management </option>
-                                   <option>Other</option>
+                                   <option>All of the above</option>
+                                   <option>None of the above</option>
                                  </select>
                                  <span class="validateError" id="reasonError" style="display: none;">You must select the reason you are here</span>  
                                   </fieldset>  
                                  
                                   <div>
-                                    <button type="submit" id="login" class="btn btn-dark btn-lg" style="width:120px;height:50px;margin-left:40px;margin-top:10px;margin-bottom:25px;color:white">Submit</button>
+                                    <button type="submit" id="userdetailsbtn" class="btn btn-dark btn-lg" style="width:120px;height:50px;margin-left:40px;margin-top:10px;margin-bottom:25px;color:white">Submit</button>
                                 </div>
                             </form>
                         </div>

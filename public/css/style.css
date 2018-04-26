@@ -80,12 +80,12 @@ h3 {
     line-height: 2em;
 }
 
-.login-form , .signup-form, .search-form{
+.login-form , .signup-form, .search-form, .reset-form{
     width: 500px;
     margin-top: 50px;
 }
 
-.login-form form, .signup-form form {
+.login-form form, .signup-form form , .reset-form form{
     margin-bottom: 15px;
     background: linear-gradient(rgba(80,120,208,.15),rgba(80,120,208,.15));
     color: blue;
@@ -342,7 +342,7 @@ background:#fff;
   }
   
 .push {
-  height: 150px;
+  height: 180px;
 }
 
 

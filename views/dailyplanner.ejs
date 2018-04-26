@@ -58,17 +58,17 @@
                 </div>
               </section>
               
-                <section class="col-sm-6">
+                <section class="col-sm-10">
                     
-                  
+
                <div class="userdayevents" >
                     
-                        <div class="userdetails-form">
+                        <div class="userdetails-form" >
                          
                         <!--    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>-->
-                            <form action="/userdailyplanner" method="post">
+                            <form action="/userdailyplanner" method="post" style="width:1000px;background:#9CBA7F">
                               <div style="background:green;color:white;height:30px;padding:40px;"> <p id="date" ></p> </div>
-                                                 <table class="table table-bordered" id="myTable">
+                                                 <table class="table table-bordered" id="myTable" style="width:800px;" >
                         <thead>
                             <tr>
                                 <th style="text-align:center">
@@ -90,7 +90,18 @@
                                 </div>
                                 </td>
                                  <td> <div class="form-group">
-                                    <input type="text" name="activity1" id="activity1"  class="form-control" placeholder="Activity Name" required="required">
+                                  <textarea class="form-control" rows="5" name="activity1" id="activity1"></textarea>
+                                   
+                                </div>
+                                 </td>
+
+                                 <td>
+                                <div class="form-group">
+                                    <input type="text" name="twelve" id="twelve" style="text-align:center" class="form-control" placeholder="12-1" value="12pm-1pm" required="required">
+                                </div>
+                                </td>
+                                 <td> <div class="form-group">
+                                   <textarea class="form-control" rows="5" name="activity9" id="activity9"></textarea>
                                 </div>
                                  </td>
                                  </tr>
@@ -101,7 +112,19 @@
                                 </div>
                                     </td>
                                       <td> <div class="form-group">
-                                    <input type="text" name="activity2" id="activity2"  class="form-control" placeholder="Activity Name" >
+                                         <textarea class="form-control" rows="5" name="activity2" id="activity2"></textarea>
+                                   
+                                      </div>
+                                    </td>
+
+                                     <td>
+                                        <div class="form-group">
+                                   <input type="text" name="onepm" id="onepm" style="text-align:center" class="form-control" placeholder="1-2" value="1pm-2pm" required="required">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                         <textarea class="form-control" rows="5" name="activity10" id="activity10"></textarea>
+                                    
                                       </div>
                                     </td>
                                   </tr>
@@ -112,10 +135,24 @@
                                 </div>
                                     </td>
                                       <td> <div class="form-group">
-                                    <input type="text" name="activity2" id="activity2"  class="form-control" placeholder="Activity Name" >
+                                         <textarea class="form-control" rows="5" name="activity3" id="activity3"></textarea>
                                       </div>
                                     </td>
+                                     <td>
+                                        <div class="form-group">
+                                    <input type="text" name="twopm" id="twopm"  style="text-align:center" class="form-control" placeholder="2-3" value="2pm-3pm">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                         <textarea class="form-control" rows="5" name="activity11" id="activity11"></textarea>
+                                  
+                                      </div>
+                                    </td> 
+
                                   </tr>
+
+
+
                                   <tr>
                                     <td>
                                         <div class="form-group">
@@ -123,11 +160,27 @@
                                 </div>
                                     </td>
                                       <td> <div class="form-group">
-                                   <input type="text" name="activity3" id="activity3"  class="form-control" placeholder="Activity Name" >
+                                         <textarea class="form-control" rows="5" name="activity4" id="activity4"></textarea>
+                                      </div>
+                                      </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="form-group">
+                                    <input type="text" name="threepm" id="threepm"  style="text-align:center" class="form-control" placeholder="3-4" value="3pm-4pm">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                         <textarea class="form-control" rows="5" name="activity12" id="activity12"></textarea>
+                                   
                                       </div>
                                       </div>
                                     </td>
                                   </tr>
+
+
+
+
                                   <tr>
                                     <td>
                                         <div class="form-group">
@@ -135,10 +188,24 @@
                                 </div>
                                     </td>
                                       <td> <div class="form-group">
-                                   <input type="text" name="activity4" id="activity4"  class="form-control" placeholder="Activity Name" >
+                                        <textarea class="form-control" rows="5" name="activity5" id="activity5"></textarea>
+                                      </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="form-group">
+                                    <input type="text" name="eight" id="eight"  style="text-align:center" class="form-control" placeholder="4-5" value="4pm-5pm">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                        <textarea class="form-control" rows="5" name="activity13" id="activity13"></textarea>
+                                  
                                       </div>
                                     </td>
                                   </tr>
+
+
+
                                   <tr>
                                     <td>
                                         <div class="form-group">
@@ -146,10 +213,24 @@
                                 </div>
                                     </td>
                                       <td> <div class="form-group">
-                                   <input type="text" name="activity5" id="activity5"  class="form-control" placeholder="Activity Name" >
+                                        <textarea class="form-control" rows="5" name="activity6" id="activity6"></textarea>
+                                      </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                    <input type="text" name="nine" id="nine"  style="text-align:center" class="form-control" placeholder="5-6" value="5pm-6pm">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                        <textarea class="form-control" rows="5" name="activity14" id="activity14"></textarea>
+                                   
                                       </div>
                                     </td>
                                   </tr>
+
+
+
+
                                   <tr>
                                     <td>
                                         <div class="form-group">
@@ -157,10 +238,24 @@
                                 </div>
                                     </td>
                                       <td> <div class="form-group">
-                                   <input type="text" name="activity6" id="activity6"  class="form-control" placeholder="Activity Name" >
+                                        <textarea class="form-control" rows="5" name="activity7" id="activity7"></textarea>
+                                   
+                                      </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                    <input type="text" name="ten" id="ten"  style="text-align:center" class="form-control" placeholder="6-7" value="6pm-7pm">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                          <textarea class="form-control" rows="5" name="activity15" id="activity15"></textarea>
+                                   
                                       </div>
                                     </td>
                                   </tr>
+
+
+
                                   <tr>
                                     <td>
                                         <div class="form-group">
@@ -168,7 +263,18 @@
                                 </div>
                                     </td>
                                       <td> <div class="form-group">
-                                   <input type="text" name="activity7" id="activity7"  class="form-control" placeholder="Activity Name" >
+                                        <textarea class="form-control" rows="5" name="activity8" id="activity8"></textarea>
+                                    
+                                      </div>
+                                    </td>
+                                     <td>
+                                        <div class="form-group">
+                                    <input type="text" name="eleven" id="eleven"  style="text-align:center" class="form-control" placeholder="7-8" value="7pm-8pm">
+                                </div>
+                                    </td>
+                                      <td> <div class="form-group">
+                                         <textarea class="form-control" rows="5" name="activity16" id="activity16"></textarea>
+                                   
                                       </div>
                                     </td>
                                   </tr>
@@ -192,8 +298,7 @@
                 
            </section>
 
-             <section class="col-sm-4">
-             </section>
+            
 
                 </div>
 

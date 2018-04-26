@@ -11,7 +11,7 @@ var passport = require('passport');
 var passportLocal = require('passport-local');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-
+var flash = require('connect-flash');
 
 
 var methodOverride = require('method-override');
@@ -27,8 +27,10 @@ UserDetails = require('./app/models/userdetails')
 app.use(methodOverride());
 app.use(express.static(__dirname + '/public'));
 
-mongoose.connect('mongodb://superadmin:superadmin@ds015902.mlab.com:15902/ikanofy');
 
+mongoose.connect('mongodb://superadmin:superadmin@ds257579.mlab.com:57579/ikanofy');
+
+//mongoose.connect('mongodb://superadmin:superadmin@ds257579.mlab.com:57579/ikanofydev');
 var db = mongoose.connection;
 
 app.set('view engine', 'ejs');
@@ -52,6 +54,8 @@ app.use(expressSession({
 // To do local authentication below lines are mandatory
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash()); 
+
 app.locals.pd1data=require('./pd1.json');
 
 app.locals.gmusicdata=require('./generalmusiclist.json');
@@ -75,9 +79,9 @@ app.locals.tamilsonglistdata = require('./tamilsonglist.json');
 app.locals.malyalamsonglistdata = require('./malyalamsonglist.json');
 
 app.locals.telugusonglistdata = require('./telugusonglist.json');
+app.locals.angrydata = require('./angry.json');
 
-
-
+var LocalStrategy = require('passport-local').Strategy;
 
 passport.use(new passportLocal.Strategy(function (username, password, done) {
     console.log("In passport", username);
@@ -118,105 +122,45 @@ passport.use(new passportLocal.Strategy(function (username, password, done) {
 }));
 
 app.get("/", function (req, res) {
-    console.log("In /", req.body.email);
-    console.log("IS In Index", req.isAuthenticated());
-    //if(req.isAuthenticated())
-    //  console.log(req.user.username);
-    //console.log("Request object is " , req.body );
-    if (req.isAuthenticated()) {
-        res.render('index', {
-            isAuthenticated: req.isAuthenticated(),
-            user: req.user.username
-
-
-        });
-    } else {
-        res.render('index', {
-            isAuthenticated: false,
-            user: "no data"
-        });
-    }
-
+    res.render('index');
 });
+
 
 app.get('/sign', function (req, res) {
   res.render('sign.ejs');
 });
 
-
-
 app.post('/sign', function (req, res) {
     console.log("In post /sign", req.body);
-   var username=req.body.name;
-    User.getUserByUsername(username, function (err, username) {
-         console.log(username);
-        
+     var username=req.body.username;
+     User.getUserByUsername(username, function (err, username) {
+        console.log(username);
         if (username) {
             console.log('existing user');
-            return res.status(409).send("The specified username address already exists.");
-            /*resp.render('sign.ejs', {
-                    viewVariable: "User already exists, please choose another user."
-            })*/
+            return res.status(409).send("The specified email address already exists.");
         } else {
-            console.log(username);
-            if (req.body.name &&
-        req.body.email &&
-        req.body.password &&
-        req.body.confpassword)
-
-        if (req.body.password !== req.body.confpassword) {
-            var err = new Error("passwords do not match");
-            err.status = 400;
-            res.redirect('sign');
-        } else {
-
-            var newUser = new User({
-                username: req.body.name,
-                email: req.body.email,
+          console.log(username);
+          if (req.body.username &&
+              req.body.password &&
+              req.body.confpassword)
+           if (req.body.password !== req.body.confpassword) { 
+               var err = new Error("passwords do not match");
+               err.status = 400;
+                res.redirect('sign');
+            } else {
+                var newUser = new User({
+                username: req.body.username,
                 password: req.body.password,
                 created :Date.now()
             });
-            console.log("All data captured in backend" + newUser.username + "," + newUser.email + "," + newUser.password + Date.now());
-
-            User.createUser(newUser, function (err, user) {
-                if (err) throw err;
-                res.redirect('login');
-
-            });
-
-        }
-
-        }
-    });
-    
-
-   /* if (req.body.name &&
-        req.body.email &&
-        req.body.password &&
-        req.body.confpassword)
-
-        if (req.body.password !== req.body.confpassword) {
-            var err = new Error("passwords do not match");
-            err.status = 400;
-            res.redirect('sign');
-        } else {
-
-            var newUser = new User({
-                username: req.body.name,
-                email: req.body.email,
-                password: req.body.password,
-                created :Date.now()
-            });
-            console.log("All data captured in backend" + newUser.username + "," + newUser.email + "," + newUser.password + Date.now());
-
-            User.createUser(newUser, function (err, user) {
-                if (err) throw err;
-                res.redirect('login');
-
-            });
-
-        }*/
-
+            console.log("All data captured in backend" +  "," + newUser.username + "," + newUser.password + Date.now());
+             User.createUser(newUser, function (err, user) {
+             if (err) throw err;
+               res.redirect('login');
+                    });
+                }
+            }
+        });
 });
 
 
@@ -227,7 +171,7 @@ app.get('/login', function (req, res) {
 
 });
 
-/*passport.authenticate('local', { failureRedirect: '/login' }),*/
+
 app.post('/login', passport.authenticate('local', {
     failureRedirect: '/login'
 }), function (req, res) {
@@ -253,8 +197,81 @@ app.post('/login', passport.authenticate('local', {
     
 });
 
+
+app.get('/forgotpassword',function(req,res){
+    res.render('forgotpassword.ejs',{
+            data : ""
+        });
+});
+
+app.post('/forgotpassword',function(req,res){
+     console.log("Am I coming in Forgot Password!");
+    //console.log(req);
+    
+    var username= req.body.username;
+    var password = req.body.updatepassword;
+    var confpassword = req.body.confpassword;
+    if(password !== confpassword){
+        res.render('forgotpassword.ejs',{
+            data : "Passwords dont match"
+        });
+    }else {
+
+      
+
+      bcrypt.hash(req.body.updatepassword, 10, function (err, hash) {
+        if (err) throw err;
+        // set hashed pwd
+        password = hash;
+        // create user
+        console.log("------------");
+       console.log(password);
+
+       db.collection('users').findOne({username: username}, function(err,obj) { 
+        console.log(obj); 
+        if(err || (obj === null)){
+                       res.render('forgotpassword.ejs',{
+                                data : "Email does not exist"
+                            });
+        }else{
+          console.log(obj); 
+            db.collection('users').findAndModify(
+              {username: username}, // query
+               [['_id','asc']],
+               {$set: {password: password}},
+               {}, 
+              // replacement, replaces only the field "hi"
+              
+              function(err, user) {
+                  if (err){
+                      console.warn(err.message); 
+                       // returns error if no matching object found
+                       res.render('forgotpassword.ejs',{
+                                data : "Something went wrong, try again"
+                            });
+                  }else{
+                     console.log("--------------");
+                      console.log(user.value.username);
+                      console.log("--------------");
+                      console.log(user.username);
+                      res.render('passwordresetsuccess.ejs');
+                  }
+                 })
+              }
+            });
+        });
+    }
+
+});
+
+app.get('/forgotpassword',function(req, res){
+    res.render('forgotpassword.ejs',{
+      data:"User does not exist"
+    });
+  });
+
 app.get('/mywelcomepage',function(req, res){
-    var username= req.user.username;
+   var username= req.user.username;
 
    UserDetails.getUserDetailsByUsername(username, function (err, username) {
          console.log(username);  
@@ -274,16 +291,6 @@ app.get('/mywelcomepage',function(req, res){
             
   });
 });
-
-
-app.get('/index',function(req, res){
-        res.render('index', {
-        isAuthenticated: req.isAuthenticated(),
-        user: req.user
-    });
-});
-
-
 
 app.get('/mysonglist',function(req, res){
         res.render('mysonglist.ejs', {
@@ -319,13 +326,6 @@ app.get('/spiritualtalks',function(req, res){
         user: req.user
     });
   });
-
-/*app.get('/userdetails',function(req, res){
-        res.render('mywelcomepage', {
-        isAuthenticated: req.isAuthenticated(),
-        user: req.user
-    });
-  });*/
 
 
 app.post('/userdetails',function(req, res){
@@ -543,6 +543,7 @@ app.post('/userdetails',function(req, res){
 
     });
 
+
 app.get('/logout',function(req,res){
 
     req.logout();
@@ -653,7 +654,6 @@ app.get('/contact',function(req, res){
         isAuthenticated: req.isAuthenticated(),
         user: req.user
      });
-
     });  */  
     
 
@@ -686,6 +686,7 @@ app.get('/contact',function(req, res){
         res.render("songlist-working.ejs");
     });
 
+
 passport.serializeUser(function (username, done) {
     console.log(username);
     done(null, username.id);
@@ -697,6 +698,7 @@ passport.deserializeUser(function (id, done) {
         done(err, username);
     });
 });
+
 
 
 var port = process.env.PORT || 3000;
