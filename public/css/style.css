@@ -349,6 +349,9 @@ background:#fff;
   color:red;
 }
 
+#myTable_paginate span .paginate_button {
+  padding:10px;
+}
 
   .footer{
     background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));

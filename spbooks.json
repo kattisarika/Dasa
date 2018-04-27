@@ -65,6 +65,61 @@
       "bookTitle":"The Four Agreements",
       "booklink":"http://wtf.tw/ref/ruiz.pdf",
       "amazonlink":"https://www.amazon.com/Four-Agreements-Practical-Personal-Freedom/dp/1878424319"
+    },
+    {
+       "bookID": "10007",
+      "bookCategory": "Thich Nhat Hanh",
+      "bookDescription": "A Guide to Spiritual Enlightenment",
+      "bookAuthor":"Thich Nhat Hanh",
+      "bookTitle":"Full Catastrophe Living-Using the Wisdom of Your Body and Mind to Face Stress, Pain, and Illness",
+      "booklink":"",
+      "amazonlink":"https://www.amazon.com/Full-Catastrophe-Living-Revised-Illness/dp/0345536932"
+    },
+    {
+       "bookID": "10008",
+      "bookCategory": "Eckhart Tolle",
+      "bookDescription": "A Guide to Spiritual Enlightenment",
+      "bookAuthor":"Eckhart Tolle ",
+      "bookTitle":"A New Earth: Awakening to Your Life's Purpose",
+      "booklink":"",
+      "amazonlink":"https://www.amazon.com/New-Earth-Awakening-Purpose-Selection/dp/0452289963"
+    },
+    
+    {
+       "bookID": "10009",
+      "bookCategory": "Deepak Chopra",
+      "bookDescription": "A Guide to Spiritual Enlightenment",
+      "bookAuthor":"Deepak Chopra ",
+      "bookTitle":"The Seven Spiritual Laws of Success",
+      "booklink":"",
+      "amazonlink":"https://www.amazon.com/Seven-Spiritual-Laws-Success-Fulfillment-ebook/dp/B005BY3XHC"
+    },
+    {
+       "bookID": "10010",
+      "bookCategory": "Mitch Albom",
+      "bookDescription": "A Guide to Spiritual Enlightenment",
+      "bookAuthor":"Mitch Albom ",
+      "bookTitle":"Tuesdays with Morrie: An Old Man, a Young Man, and Life's Greatest Lesson",
+      "booklink":"",
+      "amazonlink":"https://www.amazon.com/Tuesdays-Morrie-Young-Greatest-Lesson/dp/076790592X"
+    },
+    {
+       "bookID": "10011",
+      "bookCategory": "Herman Hesse",
+      "bookDescription": "A Guide to Spiritual Enlightenment",
+      "bookAuthor":"Herman Hesse ",
+      "bookTitle":"Siddhartha",
+      "booklink":"",
+      "amazonlink":"https://www.amazon.com/Siddhartha-Hermann-Hesse/dp/0553208845"
+    },
+    {
+       "bookID": "10012",
+      "bookCategory": "Nir Eyal",
+      "bookDescription": "A Guide to Spiritual Enlightenment",
+      "bookAuthor":"Nir Eyal",
+      "bookTitle":"Hooked: How to Build Habit-Forming Products",
+      "booklink":"",
+      "amazonlink":"https://www.amazon.com/Hooked-How-Build-Habit-Forming-Products/dp/1591847788"
     }
   ]
 }
