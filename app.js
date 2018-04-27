@@ -28,9 +28,9 @@ app.use(methodOverride());
 app.use(express.static(__dirname + '/public'));
 
 
-mongoose.connect('mongodb://superadmin:superadmin@ds257579.mlab.com:57579/ikanofy');
+//mongoose.connect('mongodb://superadmin:superadmin@ds257579.mlab.com:57579/ikanofy');
 
-//mongoose.connect('mongodb://superadmin:superadmin@ds257579.mlab.com:57579/ikanofydev');
+mongoose.connect('mongodb://superadmin:superadmin@ds257579.mlab.com:57579/ikanofydev');
 var db = mongoose.connection;
 
 app.set('view engine', 'ejs');
@@ -80,6 +80,10 @@ app.locals.malyalamsonglistdata = require('./malyalamsonglist.json');
 
 app.locals.telugusonglistdata = require('./telugusonglist.json');
 app.locals.angrydata = require('./angry.json');
+
+app.locals.oldagequotesdata = require('./oldagequotes.json');
+
+app.locals.oldagedepressionquotesdata = require('./oldagedepressionquotes.json');
 
 var LocalStrategy = require('passport-local').Strategy;
 
@@ -179,20 +183,45 @@ app.post('/login', passport.authenticate('local', {
     console.log("In POST LOGIN /login", req.isAuthenticated());
     //console.log("In  POST LOGIN /login", req.body);
     retStatus = 'Success';
-    var username= req.user.username;
-    console.log("In POST LOGIN /login", username);
-     UserDetails.getUserDetailsByUsername(username, function (err, username) {
-         console.log(username);
-        
-        if (username) {
+    var username1= req.user.username;
+    console.log("In POST LOGIN /login", username1);
+     //UserDetails.getUserDetailsByUsername(username, function (err, data) {
+      db.collection('userdetails').findOne({username: req.user.username}, function(err,data) {   
+         if (err) throw err;
+         if(data === null || data === ''){
+           res.redirect("mywelcomepage");
+        //  console.log(data);
+          }else {
             console.log('existing user');
-            res.redirect("thanks");
+            console.log(data.agegroup);
+            console.log(data.purpose);
+             switch(data.agegroup && data.purpose){
+                       /*case 'teens':
+                          res.render("teenthanks");
+                          break;
+                        case 'thirty':  
+                           res.render("thirtythanks");
+                            break;
+                        case 'midforty':  
+                           res.render("midfortythanks");
+                            break; */
+                        case ('oldage' && 'Depressed'): 
+                            res.redirect("oldagedepressedthanks");
+                            break;     
+
+                        case ('oldage' && 'Just exploring'):  
+                           res.redirect("oldagethanks");
+                            break;  
+                         default:
+                            res.redirect('thanks');
+                            break;         
+
+                  }
+            
             /*resp.render('sign.ejs', {
                     viewVariable: "User already exists, please choose another user."
             })*/
-        } else {
-            res.redirect("mywelcomepage");
-        }
+       }
     });
     
 });
@@ -227,7 +256,7 @@ app.post('/forgotpassword',function(req,res){
         console.log("------------");
        console.log(password);
 
-       db.collection('users').findOne({username: username}, function(err,obj) { 
+       db.collection('users').findOne({username: username}, function(err,obj) {   
         console.log(obj); 
         if(err || (obj === null)){
                        res.render('forgotpassword.ejs',{
@@ -273,23 +302,49 @@ app.get('/forgotpassword',function(req, res){
 app.get('/mywelcomepage',function(req, res){
    var username= req.user.username;
 
-   UserDetails.getUserDetailsByUsername(username, function (err, username) {
-         console.log(username);  
-        if (username) {
+    db.collection('userdetails').findOne({username: req.user.username}, function(err,data) {   
+         if (err) throw err;
+         if(data === null || data === ''){
+           res.render('mywelcomepage', {
+            isAuthenticated: req.isAuthenticated(),
+            user: req.user
+            });
+
+        //  console.log(data);
+          }else {
             console.log('existing user');
-            res.redirect("thanks");
+            console.log(data.agegroup);
+            console.log(data.purpose);
+             switch(data.agegroup && data.purpose){
+                       /*case 'teens':
+                          res.render("teenthanks");
+                          break;
+                        case 'thirty':  
+                           res.render("thirtythanks");
+                            break;
+                        case 'midforty':  
+                           res.render("midfortythanks");
+                            break; */
+                        case ('oldage' && 'Depressed'): 
+                            res.redirect("oldagedepressedthanks");
+                            break;     
+
+                        case ('oldage' && 'Just exploring'):  
+                           res.redirect("oldagethanks");
+                            break;  
+                         default:
+                            res.redirect('thanks');
+                            break;         
+
+                  }
+            
             /*resp.render('sign.ejs', {
                     viewVariable: "User already exists, please choose another user."
             })*/
-        } else {
-             res.render('mywelcomepage', {
-        isAuthenticated: req.isAuthenticated(),
-        user: req.user
-        });
+       }
 
-    }
-            
-  });
+ });
+
 });
 
 app.get('/mysonglist',function(req, res){
@@ -336,6 +391,7 @@ app.post('/userdetails',function(req, res){
         var purpose= req.body.selectGoal;
         var name = req.user.username;
 
+
         var uDetails = new UserDetails({
                 username: req.user.username,
                 agegroup: req.body.ageradio,
@@ -346,15 +402,58 @@ app.post('/userdetails',function(req, res){
          
          console.log("All data captured in backend" + uDetails.agegroup + "," + uDetails.purpose + "," + uDetails.username + Date.now());
 
+
+
            UserDetails.createuserdetails(uDetails, function (err, user) {
                 if (err) throw err;
-                res.render('thanks',{
-                  isAuthenticated: req.isAuthenticated(),
-                   user: req.user  
-                });
+                console.log("______________ Inside User Details")
+                console.log(user);
 
             });
 
+            db.collection('userdetails').findOne({username: req.user.username}, function(err,data) {   
+              if (err) throw err;
+               if(data === null || data === ''){
+                 res.render('mywelcomepage', {
+                  isAuthenticated: req.isAuthenticated(),
+                  user: req.user
+                  });
+
+              //  console.log(data);
+                }else {
+                  console.log('existing user');
+                  console.log(data.agegroup);
+                  console.log(data.purpose);
+                  switch(data.agegroup && data.purpose){
+                       /*case 'teens':
+                          res.render("teenthanks");
+                          break;
+                        case 'thirty':  
+                           res.render("thirtythanks");
+                            break;
+                        case 'midforty':  
+                           res.render("midfortythanks");
+                            break; */
+                        case ('oldage' && 'Depressed'): 
+                            res.redirect("oldagedepressedthanks");
+                            break;     
+
+                        case ('oldage' && 'Just exploring'):  
+                           res.redirect("oldagethanks");
+                            break;  
+                         default:
+                            res.redirect('thanks');
+                            break;         
+
+                  }
+                  
+            /*resp.render('sign.ejs', {
+                    viewVariable: "User already exists, please choose another user."
+            })*/
+       }
+
+
+            });
   });
 
     app.get('/thanks',function(req,res){
@@ -362,6 +461,32 @@ app.post('/userdetails',function(req, res){
         isAuthenticated: req.isAuthenticated(),
         user: req.user
     });
+});
+
+
+     app.get('/oldagethanks',function(req,res){
+        res.render('oldagethanks', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+});
+
+
+     
+
+   app.get('/oldagedepressedthanks',function(req,res){
+        res.render('oldagedepressedthanks', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+});   
+
+   app.get('/dailyroutine',function(req,res){
+        res.render('dailyroutine', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+
+   });     
 
     });
 

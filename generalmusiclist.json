@@ -104,7 +104,70 @@
       "youtubelink":"https://www.youtube.com/embed/Oh1m1VoMoAA?autoplay=0&rel=0",
        "songElementId":"devabandha",
       "songTitle":"Deva bandha Namma"
+    },
+    {
+      "songID": "106",
+      "songCategory": "Dasara Pada: Ranga Banda Manege (Smt. Kalavathi Avadhoot)",
+      "songDescription": "All songs sung by him and others in praises of him",
+      "youtubelink":"https://www.youtube.com/watch?v=yJIccGx9X2k",
+       "songElementId":"rangabandakala",
+      "songTitle":"Dasara Pada: Ranga Banda Manege (Smt. Kalavathi Avadhoot)"
+    },
+    {
+      "songID": "107",
+      "songCategory": "Dasara Pada: Tallanisadiru Kandya (Ranjani Hebbar)",
+      "songDescription": "All songs sung by him and others in praises of him",
+      "youtubelink":"https://www.youtube.com/watch?v=UVhsfyq_Y-8",
+      "songElementId":"tallanisadiru",
+      "songTitle":"Dasara Pada: Tallanisadiru Kandya (Ranjani Hebbar)"
+    },
+    {
+      "songID": "108",
+      "songCategory": "Hoova taruvara manege - Ranjani Hebbar - Purandara Dasaru",
+      "songDescription": "All songs sung by him and others in praises of him",
+      "youtubelink":"https://www.youtube.com/watch?v=8YXCYM3IheM",
+       "songElementId":"hoovataruva",
+      "songTitle":"Hoova taruvara manege - Ranjani Hebbar - Purandara Dasaru"
+    },
+    {
+      "songID": "109",
+      "songCategory": "Kandu Kandu Nee Enna - Ranjani Hebbar - Purandara Dasaru",
+      "songDescription": "All songs sung by him and others in praises of him",
+      "youtubelink":"https://www.youtube.com/watch?v=qpQIOsZqq3w",
+       "songElementId":"kandukandu",
+      "songTitle":"Kandu Kandu Nee Enna - Ranjani Hebbar - Purandara Dasaru"
+    },
+    {
+      "songID": "110",
+      "songCategory": "ISHTU DINA EE VAIKUNTA by SRI VIDYABHUSHANA",
+      "songDescription": "All songs sung by him and others in praises of him",
+      "youtubelink":"https://www.youtube.com/watch?v=To9TfXApjn8",
+       "songElementId":"ishtudinaeevb",
+      "songTitle":"ISHTU DINA EE VAIKUNTA by SRI VIDYABHUSHANA"
+    },
+    {
+      "songID": "111",
+      "songCategory": "Namamma Sharade - Vidyabhushan",
+      "songDescription": "All songs sung by him and others in praises of him",
+      "youtubelink":"https://www.youtube.com/watch?v=46sZ6wOztA0",
+       "songElementId":"nsharadevb",
+      "songTitle":"Namamma Sharade - Vidyabhushan"
+    },
+    {
+      "songID": "112",
+      "songCategory": "Kanakadasa Most Popular Devotional Songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+      "youtubelink":"https://www.youtube.com/watch?v=MqIeLrE5glo",
+       "songElementId":"kanakadasampdevo",
+      "songTitle":"Kanakadasa Most Popular Devotional Songs"
+    },
+    {
+      "songID": "113",
+      "songCategory": "Kanakadasa Most Popular Devotional Songs",
+      "songDescription": "All songs sung by him and others in praises of him",
+      "youtubelink":"https://www.youtube.com/watch?v=MqIeLrE5glo",
+       "songElementId":"kanakadasampdevo",
+      "songTitle":"Kanakadasa Most Popular Devotional Songs"
     }
-    
   ]
 }

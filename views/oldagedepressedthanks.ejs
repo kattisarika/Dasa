@@ -45,36 +45,40 @@
                
 
              <div class="row" style="margin-left:20px;padding:0;" id="thanks">
-                <section class="col-md-2"  style="text-align:left;padding:45px">
+                <section class="col-sm-3"  style="text-align:left;padding:45px">
                     <ul  class="sidelist">
-                       <li class="active"> <a href="/dashboard">Dashboard</a></li>
-                        <li> <a href="/dailyevents"> Daily Events</a></li>
-                       <li> <a href="/dailyplanner"> Daily Planner</a></li>
+                       <li class="active"> <a href="/yourself">More about yourself</a></li>
+                        <li> <a href="/dailyroutine"> Follow my routine</a></li>
+                       <li> <a href="/chat"> Want to talk</a></li>
                     </ul>
               </section>
              
              
-                <section class="col-md-10"  style="text-align:left;padding:45px">
-                   <div style="margin-left:20px;padding:0;">Thanks, lets work together to achieve your goals </div>
-                   <div style="margin-left:20px;background:#EFF2FA;">
+                <section class="col-sm-9" style="text-align:left;padding:45px">
+                 
+                   <!--<div style="margin-left:20px;background:#EFF2FA;">-->
+                  
+                     
+                      <h3> Some quotes for you today:-</h3>
+                      
+                        <ul   style="list-style-type: none;">
+                            <%  for(var i=0; i<oldagedepressionquotesdata.quotelist.length; i++) {%>
+                              <div class="oldagebackground" style="margin-left:10px;">
+                              <li ><%=oldagedepressionquotesdata.quotelist[i].quote%></li>
+                              </div> 
+                             
+
+                              <% } %>
+
+                        </ul> 
+                     
+                      <!-- </div>-->
                    
-
-                      <h3> Few Affirmations, to say everyday</h3>
-                      <div style="margin-left:10px;">
-                      <p>I am so grateful and thankful for me being me</p>
-                      <p>I am so grateful and thankful for all the opportunity the universe has given me to experience life as me</p>
-                      <p>I approach each day with  passion and excitement and open my arms for all good things that are coming in my way</p>
-                      <p>I love to wake up early in the morning and watch the sun rise</p>
-                      <p>I love to keep my room neat and tidy</p>
-                       <p>I love to exercise as much as I can</p>
-                       <p>I am a very confident , strong, smart and have the ability to work hard to achieve my goals.</p>
-
-                       </div>
-                   </div> 
                 </section>
            
 
             </div>
+            <div class="push" ></div>
              <footer class="container-fluid bg-4 text-center footer" >
         <p> <span>&copy; Copyright 2018
             </span></p>
