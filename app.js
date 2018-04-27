@@ -205,6 +205,10 @@ app.post('/login', passport.authenticate('local', {
                         case 'midforty':  
                            res.render("midfortythanks");
                             break; */
+                        case ('teens' && 'Just exploring'): 
+                            res.redirect('thanks');
+                            break;      
+
                         case ('oldage' && 'Depressed'): 
                             res.redirect("oldagedepressedthanks");
                             break;     
@@ -325,6 +329,9 @@ app.get('/mywelcomepage',function(req, res){
                         case 'midforty':  
                            res.render("midfortythanks");
                             break; */
+                        case ('teens' && 'Just exploring'): 
+                            res.redirect('thanks');
+                            break;          
                         case ('oldage' && 'Depressed'): 
                             res.redirect("oldagedepressedthanks");
                             break;     
@@ -409,7 +416,7 @@ app.post('/userdetails',function(req, res){
                 console.log("______________ Inside User Details")
                 console.log(user);
 
-            });
+            
 
             db.collection('userdetails').findOne({username: req.user.username}, function(err,data) {   
               if (err) throw err;
@@ -434,6 +441,9 @@ app.post('/userdetails',function(req, res){
                         case 'midforty':  
                            res.render("midfortythanks");
                             break; */
+                        case ('teens' && 'Just exploring'): 
+                            res.redirect('thanks');
+                            break;          
                         case ('oldage' && 'Depressed'): 
                             res.redirect("oldagedepressedthanks");
                             break;     
@@ -454,6 +464,7 @@ app.post('/userdetails',function(req, res){
 
 
             });
+      });
   });
 
     app.get('/thanks',function(req,res){
