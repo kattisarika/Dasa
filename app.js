@@ -12,7 +12,8 @@ var passportLocal = require('passport-local');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
-
+var request = require('request');
+var parser = require('xml2json');
 
 var methodOverride = require('method-override');
 //var configAuth= require('./app/models/auth');
@@ -23,6 +24,7 @@ var mongoose = require('mongoose');
 
 User = require('./app/models/user');
 UserDetails = require('./app/models/userdetails')
+UserTasks = require('./app/models/usertasks')
 
 app.use(methodOverride());
 app.use(express.static(__dirname + '/public'));
@@ -84,6 +86,8 @@ app.locals.angrydata = require('./angry.json');
 app.locals.oldagequotesdata = require('./oldagequotes.json');
 
 app.locals.oldagedepressionquotesdata = require('./oldagedepressionquotes.json');
+
+app.locals.teenselfesteemdata = require('./teenselfesteem.json')
 
 var LocalStrategy = require('passport-local').Strategy;
 
@@ -205,17 +209,84 @@ app.post('/login', passport.authenticate('local', {
                         case 'midforty':  
                            res.render("midfortythanks");
                             break; */
-                        case ('teens' && 'Just exploring'): 
+                        case ('teens' && ('Just exploring' || 'Improve my life')): 
                             res.redirect('thanks');
-                            break;      
+                            break;         
+                        case ('teens' && ('Improve my self esteem' || 'Stuck mid way in career and looking inward')): 
+                          //  db.collection('usertasks').findOne({username: req.user.username}, function(err,data) {   
+                                  // if (err) throw err;
+                                 //  if(data === null || data === ''){
+                                    res.redirect('teenselfesteemthanks');
+                                  //  console.log(data);
+                                 //   }else {
+                                      // res.redirect('teenselfesteemgoalsthanks');
+                                 //   }
 
+                                 // });
+                            
+                            break; 
+                        case ('teens' && 'Improve my grades'): 
+                            res.redirect('teengradesthanks');
+                            break; 
+                        case ('teens' && 'I want to become rich and powerful'): 
+                            res.redirect('teenrichpowerfulthanks');
+                            break; 
+                         case ('teens' && ('Anxious' || 'Anxious and Depressed')): 
+                            res.redirect('teenanxiousthanks');
+                            break;     
+                      
+
+                        case ('thirty' && ('Just exploring' || 'Improve my life')): 
+                            res.redirect('thanks');
+                            break;         
+                        case ('thirty' && ('Improve my self esteem' || 'Stuck mid way in career and looking inward')): 
+                            res.redirect('thirtyselfesteemthanks');
+                            break; 
+                        case ('thirty' && 'Improve my grades'): 
+                            res.redirect('thirtyselfesteemthanks');
+                            break; 
+                        case ('thirty' && 'I want to become rich and powerful'): 
+                            res.redirect('thirtyrichpowerfulthanks');
+                            break; 
+                        case ('thirty' && 'I want to manage my finances'): 
+                            res.redirect('thirtymanagemyfinances');
+                            break; 
+                        case ('thirty' && 'I want to become rich and powerful'): 
+                            res.redirect('thirtyrichpowerfulthanks');
+                            break; 
+                         case ('thirty' && ('Anxious' || 'Anxious and Depressed')): 
+                            res.redirect('thirtyanxiousthanks');
+                            break;     
+                          
+                            
+                         case ('midforty' && ('Just exploring' || 'Improve my life')): 
+                            res.redirect('thanks');
+                            break;         
+                        case ('midforty' && ('Improve my self esteem' || 'Stuck mid way in career and looking inward')): 
+                            res.redirect('thanks');
+                            break;
+                        case ('midforty' && 'I want to become rich and powerful'): 
+                            res.redirect('thanks');
+                            break; 
+                        case ('midforty' && 'I want to manage my finances'): 
+                            res.redirect('thanks');
+                            break; 
+                        case ('midforty' && 'I want to better manage time'): 
+                            res.redirect('thanks');
+                            break; 
+                         case ('midforty' && ('Anxious' || 'Anxious and Depressed')): 
+                            res.redirect('thanks');
+                            break;     
+                        
+                         case ('oldage' && ('Just exploring' || 'Improve my life')): 
+                            res.redirect('oldagethanks');
+                            break;         
+                         case ('oldage' && ('Anxious')): 
+                            res.redirect('oldagedepressedthanks');
+                            break;      
                         case ('oldage' && 'Depressed'): 
                             res.redirect("oldagedepressedthanks");
                             break;     
-
-                        case ('oldage' && 'Just exploring'):  
-                           res.redirect("oldagethanks");
-                            break;  
                          default:
                             res.redirect('thanks');
                             break;         
@@ -329,16 +400,74 @@ app.get('/mywelcomepage',function(req, res){
                         case 'midforty':  
                            res.render("midfortythanks");
                             break; */
-                        case ('teens' && 'Just exploring'): 
+                        case ('teens' && ('Just exploring' || 'Improve my life')): 
                             res.redirect('thanks');
-                            break;          
+                            break;         
+                        case ('teens' && ('Improve my self esteem' || 'Stuck mid way in career and looking inward')): 
+                            res.redirect('teenselfesteemthanks');
+                            break; 
+                        case ('teens' && 'Improve my grades'): 
+                            res.redirect('teengradesthanks');
+                            break; 
+                        case ('teens' && 'I want to become rich and powerful'): 
+                            res.redirect('teenrichpowerfulthanks');
+                            break; 
+                         case ('teens' && ('Anxious' || 'Anxious and Depressed')): 
+                            res.redirect('teenanxiousthanks');
+                            break;     
+                      
+
+                        case ('thirty' && ('Just exploring' || 'Improve my life')): 
+                            res.redirect('thanks');
+                            break;         
+                        case ('thirty' && ('Improve my self esteem' || 'Stuck mid way in career and looking inward')): 
+                            res.redirect('thirtyselfesteemthanks');
+                            break; 
+                        case ('thirty' && 'Improve my grades'): 
+                            res.redirect('thirtyselfesteemthanks');
+                            break; 
+                        case ('thirty' && 'I want to become rich and powerful'): 
+                            res.redirect('thirtyrichpowerfulthanks');
+                            break; 
+                        case ('thirty' && 'I want to manage my finances'): 
+                            res.redirect('thirtymanagemyfinances');
+                            break; 
+                        case ('thirty' && 'I want to become rich and powerful'): 
+                            res.redirect('thirtyrichpowerfulthanks');
+                            break; 
+                         case ('thirty' && ('Anxious' || 'Anxious and Depressed')): 
+                            res.redirect('thirtyanxiousthanks');
+                            break;     
+                          
+                            
+                         case ('midforty' && ('Just exploring' || 'Improve my life')): 
+                            res.redirect('thanks');
+                            break;         
+                        case ('midforty' && ('Improve my self esteem' || 'Stuck mid way in career and looking inward')): 
+                            res.redirect('thanks');
+                            break;
+                        case ('midforty' && 'I want to become rich and powerful'): 
+                            res.redirect('thanks');
+                            break; 
+                        case ('midforty' && 'I want to manage my finances'): 
+                            res.redirect('thanks');
+                            break; 
+                        case ('midforty' && 'I want to better manage time'): 
+                            res.redirect('thanks');
+                            break; 
+                         case ('midforty' && ('Anxious' || 'Anxious and Depressed')): 
+                            res.redirect('thanks');
+                            break;     
+                        
+                         case ('oldage' && ('Just exploring' || 'Improve my life')): 
+                            res.redirect('oldagethanks');
+                            break;         
+                         case ('oldage' && ('Anxious')): 
+                            res.redirect('oldagedepressedthanks');
+                            break;      
                         case ('oldage' && 'Depressed'): 
                             res.redirect("oldagedepressedthanks");
                             break;     
-
-                        case ('oldage' && 'Just exploring'):  
-                           res.redirect("oldagethanks");
-                            break;  
                          default:
                             res.redirect('thanks');
                             break;         
@@ -388,6 +517,15 @@ app.get('/spiritualtalks',function(req, res){
         user: req.user
     });
   });
+
+app.get('/smarttricks',function(req,res){
+  res.render('smarttricks.ejs', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+
+
+});
 
 
 app.post('/userdetails',function(req, res){
@@ -441,16 +579,66 @@ app.post('/userdetails',function(req, res){
                         case 'midforty':  
                            res.render("midfortythanks");
                             break; */
-                        case ('teens' && 'Just exploring'): 
+                        case ('teens' && ('Just exploring' || 'Improve my life')): 
                             res.redirect('thanks');
-                            break;          
-                        case ('oldage' && 'Depressed'): 
-                            res.redirect("oldagedepressedthanks");
+                            break;         
+                        case ('teens' && ('Improve my self esteem' || 'Stuck mid way in career and looking inward')): 
+                            res.redirect('teenselfesteemthanks');
+                            break; 
+                        case ('teens' && 'Improve my grades'): 
+                            res.redirect('teengradesthanks');
+                            break; 
+                        case ('teens' && 'I want to become rich and powerful'): 
+                            res.redirect('teenrichpowerfulthanks');
+                            break; 
+                         case ('teens' && ('Anxious' || 'Anxious and Depressed')): 
+                            res.redirect('teenanxiousthanks');
                             break;     
+                      
 
-                        case ('oldage' && 'Just exploring'):  
-                           res.redirect("oldagethanks");
-                            break;  
+                        case ('thirty' && ('Just exploring' || 'Improve my life')): 
+                            res.redirect('thanks');
+                            break;         
+                        case ('thirty' && ('Improve my self esteem' || 'Stuck mid way in career and looking inward')): 
+                            res.redirect('thirtyselfesteemthanks');
+                            break; 
+                       
+                        case ('thirty' && 'I want to become rich and powerful'): 
+                            res.redirect('thirtyrichpowerfulthanks');
+                            break; 
+                        case ('thirty' && 'I want to manage my finances'): 
+                            res.redirect('thirtymanagemyfinances');
+                            break; 
+                         case ('thirty' && ('Anxious' || 'Anxious and Depressed')): 
+                            res.redirect('thirtyanxiousthanks');
+                            break;     
+                          
+                            
+                         case ('midforty' && ('Just exploring' || 'Improve my life')): 
+                            res.redirect('thanks');
+                            break;         
+                        case ('midforty' && ('Improve my self esteem' || 'Stuck mid way in career and looking inward')): 
+                            res.redirect('thanks');
+                            break;
+                        case ('midforty' && 'I want to become rich and powerful'): 
+                            res.redirect('thanks');
+                            break; 
+                        case ('midforty' && 'I want to manage my finances'): 
+                            res.redirect('thanks');
+                            break; 
+                        case ('midforty' && 'I want to better manage time'): 
+                            res.redirect('thanks');
+                            break; 
+                         case ('midforty' && ('Anxious' || 'Anxious and Depressed')): 
+                            res.redirect('thanks');
+                            break;     
+                        
+                         case ('oldage' && ('Just exploring' || 'Improve my life')): 
+                            res.redirect('oldagethanks');
+                            break;         
+                         case ('oldage' && ('Anxious' || 'Depressed')): 
+                            res.redirect('oldagedepressedthanks');
+                            break;       
                          default:
                             res.redirect('thanks');
                             break;         
@@ -491,6 +679,234 @@ app.post('/userdetails',function(req, res){
         user: req.user
     });
 });   
+
+   
+
+app.get('/teenselfesteemthanks',function(req,res){
+
+   db.collection('usertasks').count({ username: req.user.username })
+      .then((count) => {
+        if (count > 0) {
+          console.log('Username exists.');
+            db.collection('usertasks').findOne({username: req.user.username}, function(err,data) {   
+         if (err) throw err;
+
+            console.log(data.task1);
+            console.log(data.task2);
+            console.log(data.task3);
+             console.log(data.usermind);
+            res.render('teenselfesteemthanks', {
+              isAuthenticated: req.isAuthenticated(),
+              data:data,
+              user: req.user
+
+
+             });     
+
+          
+
+        });
+        } else {
+          console.log('Username does not exist.');
+              res.render('teenselfesteemthanks', {
+              isAuthenticated: req.isAuthenticated(),
+              data:"",
+              user: req.user
+
+
+             });     
+        }
+      });
+
+
+
+
+
+  
+        //res.render('teenselfesteemthanks', {
+       // isAuthenticated: req.isAuthenticated(),
+       // user: req.user
+    //});
+});      
+
+
+ 
+            
+
+app.post('/teenselfesteemthanks/tasklist',function(req,res){
+
+  console.log(req.body.task1);
+  console.log(req.body.task2);
+  console.log(req.body.task3);
+  console.log(req.body.usermind);
+  console.log(req.body.user);
+
+       var userTaskList = new UserTasks({
+        // username: req.body.name,
+        // email: req.body.email,
+        username: req.body.user,
+        task1: req.body.task1,
+        task2: req.body.task2,
+        task3: req.body.task3,
+        usermind: req.body.usermind,
+        created :Date.now()
+            //wishlistimage:req.body.wishlistimage,
+
+
+    });
+
+     UserTasks.createusertasks(userTaskList, function (err) {
+        if (err) throw err;
+        console.log('User tasks created!');
+
+        retStatus = 'Success';
+
+        res.redirect('teenselfesteemthanks');
+        // var value=res.json(results);
+        // res.redirect('/team');
+        /*res.send({
+            retStatus: retStatus,
+            redirectTo: '/teenselfesteemthanks',
+            msg: 'Just go there please' // this should help
+        });
+
+    });*/
+
+    
+
+   });
+
+});
+
+
+app.put('/teenselfesteemthanks/tasklist:id', isLoggedIn, function (req, res) {
+
+  UserTasks.findByIdAndUpdate({'_id': req.params.id},{
+     task1: req.body.task1,
+     task2: req.body.task2,
+     task3: req.body.task3,
+     usermind: req.body.usermind,
+     created :Date.now()
+  }, function (err, result) {
+     if (err) {
+            console.log(err.toString());
+        } else {
+            // handle document
+            retStatus = 'Success';
+            res.redirect('teenselfesteemthanks');
+                }
+             });
+
+      
+     });
+
+app.get('/teenspiritualtalk', isLoggedIn, function (req, res) {
+    res.render('teenspiritualtalk', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+      });
+
+});
+
+app.get('/teenspiritualbook', isLoggedIn, function(req,res){
+  res.render('teenspiritualbook', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+      });
+});
+
+
+app.get('/yourtday', isLoggedIn, function (req, res) {
+    res.render('yourtday', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+      });
+
+});
+
+app.get('/connect2counsellors',isLoggedIn,function(req,res){
+  res.render('connect2counsellors', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+      });
+});
+
+app.get('/connect2careercoaches',isLoggedIn,function(req,res){
+  res.render('connect2careercoaches', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+      });
+});
+
+app.post('/connect2careercoaches',isLoggedIn,function(req,res){
+
+  var searchdata=req.body.inputsearch;
+  console.log(searchdata);
+  var query = { zipcode: req.body.inputsearch };
+   db.collection('careercoaches').find(query).toArray(function(err, data) { 
+    if(err) throw error;
+    console.log(data);
+    if(data.length < 1 || data == undefined){
+      res.render('connect2careercoaches', {
+                    isAuthenticated: req.isAuthenticated(),
+                    user: req.user,
+                    message: "No data available for that zipcode"
+
+                });
+     
+      }else {
+         res.render('connect2careercoaches', {
+                    isAuthenticated: req.isAuthenticated(),
+                    user: req.user,
+                    results: data
+
+                });
+      }
+
+   });
+  
+
+  
+});
+
+app.get('/connect2therapist',function(req,res){
+  res.render('connect2therapist',{
+     isAuthenticated: req.isAuthenticated(),
+        user: req.user
+  });
+});
+
+
+app.post('/connect2therapist',isLoggedIn,function(req,res){
+
+  var searchdata=req.body.inputsearch;
+  console.log(searchdata);
+  var query = { zipcode: req.body.inputsearch };
+   db.collection('careercoaches').find(query).toArray(function(err, data) { 
+    if(err) throw error;
+    console.log(data);
+    if(data.length < 1 || data == undefined){
+      res.render('connect2therapist', {
+                    isAuthenticated: req.isAuthenticated(),
+                    user: req.user,
+                    message: "No data available for that zipcode"
+
+                });
+     
+      }else {
+         res.render('connect2therapist', {
+                    isAuthenticated: req.isAuthenticated(),
+                    user: req.user,
+                    results: data
+
+                });
+      }
+
+   });
+  
+
+  
+});
 
    app.get('/dailyroutine',function(req,res){
         res.render('dailyroutine', {
@@ -822,7 +1238,16 @@ app.get('/contact',function(req, res){
         res.render("songlist-working.ejs");
     });
 
+// route middleware to make sure
+function isLoggedIn(req, res, next) {
 
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}
 passport.serializeUser(function (username, done) {
     console.log(username);
     done(null, username.id);

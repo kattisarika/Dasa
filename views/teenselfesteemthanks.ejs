@@ -1,0 +1,180 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Dasa</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  
+    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+    
+</head>
+<body>
+
+   <header >
+        <div class="container">
+            <h1>It's all about me !</h1>
+          
+        </div>
+
+    </header>
+
+
+   <div class="jumbotron jumbotron-billboard" style="padding:0;">
+
+        <!--Who are Dasas-->
+        <div style="margin-left:20px">
+        
+        
+            <nav style="display:inline-block;float:right;margin-right:20px">
+ 
+                      
+                        <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+                        <p style="font-size:14px;color:black">
+                            <b><%=user.username%></b>
+                        </p>
+                   
+              </nav>
+            </div>
+               
+
+             <div class="row" style="margin-left:20px;padding:0;" id="thanks">
+               <!-- <div class="col-sm-3"  style="text-align:left;padding:45px">-->
+                    <ul  class="sidelist">
+                     
+                       <li > <a  class="btn btn-info btn-lg" href="/smarttricks" style="margin-bottom:10px;width:300px;overflow:hidden"> Tricks To Be The Best</a></li>
+                        <li> <a class="btn btn-info btn-lg" href="/yourtday" style="margin-bottom:10px;width:300px;overflow:hidden">
+                        Positive Affirmations </a></li>
+                        <li> <a class="btn btn-info btn-lg" href="/teenspiritualtalk" style="margin-bottom:10px;width:300px;overflow:hidden"> Self Improvement videos  </a></li>
+                         <li> <a class="btn btn-info btn-lg" href="/teenspiritualbook" style="margin-bottom:10px;width:300px;overflow:hidden"> Books to Read  </a></li>
+                         
+                           <li> <a href="/connect2counsellors" class="btn btn-info btn-lg" id="counsellors" style="margin-bottom:10px;width:300px;overflow:hidden">Connect With Counselors </a></li>
+                    
+                    </ul>
+             <!-- </div>-->
+             
+             
+                <div class="col-sm-6" >
+                 
+                   <!--<div style="margin-left:20px;background:#EFF2FA;">-->
+                   <form id="usertaskform">
+
+                     <%if (typeof data !== 'undefined' && data )  {%>
+                       <h3>Your goals for today</h3> 
+
+                        <% }else {%>
+                          <h3>write down 3  most important tasks for you today</h3>
+
+                        <%}%>
+                   
+                     
+                       <div class="form-group">
+                        <label for="date">Date:</label>
+                         <p id="date" style="display:inline-block"></p> 
+                      </div>
+
+                        <input type="text" class="form-control" id="hiddenname" style="display:none" value="<%=user.username%>">
+                         <%if (typeof data !== 'undefined' && data )  {%>
+                        <input type="text" class="form-control" id="hiddenid" style="display:none" value="<%=data._id%>">
+                        <%}%>
+                      <div class="form-group">
+                        <label for="task1">Task1:</label>
+                        <input type="text" class="form-control" id="task1"   <%if (typeof data !== 'undefined' && data )  {%> value="<%=data.task1%>" <% }else {%> placeholder="Task1"  <%}%>>
+                        
+                        
+                        
+                      </div>
+                      <div class="form-group">
+                        <label for="task2">Task2:</label>
+                       <input type="text" class="form-control" id="task2" placeholder="Task2"   <%if (typeof data !== 'undefined' && data )  {%> value="<%=data.task2%>" <% }else {%> placeholder="Task1"  <%}%>>
+                      </div>
+                       <div class="form-group">
+                        <label for="task3">Task3:</label>
+                       <input type="text" class="form-control" id="task3" placeholder="Task3"   <%if (typeof data !== 'undefined' && data )  {%> value="<%=data.task3%>" <% }else {%> placeholder="Task1"  <%}%>>
+                      </div>
+                      <div class="form-group">Whats on your mind?:</label>
+                        <textarea class="form-control" rows="5" id="usermind"><%if (typeof data !== 'undefined' && data )  {%> <%=data.usermind%> <% }%></textarea>
+                      </div>
+                       <span class="validateError" id="reasonError" style="display: none;">You must select the reason you are here</span>
+
+                        <div>
+                           <%if (typeof data !== 'undefined' && data )  {%>
+                             <button type="submit" id="editusertaskbtn" class="btn btn-dark btn-lg" >Update</button>
+                             
+                           <% }else {%>
+                              <button type="submit" id="usertaskbtn" class="btn btn-dark btn-lg" >Submit</button>
+
+                            <%}%>
+                            
+
+                         </div>  
+
+                     
+                     
+                      <!-- </div>-->
+                   
+                </div>
+            
+                     <div class="col-sm-3" >
+                      <h3> Quotes for the day:-</h3>
+                      
+                        <ul   style="list-style-type: none;">
+                            <%  for(var i=0; i<teenselfesteemdata.quotelist.length; i++) {%>
+                              <div  class="teenbackground">
+                              <li  ><%=teenselfesteemdata.quotelist[i].quote%></li>
+                              <br>
+                              </div> 
+                             
+
+                              <% } %>
+
+                        </ul> 
+                     
+                      </div>
+
+            </div>
+
+            <div class="row"  style="margin-left:20px;padding:0;">
+                
+                 
+                   <!--<div style="margin-left:20px;background:#EFF2FA;">-->
+                  
+                    
+                   
+            
+            </div>
+            <div class="push" ></div>
+            <script type="text/javascript">
+
+           
+              var date = new Date();
+
+              var year = date.getUTCFullYear();
+              var month = date.getUTCMonth() + 1;  
+              var day = date.getUTCDate();
+              var hours = date.getUTCHours();
+              var minutes = date.getUTCMinutes();
+              var seconds = date.getUTCSeconds();
+
+              month = (month < 10) ? '0' + month : month;
+              day = (day < 10) ? '0' + day : day;
+              hours = (hours < 10) ? '0' + hours : hours;
+              minutes = (minutes < 10) ? '0' + minutes : minutes;
+              seconds = (seconds < 10) ? '0' + seconds: seconds;
+
+             document.getElementById("date").innerHTML = month + "/" + day + "/" + year;
+
+              //  n =  new Date();
+              //  y = n.getFullYear();
+              //  m = n.getMonth() + 1;
+              //  d = n.getDate();
+              //  document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>
+             <footer class="footer1" >
+        <p> <span>&copy; Copyright 2018
+            </span></p>
+    </footer>        
+</body>
+</html>

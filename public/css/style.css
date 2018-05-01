@@ -144,22 +144,36 @@ body {
 }*/
 
 .oldagebackground{
-  float:left;
+  
+  display:block;
   margin-right:10px;
   margin-bottom:30px;
-  
-  opacity:0.7;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.75);
-  width:400px;
-  height:400px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.75); 
   color:black;
   font-size: 26px;
   text-align: center;
-  border:2px solid green;
+  border:2px solid purple;
+   background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
 
  
 }
 
+.teenbackground{
+ 
+ 
+  width:80%;
+  margin-left:20px;
+  color:blue;
+  font-family: "helvetica";  
+  text-align:left; 
+  margin-bottom:10px;
+  border:2px solid white;
+    background:orange linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+}
 
 
 #parap{
@@ -305,9 +319,11 @@ background:#fff;
  
   text-align: center;
   /*background: linear-gradient(rgba(180,10,10,0.9),rgba(180,10,10,0.9));*/
+
   background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
   -webkit-transition: opacity 0.25s ease;
   -moz-transition: opacity 0.25s ease;
+
 }
 
 .panel:hover #overlay {
@@ -347,6 +363,7 @@ background:#fff;
 }
 
 .sidelist{
+  margin-top: 30px;
   list-style-type: none;
   line-height:2.0;
 }
@@ -369,12 +386,43 @@ background:#fff;
   padding:10px;
 }
 
+#usertaskbtn, #editusertaskbtn{
+  width:220px;
+  height:50px;
+  margin-top:10px;
+  margin-bottom:25px;
+  vertical-align:center;
+  margin-left:40%;
+  margin-right:40%;
+  color:white;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+    }
+
   .footer{
     background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
-
+    position:absolute;
     color:white;
     padding:20px;
-    bottom:100;
+    bottom:0;
     right: 0;
     left: 0;
+  }
+  
+  .footer1{
+    background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
+    position:relative;
+    color:white;
+    padding:20px;
+    bottom:0;
+    right: 0;
+    left: 0;
+  }
+
+  .footer  p, .footer1 p{
+    text-align:center;
   }

@@ -1,0 +1,86 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Dasa</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  
+    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+    
+</head>
+<body>
+
+   <header >
+        <div class="container">
+            <h1>It's all about me !</h1>
+          
+        </div>
+
+    </header>
+
+
+   <div class="jumbotron jumbotron-billboard" style="padding:0;">
+
+        <!--Who are Dasas-->
+        <div style="margin-left:20px">
+        
+        
+            <nav style="display:inline-block;float:right;margin-right:20px">
+ 
+                      
+                        <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+                        <p style="font-size:14px;color:black">
+                            <b><%=user.username%></b>
+                        </p>
+                   
+              </nav>
+            </div>
+               
+
+             <div class="row" style="margin-left:20px;padding:0;" id="thanks">
+               <!-- <div class="col-sm-3"  style="text-align:left;padding:45px">-->
+                    <ul  class="sidelist">
+                           <li > <a  class="btn btn-info btn-lg" href="/teenselfesteemthanks" style="margin-bottom:10px;width:300px;overflow:hidden"> Home</a></li>
+                         
+                    </ul>
+
+                     <div class="col-sm-7" style="padding:0;">                 
+                         <form class="form-search" action="/connect2therapist" method="post">                      
+                            <label for="inputsearch">  </label>
+                            <input  class="form-control" id="inputsearch" name="inputsearch" type="text"  placeholder="Enter Zip Code">
+                             <button  id="search" name="search" value="search" >Search</button>
+                         </form>
+                     </div>   
+
+
+                </div>
+
+                 <div class="displayresults">
+                       <%if (typeof results !== 'undefined' && results ){%>
+                       <% for(var i=0; i<results.length; i++) {%>
+                          <div class="col-sm-9" style="display:inline-block;width:30%;margin-left:30px;background:#D8BFD8">
+                            <%=results[i].coachname%><br>
+                            
+                            Degree:<%=results[i].degree%><br>
+                            Has License"<%=results[i].careercoachlicense%><br>
+                            <%=results[i].email%><br>
+                            <%=results[i].phone%><br>
+                            <%=results[i].zipcode%><br>
+                            <%=results[i].affliiatedwith%><br>
+                               </div>
+                                <%}%>
+                            <%} else {%>
+                             <%if (typeof message !== 'undefined' && message ){%>
+                                 <div class="col-sm-4" style="background:#CD5C5C"><p><%=message%></p></div>
+                                <%}%>
+                            <% } %>
+                     </div>
+                   <footer class="footer" >
+        <p> <span>&copy; Copyright 2018
+            </span></p>
+    </footer>        
+</body>
+</html>

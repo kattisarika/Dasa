@@ -1,0 +1,32 @@
+{
+  "categoryName": "thirtymanagemyfinances",
+  "quotelist": [
+    {
+      "quoteID": "101",
+      "quote":"You got to tell your money what to do, otherwise it will leave-- Dave Ramsey"
+
+
+    },
+    {
+      "quoteID": "102",
+      "quote":"It's not your salary that makes you rich , its your spending habits -- Charles Jaffe"
+
+    },
+    {
+      "quoteID": "103",
+      "quote":"Unless you control your money, making money more won't help, you will have bigger payments. "
+
+    },
+    {
+      "quoteID": "104",
+      "quote":"The borrower is a slave to the lender "
+
+    },
+    {
+      "quoteID": "105",
+      "quote":"Living on less than you make is a matter of controlling yourself, not a matter of math."
+
+    }
+    
+  ]
+}

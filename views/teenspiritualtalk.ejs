@@ -1,0 +1,130 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Dasa</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  
+    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+  <script type="text/javascript">
+
+     jQuery(document).ready(function ($) {
+
+                     $('.showtext1').hide()
+                    $('.toggle').click(function () {
+                        var $toggled = $(this).attr('href');
+                       
+                        $($toggled).siblings(':visible').hide();
+                        $($toggled).toggle("slide", {
+                            direction: 'up'
+                        }, 1000);
+                        $($toggled).toggle();
+                        //return false;
+                    });
+
+                });
+
+    $(function()
+      {
+           
+          $('.list  > li a').click(function() {
+          $(this).parent().find('ul').toggle();
+        });
+       
+      });
+
+  </script>
+
+   <header style="height:80px">
+        <div class="container">
+          <h1>Spiritual Talks</h1>
+        </div>
+
+    </header>
+
+
+  <div class="jumbotron jumbotron-billboard" style="padding:0;">
+
+        <!--Who are Dasas-->
+         <div style="margin-left:20px">
+        <a  class="btn btn-info btn-lg" href="/teenselfesteemthanks" style="margin-bottom:10px;margin-top:10px;width:300px;overflow:hidden"> Home</a>
+
+       
+      
+        
+            <nav style="display:inline-block;float:right;margin-right:20px">
+ 
+                      
+                        <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+                        <p style="font-size:14px;color:black">
+                            <b><%=user.username%></b>
+                        </p>
+                   
+              </nav>
+            </div>
+               
+
+            <div class="row" style="margin-left:20px;padding:0;" id="thanks">
+
+               <div class="row" style="margin-left:20px;margin-top:20px;padding:0;">
+                  <p id="parap">Self Improvement videos are there to help you find ways and techniques to change your habits, change your thoughts and there by changing your quality of life. If it has no impact, then please do let us know , we will help you find other videos.</p>
+                 
+
+                
+                  <div class="col-sm-2" style="padding:0;">
+                    <div class="toc" style="padding:0;margin-left:20px;" >
+                      <ul class="list">
+                       <li>
+                          <a><b> Self Improvement Videos </b></a>
+                          <ul >
+                              <li><a class="toggle" href="#btracy">Brian Tracy</a></li>  
+                          </ul>                
+                      </li>
+                     </ul>
+                     </div>
+                   </div>
+
+                     <div class="col-sm-10" style="padding:0">
+                      <div class="contentarea" style="padding:0">
+                         <div class="showtext1" id="btracy">
+                          <div class="row" style="margin-top:10px;margin-left:10px">
+                            <h1>Brian Tracy</h1>   
+                          </div>
+                           <div class="col-sm-10" >
+                           <div style="display:inline-block;margin-left:30px">
+                            <iframe width="400" height="215" src="https://www.youtube.com/embed/nOA9w4LVlHY" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+                            </div>
+                            <div style="display:inline-block;margin-left:30px">
+                            <iframe width="400" height="215" src="https://www.youtube.com/embed/nu5I85_YAak" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                             </div>
+                             <div style="display:inline-block;margin-left:30px">
+                             <iframe width="400" height="215" src="https://www.youtube.com/embed/ze20kEExaBA" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                           </div>
+                            <div style="display:inline-block;margin-left:30px">
+                             <iframe width="400" height="215" src="https://www.youtube.com/embed/4ysyybi4068" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                           </div>
+
+                           <div style="display:inline-block;margin-left:30px">
+                            <iframe width="400" height="215" src="https://www.youtube.com/embed/ezxor158lB0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                           </div>
+                           <div style="display:inline-block;margin-left:30px">
+                            <iframe width="400" height="215" src="https://www.youtube.com/embed/bcB-imqV6zE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          </div>           
+                       </div>
+                  </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+          <footer class="footer1" >
+        <p id="footerp"> <span>&copy; Copyright 2018
+            </span></p>
+    </footer>           
+</body>
+</html>

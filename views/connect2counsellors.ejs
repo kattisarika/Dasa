@@ -1,0 +1,63 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Dasa</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  
+    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+    
+</head>
+<body>
+
+   <header >
+        <div class="container">
+            <h1>It's all about me !</h1>
+          
+        </div>
+
+    </header>
+
+
+   <div class="jumbotron jumbotron-billboard" style="padding:0;">
+
+        <!--Who are Dasas-->
+        <div style="margin-left:20px">
+        
+        
+            <nav style="display:inline-block;float:right;margin-right:20px">
+ 
+                      
+                        <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+                        <p style="font-size:14px;color:black">
+                            <b><%=user.username%></b>
+                        </p>
+                   
+              </nav>
+            </div>
+               
+
+             <div class="row" style="margin-left:20px;padding:0;" id="thanks">
+               <!-- <div class="col-sm-3"  style="text-align:left;padding:45px">-->
+                    <ul  class="sidelist">
+                           <li > <a  class="btn btn-info btn-lg" href="/teenselfesteemthanks" style="margin-bottom:10px;width:300px;overflow:hidden"> Home</a></li>
+                           <li> <a href="/connect2careercoaches" class="btn btn-info btn-lg" id="counsellors" style="margin-bottom:10px;width:300px;overflow:hidden">Connect With Career Coaches </a></li>
+                            <li> <a href="/connect2therapist" class="btn btn-info btn-lg" id="counsellors" style="margin-bottom:10px;width:300px;overflow:hidden">Connect With Therapist </a></li>
+
+                    
+                    </ul>
+
+                     <div class="col-sm-7" style="padding:0;">
+
+                     </div>   
+
+                </div>
+                   <footer class="footer1" >
+        <p> <span>&copy; Copyright 2018
+            </span></p>
+    </footer>        
+</body>
+</html>
