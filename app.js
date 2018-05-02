@@ -315,7 +315,7 @@ switch(data.agegroup && data.purpose){
 					res.redirect('oldagethanks');
 					break;      
 
-					case "oldage" &&  "Anxious or Depressed": 
+					case "oldage" &&  "Anxiety or Depression": 
 					res.redirect('oldagedepressedthanks');
 					break;     
 
@@ -324,7 +324,6 @@ switch(data.agegroup && data.purpose){
 					break;         
 
 					}
-
 
 
 
@@ -596,7 +595,7 @@ db.collection('userdetails').count({ username: req.user.username })
 					res.redirect('oldagethanks');
 					break; 
 
-					case ('oldage' &&  'Anxious or Depressed'): 
+					case ('oldage' &&  'Anxiety or Depression'): 
 					res.redirect('oldagedepressedthanks');
 					break;  
 
@@ -718,7 +717,7 @@ db.collection('userdetails').count({ username: req.user.username })
 					res.redirect('oldagethanks');
 					break;  
 
-					case ('oldage' &&  'Anxious or Depressed'): 
+					case ('oldage' &&  'Anxiety or Depression'): 
 					res.redirect('oldagedepressedthanks');
 					break; 
 
