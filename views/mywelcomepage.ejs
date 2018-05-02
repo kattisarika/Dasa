@@ -12,7 +12,77 @@
         
 </head>
 <body>
+<script type="text/javascript">
 
+
+$(document).ready(function() {
+
+
+
+    $("input.radio-button-selector").change(function(){ 
+               console.log("hi" + $(this).val()) ;                
+        if ( $(this).val() === "teens" ) {
+
+            $("#selectGoal option[value='Just exploring']").show();
+            $("#selectGoal option[value='Improve my life']").show();
+            
+            $("#selectGoal option[value='Improve my self esteem']").show();
+            $("#selectGoal option[value='Be rich and powerful']").show();
+            $("#selectGoal option[value='Better manage time']").hide();
+           
+            $("#selectGoal option[value='Anxious or Depressed']").show();
+            $("#selectGoal option[value='Improve my grades']").show();
+
+            $("#selectGoal option[value='Manage my finances']").hide();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
+            $("#selectGoal option[value='Anger management']").hide();
+            $("#selectGoal option[value='Addiction management']").hide();
+            $("#selectGoal option[value='Become rich and powerful']").hide();
+        }
+        else if ( $(this).val() == "thirty" ) {
+            $("#selectGoal option[value='Just exploring']").show();
+            $("#selectGoal option[value='Improve my life']").show();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").show();
+            $("#selectGoal option[value='Improve my self esteem']").show();
+            $("#selectGoal option[value='Become rich and powerful']").show();
+            $("#selectGoal option[value='Better manage time']").show();
+            $("#selectGoal option[value='Manage my finances']").show();
+            $("#selectGoal option[value='Anxious or Depressed']").show();
+            $("#selectGoal option[value='Improve my grades']").hide();
+             $("#selectGoal option[value='Addiction management']").hide();
+              $("#selectGoal option[value='Be rich and powerful']").hide();
+        }else if ( $(this).val() == "midforty" ) {
+            $("#selectGoal option[value='Just exploring']").show();
+            $("#selectGoal option[value='Improve my life']").show();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").show();
+            $("#selectGoal option[value='Improve my self esteem']").show();
+            $("#selectGoal option[value='Become rich and powerful']").show();
+            $("#selectGoal option[value='Better manage time']").show();
+            $("#selectGoal option[value='Manage my finances']").show();
+            $("#selectGoal option[value='Anxious or Depressed']").show();
+            $("#selectGoal option[value='Improve my grades']").hide();
+             $("#selectGoal option[value='Addiction management']").hide();
+        }else if ( $(this).val() == "oldage" ) {
+             $("#selectGoal option[value='Anxious or Depressed']").show();
+              $("#selectGoal option[value='Just exploring']").show();
+              $("#selectGoal option[value='Improve my grades']").hide();
+             $("#selectGoal option[value='Addiction management']").hide();
+            $("#selectGoal option[value='Improve my life']").hide();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
+            $("#selectGoal option[value='Improve my self esteem']").hide();
+            $("#selectGoal option[value='Become rich and powerful']").hide();
+            $("#selectGoal option[value='Better manage time']").hide();
+            $("#selectGoal option[value='Manage my finances']").hide();
+        }else {
+          $("#selectGoal option[value='Manage my finances']").hide();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
+            $("#selectGoal option[value='Anger management']").hide();
+            $("#selectGoal option[value='Addiction management']").hide();
+        }
+        
+        });
+    });
+</script>
 
    <header >
         <div class="container">
@@ -29,11 +99,7 @@
           <div style="margin-left:20px">
          <!-- <div class="row" style="padding:0;">-->
          <a href="/mywelcomepage" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Home</a>   
-        <a href="/mysonglist" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Song List</a>   
-       <!--  <a href="/spiritualgurus" class="btn btn-dark btn-lg" id="sgurus" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Gurus</a>-->
-          <a href="/spiritualtalks" class="btn btn-dark btn-lg" id="sbooks" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Talks</a>
-        <a href="/spiritualbooks" class="btn btn-dark btn-lg" id="sbooks" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Spiritual Books</a>
-        <a href="/guidedtours" class="btn btn-dark btn-lg" id="sbooks" style="width:150px;height:50px;margin-right:10px;margin-top:10px;color:white">Events </a>
+      
         
         
             <nav style="display:inline-block;float:right;margin-right:20px">
@@ -75,34 +141,40 @@
                                 <div>
                                 <label for="ageradio">Age Group</label> 
                                 <div>
-                                <label style="margin:0 auto" ><input type="radio"  id="contactChoice1" name="ageradio" value="teens" required> 17 - 30</label>
+                                <label style="margin:0 auto" ><input type="radio" class="radio-button-selector" id="contactChoice1" name="ageradio" value="teens" required> 17 - 30</label>
                                 </div>
                                 <div>
-                                <label style="margin:0 auto"><input type="radio" id="contactChoice2" name="ageradio" value="thirty"> 31 - 45</label>
+                                <label style="margin:0 auto"><input type="radio" class="radio-button-selector" id="contactChoice2" name="ageradio" value="thirty"> 31 - 45</label>
                                  </div>
                                 <div>
-                                <label style="margin:0 auto"><input type="radio" id="contactChoice3" name="ageradio" value="midforty"> 46 - 59</label>
+                                <label style="margin:0 auto"><input type="radio" class="radio-button-selector" id="contactChoice3" name="ageradio" value="midforty"> 46 - 59</label>
                                 </div>
                                 <div>
-                                <label style="margin:0 auto"><input type="radio" id="contactChoice4" name="ageradio" value="oldage"> 60 plus</label>
+                                <label style="margin:0 auto"><input type="radio" class="radio-button-selector" id="contactChoice4" name="ageradio" value="oldage"> 60 plus</label>
                                 </div>
                                 
                                  <fieldset>  
-                                  <select id="selectGoal" name="selectGoal" style="margin-top:10px;margin-bottom:10px;height:48px">
+                                  
+                                  <select id="selectGoal" name="selectGoal" class="selectpicker show-tick" style="margin-top:10px;margin-bottom:10px;height:48px">
 
-                                  <option >Just exploring</option>
-                                  <option>Improve my life</option>
-                                   <option>Improve my self esteem</option>
-                                   <option>Improve my grades</option>
-                                  <option>I want to become rich and powerful</option>
-                                  <option>I want to manage my finances</option>
-                                   <option>Stuck mid way in career and looking inward</option>
-                                   <option>I want to better manage time</option>
-                                  <option >Depressed</option>
-                                  <option>Anxious</option>
-                                  <option>Anxious and Depressed</option>
-                                  <option>Anger management </option>
-                                  <option>Addiction management </option>
+                                  <option value="Just exploring">Just exploring</option>
+                                  <option value="Improve my life">Improve my life</option>
+                                   <option value="Improve my self esteem">Improve my self esteem</option>
+                                   <option value="Improve my grades">Improve my grades</option>
+                                  <option value="Be rich and powerful">Be rich and powerful</option>
+                                  <option value="Become rich and powerful">Become rich and powerful</option>
+                                  
+                                  
+
+                                  <option value="Manage my finances">Manage my finances</option>
+                                   <option value="Stuck mid way in career and looking inward">Stuck mid way in career and looking inward</option>
+                                   <option value="Better manage time">Better manage time</option>
+                                 
+                                 
+                                 
+                                   <option value="Addiction management">Addiction management </option>
+                                    <option value="Anxious or Depressed">Anxious or Depressed</option>
+                                 
                                 
                                  </select>
                                  <span class="validateError" id="reasonError" style="display: none;">You must select the reason you are here</span>  
@@ -126,7 +198,7 @@
 
            
         </div>
-             <footer class="container-fluid bg-4 text-center footer">
+             <footer class="footer1">
         <p> <span>&copy; Copyright 2018
             </span></p>
     </footer>        
