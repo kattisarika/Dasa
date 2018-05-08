@@ -1,25 +1,59 @@
-<!DOCTYPE>
+<!DOCTYPE HTML>
 <html>
 
-<head>
-     <title>Dasa</title>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    
-    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script type="text/JavaScript" src="/js/bootstrap.min.js"></script>
-    <script type="text/JavaScript" src="/js/script.js"></script>
-    
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creating a Responsive Web Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
 </head>
+
 <body>
 
+    <!--
+        To learn to create this complete desgin project, check out the original course entitled:
+        Creating a Responsive Web Design
+        http://www.lynda.com/CSS-tutorials/Creating-Responsive-Web-Design/424046-2.html
+    -->
 
-   <header class="bgimage">
-        <div class="container">
-            <h1>Holistic App -- Aadia</h1>
-        </div>
+    <div id="page">
 
-    </header>
+        <header>
+           
+            <svg xmlns="http://www.w3.org/2000/svg"  id="svg"  width="400" height="200" viewBox="0 0 500 100">
+              <g>
+               
+             
+              
+                <text  x="30" y="30"   style="font-family:Roboto;
+             font-size: 30px;text-shadow: 0 1px 0 white;
+             stroke: #fff;
+             fill: #fff;"  >  INFLECTION POINT</text>
+                <text x="30" y="70" style="font-family:Roboto;
+             font-size: 30px;text-shadow: 0 1px 0 white;
+             stroke: #fff;
+             fill: #fff;" >A practical guide to growth</text>
+              </g>
+              </g>
+            </svg>
+               
+                 <div class="hero">
+                  <h2>Aadia -- Holistic App</h2>
+                <a class="btn1" href="#">Practical <span>tips for growth!</span></a>
+
+            </div>
+
+        </header>
 
 
    <div class="jumbotron jumbotron-billboard" style="padding:0;">
@@ -28,12 +62,12 @@
 
          <!-- <div class="row" style="padding:0;">-->
          <div style="margin-left:20px">
-        <a href="/sign" class="btn btn-dark btn-lg" id="sign" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white"> Sign Up</a>
-        <a href="/login" class="btn btn-dark btn-lg" id="signup" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white"> Login</a> 
+        <a href="/sign" class="btn btn-dark btn-lg btnclass" id="sign" > Sign Up</a>
+        <a href="/login" class="btn btn-dark btn-lg btnclass" id="signup" > Login</a> 
       </div>
 
         <br>
-<div class="sign">
+            <div class="sign">
                     <div class="row">
                         <div class="signup-form">
                             <form name="form1" action="" method="post">
@@ -62,7 +96,8 @@
 
 
             </div>
-             <footer class="container-fluid bg-4 text-center footer" >
+        </div>
+             <footer class="footer">
         <p> <span>&copy; Copyright 2018
             </span></p>
     </footer>        
