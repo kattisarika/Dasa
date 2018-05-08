@@ -1,88 +1,120 @@
 * {
     box-sizing: border-box;
-    margin: 0 auto;
-    padding: 0;
-}
+    margin: 0px;
+    padding: 0px;
+     font-family: 'Roboto', sans-serif;
+    }
 
 body {
     background-color: #e9ecef;
    
 }
 
-header {
-   /* background: linear-gradient(rgba(350,30,8,.75),rgba(350,30,8,.15));*/
-   background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
-    height: 100px;
+#page {
+    margin: 0 auto;
+    position: relative;
 }
 
-.col-md-4{
-    background-color:white;
+header{
+    background: #cf000b url("../images/banner_1200.jpg") repeat 0px bottom;
+    height: 220px;
+
 }
 
-.bgimage {
+#svg{
+  border:2px solid white;
+  margin-left:100px;
+  margin-top:10px;
+}
+#svg, .hero{
+  display:inline-block;
 
-
-   /* background-image: url('../images/him-image.jpg');*/
-   background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
-    background-position: center center;
-    background-size: cover;
-    height: 100px;
 }
 
-header h1 {
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    vertical-align: middle;
-    padding: 15px;
+.hero{
+   max-width: 400px;
+  float:right;
+  margin-right :300px;
+   padding-top: 60px;
+   color:#fff;
 }
 
-header h2 {
-    color: yellow;
-    font-weight: bold;
-    line-height: 1em;
-    text-align: center;
-    vertical-align: middle;
+
+a.btn1 {
+    font-size: 1.4em;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;    
+    
 }
 
-.leftsec {
-    width: 20%;
-    height: 100%;
-    float: left;
+a.btn1:hover {
+    background-color: rgba(0, 0, 0, .3);
 }
 
-.rightsec {
-    float: right;
-    width: 80%;
-    height: 100%;
+.midsection{
+  margin:20px 170px 10px 100px;
+
 }
 
-h3 {
-    text-align: left;
-    padding: 30px;
-    color: black;
-    font-weight: bold;
-    ;
+.midsec1 , .content {
+  display:inline-block;
 }
 
-.leftsec ol li a {
-    line-height: 3em;
-    color: darkgreen;
+.midsec1{
+  float:left;
+  margin-right:170px;
 }
 
-.mainsec h1 {
-    color: white;
-    line-height: 2em;
+.smallwrites{
+  background:#e1c699 url("../images/bgcontent.svg") repeat 0px bottom;;
+ width:100%;
+ 
+ 
 }
 
-.mainsec p {
-    color: grey;
-    line-height: 2em;
+
+aside {
+   display:inline-block;
+   width:28%;
+   padding:2%;
+  margin:10px 40px 10px 30px;
+   border:2px solid white;
+   color:#ffe;
+
+}
+
+
+
+.imgbox{
+ 
+margin: 0 auto;
+ border:3px solid purple;
+height:200px;
+padding:5px;
+
+ 
+}
+
+.imgbox h4, .imgbox p, .imgbox a{
+  color:#fff;
+}
+
+.dboxes{
+  list-style-type: none;
+  color:#fff;
+}
+
+.btnclass{
+  width:200px;
+  height:50px;
+  margin-right:10px;
+  margin-top:10px;
 }
 
 .login-form , .signup-form, .search-form, .reset-form{
     width: 500px;
-    margin-top: 50px;
+    margin: 50px  0px 50px 450px;
 }
 
 .login-form form, .signup-form form , .reset-form form{
@@ -94,335 +126,19 @@ h3 {
     padding: 30px;
 }
 
-.userdetails-form form{
-  width: 600px;
-  padding:0px;
-  margin:0 auto;
-  margin-top: 20px;
-  background: linear-gradient(rgba(180,180,208,.15),rgba(180,180,208,.15));
-  color: black;
-  text-align: center;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.75);
-  
+
+
+
+.footer{
+   background: #cf000b url("../images/banner_1200.jpg") repeat 0px bottom;
+   height:100%;
 }
 
-body {
-    font-family: Arial;
-}
-
-
-/* Style tab links */
-
-.tablink {
-    background-color: #555;
-    color: white;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 25%;
-}
-
-.tablink:hover {
-    background-color: #777;
-}
-
-
-/* Style the tab content (and add height:100% for full page content) */
-
-.tabcontent {
-    color: white;
-    display: none;
-    padding: 100px 20px;
-    height: 100%;
-}
-
-/*img {
-    border: 2px solid black;
-}*/
-
-.oldagebackground{
-  
-  display:block;
-  margin-right:10px;
-  margin-bottom:30px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.75); 
-  color:black;
-  font-size: 26px;
-  text-align: center;
-  border:2px solid purple;
-   background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
-  -webkit-transition: opacity 0.25s ease;
-  -moz-transition: opacity 0.25s ease;
-
- 
-}
-
-.teenbackground{
- 
- 
-  width:80%;
-  margin-left:20px;
-  color:blue;
-  font-family: "helvetica";  
-  text-align:left; 
-  margin-bottom:10px;
-  border:2px solid white;
-    background:orange linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
-  -webkit-transition: opacity 0.25s ease;
-  -moz-transition: opacity 0.25s ease;
-}
-
-
-#parap{
-  text-align:left;
-   margin-left: 30px;
-}
- 
- #footerp{
+.footer p{
   text-align:center;
-   margin-left: 30px;
- }
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-.content {
-    margin-top: 100px;
-}
-
-.content h2 {
-    color: white;
-    margin-bottom: 20px;
-}
-
-.overlay {
-    position: relative;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    padding: 40px;
-    background: grey;
-    background-size: cover;
-}
-
-@mixin dark-overlay {
-    &:after {
-        content: "";
-        width: 50%;
-        height: auto;
-        position: absolute;
-        z-index: -1; // Take note of this negative z-index and compare to each article's positive z-index. This helps your content to show up over the overlay.
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-    }
-}
-
-.overlay {
-    position: relative;
-    z-index: 1;
-    height: 350px;
-    text-align: center;
-    padding: 40px;
-    background: grey;
-    background-size: cover;
-    @include dark-overlay;
-}
-
-.overlay:after {
-    background: rgba(0, 0, 0, 0.75);
-}
-
-img{
-   margin-left:20px;
-   margin-right:20px;
- border:2px solid rgba(0, 100, 0, 0.6);
-
-}
-.imagebox {
-   
-  padding: 0px;
-  position: relative;
-  text-align: center;
-  width: 100%;
-
-}
-
-.imagebox img {
-  opacity: 1;
-  transition: 0.5s opacity;
-}
-
-.imagebox .imagebox-desc {
-  background-color: rgba(0, 0, 0, 0.6);
-  bottom: 0px;
-  color: white;
-  font-size: 1.2em;
-  left: 140px;
-  position: absolute;
-  transition: 0.5s padding;
-  text-align: center;
-  width: 40%;
- 
-  margin:0 auto;
- 
-
-}
-
-.imagebox:hover img {
- background-color: grey;
-  opacity: 0.5;
-
-}
-
-.imagebox:hover .imagebox-desc {
-  padding-bottom: 30%;
-}
-
-.overlay {  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  z-index: 2;
-  opacity: 0;
-  background: rgba(39, 42, 43, 0.8);
-  transition: opacity 200ms ease-in-out;
-  border-radius: 4px;
-  margin: -15px 0 0 -15px;
-  button { 
-  margin:5px;
-  } 
-  &:hover {
-    opacity: 1;
-  }
+  padding:20px;
+  color:#fff;
 }
 
 
-.panel{
-background:#fff;  
 
-}
-
-#overlay {
- 
-  text-align: center;
-  /*background: linear-gradient(rgba(180,10,10,0.9),rgba(180,10,10,0.9));*/
-
-  background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
-  -webkit-transition: opacity 0.25s ease;
-  -moz-transition: opacity 0.25s ease;
-
-}
-
-.panel:hover #overlay {
- 
-  opacity: 0.7;
-}
-
-#overlay a{
-  text-decoration: none;
-}
-
-
-#overlay h3{
-    text-align:left; 
-    color:white;
-    margin-left:30px;
-    margin-top:20px;
-
-}
-
-#overlay a p{
-  color:darkblue;
-  
-  font-size:26px;
-}
-.list{
-  list-style-type: none
-
-}
-.list li  {
-  list-style-type: none
-}
-
-.list li ul{
-  display: none;
-
-}
-
-.sidelist{
-  margin-top: 30px;
-  list-style-type: none;
-  line-height:2.0;
-}
-
-.parastyle{
-  text-align:center;
-  width:250px;
-  word-wrap: break-word;"
-  }
-  
-.push {
-  height: 180px;
-}
-
-.error{
-  color:red;
-}
-
-#myTable_paginate span .paginate_button {
-  padding:10px;
-}
-
-#usertaskbtn, #editusertaskbtn{
-  width:220px;
-  height:50px;
-  margin-top:10px;
-  margin-bottom:25px;
-  vertical-align:center;
-  margin-left:40%;
-  margin-right:40%;
-  color:white;
-}
-
-.btn-info {
-    color: #fff;
-    background-color: purple;
-    border-color: purple;
-    }
-
-  .footer{
-    background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
-    position:absolute;
-    color:white;
-    padding:20px;
-    bottom:0;
-    right: 0;
-    left: 0;
-  }
-  
-  .footer1{
-    background:purple linear-gradient(rgba(150,130,180,.75),rgba(150,130,180,.15));
-    position:relative;
-    color:white;
-    padding:20px;
-    bottom:0;
-    right: 0;
-    left: 0;
-  }
-
-  .footer  p, .footer1 p{
-    text-align:center;
-  }
