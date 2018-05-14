@@ -64,9 +64,9 @@ app.use(methodOverride());
 app.use(express.static(__dirname + '/public'));
 
 
-//mongoose.connect('mongodb://superadmin:superadmin@ds257579.mlab.com:57579/ikanofy');
+mongoose.connect('mongodb://superadmin:superadmin@ds133291.mlab.com:33291/ikanofy');
 
-mongoose.connect('mongodb://superadmin:superadmin@ds121960.mlab.com:21960/ikanofydev');
+//mongoose.connect('mongodb://superadmin:superadmin@ds121960.mlab.com:21960/ikanofydev');
 var db = mongoose.connection;
 
 
