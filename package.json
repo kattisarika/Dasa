@@ -19,6 +19,7 @@
   "homepage": "https://github.com/kattisarika/Dasa#readme",
   "dependencies": {
     "bcrypt": "^1.0.2",
+    "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.0",
     "body-parser": "^1.18.2",
     "cheerio": "^1.0.0-rc.2",
