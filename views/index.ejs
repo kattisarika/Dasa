@@ -20,6 +20,27 @@
 </head>
 
 <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{latest-api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
     <!--
         To learn to create this complete desgin project, check out the original course entitled:
@@ -44,33 +65,60 @@
         </header>
 
         <section class="midsection">
-             <h2>Everyday, we all have the same 24 hours, how do we invest it wisely? How does Aadia help you?</h2>
-             <div class="midsec1">
-               
-                  <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+           <div class="midsec2" >
+            <a href="/auth/google" class="btn btn-danger" style="width:140px;"><span class="fa fa-google-plus"></span> Google</a>
 
-                 <a href="/auth/google" class="btn btn-primary"><span class="fa fa-facebook-square"></span> facebook</a>
+                 <a href="/auth/facebook" class="btn btn-primary" style="width:140px;"><span class="fa fa-facebook-square"></span> facebook</a>
 
-            </div>
+                 <a href="/sign" class="btn btn-dark" style="width:140px;"><span ></span> Sign Up</a>
+
+                  <a href="/login" class="btn btn-dark" style="width:140px;"><span ></span> Login</a>
+             </div>
+             <div class="midsec1" >
+                <h2> How does Aadia help you?</h2>
+                  
+
+          
 
             <article id="content">
-               
-              
                 <p>Rewiring of the brain through positive affirmations.</p>
-                
-                <p>Connect to subject matter experts, if you need.</p>
+                <p>Connect to subject matter experts.</p>
                 <p>Have you access books, events catered for your needs.</p>
                 <p>Helps you create a habit, there by helping you to lead a healthy and mindful life.</p>
                 <p>Creating healthy addictions.</p>
             </article>
+              </div>
+               <article id="content"  style="width:100%;border-radius:20px" >
+                <h2>Some facts, Did you know?</h2>
+
+                 <p>Children aged five to 16 spend an average of six and a half hours a day in front of a screen  according to market research firm Childwise. Teenaged boys spend the longest, with an average of eight hours</p>
+                <p>A recent national survey conducted by Common Sense Media, which included nearly 1,800 parents of children aged eight to 18, found that parents spend an average of nine hours and 22 minutes every day in front of various screens—including smartphones, tablets, computers and televisions. Of those, nearly eight hours are for personal use, not work.</p>
+               <p>Studies show that greater use of technology among tweens and teens correlates with shorter attention spans, a preference for digital time over physical activity and worse performance in school.</p>
+
+
+                <p>We all have the same 24 hours of time each day. <p>
+
+                <p>How can you invest your time better by saying “no” to the wrong things and “yes” to the right things? </p>
+
+                <p>How can Aadia help you?</p>
+
+               
+              
+            </article>
         </section>
         <section class="smallwrites">
-            <aside>
-                <div class="content">
-                     <h4>Aadia, your personal assistant</h4>
-                   <div class="imgbox">
+
+             
+              
+                
                    
-                    <ul class="dboxes">
+                   
+            <div class="col-container midcolcont">
+                <div  class="cell-cont cont" >
+                     <h4>Aadia, your personal assistant</h4>
+                  
+                   
+                    <ul class="col">
                         <li>You can add your daily planner in the daily planner section to make yourself accountable for the day.</li>
                         <li>We help you keep your day organized.</li>
                         <li>Keep writing till it becomes a habit and the habit creates a discipline and enjoy your new found lifestyle</li>
@@ -79,15 +127,15 @@
                   
                     
                    
-                    </div>
-                </div>
-            </aside>
-            <aside>
-                <div class="content">
-                     <h4>What are positive affirmations</h4>
-                  <div class="imgbox">
                    
-                     <ul class="dboxes">
+                </div>
+           
+          
+               <div  class="cell-cont cont" >
+                     <h4>What are positive affirmations</h4>
+                 
+                   
+                     <ul class="col">
                         <li>Positive affirmations are affirmations that are to be repeated several times in a day till those affirmations become a habit and get ingrained in your style of living.</li>
                         <li>We help provide different affirmation alerts based on your needs or you can upload your choice of affirmations.</li>
                         <li>Affirmations keep your mind positive and refreshed everytime you hit the wall</li>
@@ -95,56 +143,43 @@
                     </ul>   
                  
                   
-                       </div>
+                     
                 </div>
-            </aside>
-            <aside>
-                <div class="content">
+         
+           
+                <div  class="cell-cont cont" >
                       <h4>Connecting to experts</h4>
-                    <div class="imgbox">
+                   
                   
-                     <ul class="dboxes">
+                     <ul class="col">
                         <li>Get connected with experts for any kind of change in lifestyle:- career coaches, life coach, physical fitness trainer and any kind of life throw away surprise or daily humdrums.</li>
                         <li>Whether its college admissions in a new city or a work or family stress, mid life crisis or oldage blues we are there to talk to you.</li>
                         <li>Leave a message and the expert will revert back to you.</li>
 
                     </ul>   
                   
+               
                 </div>
-                </div>
-            </aside>
+        
 
         </section>
 
         <section class="midsection">
 
-            
-            <article id="content">
-                <h2>Some facts, Did you know?</h2>
+             
+            <div style="margin:0 auto;text-align: center;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/nH5K0yo-o1A?rel=0&autoplay=0&showinfo=0&controls=0" allow="encrypted-media" allowfullscreen></iframe>
 
-                <p>We all have the same 24 hours of time each day. When you begin to value your time more, you waste less of it and invest more of it. As Warren Buffett says: “There’s no way I will be able to buy more time.”
-
-                How can you be more effective by being less busy? How can you invest your time better by saying “no” to the wrong things and “yes” to the right things? </p>
-
-                <p>“Time is more valuable than money. You can get more money, but you cannot get more time.” ~ Jim Rohn
-                </p>
-
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/nH5K0yo-o1A?rel=0&autoplay=1&showinfo=0&controls=0" allow="encrypted-media" allowfullscreen></iframe>
-
-                <p>Children aged five to 16 spend an average of six and a half hours a day in front of a screen  according to market research firm Childwise. Teenaged boys spend the longest, with an average of eight hours</p>
-                <p>A recent national survey conducted by Common Sense Media, which included nearly 1,800 parents of children aged eight to 18, found that parents spend an average of nine hours and 22 minutes every day in front of various screens—including smartphones, tablets, computers and televisions. Of those, nearly eight hours are for personal use, not work.</p>
-               <p>Studies show that greater use of technology among tweens and teens correlates with shorter attention spans, a preference for digital time over physical activity and worse performance in school.</p>
-
-               <p>So if we are spending so much screen time, lets squeeze in time to listen to what Aadia got to say every morning.</p>
+               </div>
 
 
 
-            </article>
-              <aside style="margin-left:10px;width:28%;background:#fffeee">
+            <div class="col-container colcont">
+              <div  class="cell-cont cont" >
               
                 
                    
-                    <ul class="dboxes" style="color:black;">
+                    <ul class="col">
                         <p>Testimonial 1:</p>
                         <li>A healthy morning screen time with Aadia will get us thinking how to plan the day and make it work. </li>
                     </ul>   
@@ -153,49 +188,49 @@
                    
                    
 
-            </aside>
-             <aside style="margin-left:10px;width:28%;background:#fffeee">
+            </div>
+             <div  class="cell-cont cont">
               
-                    <ul class="dboxes" style="color:black;">
+                    <ul class="col">
                         <p>Testimonial 2:</p>
                         <li>Aadia talks to you, she can be your first best friend, a coach, a guide and point to your needs </li>
                     </ul>   
              
-            </aside>
-             <aside style="margin-left:10px;width:28%;background:#fffeee">
+            </div>
+             <div  class="cell-cont cont" >
               
-                    <ul class="dboxes" style="color:black;">
+                    <ul class="col">
                           <p>Testimonial 3:</p>
                         <li>A stitch in time saves nine, Aadia comes handy when you need her , chat with her and she talks</li>
                     </ul>   
                 
-            </aside>
-              <aside style="margin-left:10px;width:28%;background:#fffeee">
+            </div>
+              <div class="cell-cont cont" >
               
-                    <ul class="dboxes" style="color:black;">
+                    <ul class="col">
                           <p>Testimonial 4:</p>
                         <li>My child finds it very useful to read some quotes and affirmations every morning.</li>
                     </ul>   
                 
-            </aside>
-             <aside style="margin-left:10px;width:28%;background:#fffeee">
+            </div>
+             <div  class="cell-cont cont">
               
-                    <ul class="dboxes" style="color:black;">
+                    <ul class="col">
                           <p>Testimonial 5:</p>
                         <li>I have a good memory though I am old, but I love the reminders, quotes and affirmations, keeps me engaged.</li>
                     </ul>   
                 
-            </aside>
-              <aside style="margin-left:10px;width:28%;background:#fffeee">
+            </div>
+              <div class="cell-cont cont">
               
-                    <ul class="dboxes" style="color:black;">
+                    <ul  class="col">
                           <p>Testimonial 6:</p>
                         <li>Aadia sends me reminders and they are very useful.</li>
                     </ul>   
                 
-            </aside>
+            </div>
         </section>
-   
+        </div>
     </div>
 
 

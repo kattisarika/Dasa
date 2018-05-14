@@ -1,4 +1,8 @@
 var express = require('express');
+var http = require('http');
+var https = require('https');
+
+var fs = require('fs')
 var path = require('path');
 var nodemailer = require("nodemailer");
 
@@ -16,7 +20,6 @@ var request = require('request');
 var parser = require('xml2json');
 
 
-
 var methodOverride = require('method-override');
 //var configAuth= require('./app/models/auth');
 
@@ -27,15 +30,12 @@ var mongoose = require('mongoose');
 User = require('./app/models/user');
 UserDetails = require('./app/models/userdetails')
 UserTasks = require('./app/models/usertasks')
+var auth = require('./middlewares/authorization');
 
-app.use(methodOverride());
-app.use(express.static(__dirname + '/public'));
+var privateKey  = fs.readFileSync('key.pem');
+var certificate = fs.readFileSync('cert.pem');
 
-
-mongoose.connect('mongodb://superadmin:superadmin@ds257579.mlab.com:57579/ikanofy');
-
-//mongoose.connect('mongodb://superadmin:superadmin@ds257579.mlab.com:57579/ikanofydev');
-var db = mongoose.connection;
+var credentials = {key: privateKey, cert: certificate};
 
 app.set('view engine', 'ejs');
 
@@ -59,6 +59,17 @@ activeDuration: 5 * 60 * 1000
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash()); 
+
+app.use(methodOverride());
+app.use(express.static(__dirname + '/public'));
+
+
+//mongoose.connect('mongodb://superadmin:superadmin@ds257579.mlab.com:57579/ikanofy');
+
+mongoose.connect('mongodb://superadmin:superadmin@ds121960.mlab.com:21960/ikanofydev');
+var db = mongoose.connection;
+
+
 
 app.locals.pd1data=require('./pd1.json');
 
@@ -91,51 +102,248 @@ app.locals.oldagedepressionquotesdata = require('./oldagedepressionquotes.json')
 
 app.locals.teenselfesteemdata = require('./teenselfesteem.json')
 
-var LocalStrategy = require('passport-local').Strategy;
-var GoogleStrategy = require('passport-google-oauth20').Strategy;
+var LocalStrategy = require("passport-local").Strategy ;
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
+var authConfig = require('./config/auth');
 
 
+// serialize the object when user is being sent by strategies
+	passport.serializeUser(function(user,done){
+			
+			done(null,user);
+		
+	});
 
- 
+	//deserailize function stores the entire user object in req.user
+	// It sort of takes care of revisits of the user after logging in
+	passport.deserializeUser(function(id,done){
 
+		User.findById({"_id":id},function(err,user){
+		
+			done(null,user);
+		
+		})
+	});
 
-passport.use(new passportLocal.Strategy(function (username, password, done) {
-console.log("In passport", username);
-console.log("In passport", password);
-
-User.getUserByUsername(username, function (err, username) {
-console.log(username);
-if (err) throw err;
-if (!username) {
-console.log('Unknown user');
-return done(null, false, {
-message: 'Unknown user'
-});
-} else {
-console.log(username);
-var hash = username.password;
-console.log(hash);
-if (bcrypt.compareSync(password, hash)) {
-
-console.log("Autehntication passed");
-
-return done(null, {
-id: username._id,
-username: username.username
-
+passport.deserializeUser(function(user, done) {
+  done(null, user);
 });
 
-} else {
-console.log('Invalid password');
-return done(null, false, {
-message: 'Invalid password'
-});
-}
 
-}
-});
+passport.use(new FacebookStrategy({
+    /*'clientID': '1643085615774552',
+    'clientSecret': 'f3fbc7a2eeda5203977028f6b9dc76b2',
+    'callbackURL': "https://localhost:8443/auth/facebook/callback",
+    'profileURL'    : 'https://graph.facebook.com/v2.5/me?fields=first_name,last_name,email',
+    'profileFields' : ['id', 'email', 'name'] // For requesting permissions from Facebook API*/
 
-}));
+    'clientID': authConfig.facebookAuth.clientID,
+    'clientSecret': authConfig.facebookAuth.clientSecret,
+    'callbackURL': authConfig.facebookAuth.callbackURL,
+    'profileURL'    : 'https://graph.facebook.com/v2.5/me?fields=first_name,last_name,email',
+    'profileFields' : ['id', 'email', 'name']
+
+  },
+  function(token, refreshToken, profile, done) {
+   console.log(token);
+       process.nextTick(function() {
+
+	    	//Search for user with concerned profile-ID
+	    	db.collection('users').findOne({"facebook.id":profile.id},function(err,user){
+
+		    	if(err){
+
+		    		return done(err);
+		    	}
+
+		    	else if(user){
+		    		
+		    		// If user present, then log them in
+		    		return done(null,user);
+
+		    	}
+
+		    	else{
+		    		
+		    		// if the user isnt in our database, create a new user
+                    var newUser          = new User();
+                    
+                    newUser.facebook.id    = profile.id;
+                    newUser.facebook.token = token;
+                    newUser.facebook.name  =  profile.name.givenName;
+                    newUser.facebook.email =  profile.emails[0].value;
+
+                              
+                    newUser.save(function(err,finalResult) {
+                        if (err){
+                            throw err;
+                        }
+
+                        console.log('facebook');
+                        console.log('finalResult');
+                        console.log(newUser);
+                        return done(null, newUser);
+                    });
+                }
+		    	
+		    })
+	   	}); // process.nextTick e
+	  
+  }
+));
+
+passport.use(
+    new GoogleStrategy({
+        // options for google strategy
+   'clientID': authConfig.googleAuth.clientID,
+    'clientSecret': authConfig.googleAuth.clientSecret,
+    'callbackURL': authConfig.googleAuth.callbackURL
+    }, (token, refreshToken, profile, done) => {
+        // passport callback function
+         console.log(token);
+       process.nextTick(function() {
+
+	    	//Search for user with concerned profile-ID
+	    	db.collection('users').findOne({"google.id":profile.id},function(err,user){
+
+		    	if(err){
+
+		    		return done(err);
+		    	}
+
+		    	else if(user){
+		    		
+		    		// If user present, then log them in
+		    		return done(null,user);
+
+		    	}
+
+		    	else{
+		    		
+		    		// if the user isnt in our database, create a new user
+                    var newUser          = new User();
+                    newUser.google.id    = profile.id;
+                    newUser.google.token = token;
+                    newUser.google.name  = profile.displayName;
+
+                    for(var i in profile.emails){
+
+                    	newUser.google.email[i] = profile.emails[i].value;
+                    	if(profile.emails.length>1){
+                    		newUser.email.split(',');
+                    	}
+                    }
+                              
+                    newUser.save(function(err,finalResult) {
+                        if (err){
+                            throw err;
+                        }
+
+                        console.log('google');
+                        console.log('finalResult');
+                        console.log(newUser);
+                        return done(null, newUser);
+                    });
+                }
+		    	
+		    })
+	   	}); // process.nextTick e
+	   
+
+    })
+);
+
+
+passport.use('local-signup',new LocalStrategy({
+	    usernameField: 'username',
+	    passwordField: 'password',
+	    passReqToCallback:true
+	  },
+	  function(req,username, password, done){
+	  	console.log(username);
+	  	console.log(password);
+	  	 process.nextTick(function() {
+	    
+
+			    User.findOne({"local.email":username},function(err,user){
+
+			    	if(err){
+
+			    		return done(err);
+			    	}
+
+			    	else if(user){
+
+			    		console.log("NULL");
+			    		return done(null,false,req.flash("signupMessage","E-Mail already Taken"));
+			    	}
+
+			    	else{
+			    		      
+		                 	var newUser = new User();
+		    
+			                  
+			                    newUser.local.email = req.body.username;
+			                    newUser.local.password = newUser.generateHash(req.body.password);                	
+
+		                	newUser.save(function(err,result){
+		                		if(err){
+		                			return done(err);
+		                		}
+		                		else{
+		                			
+		                			// Returns user and jumbs back to the route
+		                			console.log(newUser.local);
+		                			console.log("jjashf");
+		                			return done(null,newUser);
+		                		}
+		                	})
+					}
+			    	
+			    })
+	   })
+
+	}));
+
+
+
+passport.use('local-login',new LocalStrategy({
+	    usernameField: 'username',
+	    passwordField: 'password',
+	    passReqToCallback:true
+	  },
+	  function(req,username, password, done){
+	    console.log(username);
+	  	console.log(password);
+
+	    	//Dont search by password field also, since we have not hashed it yet.
+		    User.findOne({"local.email":username},function(err,user){
+
+		    	if(err){
+
+		    		return done(err);
+		    	}
+
+		    	else if(!user){
+		    		
+		    		// Returns message and jumps back to the route
+		    		return done(null,false,req.flash("loginMessage","Invalid credentials"));
+
+		    	}
+
+		    	else if(!user.validPassword(password)){
+
+		    		return done(null,false,req.flash("loginMessage","Password is wrong!"));
+
+		    	}
+
+		    	else{
+		    		
+		    		return done(null,user);
+		    	}
+		    })
+	   }))
 
 
 
@@ -144,42 +352,7 @@ res.render('index');
 });
 
 
-app.get('/sign', function (req, res) {
-res.render('sign.ejs');
-});
 
-app.post('/sign', function (req, res) {
-console.log("In post /sign", req.body);
-var username=req.body.username;
-User.getUserByUsername(username, function (err, username) {
-console.log(username);
-if (username) {
-console.log('existing user');
-return res.status(409).send("The specified email address already exists.");
-} else {
-console.log(username);
-if (req.body.username &&
-req.body.password &&
-req.body.confpassword)
-if (req.body.password !== req.body.confpassword) { 
-var err = new Error("passwords do not match");
-err.status = 400;
-res.redirect('sign');
-} else {
-var newUser = new User({
-username: req.body.username,
-password: req.body.password,
-created :Date.now()
-});
-console.log("All data captured in backend" +  "," + newUser.username + "," + newUser.password + Date.now());
-User.createUser(newUser, function (err, user) {
-if (err) throw err;
-res.redirect('login');
-});
-}
-}
-});
-});
 
 
 app.get('/login', function (req, res) {
@@ -189,26 +362,204 @@ res.render('login.ejs');
 
 });
 
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
-
-app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/profile',
-  failureRedirect: '/',
-}));
 
 
 
-app.post('/login', passport.authenticate('local', {
+// Redirect the user to Facebook for authentication.  When complete,
+// Facebook will redirect the user back to the application at
+//     /auth/facebook/callback
+app.get('/auth/facebook', passport.authenticate('facebook', {scope:'email'}));
+
+// Facebook will redirect the user to this URL after approval.  Finish the
+// authentication process by attempting to obtain an access token.  If
+// access was granted, the user will be logged in.  Otherwise,
+// authentication has failed.
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { successRedirect: '/mywelcomepage',
+                                      failureRedirect: '/login' }));
+
+//app.get('/auth/google', passport.authenticate('google', {
+//    scope: ['profile']
+//}));
+
+app.get('/auth/google/', passport.authenticate('google', {
+	 scope : ['profile', 'email'] 
+	}
+	));
+
+ app.get('/auth/google/callback',passport.authenticate('google', {
+                    failureRedirect : 'http://localhost:3000/login'
+            }),function(req,res){
+
+    console.log(req);
+
+    var username1= req.user.google.email;
+
+	console.log("In POST GOOGLE LOGIN /login", username1);
+	db.collection('userdetails').find({email:username1}, function(err, data)  {   
+if (err) throw err;
+console.log("IS it this one " , data);
+console.log("IS it this one " , data.length);
+if(data === null || data === ''){
+res.redirect("/mywelcomepage");
+//  console.log(data);
+}else {
+console.log('existing user');
+console.log('Am i coming here 3, existing user');
+console.log(data);
+console.log(data.agegroup);
+console.log(data.purpose);
+switch(data.agegroup && data.purpose){
+					case 'teens' && 'Just exploring': 
+					res.redirect('/thanks');
+					break;   
+
+					case 'teens' && 'Improve my life': 
+					res.redirect('/thanks');
+					break;    
+
+					case 'teens' && 'Improve my self esteem': 
+					res.redirect('/teenselfesteemthanks');
+					break; 
+
+					case 'teens' && 'Improve my grades': 
+					res.redirect('/teengradesthanks');
+					break; 
+
+					case 'teens' && 'Be rich and powerful': 
+					res.redirect('/teenrichpowerfulthanks');
+					break; 
+
+					case 'teens' &&  'Anxious or Depressed': 
+					res.redirect('/teenanxiousthanks');
+					break;  
+
+					
+
+
+					case 'thirty' && 'Just exploring': 
+					res.redirect('/thanks');
+					break;  
+
+					case 'thirty' && 'Improve my life': 
+					res.redirect('/thanks');
+					break;  
+
+					case 'thirty' && 'Stuck mid way in career and looking inward': 
+					res.redirect('/thanks');
+					break;   
+
+					case 'thirty' && 'Improve my self esteem': 
+					res.redirect('/thirtyselfesteemthanks');
+					break; 
+
+					case 'thirty' && 'Become rich and powerful': 
+					res.redirect('/thirtyrichpowerfulthanks');
+					break; 
+
+					case 'thirty' &&  'Better manage time': 
+					res.redirect('/teenanxiousthanks');
+					break;   
+
+					case 'thirty' && 'Manage my finances': 
+					res.redirect('/thirtymanagemyfinances');
+					break; 
+
+					case 'thirty' && 'Anxious or Depressed': 
+					res.redirect('/thirtyanxiousthanks');
+					break;     
+
+
+					case 'midforty' && 'Just exploring': 
+					res.redirect('thanks');
+					break; 
+
+					case 'midforty' && 'Improve my life':
+					res.redirect('/thanks');
+					break;        
+
+					case 'midforty' && 'Improve my self esteem': 
+					res.redirect('/thanks');
+					break;
+
+					case 'midforty' &&  'Stuck mid way in career and looking inward':
+					res.redirect('/thanks');
+					break;
+
+					case 'midforty' && 'I want to become rich and powerful': 
+					res.redirect('/thanks');
+					break; 
+
+					case 'midforty' && 'I want to manage my finances': 
+					res.redirect('/thanks');
+					break; 
+
+					case 'midforty' && 'I want to better manage time': 
+					res.redirect('/thanks');
+					break; 
+
+					case 'midforty' &&  'Anxious or Depressed': 
+					res.redirect('/thanks');
+					break;     
+
+					case 'oldage' && 'Just exploring': 
+					res.redirect('/oldagethanks');
+					break;      
+
+					case "oldage" &&  "Anxiety or Depression": 
+					res.redirect('/oldagedepressedthanks');
+					break;     
+
+					default:
+					res.redirect('/thanks');
+					break;         
+
+					}
+
+
+
+/*resp.render('sign.ejs', {
+viewVariable: "User already exists, please choose another user."
+})*/
+}
+});
+
+ });
+
+
+
+app.get('/sign', function (req, res) {
+res.render('sign.ejs');
+});
+
+
+ app.post('/sign', passport.authenticate('local-signup', {
+        successRedirect: '/login',
+        failureRedirect: '/sign',
+        failureFlash: true
+    }));
+
+
+
+
+app.post('/login', passport.authenticate('local-login', {
 failureRedirect: '/login'
 }), function (req, res) {
-console.log(req);
+
 console.log("In POST LOGIN /login", req.isAuthenticated());
 //console.log("In  POST LOGIN /login", req.body);
 retStatus = 'Success';
-var username1= req.user.username;
+var username1="nameless";
+console.log(req.user);
+if(req.user.google.email !='' || req.user.google.email != null)
+  username1= req.user.google.email;
+if(req.user.facebook.email !='' || req.user.facebook.email != null)
+  username1= req.user.google.email;
+if(req.user.local.email !='' || req.user.local.email != null)
+  username1= req.user.google.email;
 console.log("In POST LOGIN /login", username1);
 //UserDetails.getUserDetailsByUsername(username, function (err, data) {
-db.collection('userdetails').findOne({username: req.user.username}, function(err,data) {   
+db.collection('userdetails').findOne({username: username1}, function(err,data) {   
 if (err) throw err;
 if(data === null || data === ''){
 res.redirect("mywelcomepage");
@@ -411,8 +762,16 @@ data:"User does not exist"
 
 
 
-app.get('/mywelcomepage',function(req, res){
-var username= req.user.username;
+app.get('/mywelcomepage',auth.checkLogin,function(req, res){
+	//res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate,
+     //         max-stale=0, post-check=0, pre-check=0');
+var username="";
+if(req.user.google.email !='' || req.user.google.email != null)
+  username= req.user.google.email;
+if(req.user.facebook.email !='' || req.user.facebook.email != null)
+  username= req.user.google.email;
+if(req.user.local.email !='' || req.user.local.email != null)
+  username= req.user.google.email;
 
 res.render('mywelcomepage',{
   isAuthenticated:req.isAuthenticated(),
@@ -424,14 +783,14 @@ res.render('mywelcomepage',{
 
 
 
-app.get('/mysonglist',function(req, res){
+app.get('/mysonglist',auth.checkLogin,function(req, res){
 res.render('mysonglist.ejs', {
 isAuthenticated: req.isAuthenticated(),
 user: req.user
 });
 });
 
-app.get('/guidedtours',function(req, res){
+app.get('/guidedtours',auth.checkLogin,function(req, res){
 res.render('guidedtours.ejs', {
 isAuthenticated: req.isAuthenticated(),
 user: req.user
@@ -469,24 +828,43 @@ user: req.user
 });
 
 
-app.post('/userdetails',function(req, res){
+app.post('/userdetails',auth.checkLogin,function(req, res){
 console.log("----------------Am I in the Users Details Post---------");
 //console.log(req.body);
+console.log("----------------kooooooooo---------");
+var username1="";
+if(req.user.google.email !='' || req.user.google.email != null)
+  username1= req.user.google.email;
+if(req.user.facebook.email !='' || req.user.facebook.email != null)
+  username1= req.user.google.email;
+if(req.user.local.email !='' || req.user.local.email != null)
+  username1= req.user.google.email;
+//	console.log("In POST GOOGLE LOGIN /login", username1);
+//db.collection('userdetails').find({email:username1}, function(err, data)  {   
+db.collection('userdetails').find({email:username1},function(err,data) {
+	if (err) throw err;
+	if (err) throw err;
+if(data !== null || data !== ''){
 
-db.collection('userdetails').count({ username: req.user.username })
-.then((count) => {
-	if (count > 0) {
+	console.log(data)
 	console.log('Username exists.');
 	var agegroup = req.body.ageradio;
 	var purpose= req.body.selectGoal;
-	var username = req.user.username;
+	var email = "";
+
+	if(req.user.google.email !='' || req.user.google.email != null)
+  	email= req.user.google.email;
+	if(req.user.facebook.email !='' || req.user.facebook.email != null)
+	  email= req.user.google.email;
+	if(req.user.local.email !='' || req.user.local.email != null)
+	  email= req.user.google.email;
 
 	console.log(agegroup);
 	console.log(purpose);
-	console.log(username);
+	console.log(email);
 
 	db.collection('userdetails').update(
-		{username: username}, 
+		{email: email}, 
 		{$set: {
 			agegroup: agegroup,
 			purpose: purpose
@@ -610,27 +988,34 @@ db.collection('userdetails').count({ username: req.user.username })
 	
 	
     
-  }else{
+  } else {
 
 		var agegroup = req.body.ageradio;
 		var purpose= req.body.selectGoal;
-		var name = req.user.username;
+		var email = "";
+
+		if(req.user.google.email !='' || req.user.google.email != null)
+  			email= req.user.google.email;
+		if(req.user.facebook.email !='' || req.user.facebook.email != null)
+	 	   email= req.user.google.email;
+		if(req.user.local.email !='' || req.user.local.email != null)
+	  	   email= req.user.google.email;
 
 
 		var uDetails = new UserDetails({
-		username: req.user.username,
+		email: email,
 		agegroup: req.body.ageradio,
 		purpose: req.body.selectGoal,  
 		created :Date.now()
 		});
-		console.log("All data captured in backend" + uDetails.agegroup + "," + uDetails.purpose + "," + uDetails.username + Date.now());
+		console.log("All data captured in backend" + uDetails.agegroup + "," + uDetails.purpose + "," + uDetails.email + Date.now());
 
 		UserDetails.createuserdetails(uDetails, function (err, user) {
 		if (err) throw err;
 		console.log("______________ Inside User Details")
 		console.log(user);
 
-		db.collection('userdetails').findOne({username: req.user.username}, function(err,data) {   
+		db.collection('userdetails').findOne({email:  user.email}, function(err,data) {   
 			if (err) throw err;
 			
 			console.log('Am i coming here 1, existing user');
@@ -777,7 +1162,7 @@ user: req.user
 });  
 
 
-app.get('/teenrichpowerfulthanks',function(req,res){
+app.get('/teenrichpowerfulthanks',auth.checkLogin,function(req,res){
 res.render('teenrichpowerfulthanks', {
 isAuthenticated: req.isAuthenticated(),
 user: req.user
@@ -792,12 +1177,19 @@ user: req.user
 });  
 
 app.get('/teenselfesteemthanks',function(req,res){
+	var email="";
+	if(req.user.google.email !='' || req.user.google.email != null)
+  	  email= req.user.google.email;
+	if(req.user.facebook.email !='' || req.user.facebook.email != null)
+	  email= req.user.google.email;
+	if(req.user.local.email !='' || req.user.local.email != null)
+	  email= req.user.google.email;
 
-db.collection('usertasks').count({ username: req.user.username })
+db.collection('usertasks').count({ email:email})
 .then((count) => {
 if (count > 0) {
 console.log('Username exists.');
-db.collection('usertasks').findOne({username: req.user.username}, function(err,data) {   
+db.collection('usertasks').findOne({email: email}, function(err,data) {   
 if (err) throw err;
 
 console.log(data.task1);
@@ -817,9 +1209,9 @@ user: req.user
 });
 } else {
 console.log('Username does not exist.');
-res.render('teenselfesteemthanks', {
-isAuthenticated: req.isAuthenticated(),
-data:"",
+ res.render('teenselfesteemthanks', {
+ isAuthenticated: req.isAuthenticated(),
+ data:"",
 user: req.user
 
 
@@ -1207,9 +1599,13 @@ user: req.user
 
 app.get('/logout',function(req,res){
 
-req.logout();
-res.redirect('/');
 
+ req.session.destroy(function (err) {
+    
+        req.logout();
+        req.user = null;
+        res.redirect('/');
+    });
 
 });
 
@@ -1357,19 +1753,14 @@ return next();
 // if they aren't redirect them to the home page
 res.redirect('/');
 }
-passport.serializeUser(function (username, done) {
-console.log(username);
-done(null, username.id);
-});
-
-passport.deserializeUser(function (id, done) {
-User.getUserById(id, function (err, username) {
-
-done(err, username);
-});
-});
 
 
+
+
+var httpsServer = https.createServer(credentials, app);
+
+
+httpsServer.listen(8443);
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {

@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var usertasksSchema = mongoose.Schema({
-	username: {
+	email: {
         type: String,
         unique: true,
         required: true,

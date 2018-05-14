@@ -1,25 +1,38 @@
-<!DOCTYPE>
+<!DOCTYPE HTML>
 <html>
 
-<head>
-    <title>Dasa</title>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creating a Responsive Web Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   
-    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
 </head>
 <body>
+   <div id="page">
 
-   <header >
-        <div class="container">
-            <h1>Positive Affirmations</h1>
-          
-        </div>
+        <header>
+                
+                <div id="svg">
+                <h1>Inflection Point</h1>
+                <p>A practical guide to growth</p>
+               </div>
+                 <div class="hero">
+                  <h2>Aadia -- Holistic App</h2>
+                <a class="btn1" href="#">Rejuvenate <span>and Re-energize</span></a>
 
-    </header>
+            </div>
 
+        </header>
 
    <div class="jumbotron jumbotron-billboard" style="padding:0;">
 
@@ -33,7 +46,17 @@
                       
                         <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
                         <p style="font-size:14px;color:black">
-                            <b><%=user.username%></b>
+                            <% if(user.google.email) { %>
+                            <b><%=user.google.email%></b>
+                             <% } %>
+
+                              <% if(user.facebook.email) { %>
+                            <b><%=user.facebook.email%></b>
+                             <% } %>
+
+                               <% if(user.local.email) { %>
+                            <b><%=user.local.email%></b>
+                             <% } %>
                         </p>
                    
               </nav>
@@ -74,8 +97,9 @@
            
 
             </div>
-            <div class="push" ></div>
-             <footer class="footer1" >
+          </div>
+           
+             <footer class="footer" >
         <p> <span>&copy; Copyright 2018
             </span></p>
     </footer>        

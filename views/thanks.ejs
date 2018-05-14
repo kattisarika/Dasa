@@ -11,14 +11,21 @@
     
 </head>
 <body>
+ <div id="page">
+   <header>
+                
+                <div id="svg">
+                <h1>Inflection Point</h1>
+                <p>A practical guide to growth</p>
+               </div>
+                 <div class="hero">
+                  <h2>Aadia -- Holistic App</h2>
+                 <a class="btn1" href="#">Rejuvenate <span>and Re-energize</span></a>
 
-   <header >
-        <div class="container">
-            <h1>My Spiritual Journey</h1>
-          
-        </div>
+            </div>
 
-    </header>
+        </header>
+
 
 
    <div class="jumbotron jumbotron-billboard" style="padding:0;">
@@ -35,7 +42,17 @@
                       
                         <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
                         <p style="font-size:14px;color:black">
-                            <b><%=user.username%></b>
+                            <% if(user.google.email) { %>
+                            <b><%=user.google.email%></b>
+                             <% } %>
+
+                              <% if(user.facebook.email) { %>
+                            <b><%=user.facebook.email%></b>
+                             <% } %>
+
+                               <% if(user.local.email) { %>
+                            <b><%=user.local.email%></b>
+                             <% } %>
                         </p>
                    
               </nav>
@@ -69,10 +86,10 @@
                        </div>
                    </div> 
                 </section>
-           
-
-            </div>
-             <footer class="container-fluid bg-4 text-center footer" >
+              </div>
+          </div>
+        </div>
+            <footer class="footer" style="height:15%">
         <p> <span>&copy; Copyright 2018
             </span></p>
     </footer>        
