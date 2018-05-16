@@ -1736,7 +1736,7 @@ httpsServer.listen(8443);
 
 
 //var port = process.env.PORT || 3000;
-var port =  3000;
+var port = process.env.PORT || 3000;
 var server = app.listen(port, function () {
 console.log("local host" + port);
 });
