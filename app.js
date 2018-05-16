@@ -19,11 +19,14 @@ var flash = require('connect-flash');
 var request = require('request');
 var parser = require('xml2json');
 
+var socket= require('socket.io');
+
 
 var methodOverride = require('method-override');
 //var configAuth= require('./app/models/auth');
 
 var app = express();
+
 
 var mongoose = require('mongoose');
 
@@ -64,9 +67,9 @@ app.use(methodOverride());
 app.use(express.static(__dirname + '/public'));
 
 
-mongoose.connect('mongodb://superadmin:superadmin@ds133291.mlab.com:33291/ikanofy');
+//mongoose.connect('mongodb://superadmin:superadmin@ds133291.mlab.com:33291/ikanofy');
 
-//mongoose.connect('mongodb://superadmin:superadmin@ds121960.mlab.com:21960/ikanofydev');
+mongoose.connect('mongodb://superadmin:superadmin@ds123770.mlab.com:23770/ikanofydev');
 var db = mongoose.connection;
 
 
@@ -100,7 +103,9 @@ app.locals.oldagequotesdata = require('./oldagequotes.json');
 
 app.locals.oldagedepressionquotesdata = require('./oldagedepressionquotes.json');
 
-app.locals.teenselfesteemdata = require('./teenselfesteem.json')
+app.locals.teenselfesteemdata = require('./teenselfesteem.json');
+
+app.locals.teenselfesteemaffirmationsdata = require('./teenselfesteemaffirmations.json');
 
 var LocalStrategy = require("passport-local").Strategy ;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
@@ -346,6 +351,14 @@ passport.use('local-login',new LocalStrategy({
 	   }))
 
 
+//StackOverflow-IDEA to not CACHE
+app.use(function (req, res, next) {
+    res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+    next();
+});
+
+
+
 
 app.get("/", function (req, res) {
 res.render('index');
@@ -396,20 +409,21 @@ app.get('/auth/google/', passport.authenticate('google', {
     var username1= req.user.google.email;
 
 	console.log("In POST GOOGLE LOGIN /login", username1);
-	db.collection('userdetails').find({email:username1}, function(err, data)  {   
-if (err) throw err;
-console.log("IS it this one " , data);
-console.log("IS it this one " , data.length);
-if(data === null || data === ''){
-res.redirect("/mywelcomepage");
-//  console.log(data);
-}else {
-console.log('existing user');
-console.log('Am i coming here 3, existing user');
-console.log(data);
-console.log(data.agegroup);
-console.log(data.purpose);
-switch(data.agegroup && data.purpose){
+	UserDetails.find({email:username1}, function(err, data)  {   
+		if (err) throw err;
+		console.log("IS it this one " , data);
+		console.log("IS it this one " , data.length);
+		if(data === null || data === ''){
+		res.redirect("/mywelcomepage");
+		
+		 //console.log(data);
+		}else {
+		console.log('existing user');
+		console.log('Am i coming here in post google login 3, existing user');
+		console.log(data);
+		console.log(data.agegroup);
+		console.log(data.purpose);
+		switch(data.agegroup && data.purpose){
 					case 'teens' && 'Just exploring': 
 					res.redirect('/thanks');
 					break;   
@@ -549,26 +563,21 @@ failureRedirect: '/login'
 console.log("In POST LOGIN /login", req.isAuthenticated());
 //console.log("In  POST LOGIN /login", req.body);
 retStatus = 'Success';
-var username1="nameless";
+var username1="";
 console.log(req.user);
-if(req.user.google.email !='' || req.user.google.email != null)
-  username1= req.user.google.email;
-if(req.user.facebook.email !='' || req.user.facebook.email != null)
-  username1= req.user.google.email;
-if(req.user.local.email !='' || req.user.local.email != null)
-  username1= req.user.google.email;
+username1= req.user.local.email;
 console.log("In POST LOGIN /login", username1);
 //UserDetails.getUserDetailsByUsername(username, function (err, data) {
-db.collection('userdetails').findOne({username: username1}, function(err,data) {   
-if (err) throw err;
-if(data === null || data === ''){
-res.redirect("mywelcomepage");
-//  console.log(data);
-}else {
-console.log('existing user');
-console.log('Am i coming here 3, existing user');
-console.log(data.agegroup);
-console.log(data.purpose);
+UserDetails.findOne({email: username1}, function(err,data) {   
+	if (err) throw err;
+	if(data === null || data === ''){
+	res.redirect("mywelcomepage");
+	//  console.log(data);
+	}else {
+	console.log('existing user');
+	console.log('Am i coming here 3, existing user');
+	console.log(data.agegroup);
+	console.log(data.purpose);
 switch(data.agegroup && data.purpose){
 					case 'teens' && 'Just exploring': 
 					res.redirect('thanks');
@@ -716,7 +725,7 @@ password = hash;
 console.log("------------");
 console.log(password);
 
-db.collection('users').findOne({username: username}, function(err,obj) {   
+db.collection('users').findOne({email: username}, function(err,obj) {   
 console.log(obj); 
 if(err || (obj === null)){
 res.render('forgotpassword.ejs',{
@@ -725,7 +734,7 @@ data : "Email does not exist"
 }else{
 console.log(obj); 
 db.collection('users').findAndModify(
-{username: username}, // query
+{email: username}, // query
 [['_id','asc']],
 {$set: {password: password}},
 {}, 
@@ -742,7 +751,7 @@ data : "Something went wrong, try again"
 console.log("--------------");
 console.log(user.value.username);
 console.log("--------------");
-console.log(user.username);
+console.log(user.email);
 res.render('passwordresetsuccess.ejs');
 }
 })
@@ -797,28 +806,28 @@ user: req.user
 });
 });
 
-app.get('/dailyplanner',function(req, res){
+app.get('/dailyplanner',auth.checkLogin,function(req, res){
 res.render('dailyplanner.ejs', {
 isAuthenticated: req.isAuthenticated(),
 user: req.user
 });
 });
 
-app.get('/dashboard',function(req, res){
+app.get('/dashboard',auth.checkLogin,function(req, res){
 res.render('dashboard.ejs', {
 isAuthenticated: req.isAuthenticated(),
 user: req.user
 });
 });
 
-app.get('/spiritualtalks',function(req, res){
+app.get('/spiritualtalks',auth.checkLogin,function(req, res){
 res.render('spiritualtalks.ejs', {
 isAuthenticated: req.isAuthenticated(),
 user: req.user
 });
 });
 
-app.get('/smarttricks',function(req,res){
+app.get('/smarttricks',auth.checkLogin,function(req,res){
 res.render('smarttricks.ejs', {
 isAuthenticated: req.isAuthenticated(),
 user: req.user
@@ -830,38 +839,32 @@ user: req.user
 
 app.post('/userdetails',auth.checkLogin,function(req, res){
 console.log("----------------Am I in the Users Details Post---------");
-//console.log(req.body);
+
 console.log("----------------kooooooooo---------");
-var username1="";
-if(req.user.google.email !='' || req.user.google.email != null)
-  username1= req.user.google.email;
-if(req.user.facebook.email !='' || req.user.facebook.email != null)
-  username1= req.user.google.email;
-if(req.user.local.email !='' || req.user.local.email != null)
-  username1= req.user.google.email;
+//console.log(req);
+var username1=req.body.username;
+username1=username1.trim();
+console.log("Yummy"+ username1);
 //	console.log("In POST GOOGLE LOGIN /login", username1);
 //db.collection('userdetails').find({email:username1}, function(err, data)  {   
-db.collection('userdetails').find({email:username1},function(err,data) {
+UserDetails.find({"email":username1},function(err,data) {
 	if (err) throw err;
-	if (err) throw err;
-if(data !== null || data !== ''){
+	
+	console.log(data);
+	console.log(data.length);
+if(data.length !== 0 &&  data !== undefined){
 
-	console.log(data)
+	
 	console.log('Username exists.');
 	var agegroup = req.body.ageradio;
 	var purpose= req.body.selectGoal;
-	var email = "";
+	var email = req.body.username;
+	email = email.trim();
 
-	if(req.user.google.email !='' || req.user.google.email != null)
-  	email= req.user.google.email;
-	if(req.user.facebook.email !='' || req.user.facebook.email != null)
-	  email= req.user.google.email;
-	if(req.user.local.email !='' || req.user.local.email != null)
-	  email= req.user.google.email;
 
 	console.log(agegroup);
 	console.log(purpose);
-	console.log(email);
+	console.log(email.trim());
 
 	db.collection('userdetails').update(
 		{email: email}, 
@@ -992,14 +995,9 @@ if(data !== null || data !== ''){
 
 		var agegroup = req.body.ageradio;
 		var purpose= req.body.selectGoal;
-		var email = "";
+		var email = username1;
 
-		if(req.user.google.email !='' || req.user.google.email != null)
-  			email= req.user.google.email;
-		if(req.user.facebook.email !='' || req.user.facebook.email != null)
-	 	   email= req.user.google.email;
-		if(req.user.local.email !='' || req.user.local.email != null)
-	  	   email= req.user.google.email;
+		
 
 
 		var uDetails = new UserDetails({
@@ -1015,7 +1013,7 @@ if(data !== null || data !== ''){
 		console.log("______________ Inside User Details")
 		console.log(user);
 
-		db.collection('userdetails').findOne({email:  user.email}, function(err,data) {   
+		db.collection('userdetails').findOne({email:  email}, function(err,data) {   
 			if (err) throw err;
 			
 			console.log('Am i coming here 1, existing user');
@@ -1177,57 +1175,10 @@ user: req.user
 });  
 
 app.get('/teenselfesteemthanks',function(req,res){
-	var email="";
-	if(req.user.google.email !='' || req.user.google.email != null)
-  	  email= req.user.google.email;
-	if(req.user.facebook.email !='' || req.user.facebook.email != null)
-	  email= req.user.google.email;
-	if(req.user.local.email !='' || req.user.local.email != null)
-	  email= req.user.google.email;
-
-db.collection('usertasks').count({ email:email})
-.then((count) => {
-if (count > 0) {
-console.log('Username exists.');
-db.collection('usertasks').findOne({email: email}, function(err,data) {   
-if (err) throw err;
-
-console.log(data.task1);
-console.log(data.task2);
-console.log(data.task3);
-console.log(data.usermind);
-res.render('teenselfesteemthanks', {
-isAuthenticated: req.isAuthenticated(),
-data:data,
-user: req.user
-
-
-});     
-
-
-
-});
-} else {
-console.log('Username does not exist.');
- res.render('teenselfesteemthanks', {
- isAuthenticated: req.isAuthenticated(),
- data:"",
-user: req.user
-
-
-});     
-}
-});
-
-
-
-
-
-
-//res.render('teenselfesteemthanks', {
-// isAuthenticated: req.isAuthenticated(),
-// user: req.user
-//});
+	  res.render('teenselfesteemthanks', {
+	 isAuthenticated: req.isAuthenticated(),
+	 user: req.user
+	});
 });      
 
 
@@ -1332,11 +1283,29 @@ user: req.user
 });
 });
 
-app.get('/connect2careercoaches',isLoggedIn,function(req,res){
-res.render('connect2careercoaches', {
-isAuthenticated: req.isAuthenticated(),
-user: req.user
-});
+app.get('/connect2careercoaches',function(req,res){
+
+	db.collection('careercoaches').find().toArray(function(err, data) { 
+		if(err) throw error;
+		console.log(data);
+		if(data.length < 1 || data == undefined){
+		res.render('connect2careercoaches', {
+		isAuthenticated: req.isAuthenticated(),
+		user: req.user,
+		message: "No data available for that zipcode"
+
+		});
+
+		}else {
+		res.render('connect2careercoaches', {
+		isAuthenticated: req.isAuthenticated(),
+		user: req.user,
+		results: data
+
+		});
+		}
+
+  });
 });
 
 app.post('/connect2careercoaches',isLoggedIn,function(req,res){
@@ -1762,7 +1731,31 @@ var httpsServer = https.createServer(credentials, app);
 
 httpsServer.listen(8443);
 
-var port = process.env.PORT || 3000;
-app.listen(port, function () {
+
+
+
+
+//var port = process.env.PORT || 3000;
+var port =  3000;
+var server = app.listen(port, function () {
 console.log("local host" + port);
 });
+
+var io = socket(server);
+
+io.on('connection',function(socket){
+	console.log("made socket connection", socket.id);
+
+	// Handle chat event
+    socket.on('chat', function(data){
+        // console.log(data);
+        io.sockets.emit('chat', data);
+    });
+
+    // Handle typing event
+    socket.on('typing', function(data){
+        socket.broadcast.emit('typing', data);
+    });
+	
+})
+

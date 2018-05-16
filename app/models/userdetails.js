@@ -4,8 +4,8 @@ var userdetailsSchema = mongoose.Schema({
 	email: {
         type: String,
         unique: true,
-        required: true,
-         match: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+        required: true
+        
     },
     agegroup:{
     	type: String,
@@ -35,9 +35,9 @@ module.exports.createuserdetails = function(adduserdetails, callback) {
     }
 
 
-module.exports.getUserDetailsByUsername = function (username, callback) {
+module.exports.getUserDetailsByUsername = function (email, callback) {
     var query = {
-        username: username
+        email: email
     };
     UserDetails.findOne(query, callback);
 }

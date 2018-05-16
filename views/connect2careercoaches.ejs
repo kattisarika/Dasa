@@ -1,39 +1,69 @@
 <!DOCTYPE>
 <html>
 
-<head>
-    <title>Dasa</title>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creating a Responsive Web Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   
-    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
-    
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.dev.js"></script>
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
+   
 </head>
 <body>
+   
+  <div id="page">
 
-   <header >
-        <div class="container">
-            <h1>It's all about me !</h1>
-          
-        </div>
+        <header>
+                
+                <div id="svg">
+                <h1>Inflection Point</h1>
+                <p>A practical guide to growth</p>
+               </div>
+                 <div class="hero">
+                  <h2>Aadia -- Holistic App</h2>
+                 <a class="btn1" href="#">Rejuvenate <span>and Re-energize</span></a>
 
-    </header>
+            </div>
+
+        </header>
 
 
-   <div class="jumbotron jumbotron-billboard" style="padding:0;">
+   <div class="jumbotron jumbotron-billboard" style="padding:0;height:100%">
 
         <!--Who are Dasas-->
         <div style="margin-left:20px">
-        
+         
         
             <nav style="display:inline-block;float:right;margin-right:20px">
  
                       
                         <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
                         <p style="font-size:14px;color:black">
-                            <b><%=user.username%></b>
+                            <% if(user.google.email) { %>
+                            <b><%=user.google.email%></b>
+                             <% } %>
+
+                              <% if(user.facebook.email) { %>
+                            <b><%=user.facebook.email%></b>
+                             <% } %>
+
+                               <% if(user.local.email) { %>
+                            <b><%=user.local.email%></b>
+                             <% } %>
                         </p>
                    
               </nav>
@@ -43,44 +73,63 @@
              <div class="row" style="margin-left:20px;padding:0;" id="thanks">
                <!-- <div class="col-sm-3"  style="text-align:left;padding:45px">-->
                     <ul  class="sidelist">
-                           <li > <a  class="btn btn-info btn-lg" href="/teenselfesteemthanks" style="margin-bottom:10px;width:300px;overflow:hidden"> Home</a></li>
+                          <li><a  href="/teenselfesteemthanks" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white;margin-bottom:10px">Home</a> </li> 
                          
                     </ul>
+                    </div>
+                    <div class="col-sm-4" >
+        <ul class="nav nav-list">
+            <li><label class="tree-toggler nav-header">Career Coaches</label>
+                <ul class="menu vertical"  style="line-height:2em">
+                    <%if (typeof results !== 'undefined' && results ){%>
+                    <% for(var i=0; i<results.length; i++) {%>
+                    <li ><%=results[i].name%><br></li>
+                    <%}%>
+                    <%} else {%>
+                    <%if (typeof message !== 'undefined' && message ){%>
+                    <div class="col-sm-4" style="background:#CD5C5C"><p><%=message%></p></div>
+                    <%}%>
+                    <% } %>
+                   </ul>
+               </li>
+           </ul>
+       </div>
+          <div class="col-sm-7">
+             <div id="mario-chat">
+            <h2>Mario Chat</h2>
+            <div id="chat-window">
+                <div id="output"></div>
+                <div id="feedback"></div>
+            </div>
+            <input id="handle" type="text" placeholder="Handle" value= "<% if(user.google.email) { %>
+                           <%=user.google.name%>
+                             <% } %>
 
-                     <div class="col-sm-7" style="padding:0;">                 
-                         <form class="form-search" action="/connect2careercoaches" method="post">                      
-                            <label for="inputsearch">  </label>
-                            <input  class="form-control" id="inputsearch" name="inputsearch" type="text"  placeholder="Enter Zip Code">
-                             <button  id="search" name="search" value="search" >Search</button>
-                         </form>
+                              <% if(user.facebook.email) { %>
+                           <%=user.facebook.name%>
+                             <% } %>
+
+                               <% if(user.local.email) { %>
+                                  <%=user.local.email.substring(0,2).trim()%>
+
+                             <% } %>"/>
+            <input id="message" type="text" placeholder="Message" />
+            <button id="send">Send</button>
+        </div>
+
+
+          </div>
+
+                
                      </div>   
+               
+                 </div>
 
-
-                </div>
-
-                 <div class="displayresults">
-                       <%if (typeof results !== 'undefined' && results ){%>
-                       <% for(var i=0; i<results.length; i++) {%>
-                          <div class="col-sm-9" style="display:inline-block;width:30%;margin-left:30px;background:#D8BFD8">
-                            <%=results[i].coachname%><br>
-                            
-                            Degree:<%=results[i].degree%><br>
-                            Has License"<%=results[i].careercoachlicense%><br>
-                            <%=results[i].email%><br>
-                            <%=results[i].phone%><br>
-                            <%=results[i].zipcode%><br>
-                            <%=results[i].affliiatedwith%><br>
-                               </div>
-                                <%}%>
-                            <%} else {%>
-                             <%if (typeof message !== 'undefined' && message ){%>
-                                 <div class="col-sm-4" style="background:#CD5C5C"><p><%=message%></p></div>
-                                <%}%>
-                            <% } %>
-                     </div>
-                   <footer class="footer" >
+                   <footer class="footer"  style="height:80px;">
         <p> <span>&copy; Copyright 2018
             </span></p>
-    </footer>        
+    </footer>  
+
+      <script src="../js/chat.js"></script>
 </body>
 </html>

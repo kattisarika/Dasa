@@ -4,8 +4,8 @@ var usertasksSchema = mongoose.Schema({
 	email: {
         type: String,
         unique: true,
-        required: true,
-         match: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+        required: true
+         
     },
     task1:{
     	type: String,

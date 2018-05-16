@@ -38,7 +38,7 @@
 
         <!--Who are Dasas-->
         <div style="margin-left:20px">
-          <a href="/mywelcomepage" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Home</a>   
+          <a href="/mywelcomepage" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white;margin-bottom:10px">Home</a>   
         
             <nav style="display:inline-block;float:right;margin-right:20px">
  
@@ -67,96 +67,64 @@
                     <ul  class="sidelist">
                      
                        <li > <a  class="btn btn-info btn-lg" href="/smarttricks" style="margin-bottom:10px;width:300px;overflow:hidden"> Tricks To Be The Best</a></li>
-                        <li> <a class="btn btn-info btn-lg" href="/yourtday" style="margin-bottom:10px;width:300px;overflow:hidden">
-                        Positive Affirmations </a></li>
+                       
                         <li> <a class="btn btn-info btn-lg" href="/teenspiritualtalk" style="margin-bottom:10px;width:300px;overflow:hidden"> Self Improvement videos  </a></li>
                          <li> <a class="btn btn-info btn-lg" href="/teenspiritualbook" style="margin-bottom:10px;width:300px;overflow:hidden"> Books to Read  </a></li>
                          
-                           <li> <a href="/connect2counsellors" class="btn btn-info btn-lg" id="counsellors" style="margin-bottom:10px;width:300px;overflow:hidden">Connect With Counselors </a></li>
+                           <li> <a href="/connect2counsellors" class="btn btn-info btn-lg" id="counsellors" style="margin-bottom:10px;width:300px;overflow:hidden">Connect With Coaches </a></li>
                     
                     </ul>
              <!-- </div>-->
-             
-             
-                <div class="col-sm-6" >
-                 
-                   <!--<div style="margin-left:20px;background:#EFF2FA;">-->
-                   <form id="usertaskform">
+                      <div class="col-sm-9" >
+                        <h3 style="text-align:center">Daily Affirmations </h3>
+                        <div >
 
-                     <%if (typeof data !== 'undefined' && data )  {%>
-                       <h3>Your goals for today</h3> 
+                          <ul >
 
-                        <% }else {%>
-                          <h3>write down 3  most important tasks for you today</h3>
+                            <li >
+                              <p style="line-height:1.5em">My character is a sum total of my habits, My habits are formed by my repeated decisions and every decision I make will either build up my character or bring me down and eventually break me down, So I will choose to make my right informed decisons. (Derek Prince).</p>
+                            </li>
 
-                        <%}%>
-                   
-                     
-                       <div class="form-group">
-                        <label for="date">Date:</label>
-                         <p id="date" style="display:inline-block"></p> 
+                             <li>
+                               <p style="line-height:1.5em">Character is strength,I will do the right things when no one is looking.</p>
+                            </li>
+
+                             <li>
+                              <p style="line-height:1.5em">I am proud to represent the values that matter to me and my community.</p>
+                            </li>
+
+                              <li>
+                              <p style="line-height:1.5em">The more I like myself, the more others will like me.</p>
+                            </li>
+                            <li>
+                              <p style="line-height:1.5em">I am becoming better with each day.</p>
+                            </li>
+
+                          </ul>
+                        </div>
+
                       </div>
 
-                        <input type="text" class="form-control" id="hiddenname" style="display:none" value="<%=user.username%>">
-                         <%if (typeof data !== 'undefined' && data )  {%>
-                        <input type="text" class="form-control" id="hiddenid" style="display:none" value="<%=data._id%>">
-                        <%}%>
-                      <div class="form-group">
-                        <label for="task1">Task1:</label>
-                        <input type="text" class="form-control" id="task1"   <%if (typeof data !== 'undefined' && data )  {%> value="<%=data.task1%>" <% }else {%> placeholder="Task1"  <%}%>>
+
+              
+                    <div class="col-container colcont" >
+
+                         <%  for(var i=0; i<teenselfesteemdata.quotelist.length; i++) {%>
+                        <div  class="cell-cont cont" >
                         
                         
-                        
-                      </div>
-                      <div class="form-group">
-                        <label for="task2">Task2:</label>
-                       <input type="text" class="form-control" id="task2" placeholder="Task2"   <%if (typeof data !== 'undefined' && data )  {%> value="<%=data.task2%>" <% }else {%> placeholder="Task1"  <%}%>>
-                      </div>
-                       <div class="form-group">
-                        <label for="task3">Task3:</label>
-                       <input type="text" class="form-control" id="task3" placeholder="Task3"   <%if (typeof data !== 'undefined' && data )  {%> value="<%=data.task3%>" <% }else {%> placeholder="Task1"  <%}%>>
-                      </div>
-                      <div class="form-group">Whats on your mind?:</label>
-                        <textarea class="form-control" rows="5" id="usermind"><%if (typeof data !== 'undefined' && data )  {%> <%=data.usermind%> <% }%></textarea>
-                      </div>
-                       <span class="validateError" id="reasonError" style="display: none;">You must select the reason you are here</span>
-
-                        <div>
-                           <%if (typeof data !== 'undefined' && data )  {%>
-                             <button type="submit" id="editusertaskbtn" class="btn btn-dark btn-lg" >Update</button>
                              
-                           <% }else {%>
-                              <button type="submit" id="usertaskbtn" class="btn btn-dark btn-lg" >Submit</button>
-
-                            <%}%>
-                            
-
-                         </div>  
-
+                              <ul class="col">
+                                    <li><%=teenselfesteemdata.quotelist[i].quote%></li>
+                              </ul> 
+                               </div>
+                               <% } %> 
                      
-                     
-                      <!-- </div>-->
-                   
-                </div>
+                    </div>  
             
-                     <div class="col-sm-3" >
-                      <h3> Quotes for the day:-</h3>
-                      
-                        <ul   style="list-style-type: none;">
-                            <%  for(var i=0; i<teenselfesteemdata.quotelist.length; i++) {%>
-                              <div  class="teenbackground">
-                              <li  ><%=teenselfesteemdata.quotelist[i].quote%></li>
-                              <br>
-                              </div> 
-                             
-
-                              <% } %>
-
-                        </ul> 
-                     
-                      </div>
-
-            </div>
+                   
+              </div>
+           
 
             <div class="row"  style="margin-left:20px;padding:0;">
                 
