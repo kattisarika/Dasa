@@ -163,7 +163,15 @@ $(document).ready(function() {
               </section>
                
                 <section class="col-md-10"  style="text-align:left;padding:45px">
-               <p>Welcome <%=user.username%>! Let us help you in your journey and if you don't find what you need, do write to us. We can help you find what you need. We will customize the solutions just for you , once we understand your goal. </p>
+               <p>Welcome  <% if(user.google.email) { %>
+                             <b><%=user.google.name%></b>
+                             <% } %>
+                              <% if(user.facebook.email) { %>
+                             <b><%=user.facebook.name%></b>
+                             <% } %>
+                               <% if(user.local.email) { %>  
+                              <b><%=user.local.email%></b>
+                             <% } %>! Let us help you in your journey and if you don't find what you need, do write to us. We can help you find what you need. We will customize the solutions just for you , once we understand your goal. </p>
 
               <p> What are your goals? Why are you here ? Understanding you on a deeper level.</p>
 
