@@ -27,82 +27,7 @@
 </head>
 <body>
 
-<script type="text/javascript">
 
-
-$(document).ready(function() {
-
-
-
-    $("input.radio-button-selector").change(function(){ 
-               console.log("hi" + $(this).val()) ;                
-        if ( $(this).val() === "teens" ) {
-
-            $("#selectGoal option[value='Just exploring']").show();
-            $("#selectGoal option[value='Improve my life']").show();
-            
-            $("#selectGoal option[value='Improve my self esteem']").show();
-            $("#selectGoal option[value='Be rich and powerful']").show();
-            $("#selectGoal option[value='Better manage time']").hide();
-           
-            $("#selectGoal option[value='Anxious or Depressed']").show();
-            $("#selectGoal option[value='Improve my grades']").show();
-
-            $("#selectGoal option[value='Manage my finances']").hide();
-            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
-            $("#selectGoal option[value='Anger management']").hide();
-            $("#selectGoal option[value='Addiction management']").hide();
-            $("#selectGoal option[value='Become rich and powerful']").hide();
-            $("#selectGoal option[value='Anxiety or Depression']").hide();
-        }
-        else if ( $(this).val() == "thirty" ) {
-            $("#selectGoal option[value='Just exploring']").show();
-
-            $("#selectGoal option[value='Improve my life']").show();
-            $("#selectGoal option[value='Stuck mid way in career and looking inward']").show();
-            $("#selectGoal option[value='Improve my self esteem']").show();
-            $("#selectGoal option[value='Become rich and powerful']").show();
-            $("#selectGoal option[value='Better manage time']").show();
-            $("#selectGoal option[value='Manage my finances']").show();
-            $("#selectGoal option[value='Anxious or Depressed']").show();
-            $("#selectGoal option[value='Improve my grades']").hide();
-             $("#selectGoal option[value='Addiction management']").hide();
-              $("#selectGoal option[value='Be rich and powerful']").hide();
-              $("#selectGoal option[value='Anxiety or Depression']").hide();
-        }else if ( $(this).val() == "midforty" ) {
-            $("#selectGoal option[value='Just exploring']").show();
-            $("#selectGoal option[value='Improve my life']").show();
-            $("#selectGoal option[value='Stuck mid way in career and looking inward']").show();
-            $("#selectGoal option[value='Improve my self esteem']").show();
-            $("#selectGoal option[value='Become rich and powerful']").show();
-            $("#selectGoal option[value='Better manage time']").show();
-            $("#selectGoal option[value='Manage my finances']").show();
-            $("#selectGoal option[value='Anxious or Depressed']").show();
-            $("#selectGoal option[value='Improve my grades']").hide();
-             $("#selectGoal option[value='Addiction management']").hide();
-             $("#selectGoal option[value='Anxiety or Depression']").hide()
-        }else if ( $(this).val() == "oldage" ) {
-             $("#selectGoal option[value='Anxiety or Depression']").show();
-              $("#selectGoal option[value='Just exploring']").show();
-              $("#selectGoal option[value='Improve my grades']").hide();
-             $("#selectGoal option[value='Addiction management']").hide();
-            $("#selectGoal option[value='Improve my life']").hide();
-            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
-            $("#selectGoal option[value='Improve my self esteem']").hide();
-            $("#selectGoal option[value='Become rich and powerful']").hide();
-            $("#selectGoal option[value='Better manage time']").hide();
-            $("#selectGoal option[value='Manage my finances']").hide();
-              $("#selectGoal option[value='Anxious or Depressed']").hide();
-        }else {
-          $("#selectGoal option[value='Manage my finances']").hide();
-            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
-            $("#selectGoal option[value='Anger management']").hide();
-            $("#selectGoal option[value='Addiction management']").hide();
-        }
-        
-        });
-    });
-</script>
 
    <div id="page">
 
@@ -182,7 +107,7 @@ $(document).ready(function() {
                         <!--    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>-->
                             <form action="/userdetails" method="post">
 
-                                <p class="text-center">User Details</p>
+                                <h2 class="text-center">User Details</h2>
                                 <div><li style="display:none"> <input type="text"  id="username" name="username" value=" <% if(user.google.email) { %>
                              <%=user.google.email%>
                              <% } %>
@@ -267,18 +192,83 @@ $(document).ready(function() {
         <p> <span>&copy; Copyright 2018
             </span></p>
     </footer>      
-    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDFiHkoXgd69luvt3PoFIQHj3K5YRnNJdI",
-    authDomain: "fir-messagingapp-9e117.firebaseapp.com",
-    databaseURL: "https://fir-messagingapp-9e117.firebaseio.com",
-    projectId: "fir-messagingapp-9e117",
-    storageBucket: "fir-messagingapp-9e117.appspot.com",
-    messagingSenderId: "860407436652"
-  };
-  firebase.initializeApp(config);  
+   <script type="text/javascript">
+
+
+$(document).ready(function() {
+
+
+
+    $("input.radio-button-selector").change(function(){ 
+               console.log("hi" + $(this).val()) ;                
+        if ( $(this).val() === "teens" ) {
+
+            $("#selectGoal option[value='Just exploring']").show();
+            $("#selectGoal option[value='Improve my life']").show();
+            
+            $("#selectGoal option[value='Improve my self esteem']").show();
+            $("#selectGoal option[value='Be rich and powerful']").show();
+            $("#selectGoal option[value='Better manage time']").hide();
+           
+            $("#selectGoal option[value='Anxious or Depressed']").show();
+            $("#selectGoal option[value='Improve my grades']").show();
+
+            $("#selectGoal option[value='Manage my finances']").hide();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
+            $("#selectGoal option[value='Anger management']").hide();
+            $("#selectGoal option[value='Addiction management']").hide();
+            $("#selectGoal option[value='Become rich and powerful']").hide();
+            $("#selectGoal option[value='Anxiety or Depression']").hide();
+        }
+        else if ( $(this).val() == "thirty" ) {
+            $("#selectGoal option[value='Just exploring']").show();
+
+            $("#selectGoal option[value='Improve my life']").show();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").show();
+            $("#selectGoal option[value='Improve my self esteem']").show();
+            $("#selectGoal option[value='Become rich and powerful']").show();
+            $("#selectGoal option[value='Better manage time']").show();
+            $("#selectGoal option[value='Manage my finances']").show();
+            $("#selectGoal option[value='Anxious or Depressed']").show();
+            $("#selectGoal option[value='Improve my grades']").hide();
+             $("#selectGoal option[value='Addiction management']").hide();
+              $("#selectGoal option[value='Be rich and powerful']").hide();
+              $("#selectGoal option[value='Anxiety or Depression']").hide();
+              $("#selectGoal option[value='Be rich and powerful']").hide();
+        }else if ( $(this).val() == "midforty" ) {
+            $("#selectGoal option[value='Just exploring']").show();
+            $("#selectGoal option[value='Improve my life']").show();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").show();
+            $("#selectGoal option[value='Improve my self esteem']").show();
+            $("#selectGoal option[value='Become rich and powerful']").show();
+            $("#selectGoal option[value='Better manage time']").show();
+            $("#selectGoal option[value='Manage my finances']").show();
+            $("#selectGoal option[value='Anxious or Depressed']").show();
+            $("#selectGoal option[value='Improve my grades']").hide();
+             $("#selectGoal option[value='Addiction management']").hide();
+             $("#selectGoal option[value='Anxiety or Depression']").hide()
+        }else if ( $(this).val() == "oldage" ) {
+             $("#selectGoal option[value='Anxiety or Depression']").show();
+              $("#selectGoal option[value='Just exploring']").show();
+              $("#selectGoal option[value='Improve my grades']").hide();
+             $("#selectGoal option[value='Addiction management']").hide();
+            $("#selectGoal option[value='Improve my life']").hide();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
+            $("#selectGoal option[value='Improve my self esteem']").hide();
+            $("#selectGoal option[value='Become rich and powerful']").hide();
+            $("#selectGoal option[value='Better manage time']").hide();
+            $("#selectGoal option[value='Manage my finances']").hide();
+              $("#selectGoal option[value='Anxious or Depressed']").hide();
+        }else {
+          $("#selectGoal option[value='Manage my finances']").hide();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
+            $("#selectGoal option[value='Anger management']").hide();
+            $("#selectGoal option[value='Addiction management']").hide();
+        }
+        
+        });
+    });
+</script>
 </body>
 
 

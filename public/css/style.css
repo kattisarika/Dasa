@@ -13,6 +13,7 @@ body {
 #page {
     margin: 0 auto;
     position: relative;
+   
 }
 
 header {
@@ -70,13 +71,15 @@ ul li {
 }
 
 .hero h2 {
+
     font-family: 'OpenSansSemiBold';
 }
 
 a.btn1 {
-    font-size: 1.4em;
+
+    font-size: 1em;
     text-decoration: none;
-    color: #fff;
+    color: black;
     border: 1px solid #fff;
     padding:5px;
 }
@@ -85,17 +88,13 @@ a.btn1:hover {
     background-color: rgba(0, 0, 0, .3);
 }
 
-.midsection {
-    background: rgba(500, 500, 500, .3);
-    margin: 5px 100px 10px 100px;
-}
 
 
-
-.midsec2,.midsec1,
+/*.midsec2,.midsec1,
 #content {
     display: inline-block;
-}
+
+}*/
 
 .midsec2{
     width:50%;
@@ -118,6 +117,23 @@ a.btn1:hover {
     float: right;
     width:50%;
     
+}
+
+.midsection {
+    background: rgba(500, 500, 500, .3);
+    margin: 5px 100px 10px 100px;
+}
+
+
+.midhero{
+    margin-top:10px;
+     max-width: 100%;
+}
+
+.midsection2{
+
+    max-width: 100%;
+     margin-top:50px;
 }
 
 .smallwrites {
@@ -186,6 +202,7 @@ a.btn1:hover {
     margin: 50px 0px 50px 450px;
 }
 
+
 .login-form form,
 .signup-form form,
 .reset-form form {
@@ -194,6 +211,19 @@ a.btn1:hover {
     color: blue;
     text-align: center;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+
+.userdetails-form{
+     width: 500px;
+    margin: 50px 0px 50px 100px;
+}
+
+
+.userdetails-form form{
+    background: linear-gradient(rgba(80, 120, 208, .15), rgba(80, 120, 208, .15));
+    text-align: left;
+     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     padding: 30px;
 }
 
@@ -303,9 +333,22 @@ a.btn1:hover {
     padding: 10px;
 }
 
+.userdetails-form{
+     width: 350px;
+    margin: 10px 0px 50px 10px;
+}
+
+
+.userdetails-form form{
+    background: linear-gradient(rgba(80, 120, 208, .15), rgba(80, 120, 208, .15));
+    text-align: left;
+     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
  footer {
     background: #cf000b;
-    width:805px;
+    width:1024px;
     height: 120px;
         }
     

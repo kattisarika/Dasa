@@ -364,7 +364,16 @@ app.get("/", function (req, res) {
 res.render('index');
 });
 
+/*app.get('/sign', function (req, res) {
+res.render('sign.ejs');
+});*/
 
+
+ app.post('/', passport.authenticate('local-signup', {
+        successRedirect: '/login',
+        failureRedirect: '/',
+        failureFlash: true
+    }));
 
 
 
