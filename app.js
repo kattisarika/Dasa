@@ -82,7 +82,7 @@ app.locals.instrumusicdata=require('./instru.json');
 
 app.locals.spbooksdata=require('./spbooks.json');
 
-app.locals.englishsonglistdata= require('./englishsonglist.json');
+/*app.locals.englishsonglistdata= require('./englishsonglist.json');
 
 app.locals.gujuratisonglistdata= require('./gujuratisonglist.json');
 
@@ -96,7 +96,7 @@ app.locals.tamilsonglistdata = require('./tamilsonglist.json');
 
 app.locals.malyalamsonglistdata = require('./malyalamsonglist.json');
 
-app.locals.telugusonglistdata = require('./telugusonglist.json');
+app.locals.telugusonglistdata = require('./telugusonglist.json');*/
 app.locals.angrydata = require('./angry.json');
 
 app.locals.oldagequotesdata = require('./oldagequotes.json');
@@ -386,7 +386,6 @@ res.render('login.ejs');
 
 
 
-
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at
 //     /auth/facebook/callback
@@ -410,144 +409,19 @@ app.get('/auth/google/', passport.authenticate('google', {
 	));
 
  app.get('/auth/google/callback',passport.authenticate('google', {
+
                     failureRedirect : 'http://localhost:3000/login'
             }),function(req,res){
 
-    console.log(req);
+    	console.log(req);
 
     var username1= req.user.google.email;
 
 	console.log("In POST GOOGLE LOGIN /login", username1);
-	UserDetails.find({email:username1}, function(err, data)  {   
-		if (err) throw err;
-		console.log("IS it this one " , data);
-		console.log("IS it this one " , data.length);
-		if(data === null || data === ''){
-		res.redirect("/mywelcomepage");
-		
-		 //console.log(data);
-		}else {
-		console.log('existing user');
-		console.log('Am i coming here in post google login 3, existing user');
-		console.log(data);
-		console.log(data.agegroup);
-		console.log(data.purpose);
-		switch(data.agegroup && data.purpose){
-					case 'teens' && 'Just exploring': 
-					res.redirect('/thanks');
-					break;   
-
-					case 'teens' && 'Improve my life': 
-					res.redirect('/thanks');
-					break;    
-
-					case 'teens' && 'Improve my self esteem': 
-					res.redirect('/teenselfesteemthanks');
-					break; 
-
-					case 'teens' && 'Improve my grades': 
-					res.redirect('/teengradesthanks');
-					break; 
-
-					case 'teens' && 'Be rich and powerful': 
-					res.redirect('/teenrichpowerfulthanks');
-					break; 
-
-					case 'teens' &&  'Anxious or Depressed': 
-					res.redirect('/teenanxiousthanks');
-					break;  
-
-					
-
-
-					case 'thirty' && 'Just exploring': 
-					res.redirect('/thanks');
-					break;  
-
-					case 'thirty' && 'Improve my life': 
-					res.redirect('/thanks');
-					break;  
-
-					case 'thirty' && 'Stuck mid way in career and looking inward': 
-					res.redirect('/thanks');
-					break;   
-
-					case 'thirty' && 'Improve my self esteem': 
-					res.redirect('/thirtyselfesteemthanks');
-					break; 
-
-					case 'thirty' && 'Become rich and powerful': 
-					res.redirect('/thirtyrichpowerfulthanks');
-					break; 
-
-					case 'thirty' &&  'Better manage time': 
-					res.redirect('/teenanxiousthanks');
-					break;   
-
-					case 'thirty' && 'Manage my finances': 
-					res.redirect('/thirtymanagemyfinances');
-					break; 
-
-					case 'thirty' && 'Anxious or Depressed': 
-					res.redirect('/thirtyanxiousthanks');
-					break;     
-
-
-					case 'midforty' && 'Just exploring': 
-					res.redirect('thanks');
-					break; 
-
-					case 'midforty' && 'Improve my life':
-					res.redirect('/thanks');
-					break;        
-
-					case 'midforty' && 'Improve my self esteem': 
-					res.redirect('/thanks');
-					break;
-
-					case 'midforty' &&  'Stuck mid way in career and looking inward':
-					res.redirect('/thanks');
-					break;
-
-					case 'midforty' && 'I want to become rich and powerful': 
-					res.redirect('/thanks');
-					break; 
-
-					case 'midforty' && 'I want to manage my finances': 
-					res.redirect('/thanks');
-					break; 
-
-					case 'midforty' && 'I want to better manage time': 
-					res.redirect('/thanks');
-					break; 
-
-					case 'midforty' &&  'Anxious or Depressed': 
-					res.redirect('/thanks');
-					break;     
-
-					case 'oldage' && 'Just exploring': 
-					res.redirect('/oldagethanks');
-					break;      
-
-					case "oldage" &&  "Anxiety or Depression": 
-					res.redirect('/oldagedepressedthanks');
-					break;     
-
-					default:
-					res.redirect('/thanks');
-					break;         
-
-					}
-
-
-
-/*resp.render('sign.ejs', {
-viewVariable: "User already exists, please choose another user."
-})*/
-}
+	res.redirect("/mywelcomepage");
 });
 
- });
+
 
 
 
@@ -565,6 +439,7 @@ res.render('sign.ejs');
 
 
 
+
 app.post('/login', passport.authenticate('local-login', {
 failureRedirect: '/login'
 }), function (req, res) {
@@ -576,133 +451,9 @@ var username1="";
 console.log(req.user);
 username1= req.user.local.email;
 console.log("In POST LOGIN /login", username1);
-//UserDetails.getUserDetailsByUsername(username, function (err, data) {
-UserDetails.findOne({email: username1}, function(err,data) {   
-	if (err) throw err;
-	if(data === null || data === ''){
-	res.redirect("mywelcomepage");
-	//  console.log(data);
-	}else {
-	console.log('existing user');
-	console.log('Am i coming here 3, existing user');
-	console.log(data.agegroup);
-	console.log(data.purpose);
-switch(data.agegroup && data.purpose){
-					case 'teens' && 'Just exploring': 
-					res.redirect('thanks');
-					break;   
-
-					case 'teens' && 'Improve my life': 
-					res.redirect('thanks');
-					break;    
-
-					case 'teens' && 'Improve my self esteem': 
-					res.redirect('teenselfesteemthanks');
-					break; 
-
-					case 'teens' && 'Improve my grades': 
-					res.redirect('teengradesthanks');
-					break; 
-
-					case 'teens' && 'Be rich and powerful': 
-					res.redirect('teenrichpowerfulthanks');
-					break; 
-
-					case 'teens' &&  'Anxious or Depressed': 
-					res.redirect('teenanxiousthanks');
-					break;  
-
-					
-
-
-					case 'thirty' && 'Just exploring': 
-					res.redirect('thanks');
-					break;  
-
-					case 'thirty' && 'Improve my life': 
-					res.redirect('thanks');
-					break;  
-
-					case 'thirty' && 'Stuck mid way in career and looking inward': 
-					res.redirect('thanks');
-					break;   
-
-					case 'thirty' && 'Improve my self esteem': 
-					res.redirect('thirtyselfesteemthanks');
-					break; 
-
-					case 'thirty' && 'Become rich and powerful': 
-					res.redirect('thirtyrichpowerfulthanks');
-					break; 
-
-					case 'thirty' &&  'Better manage time': 
-					res.redirect('teenanxiousthanks');
-					break;   
-
-					case 'thirty' && 'Manage my finances': 
-					res.redirect('thirtymanagemyfinances');
-					break; 
-
-					case 'thirty' && 'Anxious or Depressed': 
-					res.redirect('thirtyanxiousthanks');
-					break;     
-
-
-					case 'midforty' && 'Just exploring': 
-					res.redirect('thanks');
-					break; 
-
-					case 'midforty' && 'Improve my life':
-					res.redirect('thanks');
-					break;        
-
-					case 'midforty' && 'Improve my self esteem': 
-					res.redirect('thanks');
-					break;
-
-					case 'midforty' &&  'Stuck mid way in career and looking inward':
-					res.redirect('thanks');
-					break;
-
-					case 'midforty' && 'I want to become rich and powerful': 
-					res.redirect('thanks');
-					break; 
-
-					case 'midforty' && 'I want to manage my finances': 
-					res.redirect('thanks');
-					break; 
-
-					case 'midforty' && 'I want to better manage time': 
-					res.redirect('thanks');
-					break; 
-
-					case 'midforty' &&  'Anxious or Depressed': 
-					res.redirect('thanks');
-					break;     
-
-					case 'oldage' && 'Just exploring': 
-					res.redirect('oldagethanks');
-					break;      
-
-					case "oldage" &&  "Anxiety or Depression": 
-					res.redirect('oldagedepressedthanks');
-					break;     
-
-					default:
-					res.redirect('thanks');
-					break;         
-
-					}
-
-
-
-/*resp.render('sign.ejs', {
-viewVariable: "User already exists, please choose another user."
-})*/
-}
+res.redirect("mywelcomepage");
 });
 
-});
 
 
 app.get('/forgotpassword',function(req,res){
@@ -799,14 +550,18 @@ res.render('mywelcomepage',{
 });
 
 
+app.get('/selfhelp',auth.checkLogin,function(req,res){
+
+	res.render('selfhelp',{
+		  isAuthenticated:req.isAuthenticated(),
+		  user:req.user
+		});
+});
 
 
-app.get('/mysonglist',auth.checkLogin,function(req, res){
-res.render('mysonglist.ejs', {
-isAuthenticated: req.isAuthenticated(),
-user: req.user
-});
-});
+
+
+
 
 app.get('/guidedtours',auth.checkLogin,function(req, res){
 res.render('guidedtours.ejs', {
@@ -1233,8 +988,6 @@ msg: 'Just go there please' // this should help
 
 });*/
 
-
-
 });
 
 });
@@ -1261,7 +1014,7 @@ res.redirect('teenselfesteemthanks');
 
 });
 
-app.get('/teenspiritualtalk', isLoggedIn, function (req, res) {
+app.get('/teenspiritualtalk', auth.checkLogin, function (req, res) {
 res.render('teenspiritualtalk', {
 isAuthenticated: req.isAuthenticated(),
 user: req.user
@@ -1269,7 +1022,7 @@ user: req.user
 
 });
 
-app.get('/teenspiritualbook', isLoggedIn, function(req,res){
+app.get('/teenspiritualbook', auth.checkLogin, function(req,res){
 res.render('teenspiritualbook', {
 isAuthenticated: req.isAuthenticated(),
 user: req.user
@@ -1277,7 +1030,7 @@ user: req.user
 });
 
 
-app.get('/yourtday', isLoggedIn, function (req, res) {
+app.get('/yourtday', auth.checkLogin, function (req, res) {
 res.render('yourtday', {
 isAuthenticated: req.isAuthenticated(),
 user: req.user
@@ -1285,14 +1038,36 @@ user: req.user
 
 });
 
-app.get('/connect2counsellors',isLoggedIn,function(req,res){
+app.get('/connect2counsellors',auth.checkLogin,function(req,res){
 res.render('connect2counsellors', {
 isAuthenticated: req.isAuthenticated(),
 user: req.user
 });
 });
 
-app.get('/connect2careercoaches',function(req,res){
+
+app.get('/tests',auth.checkLogin,function(req,res){
+	res.render('tests', {
+	isAuthenticated: req.isAuthenticated(),
+	user: req.user
+	});
+});
+
+app.get('/lifeskills',auth.checkLogin,function(req,res){
+	res.render('lifeskills', {
+	isAuthenticated: req.isAuthenticated(),
+	user: req.user
+	});
+});
+
+app.get('/fitness',auth.checkLogin,function(req,res){
+	res.render('fitness', {
+	isAuthenticated: req.isAuthenticated(),
+	user: req.user
+	});
+});
+
+app.get('/connect2careercoaches',auth.checkLogin,function(req,res){
 
 	db.collection('careercoaches').find().toArray(function(err, data) { 
 		if(err) throw error;
@@ -1766,5 +1541,4 @@ io.on('connection',function(socket){
         socket.broadcast.emit('typing', data);
     });
 	
-})
-
+});

@@ -1,8 +1,8 @@
-<!DOCTYPE HTML>
+<!DOCTYPE>
 <html>
 
 <head lang="en">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119235303-1"></script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119235303-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -12,16 +12,17 @@
 </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aadia -- Rejuvaenate and Re-energize</title>
+    <title>Aadia- Rejuvenate and Re-energize</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+
   
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/script.js"></script>
 </head>
@@ -29,248 +30,73 @@
 
 
 
-   <div id="page">
+  <div id="page">
 
-        <header>
-                
-                <div id="svg">
-                <h1>Inflection Point</h1>
-                <p>A practical guide to growth</p>
-               </div>
-                 <div class="hero">
-                  <h2>Aadia -- Holistic App</h2>
-                 <a class="btn1" href="#">Rejuvenate <span>and Re-energize</span></a>
-
-            </div>
-
+       <header>
+                <div id="heading"> 
+                  <h1>Aadia -- Holistic App</h1>
+                 <p>Rejuvenate and Re-energize</p>
+            </div>   
+                <div id="svg" > 
+                <h1>A practical guide to growth</h1>
+               </div>        
         </header>
 
 
 
-   <div class="jumbotron jumbotron-billboard" style="padding:0;">
+<div class="topheading">
+<div class="homebtn">
+    <a  href="/mywelcomepage" class="btn btn-dark btn-lg" >Home</a>
+</div>
 
-        <!--Who are Dasas-->
-          <div style="margin-left:20px">
-         <!-- <div class="row" style="padding:0;">-->
-         <a href="/mywelcomepage" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Home</a>   
-      
-        
-        
-            <nav style="display:inline-block;float:right;margin-right:20px">
- 
-                      
-                        <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+    <div class="navbtn">
+    <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
                         <p style="font-size:14px;color:black">
-                             <% if(user.google.email) { %>
-                             <b><%=user.google.email%></b>
+                            <% if(user.google.email) { %>
+                            <b><%=user.google.email%></b>
                              <% } %>
+
                               <% if(user.facebook.email) { %>
-                             <b><%=user.facebook.email%></b>
+                            <b><%=user.facebook.email%></b>
                              <% } %>
-                               <% if(user.local.email) { %>  
-                              <b><%=user.local.email%></b>
+
+                               <% if(user.local.email) { %>
+                            <b><%=user.local.email%></b>
                              <% } %>
-                             
                         </p>
-              </div>     
-              </nav>
-              <div class="row" style="margin-left:20px;padding:0;" id="mainwelcomepage">
-                <section class="col-md-2"  style="text-align:left;padding:45px">
-               <div  style="margin-left:20px;">
-                    <ul  class="sidelist">
 
-                        <li class="active"> <a href="/dashboard">Dashboard</a></li>
-                        <li> <a href="/dailyevents"> Daily Events</a></li>
-                       <li> <a href="/dailyplanner"> Daily Planner</a></li>
-                    </ul>
-
-                </div>
-              </section>
-               
-                <section class="col-md-10"  style="text-align:left;padding:45px">
-               <p>Welcome  <% if(user.google.email) { %>
-                             <b><%=user.google.name%></b>
-                             <% } %>
-                              <% if(user.facebook.email) { %>
-                             <b><%=user.facebook.name%></b>
-                             <% } %>
-                               <% if(user.local.email) { %>  
-                              <b><%=user.local.email%></b>
-                             <% } %>! Let us help you in your journey and if you don't find what you need, do write to us. We can help you find what you need. We will customize the solutions just for you , once we understand your goal. </p>
-
-              <p> What are your goals? Why are you here ? Understanding you on a deeper level.</p>
-
-
-               <div class="userdetails" >
-                    
-                        <div class="userdetails-form">
-                        <!--    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>-->
-                            <form action="/userdetails" method="post">
-
-                                <h2 class="text-center">User Details</h2>
-                                <div><li style="display:none"> <input type="text"  id="username" name="username" value=" <% if(user.google.email) { %>
-                             <%=user.google.email%>
-                             <% } %>
-                              <% if(user.facebook.email) { %>
-                             <%=user.facebook.email%>
-                             <% } %>
-                               <% if(user.local.email) { %>  
-                              <%=user.local.email%>
-                             <% } %>">  <% if(user.google.email) { %>
-                             <b><%=user.google.email%></b>
-                             <% } %>
-                              <% if(user.facebook.email) { %>
-                             <b><%=user.facebook.email%></b>
-                             <% } %>
-                               <% if(user.local.email) { %>  
-                              <b><%=user.local.email%></b>
-                             <% } %> </li></div>
-                                <div>
-                                <label for="ageradio">Age Group</label> 
-                                <div>
-                                <label style="margin:0 auto" ><input type="radio" class="radio-button-selector" id="contactChoice1" name="ageradio" value="teens" required> 17 - 30</label>
-                                </div>
-                                <div>
-                                <label style="margin:0 auto"><input type="radio" class="radio-button-selector" id="contactChoice2" name="ageradio" value="thirty"> 31 - 45</label>
-                                 </div>
-                                <div>
-                                <label style="margin:0 auto"><input type="radio" class="radio-button-selector" id="contactChoice3" name="ageradio" value="midforty"> 46 - 59</label>
-                                </div>
-                                <div>
-                                <label style="margin:0 auto"><input type="radio" class="radio-button-selector" id="contactChoice4" name="ageradio" value="oldage"> 60 plus</label>
-                                </div>
-                                
-                                 <fieldset>  
-                                  
-                                  <select id="selectGoal" name="selectGoal" class="selectpicker show-tick" style="margin-top:10px;margin-bottom:10px;height:48px">
-
-                                  <option value="Just exploring">Just exploring</option>
-                                  <option value="Improve my life">Improve my life</option>
-                                   <option value="Improve my self esteem">Improve my self esteem</option>
-                                   <option value="Improve my grades">Improve my grades</option>
-                                  <option value="Be rich and powerful">Be rich and powerful</option>
-                                  <option value="Become rich and powerful">Become rich and powerful</option>
-                                  
-                                  
-
-                                  <option value="Manage my finances">Manage my finances</option>
-                                   <option value="Stuck mid way in career and looking inward">Stuck mid way in career and looking inward</option>
-                                   <option value="Better manage time">Better manage time</option>
-                                 
-                                 
-                                
-                                   <option value="Addiction management">Addiction management </option>
-                                    
-                                    <option value="Anxiety or Depression">Anxiety or Depression</option>
-                                    <option value="Anxious or Depressed">Anxious or Depressed</option>
-                                 
-                                
-                                 </select>
-                                 <span class="validateError" id="reasonError" style="display: none;">You must select the reason you are here</span>  
-                                  </fieldset>  
-                                 
-                                  <div>
-                                    <button type="submit" id="userdetailsbtn" class="btn btn-dark btn-lg" style="width:120px;height:50px;margin-left:40px;margin-top:10px;margin-bottom:25px;color:white">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    
-                </div>
-           </section>
-
-
-
-                </div>
-
-
-
-
-           
-        </div>
       </div>
-             <footer class="footer">
+</div>
+<div class="jumbotron" style="padding:0;margin-left:10px">
+  <div class="rowpage row" style="padding:0;">
+                <div class="col-sm-2 col-xs-2" style="padding:0;">
+                     <a href="/tests" class="btn btn-info  btn1" id="counsellors" >Skill Competency </a>
+                    <a href="/lifeskills" class="btn btn-info btn1" id="lifeskills" >Daily Rythms</a>
+                   <a href="/connect2careercoaches" class="btn btn-info  btn1" id="connectcollegecoaches" >College Counselling </a>
+                    <a href="/fitness" class="btn btn-info btn1" id="fitness" >Fitness and Grooming </a>
+                    </div>
+                       <div class="col-sm-9 col-xs-9" >
+                       <h3 style="text-align:center">Skill Competency</h3>
+                       <p>Take our online technical tests and see areas where you need to improve or spend time revising what you have learnt and we can point you to relevant student material to study the gaps and improve your technical or engineering capabilities.</p>
+                       <h3 style="text-align:center">Daily Rythms</h3>
+                        <p>Everyday is a new beginning. Daily Rythms give you the energy to plan your everyday and flow through your routine in a very adept manner, be it time management, money management or your daily mundane hum drums, we can help you with it. </p>
+                       <h3 style="text-align:center">College Counselling</h3>
+                        <p>You are a new person to town or a student or parent looking for information,we  provide the required guidance for college admission process.</p>
+                       <h3 style="text-align:center">Fitness and Grooming</h3>
+                        <p>Worried about looks , weight and general questions on what to wear and dress up for an event, Aadia can help you find relevant people who can help you in your journey.</p>
+                      </div>  
+                
+                    </div>
+         
+</div>
+
+ <footer class="footer">
         <p> <span>&copy; Copyright 2018
             </span></p>
-    </footer>      
-   <script type="text/javascript">
+    </footer>   
 
+</div>
 
-$(document).ready(function() {
-
-
-
-    $("input.radio-button-selector").change(function(){ 
-               console.log("hi" + $(this).val()) ;                
-        if ( $(this).val() === "teens" ) {
-
-            $("#selectGoal option[value='Just exploring']").show();
-            $("#selectGoal option[value='Improve my life']").show();
-            
-            $("#selectGoal option[value='Improve my self esteem']").show();
-            $("#selectGoal option[value='Be rich and powerful']").show();
-            $("#selectGoal option[value='Better manage time']").hide();
-           
-            $("#selectGoal option[value='Anxious or Depressed']").show();
-            $("#selectGoal option[value='Improve my grades']").show();
-
-            $("#selectGoal option[value='Manage my finances']").hide();
-            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
-            $("#selectGoal option[value='Anger management']").hide();
-            $("#selectGoal option[value='Addiction management']").hide();
-            $("#selectGoal option[value='Become rich and powerful']").hide();
-            $("#selectGoal option[value='Anxiety or Depression']").hide();
-        }
-        else if ( $(this).val() == "thirty" ) {
-            $("#selectGoal option[value='Just exploring']").show();
-
-            $("#selectGoal option[value='Improve my life']").show();
-            $("#selectGoal option[value='Stuck mid way in career and looking inward']").show();
-            $("#selectGoal option[value='Improve my self esteem']").show();
-            $("#selectGoal option[value='Become rich and powerful']").show();
-            $("#selectGoal option[value='Better manage time']").show();
-            $("#selectGoal option[value='Manage my finances']").show();
-            $("#selectGoal option[value='Anxious or Depressed']").show();
-            $("#selectGoal option[value='Improve my grades']").hide();
-             $("#selectGoal option[value='Addiction management']").hide();
-              $("#selectGoal option[value='Be rich and powerful']").hide();
-              $("#selectGoal option[value='Anxiety or Depression']").hide();
-              $("#selectGoal option[value='Be rich and powerful']").hide();
-        }else if ( $(this).val() == "midforty" ) {
-            $("#selectGoal option[value='Just exploring']").show();
-            $("#selectGoal option[value='Improve my life']").show();
-            $("#selectGoal option[value='Stuck mid way in career and looking inward']").show();
-            $("#selectGoal option[value='Improve my self esteem']").show();
-            $("#selectGoal option[value='Become rich and powerful']").show();
-            $("#selectGoal option[value='Better manage time']").show();
-            $("#selectGoal option[value='Manage my finances']").show();
-            $("#selectGoal option[value='Anxious or Depressed']").show();
-            $("#selectGoal option[value='Improve my grades']").hide();
-             $("#selectGoal option[value='Addiction management']").hide();
-             $("#selectGoal option[value='Anxiety or Depression']").hide()
-        }else if ( $(this).val() == "oldage" ) {
-             $("#selectGoal option[value='Anxiety or Depression']").show();
-              $("#selectGoal option[value='Just exploring']").show();
-              $("#selectGoal option[value='Improve my grades']").hide();
-             $("#selectGoal option[value='Addiction management']").hide();
-            $("#selectGoal option[value='Improve my life']").hide();
-            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
-            $("#selectGoal option[value='Improve my self esteem']").hide();
-            $("#selectGoal option[value='Become rich and powerful']").hide();
-            $("#selectGoal option[value='Better manage time']").hide();
-            $("#selectGoal option[value='Manage my finances']").hide();
-              $("#selectGoal option[value='Anxious or Depressed']").hide();
-        }else {
-          $("#selectGoal option[value='Manage my finances']").hide();
-            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
-            $("#selectGoal option[value='Anger management']").hide();
-            $("#selectGoal option[value='Addiction management']").hide();
-        }
-        
-        });
-    });
-</script>
+   
 </body>
-
-
-</script>
 </html>

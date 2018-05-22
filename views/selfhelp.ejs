@@ -1,0 +1,273 @@
+<!DOCTYPE>
+<html>
+
+<head lang="en">
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119235303-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119235303-1');
+</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aadia- Rejuvenate and Re-energize</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
+</head>
+<body>
+
+
+
+  <div id="page">
+
+       <header>
+                <div id="heading"> 
+                  <h1>Aadia -- Holistic App</h1>
+                 <p>Rejuvenate and Re-energize</p>
+            </div>   
+                <div id="svg" > 
+                <h1>A practical guide to growth</h1>
+               </div>        
+        </header>
+
+
+
+<div class="topheading">
+<div class="homebtn">
+    <a  href="/mywelcomepage" class="btn btn-dark btn-lg" >Home</a>
+</div>
+
+    <div class="navbtn">
+    <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+                        <p style="font-size:14px;color:black">
+                            <% if(user.google.email) { %>
+                            <b><%=user.google.email%></b>
+                             <% } %>
+
+                              <% if(user.facebook.email) { %>
+                            <b><%=user.facebook.email%></b>
+                             <% } %>
+
+                               <% if(user.local.email) { %>
+                            <b><%=user.local.email%></b>
+                             <% } %>
+                        </p>
+
+      </div>
+</div>
+ <div class="jumbotron" style="padding:0;margin-left:10px;height:100%">
+
+  <div class="rowpage row" style="padding:0;">
+                 <div class="col-sm-2 col-xs-2" style="padding:0;">        
+                   <a class="btn btn-info btn1" href="/dailyevents" > How do you feel today?  </a>
+                
+                        
+                 </div>       
+              <div class="col-sm-9 col-xs-9" >   
+               <p>Welcome  <% if(user.google.email) { %>
+                             <b><%=user.google.name%></b>
+                             <% } %>
+                              <% if(user.facebook.email) { %>
+                             <b><%=user.facebook.name%></b>
+                             <% } %>
+                               <% if(user.local.email) { %>  
+                              <b><%=user.local.email%></b>
+                             <% } %>! Explore all the features and if you have set goals for yourself , we will try to help you accomplish your goals. Stay put and get the best out of it!  </p>
+
+              <p> What are your goals? Why are you here ? Understanding you on a deeper level.</p>
+             
+
+               <div class="userdetails" >
+                    
+                        <div id="userdetails-form">
+                        <!--    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>-->
+                            <form action="/userdetails" method="post">
+
+                                <h2 class="text-center">User Details</h2>
+                                <div><li style="display:none"> <input type="text"  id="username" name="username" value=" <% if(user.google.email) { %>
+                             <%=user.google.email%>
+                             <% } %>
+                              <% if(user.facebook.email) { %>
+                             <%=user.facebook.email%>
+                             <% } %>
+                               <% if(user.local.email) { %>  
+                              <%=user.local.email%>
+                             <% } %>">  <% if(user.google.email) { %>
+                             <b><%=user.google.email%></b>
+                             <% } %>
+                              <% if(user.facebook.email) { %>
+                             <b><%=user.facebook.email%></b>
+                             <% } %>
+                               <% if(user.local.email) { %>  
+                              <b><%=user.local.email%></b>
+                             <% } %> </li></div>
+                                <div>
+                                <label for="ageradio">Age Group</label> 
+                                <div>
+                                <label style="margin:0 auto" ><input type="radio" class="radio-button-selector" id="contactChoice1" name="ageradio" value="teens" required> 17 - 30</label>
+                                </div>
+                                <div>
+                                <label style="margin:0 auto"><input type="radio" class="radio-button-selector" id="contactChoice2" name="ageradio" value="thirty"> 31 - 45</label>
+                                 </div>
+                                <div>
+                                <label style="margin:0 auto"><input type="radio" class="radio-button-selector" id="contactChoice3" name="ageradio" value="midforty"> 46 - 59</label>
+                                </div>
+                                <div>
+                                <label style="margin:0 auto"><input type="radio" class="radio-button-selector" id="contactChoice4" name="ageradio" value="oldage"> 60 plus</label>
+                                </div>
+                                
+                                 <fieldset>  
+                                  
+                                  <select id="selectGoal" name="selectGoal" class="selectpicker show-tick" style="margin-top:10px;margin-bottom:10px;height:48px">
+
+                                  <option value="Just exploring">Just exploring</option>
+                                  <option value="Improve my life">Improve my life</option>
+                                   <option value="Improve my self esteem">Improve my self esteem</option>
+                                   <option value="Improve my grades">Improve my grades</option>
+                                  <option value="Be rich and powerful">Be rich and powerful</option>
+                                  <option value="Become rich and powerful">Become rich and powerful</option>
+                                  
+                                  
+
+                                  <option value="Manage my finances">Manage my finances</option>
+                                   <option value="Stuck mid way in career and looking inward">Stuck mid way in career and looking inward</option>
+                                   <option value="Better manage time">Better manage time</option>
+                                 
+                                 
+                                
+                                   <option value="Addiction management">Addiction management </option>
+                                    
+                                    <option value="Anxiety or Depression">Anxiety or Depression</option>
+                                    <option value="Anxious or Depressed">Anxious or Depressed</option>
+                                 
+                                
+                                 </select>
+                                 <span class="validateError" id="reasonError" style="display: none;">You must select the reason you are here</span>  
+                                  </fieldset>  
+                                 
+                                  <div>
+                                    <button type="submit" id="userdetailsbtn" class="btn btn-dark btn-lg" style="width:120px;height:50px;margin-left:40px;margin-top:10px;margin-bottom:25px;color:white">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    
+                </div>
+
+
+
+           </div>
+             
+         </div>
+
+        
+    </div>      
+     
+
+   
+    
+
+    </div>
+     <div class="rowpage row" style="margin-left:570px;">
+           <div style="text-align:center;vertical-align:center">
+                    <iframe width="500" height="415" src="https://www.youtube.com/embed/WVNp6avC1Ig" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                   </div>
+
+         </div>
+   <script type="text/javascript">
+
+
+$(document).ready(function() {
+
+
+
+    $("input.radio-button-selector").change(function(){ 
+               console.log("hi" + $(this).val()) ;                
+        if ( $(this).val() === "teens" ) {
+
+            $("#selectGoal option[value='Just exploring']").show();
+            $("#selectGoal option[value='Improve my life']").show();
+            
+            $("#selectGoal option[value='Improve my self esteem']").show();
+            $("#selectGoal option[value='Be rich and powerful']").show();
+            $("#selectGoal option[value='Better manage time']").hide();
+           
+            $("#selectGoal option[value='Anxious or Depressed']").show();
+            $("#selectGoal option[value='Improve my grades']").show();
+
+            $("#selectGoal option[value='Manage my finances']").hide();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
+            $("#selectGoal option[value='Anger management']").hide();
+            $("#selectGoal option[value='Addiction management']").hide();
+            $("#selectGoal option[value='Become rich and powerful']").hide();
+            $("#selectGoal option[value='Anxiety or Depression']").hide();
+        }
+        else if ( $(this).val() == "thirty" ) {
+            $("#selectGoal option[value='Just exploring']").show();
+
+            $("#selectGoal option[value='Improve my life']").show();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").show();
+            $("#selectGoal option[value='Improve my self esteem']").show();
+            $("#selectGoal option[value='Become rich and powerful']").show();
+            $("#selectGoal option[value='Better manage time']").show();
+            $("#selectGoal option[value='Manage my finances']").show();
+            $("#selectGoal option[value='Anxious or Depressed']").show();
+            $("#selectGoal option[value='Improve my grades']").hide();
+             $("#selectGoal option[value='Addiction management']").hide();
+              $("#selectGoal option[value='Be rich and powerful']").hide();
+              $("#selectGoal option[value='Anxiety or Depression']").hide();
+              $("#selectGoal option[value='Be rich and powerful']").hide();
+        }else if ( $(this).val() == "midforty" ) {
+            $("#selectGoal option[value='Just exploring']").show();
+            $("#selectGoal option[value='Improve my life']").show();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").show();
+            $("#selectGoal option[value='Improve my self esteem']").show();
+            $("#selectGoal option[value='Become rich and powerful']").show();
+            $("#selectGoal option[value='Better manage time']").show();
+            $("#selectGoal option[value='Manage my finances']").show();
+            $("#selectGoal option[value='Anxious or Depressed']").show();
+            $("#selectGoal option[value='Improve my grades']").hide();
+             $("#selectGoal option[value='Addiction management']").hide();
+             $("#selectGoal option[value='Anxiety or Depression']").hide()
+        }else if ( $(this).val() == "oldage" ) {
+             $("#selectGoal option[value='Anxiety or Depression']").show();
+              $("#selectGoal option[value='Just exploring']").show();
+              $("#selectGoal option[value='Improve my grades']").hide();
+             $("#selectGoal option[value='Addiction management']").hide();
+            $("#selectGoal option[value='Improve my life']").hide();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
+            $("#selectGoal option[value='Improve my self esteem']").hide();
+            $("#selectGoal option[value='Become rich and powerful']").hide();
+            $("#selectGoal option[value='Better manage time']").hide();
+            $("#selectGoal option[value='Manage my finances']").hide();
+              $("#selectGoal option[value='Anxious or Depressed']").hide();
+        }else {
+          $("#selectGoal option[value='Manage my finances']").hide();
+            $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
+            $("#selectGoal option[value='Anger management']").hide();
+            $("#selectGoal option[value='Addiction management']").hide();
+        }
+        
+        });
+    });
+</script>
+ <footer class="footer">
+        <p> <span>&copy; Copyright 2018
+            </span></p>
+    </footer>      
+</body>
+
+
+</script>
+</html>

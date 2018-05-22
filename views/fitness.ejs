@@ -46,58 +46,45 @@
 
 <div class="topheading">
 <div class="homebtn">
-    <a  href="/selfhelp" class="btn btn-dark btn-lg" >Home</a>
+    <a  href="/mywelcomepage" class="btn btn-dark btn-lg" >Home</a>
 </div>
 
     <div class="navbtn">
     <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
                         <p style="font-size:14px;color:black">
                             <% if(user.google.email) { %>
-                            <%=user.google.email%>
+                            <b><%=user.google.email%></b>
                              <% } %>
 
                               <% if(user.facebook.email) { %>
-                            <%=user.facebook.email%>
+                            <b><%=user.facebook.email%></b>
                              <% } %>
 
                                <% if(user.local.email) { %>
-                            <%=user.local.email%>
+                            <b><%=user.local.email%></b>
                              <% } %>
                         </p>
 
       </div>
 </div>
 
-  <div class="jumbotron" style="padding:0;margin-left:10px">
+ <div class="jumbotron" style="padding:0;margin-left:10px">
     <div class="rowpage row" style="padding:0;">
       <div class="col-sm-2 col-xs-2" style="padding:0;">
-       
-      </div>
-             
-             
-               <div class="col-sm-9 col-xs-9" >
-                   <div style="margin-left:20px;padding:0;">Thanks, lets work together to achieve your goals </div>
-                   <div style="margin-left:20px;background:#EFF2FA;">
-                   
-
-                      <h3> Few Affirmations, to say everyday to become rich and powerful</h3>
-                      <div style="margin-left:10px;">
-                      <p>I am blessed,I am rich, I am wealthy, I have freedom</p>
-                      <p>There is more than enough for everyone. Abundance is everywhere I look. I see wealth, abundance and prosperity everywhere I go.</p>
-                      <p>I overcome all obstacles that lie in my way of financial success and independence</p>
-                      <p>My ideals are Bill Gates, Warren Buffet and all those who have invited success in their lives, I will read about them , take risks and grow like them  </p>
-                      <p>I love to keep my room neat and tidy, as cluttered home reflects cluttered mind</p>
-                       <p>I love to exercise as much as I can, as exercising keeps me away from doctor</p>
-                       <p>I am good as I am and will not compare myself to others and be a better version of what I was the previous day.</p>
-                    </div>
-                    
+         <a href="/connect2therapist" class="btn btn-info btn1" id="counsellors">Physical Fitness Coaches</a>
+        
             </div>
+
+             
+             <div id="push"></div>
           </div>
-         </div>
-       </div>  
-             <footer class="container-fluid bg-4 text-center footer" >
+        </div>
+      </div>
+            <footer class="footer"  style="position:relative;height:80px;">
         <p> <span>&copy; Copyright 2018
             </span></p>
     </footer>        
 </body>
 </html>
+               
+               

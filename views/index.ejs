@@ -1,9 +1,8 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
-<head lang="en">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119235303-1"></script>
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119235303-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -11,26 +10,19 @@
 
   gtag('config', 'UA-119235303-1');
 </script>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
     <title>Aadia -- Rejuvenate and Re-energize</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-  
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+    <link rel="stylesheet" href="https://cloud.typography.com/6638272/7155352/css/fonts.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/basicstyles.css">
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/script.js"></script>
 </head>
 
 <body>
-<script>
+
+  <script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '{your-app-id}',
@@ -52,77 +44,85 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
- <div id="page" style="height:100%;" >
+  <section class="intro" style="height:100%;">
+        <div class="inner">
+           <div class="content" >
+         <h1 style="margin-left:20px">aadia </h1>   
+          <h3 style="color:white;margin-left:20px">Rejuvanate and Re-energize</h3>  
+          
+          </div>        
+        </div>
+     
+     <!--End Of Header -->
 
-        <header>
-                
-                <div id="svg" class="hidden">
-                <h1>Inflection Point</h1>
-                <p>A practical guide to growth</p>
-               </div>
-               
+    
 
-        </header>
+       
 
-        <section class="midsection" >
-           <div class="midhero">
-                  <h2 style="color:black;"> <a class="btn1" href="#">Rejuvenate <span>and Re-energize</span></a> with Aadia</h2>
-               
+        <div class="difflogins">
 
-            </div>
-           
-           <div class="midsection2" >
-            
-            <a href="/auth/google" class="btn btn-danger" style="width:140px;"><span class="fa fa-google-plus"></span> Google</a>
-
-                 <a href="/auth/facebook" class="btn btn-primary" style="width:140px;"><span class="fa fa-facebook-square"></span> facebook</a>
-
-               
-
-                  <a href="/login" class="btn btn-dark" style="width:140px;"><span ></span> Login</a>
-             </div>
-        </section>
-
-
-        
+           <h1 style="margin-left:20px"> Inflection Point</h1>   
+          <h3 style="color:white;margin-left:20px">Practical Point to growth </h3>   
+           <div style="margin-left:20px;">
+           <a href="/auth/google" class="btn btn-danger" style="width:140px;"><span class="fa fa-google-plus"></span> Google</a>
+           <a href="/auth/facebook" class="btn btn-primary" style="width:140px;"><span class="fa fa-facebook-square"></span> facebook</a>
+            <a href="/login" class="btn btn-success" style="width:140px;"><span ></span> Login</a>
          </div>
-         <div class="sign" style="margin-left:0 auto">
-                    <div class="row">
-                        <div class="signup-form">
-                            <form name="form1" action="" method="post">
-                                <h2 class="text-center">Sign Up</h2>
-                                <div class="form-group">
-                                    <input type="text" name="username" id="username" class="form-control" placeholder="Email" required="required">
-                                   
-                                </div>
-                                
-                                <div class="form-group">
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="required">
-                                </div>
+     
+      <div id="login">  
+         <h2><i class="fa fa-lock" style="margin-right: 10px;" aria-hidden="true"></i>Sign Up</h2>
+        <form id="form-login" action="" method="post">   
+            <fieldset>
+            <p>
+                   <!-- <label for="username"> UserName :</label>-->
+                 <input type="text" name="username" id="username" class="form-control" placeholder="Email" required="required">
+               </p>
 
-                                <div class="form-group">
-                                    <input type="password" name="confpassword" id="confpassword" class="form-control" placeholder="Confirm Password" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" id="submit" class="btn btn-primary btn-block">Sign Up</button>
-                                </div>
-                                <p style="text-align:center">Already have an account? <b><a href="/login">Login</a></b></p>
-            <p style="text-align:center">Or go <b><a href="/">home</a> page</b></p>
-                            </form>
-                        </div>
-                    </div>
+                <p>
+                   <!-- <label for="password"> Password:</label> -->
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="required">
+               </p>
+               <p>
+                   <input type="password" name="confpassword" id="confpassword" class="form-control" placeholder="Confirm Password" required="required">
+               </p>
 
-                </div>
 
-         
-         <div style="bottom:0;height:300px"></div>
+                <!-- <li>
+                    <label for="chkbox">Home Business Owner?</label>
+                    <input type="checkbox" name="chkbox" id="cbox1" value="first_checkbox">
+                </li> -->
 
- <footer class="footer" style="bottom:0;height:80px">
+                <p>
+                    <button class="login1btn" >SignUp</button>
+                  <p style="text-align:center;color:white">Already have an account? <b><a href="/login">Login</a></b></p>
+            <p style="text-align:center;color:white">Or go <b><a href="/">home</a> page</b></p>
+                </p>
+
+           </fieldset>
+        </form>
+       </div>
+</section>
+ <div style="bottom:0;height:300px"></div>
+ </div>
+
+<footer class="footer" style="bottom:0;height:80px">
         <p> <span>&copy; Copyright 2018
             </span></p>
-    </footer>        
+    </footer>         
+   
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+<script type="text/javascript">
+    $(document).ready(function () {
+      
+          $(".cancel1btn").click(function () {
+               event.preventDefault();
+                history.back(1);
+            });
+              
+          });
+
+  </script>
 
 </body>
-
 </html>
-     
