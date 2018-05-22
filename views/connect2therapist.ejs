@@ -2,79 +2,82 @@
 <html>
 
 <head lang="en">
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119235303-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119235303-1');
+</script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Creating a Responsive Web Design</title>
+    <title>Aadia- Rejuvenate and Re-energize</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+
   
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/script.js"></script>
 </head>
-<body>
+<div id="page">
 
- <div id="page">
-
-        <header>
-                
-                <div id="svg">
-                <h1>Inflection Point</h1>
-                <p>A practical guide to growth</p>
-               </div>
-                 <div class="hero">
-                  <h2>Aadia -- Holistic App</h2>
-                 <a class="btn1" href="#">Rejuvenate <span>and Re-energize</span></a>
-
-            </div>
+       <header>
+                <div id="heading"> 
+                  <h1>Aadia -- Holistic App</h1>
+                 <p>Rejuvenate and Re-energize</p>
+            </div>   
+                <div id="svg" > 
+                <h1>A practical guide to growth</h1>
+               </div>        
+        </header>
 
 
 
-   <div class="jumbotron jumbotron-billboard" style="padding:0;">
+<div class="topheading">
+<div class="homebtn">
+    <a  href="/lifeskills" class="btn btn-dark btn-lg" >Home</a>
+</div>
 
-        <!--Who are Dasas-->
-        <div style="margin-left:20px">
-        
-        
-            <nav style="display:inline-block;float:right;margin-right:20px">
- 
-                      
-                        <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+    <div class="navbtn">
+    <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
                         <p style="font-size:14px;color:black">
                             <% if(user.google.email) { %>
-                            <b><%=user.google.email%></b>
+                            <%=user.google.email%>
                              <% } %>
 
                               <% if(user.facebook.email) { %>
-                            <b><%=user.facebook.email%></b>
+                            <%=user.facebook.email%>
                              <% } %>
 
                                <% if(user.local.email) { %>
-                            <b><%=user.local.email%></b>
+                            <%=user.local.email%>
                              <% } %>
                         </p>
-                   
-              </nav>
-            </div>
+
+      </div>
+</div>
+
                
 
-             <div class="row" style="margin-left:20px;padding:0;" id="thanks">
-               <!-- <div class="col-sm-3"  style="text-align:left;padding:45px">-->
-                    <ul  class="sidelist">
-                           <li > <a  class="btn btn-info btn-lg" href="/teenselfesteemthanks" style="margin-bottom:10px;width:300px;overflow:hidden"> Home</a></li>
-                         
-                    </ul>
 
-                     <div class="col-sm-7" style="padding:0;">                 
+   
+    <div class="jumbotron" style="padding:0;margin-left:10px">
+    <div class="rowpage row" style="padding:0;">
+      <div class="col-sm-2 col-xs-2" style="padding:0;margin-left:20px">
+      </div>
+         <div class="col-sm-9 col-xs-9">  
+                              <p>Work is going on , Coming up Soon!</p>            
                          <form class="form-search" action="/connect2therapist" method="post">                      
-                            <label for="inputsearch">  </label>
+                            <label for="inputsearch"> </label>
                             <input  class="form-control" id="inputsearch" name="inputsearch" type="text"  placeholder="Enter Zip Code">
-                             <button  id="search" name="search" value="search" >Search</button>
+                             <button  id="search" name="search" value="search" >Search</button> 
                          </form>
                      </div>   
 

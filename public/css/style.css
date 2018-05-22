@@ -39,6 +39,17 @@ header {
   
 }
 
+.btn-info,.btn-dark{
+   background-color:rgb(75, 0, 130,0.9);
+}
+
+.btn-info:hover, .btn-dark:hover{
+  background-color:white;
+  color:rgb(75, 0, 130,0.9);
+}
+
+
+
 .topheading{
    width:100%;
 }
@@ -72,7 +83,7 @@ header {
 
 #userdetails-form {
     width: 400px;
-    background: rgba(220, 180, 180, 0.3);
+    background: rgb(75, 0, 130,0.3);
     line-height:1.5rem;
     margin-left: auto;
     margin-top: 3%;
@@ -107,6 +118,30 @@ header {
 
 }
 
+#chat-window{
+    height: 400px;
+    overflow: auto;
+    background: #f9f9f9;
+}
+
+#output p{
+    padding: 14px 0px;
+    margin: 0 20px;
+    border-bottom: 1px solid #e9e9e9;
+    color: #555;
+}
+
+#feedback p{
+    color: #aaa;
+    padding: 14px 0px;
+    margin: 0 20px;
+}
+
+#output strong{
+    color: #575ed8;
+}
+
+
 #oprahaffirmations{
   display:none;
 }
@@ -116,7 +151,8 @@ ul li{
 }
 .colcont{
     display:flex;
-    background:olivedrab;
+    background:rgb(75, 0, 130);
+    border:1px solid white;
     color:#fff;
 }
 
