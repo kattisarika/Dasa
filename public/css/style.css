@@ -23,6 +23,7 @@ header {
     border-bottom: 1px solid white;
     color:#fff; 
     height:120px;
+     font-size: 200%;
 }
 
  #svg {
@@ -167,7 +168,7 @@ ul li{
    #heading{
   float:left;
    margin:5px auto;
-   font-size: 12px;
+   font-size: 10px;
     }  
 
     .homebtn {
