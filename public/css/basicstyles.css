@@ -10,7 +10,7 @@ html,
 body {
     width: 100%;
     height: 100%;
-     background: url('../images/imagechg1.jpg');
+    /*background: darkblue url('../images/imagechg1.jpg');*/
     font-family: 'Raleway', sans-serif;
 }
 
@@ -18,11 +18,11 @@ body {
     width: 100%;
     height: 100%;
     margin: auto;
-  
+   background-size: cover;
     opacity: 1;
     display: block;
     /* top: 0; */
-    background-size: cover;
+   
 }
 
 .intro .inner {
@@ -57,9 +57,10 @@ h1 {
     text-transform: uppercase;
 }
 
+
 .heading{
      width: 23%;
-    color: white;
+    color: black;
      margin-left: 2 rem;
     margin-left: 2%;
 }
@@ -84,8 +85,9 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     font-size: 100%;
-    /*background: #136BE8;*/
-    color: #e3e3e3;
+    /*background: #136BE8;
+    color: #e3e3e3;*/
+    color:black;
     font-weight: bold;
     text-shadow: 0px 0px 500px #000;
     /*box-shadow: 10px 10px 5px #136BE8;*/
@@ -98,9 +100,28 @@ a:hover {
     text-shadow: 0px 0px 300px #000;
 }
 
+.login-form,
+.signup-form,
+.search-form,
+.reset-form {
+    width: 40%;
+    margin: 50px 0px 50px 450px;
+}
+
+.login-form form,
+.signup-form form,
+.reset-form form {
+    margin-bottom: 15px;
+   background: rgb(42, 0, 97,0.3);
+   color:white; 
+    text-align: center;
+    padding: 30px;
+}
+
+
 #register {
-    width: 300px;
-    background: rgba(0, 0, 0, 0.5);
+    width: 500px;
+    background: rgb(42, 0, 97,0.3);
     line-height: 0.5rem;
     margin-left: auto;
     /* float: left; */
@@ -165,7 +186,7 @@ fieldset input[type="email"] {
     color: #777;
     font-size: 13px;
     height: 40px;
-    width: 250px;
+   
     text-align: center;
 }
 
@@ -198,11 +219,11 @@ fieldset input[type="email"] {
 }
 
 #login {
-    width: 400px;
-    background: rgba(0, 0, 0, 0.5);
+    width: 500px;
+    background: rgba(40, 0, 97, 0.5);
     line-height: 0.5rem;
     margin-left: auto;
-    margin-top: 12%;
+    margin-top: 2%;
     /* float: left; */
     margin-right: auto;
     /*  -webkit-border-radius: 20px;
@@ -238,6 +259,7 @@ fieldset input[type="email"] {
     width: 100%;
     line-height: 2rem;
     margin-bottom: 2rem;
+    text-align:center;
 }
 
 #login fieldset p {
@@ -260,16 +282,16 @@ fieldset input[type="email"] {
 #login fieldset input[type="text"],
 #login fieldset input[type="password"],
 fieldset input[type="email"] {
-    background-color: #eee;
+    background-color:#eee;
     color: #777;
     font-size: 13px;
-    height: 40px;
-    width: 350px;
+    height: 50px;
+  
     text-align: center;
 }
 
 .loginbtn {
-    background-color: #136BE8;
+    background-color:rgb(75, 0, 130,0.9);
     color: white;
     padding: 4px 10px;
     width: 250px;
@@ -357,7 +379,7 @@ fieldset input[type="email"] {
 
 
 .difflogins{
-     background: rgba(0, 0, 0, 0.5);
+   
     width: 100%;
     height:100%;
     text-align:left;
@@ -388,7 +410,7 @@ fieldset input[type="email"] {
 }
 
 .login1btn {
-    background-color: #136BE8;
+   background-color:rgb(75, 0, 130,0.9);
     color: white;
     padding: 4px 10px;
     width: 120px;
