@@ -21,7 +21,23 @@ $(document).ready(function() {
     });
 
 
-    $('#login').click(function() {  
+    $("#signupbtn").click(function(){
+        $(".error").hide();
+          var emailaddressVal = $("#username").val();
+        if(emailaddressVal == '') {
+            $("#username").after('<span class="error">Please enter your email address.</span>');
+            hasError = true;
+        }else if(!emailReg.test(emailaddressVal)) {
+            $("#username").after('<span class="error">Enter a valid email address.</span>');
+            hasError = true;
+        }
+
+
+        if(hasError == true) { return false; }
+    })
+
+
+    $('#loginbtn').click(function() {  
  
         $(".error").hide();
         var hasError = false;
