@@ -37,7 +37,7 @@ body {
 .content {
     display: block;
     width: 100%;
-    background: #4B0082;
+    background: #2a0061;
     padding: 1%;
 
 }
@@ -199,7 +199,7 @@ fieldset input[type="email"] {
 
 #login {
     width: 400px;
-   background: rgb(42, 0, 97,0.3);
+   background: #2a0061;
     line-height: 0.5rem;
     margin-left: auto;
     margin-top: 12%;
@@ -388,7 +388,8 @@ fieldset input[type="email"] {
 }
 
 .login1btn {
-    background-color:rgb(42, 0, 97);
+    background-color:#2a0061;
+    border:1px solid white;
     color: white;
     padding: 4px 10px;
     width: 120px;
@@ -400,7 +401,7 @@ fieldset input[type="email"] {
 }
 
 .footer {
-    background: #4B0082;
+    background:#2a0061;
     height: 100%;
    
 }
