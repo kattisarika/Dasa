@@ -40,13 +40,10 @@ header {
 }
 
 .btn-info,.btn-dark{
-   background-color:rgb(75, 0, 130,0.9);
+   background-color:rgb(42, 0, 97);
 }
 
-.btn-info:hover, .btn-dark:hover{
-  background-color:white;
-  color:rgb(75, 0, 130,0.9);
-}
+
 
 
 
