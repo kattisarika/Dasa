@@ -99,7 +99,8 @@ a:hover {
 }
 
 #register {
-    width: 300px;
+    width: 400px;
+     background: #2a0061;
     /*background: rgba(0, 0, 0, 0.5);*/
     line-height: 0.5rem;
     margin-left: auto;
@@ -165,7 +166,7 @@ fieldset input[type="email"] {
     color: #777;
     font-size: 13px;
     height: 40px;
-    width: 250px;
+   width: 350px;
     text-align: center;
 }
 
@@ -198,7 +199,7 @@ fieldset input[type="email"] {
 }
 
 #login {
-    width: 400px;
+    width: 300px;
    background: #2a0061;
     line-height: 0.5rem;
     margin-left: auto;
@@ -264,7 +265,7 @@ fieldset input[type="email"] {
     color: #777;
     font-size: 13px;
     height: 40px;
-    width: 350px;
+    width: 250px;
     text-align: center;
 }
 
