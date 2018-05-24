@@ -37,7 +37,7 @@ body {
 .content {
     display: block;
     width: 100%;
-    background: #2a0061;
+    background: #4b0000;
     padding: 1%;
 
 }
@@ -100,7 +100,7 @@ a:hover {
 
 #register {
     width: 400px;
-     background: #2a0061;
+     background: #dfb9b9;
     /*background: rgba(0, 0, 0, 0.5);*/
     line-height: 0.5rem;
     margin-left: auto;
@@ -129,7 +129,7 @@ a:hover {
 }*/
 
 #register h2 {
-    color: white;
+    color: #4b0000;
     padding: 5px;
     /* text-shadow: 0px 0px 14px rgba(255, 255, 255, 1);*/
     line-height: 70px;
@@ -200,7 +200,7 @@ fieldset input[type="email"] {
 
 #login {
     width: 300px;
-   background: #2a0061;
+   background: #d4a2a2;
     line-height: 0.5rem;
     margin-left: auto;
     margin-top: 12%;
@@ -228,7 +228,7 @@ fieldset input[type="email"] {
 }*/
 
 #login h2 {
-    color: white;
+    color: #4b0000;
     padding: 5px;
     /* text-shadow: 0px 0px 14px rgba(255, 255, 255, 1);*/
     line-height: 70px;
@@ -389,9 +389,9 @@ fieldset input[type="email"] {
 }
 
 .login1btn {
-    background-color:#2a0061;
+    background-color:#d4a2a2;
     border:1px solid white;
-    color: white;
+    color: #4b0000;
     padding: 4px 10px;
     width: 120px;
     height: 40px;
@@ -402,7 +402,7 @@ fieldset input[type="email"] {
 }
 
 .footer {
-    background:#2a0061;
+    background:#4b0000;
     height: 100%;
    
 }
