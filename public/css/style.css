@@ -39,6 +39,8 @@ header {
   
 }
 
+
+
 .btn-info,.btn-dark{
    background-color:#4b0000;
 }
@@ -206,8 +208,17 @@ ul li{
    #heading{
   float:left;
    margin:5px auto;
-   font-size: 10px;
+   
     }  
+
+  #heading h1{
+    font-size: 24px;
+  }  
+
+  #heading p{
+    font-size: 14px;
+    margin-bottom:2px;
+  }  
 
     .homebtn {
   float:left;
