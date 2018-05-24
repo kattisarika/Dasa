@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+html {
+    background: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    margin-top: 15px;
+  
+    /*background: #f5f2f2;
+       opacity: 0.5;*/
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 500px;
+    height: 340px;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+
+section,
+header {
+    display: block;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.start {
+    text-align: center;
+}
+
+.button-start {
+    color: darkcyan;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+#question_wrapper {
+    height: 160px;
+}
+
+.quiz-section {
+    width: 100%;
+}
+
+#question {
+    font-size: 15px;
+    text-align: left;
+}
+
+#choices {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+s .question-number {
+    float: left;
+}
+
+.error{
+    color:red;
+    font-size: 20px;
+}
+
+.option {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.button-nxt {
+   
+    margin-right: 50%;
+}
+
+.button-next,
+.button-try {
+    margin-left: 10px;
+    padding: 0;
+    float: right;
+    width: 100px;
+    height: 60px;
+    color: darkcyan;
+    border-radius: 15px;
+    font-size: 20px;
+}

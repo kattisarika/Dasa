@@ -24,10 +24,64 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../js/prototype.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/script.js"></script>
+   
 </head>
 <body>
+<script type="text/javascript">
 
+ function showChildren(obj)
+ {
+     var children = obj.immediateDescendants();
+     for(var i=0;i<children.length;i++)
+     {
+         if(children[i].tagName.toLowerCase()=='ul')
+             children[i].toggle();
+     }
+ }
+ 
+ // Called when a node's checkbox changes, toggles the child checkboxes recursively
+ // @param: the reference of the clicked node, i.e. the <li>
+ // @param: reference to self
+ function checkChildren(obj,srcObj)
+ {
+     var children = obj.immediateDescendants();
+     for(var i=0;i<children.length;i++)
+     {
+         if(children[i].tagName.toLowerCase()=='input' && children[i].type=='radio' && children[i]!=srcObj)
+            children[i].checked = srcObj.checked;
+ 
+         // recursive call
+         checkChildren(children[i],srcObj);
+     }
+   }
+
+
+function startQuiz()
+{
+  var checkedValue = null; 
+ var inputElements = document.getElementsByClassName('messageCheckbox');
+  console.log(inputElements[i]);
+ var tframe =  document.getElementById("videoWrapper");
+ 
+  for(var i=0; inputElements[i]; i++){
+
+      if(inputElements[i].checked){
+           checkedValue = inputElements[i].value;
+            //alert(checkedValue);
+           if(checkedValue === "beginnerjavascript"){
+              tframe.style.display = "block";
+            }else{
+               tframe.style.display = "none";
+            }
+
+          
+           break;
+      }
+}
+  
+}
+
+</script>
 
 
   <div id="page">
@@ -76,19 +130,45 @@
  <ul style="display:block">
 
 
-     <li ><input type='checkbox' name='f_1'><a href='javascript:void(0);'>Java Script</a>
+     <li id="1" style="background:#d4a2a2;color:#4b0000;padding:12px;margin-bottom:10px"><input type="type"  style="display:none;" name='f_1' onclick='checkChildren($("1"),this);'><a href='#' style="color:#4b0000;" onclick='showChildren($("1"));'><b>&plus;</b>JavaScript</a>
+         <ul style="display:none;margin-left:15px;padding:4px;margin-top:5px">
+             <li id="2"><input type='radio' style="background:#d4a2a2;color:#4b0000;padding:2px" value="beginnerjavascript" class="messageCheckbox" onclick="startQuiz()"><a href='#' style="color:#4b0000;">Beginner</a></li>
+             <li id="3"><input type='radio' style="background:#d4a2a2;color:#4b0000;padding:2px" class="messageCheckbox" onclick="startQuiz()"><a href='#' style="color:#4b0000;">Intermediate</a></li>
+   <li id=“4”><input type='radio' style="background:#d4a2a2;color:#4b0000;padding:2px" class="messageCheckbox" onclick="startQuiz()" ><a href='#' style="color:#4b0000;">Advanced</a></li>
+   </ul>
      </li>
 
-       <li ><input type='checkbox' name='f_1' ><a href='javascript:void(0);'>Node Js</a>
+
+       <li id="5" style="background:#d4a2a2;color:#4b0000;padding:12px;margin-bottom:10px"><input type="type"  style="display:none" name='f_1' onclick='checkChildren($("5"),this);'><a href='javascript:void(0);' style="color:#4b0000;" onclick='showChildren($("5"));'><b>&plus;</b>Node Js</a>
+         <ul style="display:none;margin-left:15px;color:#4b0000">
+             <li id="6"><input type='radio' value="beginnernodejs" class="messageCheckbox" onclick="startQuiz()"><a href='#' style="color:#4b0000;">Beginner</a></li>
+             <li id="7"><input type='radio'  value="intermediatenodejs" class="messageCheckbox" onclick="startQuiz()"><a href='#' style="color:#4b0000;">Intermediate</a></li>
+           <li id=“8”><input type='radio' class="messageCheckbox"  value="advancednodejs" onclick="startQuiz()" ><a href='#' style="color:#4b0000;">Advanced</a></li>
+          </ul>
      </li>
 
-       <li ><input type='checkbox' name='f_1' ><a href='javascript:void(0);'>Mongo DB</a>
+       <li id="9" style="background:#d4a2a2;color:#4b0000;padding:12px;margin-bottom:10px"><input type="type"  style="display:none" name='f_1' onclick='checkChildren($("9"),this);'><a href='javascript:void(0);' style="color:#4b0000;" onclick='showChildren($("9"));'><b>&plus;</b>MongoDB</a>
+        <ul style="display:none;margin-left:15px;color:#4b0000">
+             <li id="10"><input type='radio' value="beginnermongo" class="messageCheckbox" onclick="startQuiz()"><a href='#' style="color:#4b0000;">Beginner</a></li>
+             <li id="11"><input type='radio'  value="intermediatemongo" class="messageCheckbox" onclick="startQuiz()"><a href='#' style="color:#4b0000;">Intermediate</a></li>
+           <li id=“12”><input type='radio' class="messageCheckbox"  value="advancedmongo" onclick="startQuiz()" ><a href='#' style="color:#4b0000;">Advanced</a></li>
+          </ul>
      </li>
 
-      <li ><input type='checkbox' name='f_1' ><a href='javascript:void(0);'>MySQL</a>
+      <li id="13" style="background:#d4a2a2;color:#4b0000;padding:12px;margin-bottom:10px"><input type="type"  style="display:none" name='f_1' onclick='checkChildren($("9"),this);'><a href='javascript:void(0);' style="color:#4b0000;" onclick='showChildren($("13"));'><b>&plus;</b>Block Chain Technology</a>
+        <ul style="display:none;margin-left:15px;color:#4b0000">
+             <li id="14"><input type='radio' value="beginnermongo" class="messageCheckbox" onclick="startQuiz()"><a href='#' style="color:#4b0000;">Beginner</a></li>
+             <li id="15"><input type='radio'  value="intermediatemongo" class="messageCheckbox" onclick="startQuiz()"><a href='#' style="color:#4b0000;">Intermediate</a></li>
+           <li id=“16”><input type='radio' class="messageCheckbox"  value="advancedmongo" onclick="startQuiz()" ><a href='#' style="color:#4b0000;">Advanced</a></li>
+          </ul>
      </li>
 
-      <li ><input type='checkbox' name='f_1' ><a href='javascript:void(0);'>Python</a>
+      <li id="17" style="background:#d4a2a2;color:#4b0000;padding:12px;margin-bottom:10px"><input type="type"  style="display:none" name='f_1' onclick='checkChildren($("9"),this);'><a href='javascript:void(0);' style="color:#4b0000;" onclick='showChildren($("17"));'><b>&plus;</b>DataScience</a>
+        <ul style="display:none;margin-left:15px;color:#4b0000">
+             <li id="18"><input type='radio' value="beginnermongo" class="messageCheckbox" onclick="startQuiz()"><a href='#' style="color:#4b0000;">Beginner</a></li>
+             <li id="19"><input type='radio'  value="intermediatemongo" class="messageCheckbox" onclick="startQuiz()"><a href='#' style="color:#4b0000;">Intermediate</a></li>
+           <li id=“20”><input type='radio' class="messageCheckbox"  value="advancedmongo" onclick="startQuiz()" ><a href='#' style="color:#4b0000;">Advanced</a></li>
+          </ul>
      </li>
 
 
@@ -96,8 +176,10 @@
  
                         
                  </div>       
-                <div class="col-sm-9 col-xs-9" >   
-                 
+                <div class="col-sm-9 col-xs-9" >  
+                  <div class="videoWrapper" id="videoWrapper" style="display:none">
+                <iframe src="../html/quizapp.html" id="jsframe" allowfullscreen></iframe> 
+                 </div>
               </div>  
               </div>    
               <div id="push"></div>

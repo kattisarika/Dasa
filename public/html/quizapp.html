@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+   
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+     <link rel="stylesheet" href="/css/quizapp.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1> JavaScript Beginners Quiz</h1>
+    </header>
+
+    <section class="start">
+        <button name="button" class="button-start">Start Quiz</button>
+    </section>
+
+    <section class="quiz-section" style="display: none;">
+        <div id="question_wrapper">
+            <h1 class="text" id="question">How well you know JavaScript?</h1>
+            <div id="choices">
+                <input class="option" type="radio" value="0" name="option">Novice
+                <br>
+                <input class="option" type="radio" value="1" name="option">Intermediate
+                <br>
+                <input class="option" type="radio" value="2" name="option">Expert
+                <br>
+            </div>
+        </div>
+
+        <div class="question-number" id="questionNumberDisplay"></div>
+        <div class="question-number1" id="questionNumberDisplay1" style="display:none"></div>
+
+        <div class="button-nxt">
+            <button name="button" class="button-next">Next</button>
+        </div>
+    </section>
+
+
+    <section class="results" style="display: none;">
+        <button name="button" class="button-try">Try Again</button>
+
+    </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+ <script  src="/js/quizapp.js"></script>
+
+</html>
