@@ -602,7 +602,7 @@ Even if this approach requires more work in the long run, it is used often in or
 }
 
 #register {
-    width: 400px;
+    width: 300px;
     
     background: rgba(0, 0, 0, 0.5);
     line-height: 0.5rem;
