@@ -1,22 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
 }
 
 html,
 body {
     width: 100%;
-    height: 100%;
-  
-    font-family: 'Raleway', sans-serif;
+   /* height: 100%;*/
+   background:#4d0000;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .intro {
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     margin: auto;
   
     opacity: 1;
@@ -42,19 +44,101 @@ body {
 
 }
 
+.videosettings{
+   width: 100%;
+   height:817px;
+}
+
+#outer{
+    width:100%;
+    display:block;
+    text-align:center;
+    position:relative;
+    overflow: hidden;
+   
+    height:810px;
+     background: rgba(0,0,0,0.3);
+     opacity:0.3;
+  -webkit-transition:.4s background ease;
+    -moz-transition:.4s background ease;
+    -o-transition:.4s background ease;
+    transition:.4s background ease;
+}
+    #home-top-video{
+        left:0%;
+        top:0%;
+       /* height:100%;*/
+        width:100%;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+    #home-text{
+       
+        width:100%;
+        position: absolute;
+        z-index: 0;
+        color:white
+    }
+
+    .smallwrites {
+    background: #ffffff;
+     /*margin: 5px 100px 5px 100px;*/
+   
+   
+}
+
+.midcolcont{
+     background: rgba(0,0,0,0.3);
+     display:flex;
+}
+
+
+.colcont{
+    display:flex;
+    background:olivedrab;
+    color:#fff;
+}
+
+.cont{
+    padding: 10px;
+}
+
+.col-container {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cell-cont{
+    width: 29%;
+    margin-bottom: 2%;
+     margin-top: 2%;
+     margin-left:2%;
+      margin-right:2%;
+    color:#fff;
+    border:3px solid white;
+   
+}
+
+.col{
+    list-style-type: none;
+    color:#fff;
+}
+
+
 h1,
 nav {
     display: inline-block;
 }
 
 h1 {
-    font-family: 'IM Fell English', serif;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     width: 23%;
     color: white;
     font-size: 200%;
     margin-left: 2 rem;
     margin-left: 2%;
-    text-transform: uppercase;
+   
 }
 
 .heading{
@@ -98,23 +182,46 @@ a:hover {
     text-shadow: 0px 0px 300px #000;
 }
 
+.btndisplay{
+    margin-top:4px;
+    
+}
+
 #register {
     width: 400px;
-     background: #dfb9b9;
-    /*background: rgba(0, 0, 0, 0.5);*/
+    
+    background: rgba(0, 0, 0, 0.5);
     line-height: 0.5rem;
-    margin-left: auto;
+   
     /* float: left; */
-    margin-right: auto;
-    margin-top: 9%;
+   
+    margin-top: 10%;
     /* -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;*/
     box-shadow: 0px 0px 25px white;
     border: 1px solid white;
     text-align: center;
-    padding-left: 15px;
-    padding-right: 15px;
+    
+    top:0;
+    padding-left: 2%;
+    padding-right:2%;
+    position:absolute;
+    
+    margin-left: 40%;
+    z-index:0;
+}
+
+
+.headingh2{
+   color:white;
+   text-align:center;
+   padding-top:4%;
+   text-transform:uppercase;
+   font: bold 52px Helvetica, Arial, Sans-Serif;
+   text-shadow: 1px 1px #fe4902, 
+                2px 2px #fe4902, 
+                3px 3px #fe4902;
 }
 
 
@@ -200,10 +307,10 @@ fieldset input[type="email"] {
 
 #login {
     width: 300px;
-   background: #d4a2a2;
+   background: rgba(0,0,0,0.5);
     line-height: 0.5rem;
     margin-left: auto;
-    margin-top: 12%;
+    margin-top: 1%;
     /* float: left; */
     margin-right: auto;
     /*  -webkit-border-radius: 20px;
@@ -228,7 +335,7 @@ fieldset input[type="email"] {
 }*/
 
 #login h2 {
-    color: #4b0000;
+    color: white;
     padding: 5px;
     /* text-shadow: 0px 0px 14px rgba(255, 255, 255, 1);*/
     line-height: 70px;
@@ -336,7 +443,7 @@ fieldset input[type="email"] {
 }*/
 
 #smallwriteUp {
-    font-family: 'proxima-nova', sans-serif;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: white;
     font-size: 18px;
     line-height: 2rem;
@@ -359,15 +466,28 @@ fieldset input[type="email"] {
 
 .difflogins{
      /*background: rgba(0, 0, 0, 0.5);*/
-    width: 100%;
-    height:100%;
+  
+   
     text-align:left;
+    left:0%;
+    top:0;
+    height:100%;
+    width:100%;
    
-   
+   /* position: absolute;
+    z-index: 0;*/
+    color:white;
+      background: rgba(0, 0, 0, 0.5);
+     opacity:0.6;
+  -webkit-transition:.4s background ease;
+    -moz-transition:.4s background ease;
+    -o-transition:.4s background ease;
+    transition:.4s background ease;
+ 
 }
 
 .loginconf{
-     font-family: 'proxima-nova', sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
      font-size: 1.2rem;
       text-align: center;
       padding:0.5em;
@@ -389,7 +509,8 @@ fieldset input[type="email"] {
 }
 
 .login1btn {
-    background-color:#d4a2a2;
+    /*background-color:#d4a2a2;*/
+    background-color:#ffffff;
     border:1px solid white;
     color: #4b0000;
     padding: 4px 10px;
@@ -404,6 +525,7 @@ fieldset input[type="email"] {
 .footer {
     background:#4b0000;
     height: 100%;
+    width:100%;
    
 }
 
@@ -412,3 +534,116 @@ fieldset input[type="email"] {
     padding: 20px;
     color: #fff;
 }
+
+
+}
+
+
+/* desktop first approach = (the website was built initialy for desktop and will be adapted for mobiles)
+Even if this approach requires more work in the long run, it is used often in order to develop and Minimum Voable Product with the least amount of initial investment
+*/
+
+
+/*ipad lanscape / small laptop*/
+
+@media only screen and (max-width: 1024px) {
+    /* acting like an IF statement, the media query is a set of conditions in which the containing css will be applied
+    for example the statament above says: IF the media on which this CSS is going to used is SCREEN (Mobiles, Tables, Laptops, Desktops or Projectors) and the maximum resolution of that device is 1024px, THEN apply the body color blue for all the text
+    */
+    body {
+        color: blue;
+    }
+}
+
+
+/*ipad potrait*/
+
+@media only screen and (max-width: 768px) {
+    body {
+        color: red;
+    }
+
+    .headingh2{
+   color:white;
+   text-align:center;
+   padding-top:4%;
+   text-transform:uppercase;
+   font: bold 24px Helvetica, Arial, Sans-Serif;
+   text-shadow: 1px 1px #fe4902, 
+                2px 2px #fe4902, 
+                3px 3px #fe4902;
+}
+
+
+     .cell-cont {
+    width: 100%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    color: #fff;
+    border: 3px solid white;
+    }
+
+    #outer{
+    width:100%;
+    display:block;
+    text-align:center;
+    position:relative;
+    overflow: hidden;
+   
+    height:810px;
+     background: #2d0000;
+     opacity:0.3;
+  -webkit-transition:.4s background ease;
+    -moz-transition:.4s background ease;
+    -o-transition:.4s background ease;
+    transition:.4s background ease;
+}
+
+#register {
+    width: 400px;
+    
+    background: rgba(0, 0, 0, 0.5);
+    line-height: 0.5rem;
+   
+    /* float: left; */
+   
+    margin-top: 30%;
+    /* -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;*/
+    box-shadow: 0px 0px 25px white;
+    border: 1px solid white;
+    text-align: center;
+    
+    top:0;
+    padding-left: 2%;
+    padding-right:2%;
+    position:absolute;
+    
+   margin-left: 0%;
+    z-index:0;
+}
+}
+
+
+/*iPhone landscape*/
+
+@media only screen and (max-width: 480px) {
+    body {
+        color: green;
+    }
+
+   
+}
+
+
+/*iPhone portrait*/
+
+@media only screen and (max-width: 320px) {
+    body {
+        color: purple;
+    }
+}
+
