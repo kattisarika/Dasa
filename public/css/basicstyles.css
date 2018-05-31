@@ -618,12 +618,22 @@ Even if this approach requires more work in the long run, it is used often in or
     text-align: center;
     
     top:0;
-    padding-left: 2%;
-    padding-right:2%;
-    position:absolute;
+    padding-left: 15px;
+    padding-right:15px;
+   
     
    margin-left: 0%;
-    z-index:0;
+    
+}
+#register fieldset input[type="text"],
+#register fieldset input[type="password"],
+fieldset input[type="email"] {
+    background-color: #eee;
+    color: #777;
+    font-size: 13px;
+    height: 40px;
+   width: 250px;
+    text-align: center;
 }
 }
 
