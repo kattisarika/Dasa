@@ -361,7 +361,11 @@ app.use(function (req, res, next) {
 
 
 app.get("/", function (req, res) {
-res.render('index');
+	res.render('index');
+});
+
+app.get("/index", function(req,res){
+	res.render("index");
 });
 
 /*app.get('/sign', function (req, res) {
@@ -457,9 +461,9 @@ res.redirect("mywelcomepage");
 
 
 app.get('/forgotpassword',function(req,res){
-res.render('forgotpassword.ejs',{
-data : ""
-});
+	res.render('forgotpassword',{
+	data : ""
+	});
 });
 
 app.post('/forgotpassword',function(req,res){
@@ -1541,4 +1545,5 @@ io.on('connection',function(socket){
         socket.broadcast.emit('typing', data);
     });
 	
-});
+})
+
