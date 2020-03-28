@@ -12,7 +12,7 @@
 </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aadia- Rejuvenate and Re-energize</title>
+    <title>Yeda -- Holistic App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
    <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -27,52 +27,33 @@
     <script src="../js/script.js"></script>
 </head>
 <body>
-
-
-
-  <div id="page">
-
-       <header>
-                <div id="heading"> 
-                  <h1>Yeda -- Holistic App</h1>
-                 <p>Rejuvenate and Re-energize</p>
-            </div>   
-                <div id="svg" > 
-                <h1>A practical guide to growth</h1>
-               </div>        
-        </header>
-
-
-
-<div class="topheading">
-<div class="homebtn">
-    <a  href="/mywelcomepage" class="btn btn-dark btn-lg"  >Home</a>
-</div>
-
-    <div class="navbtn">
-    <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
-                        <p style="font-size:14px;color:black">
-                            <% if(user.google.email) { %>
-                            <b><%=user.google.email%></b>
+        <header >
+        <div class="row"  >
+                <a href="/teenselfesteemthanks" class="homebutton">Home</a>  
+              <p class="headingContent"> Yeda -- Holistic App</p> 
+              <div class="row">
+               <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+              <p style="text-align:right;font-size:12px;margin-right:2%;"> <% if(user.google.email) { %>
+                            <%=user.google.email%>
                              <% } %>
 
                               <% if(user.facebook.email) { %>
-                            <b><%=user.facebook.email%></b>
+                           <%=user.facebook.email%>
                              <% } %>
 
                                <% if(user.local.email) { %>
-                            <b><%=user.local.email%></b>
-                             <% } %>
-                        </p>
+                          <%=user.local.email%>
+                             <% } %></p>
+              </div>
+        </div>
 
-      </div>
-</div>
-<div class="jumbotron" style="padding:0;margin-left:10px">
+    </header>
+
 
   
-  <div class="rowpage row" style="padding:0;">
+  <div class="row" >
 
-        <div class="col-sm-2 col-xs-2" style="padding:0;margin-top:50px">
+        <div class="col-sm-2">
                      <a href="/tests" class="btn btn-info  btn1" id="counsellors" >Skill Competency </a>
                     <a href="/lifeskills" class="btn btn-info btn1" id="lifeskills" >Daily Rythms</a>
                   <!-- <a href="/connect2careercoaches" class="btn btn-info  btn1" id="connectcollegecoaches" >College Counselling </a>
@@ -81,7 +62,7 @@
                        <div class="col-sm-9 col-xs-9" >
 
                       <div>
-                        <p>At Aadia , we focus on self grooming. Self grooming by acquiring skill competency for your job and emotional readiness to face the daily rythms of life. Be it grit, resilience or the ability to cope through difficult and challenging situations, we can help you with that. </p>
+                        <p>At Yeda , we focus on developing routine, reliance, repetition and resilence .Self Reliance by acquiring skill competency for your job and the resilence to face the daily rythms of life. Be it grit, resilience or the ability to cope through difficult and challenging situations, we can help you with that. </p>
                       </div>
                        <h3 style="text-align:center">Skill Competency</h3>
                        <p>Take our online tests and see areas where you need to improve or spend time revising what you have learnt and we can point you to relevant student material to study the gaps and improve your technical or engineering capabilities.</p>
@@ -94,10 +75,12 @@
                 
                     </div>
          
-</div>
-</div>
- 
 
+
+ 
+  <footer class="container-fluid text-center" style="position:fixed;bottom:0;background-color:#4b0000;width:100%;color:ghostwhite">
+       <p id="footerp">  <span class="glyphicon glyphicon-copyright-mark"> </span> Yeda 2020</p> 
+      </footer>   
    
 </body>
 </html>

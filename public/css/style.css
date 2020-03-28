@@ -51,7 +51,24 @@ header {
    color:#4b0000;
 }
 
+.headingContent h1{
+  text-align:center;
+}
 
+.spiritualBooksInnerWrapper{
+    margin-left:4%;
+    margin-top:2%;
+    padding:0;
+    width:80%;
+  
+
+}
+
+.contentDescription{
+  margin-left:20px;
+  padding:50px;
+  font-size:20px;
+}
 
 .topheading{
    width:100%;
@@ -62,6 +79,83 @@ header {
    width:70%;
   padding:0;
   margin-left:10px;
+}
+
+a.homebutton{
+  width:120px;
+  height:50px;
+  margin-left:2%;
+  margin-top:10px;
+  color:white;
+  text-decoration: none;
+}
+
+
+
+a.menubutton{
+   width:10%;
+   margin-left:2%;
+  color:white;
+  text-decoration: none;
+  font-size:20px;
+}
+
+.headingContent{
+  margin-left:auto; 
+  margin-right:auto;
+  text-align:center;
+}
+
+a.linkbutton{
+  width:150px;
+  height:80px;
+  padding:4%;
+  margin-left:2%;
+  margin-top:10px;
+  color:black;
+  line-height:2.5;
+  text-decoration: none;
+}
+
+a.logout{
+font-size:20px;
+color:white;
+text-decoration: none;
+}
+
+a.menubutton:hover,a.logout:hover, a.homebutton:hover{
+  background-color:#d4a2a2;
+   color:#4b0000;
+   text-decoration: none;
+}
+
+a.linkbutton:hover{
+   background-color:#d4a2a2;
+   color:#4b0000;
+   text-decoration: none;
+}
+
+.dailydiary{
+  margin:auto;
+  height:auto;
+  margin-left:20%;
+  width:80%;
+  background:#9CBA7F;
+}
+
+.diaryContent{
+  width:80%;
+  height:60%;
+}
+
+
+
+.spiritualTalkContent{
+  margin-left:auto; 
+  margin-right:auto;
+  text-align:center;
+  font-size: 34px;
+  font-weight:800;
 }
 
 .navbtn{
@@ -103,23 +197,28 @@ iframe{
   height:60%;
 }
 
-#userdetails-form {
-    width: 400px;
-   background: #d4a2a2;
-    color: #4b0000;
+.userdayevents{
+  width: 100%;
+}
+
+.userdetails-form {
+    width: 100%;
+   background: white;
+    color:black;
     line-height:1.5rem;
     margin-left: auto;
     margin-top: 3%;
     /* float: left; */
-    margin-right: auto;
+    margin-right: 3%;
     /*  -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px; */
     /* box-shadow: 0px 0px 25px white;*/
-    border: 1px solid white;
+    border: 1px solid green;
     text-align: center;
     padding-left: 15px;
     padding-right: 15px;
+    background:white;
 }
 
 .affirmations{
@@ -128,17 +227,41 @@ iframe{
 }
 
 .result{
-  background: rgba(220, 400, 300, 0.5);
+  background: ghostwhite;
     line-height:1.5rem;
     width:500px;
     height:300px;
     text-align:center;
     vertical-align:center;
-        margin-left:300px;
-     margin-right:300px;
-     border: 1px solid white;
+    margin-left:300px;
+    margin-right:300px;
+    border: 1px solid white;
+}
 
+.form-element {  
+    width: 100%;
+    height:300px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: black;
+    background-color: white;
+    border:1px solid green;
+}
 
+.diarylabel{
+  width:100%;
+  color:black;
+  font-family: 'Fondamento', cursive;
+  font-size:25px;
+}
+
+.datelabel{
+  float:right;
+}
+
+.btn-info, .btn-dark {
+    background-color: white;
+    color: black;
 }
 
 #chat-window{
@@ -174,7 +297,9 @@ ul li{
 }
 .colcont{
     display:flex;
-    background:rgb(75, 0, 130);
+    /*background:rgb(75, 0, 130);*/
+    background-color:white;
+    color:black;
     border:1px solid white;
     color:#fff;
 }
@@ -182,6 +307,7 @@ ul li{
 .col-container {
   justify-content: space-between;
   flex-wrap: wrap;
+   color:black;
 }
 
 .cell-cont{
@@ -190,8 +316,8 @@ ul li{
      margin-top: 2%;
      margin-left:2%;
       margin-right:2%;
-    color:#fff;
-    border:3px solid white;
+    color:black;
+    border:3px solid black;
    
 }
 
@@ -199,19 +325,15 @@ ul li{
     padding: 10px;
 }
 
-.footer {
-    background:#4b0000;
-    width:100%;
-    height:120px;
-   
+.footerContent{
+  position:fixed;
+  bottom:0;
+  background-color:#4b0000;
+  width:100%;
+  color:ghostwhite;
+  height:2%;
+  margin-top:4%;
 }
-
-.footer p {
-    text-align: center;
-    padding: 20px;
-    color: #fff;
-}
-
 
 
 @media only screen and (max-width: 796px) {

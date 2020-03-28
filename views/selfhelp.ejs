@@ -12,7 +12,7 @@
 </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aadia- Rejuvenate and Re-energize</title>
+    <title>Yeda- Holistic App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
    <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -32,7 +32,29 @@
 
   <div id="page">
 
-       <header>
+    <header >
+        <div class="row"  >
+                <a href="/mywelcomepage" class="homebutton" >Home</a>  
+              <p style="margin-left:auto; margin-right:auto;text-align:center;">  Self Help </p> 
+              <div class="row">
+               <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+              <p style="text-align:right;font-size:12px;margin-right:2%;"> <% if(user.google.email) { %>
+                            <%=user.google.email%>
+                             <% } %>
+
+                              <% if(user.facebook.email) { %>
+                           <%=user.facebook.email%>
+                             <% } %>
+
+                               <% if(user.local.email) { %>
+                          <%=user.local.email%>
+                             <% } %></p>
+              </div>
+        </div>
+
+    </header>
+
+    <!--   <header>
                 <div id="heading"> 
                   <h1>Yeda -- Holistic App</h1>
                  <p>Rejuvenate and Re-energize</p>
@@ -66,11 +88,11 @@
                         </p>
 
       </div>
-</div>
- <div class="jumbotron" style="padding:0;margin-left:10px;height:100%">
+</div>-->
+ <!--<div class="jumbotron" style="padding:0;margin-left:10px;height:100%">-->
 
-  <div class="rowpage row" style="padding:0;">
-                 <div class="col-sm-2 col-xs-2" style="padding:0;">        
+  <div class="row">
+                 <div class="col-sm-2" >        
                    <a class="btn btn-info btn1" href="/dailyevents" > How do you feel today?  </a>
                 
                         
@@ -141,11 +163,7 @@
                                   <option value="Manage my finances">Manage my finances</option>
                                    <option value="Stuck mid way in career and looking inward">Stuck mid way in career and looking inward</option>
                                    <option value="Better manage time">Better manage time</option>
-                                 
-                                 
-                                
-                                   <option value="Addiction management">Addiction management </option>
-                                    
+                                   <option value="Addiction management">Addiction management </option>                  
                                     <option value="Anxiety or Depression">Motivate Self</option>
                                    
                                  
@@ -155,33 +173,33 @@
                                   </fieldset>  
                                  
                                   <div>
-                                    <button type="submit" id="userdetailsbtn" class="btn btn-dark btn-lg" style="width:120px;height:50px;margin-left:40px;margin-top:10px;margin-bottom:25px;color:white">Submit</button>
+                                    <button type="submit" id="userdetailsbtn" class="btn btn-dark btn-lg" style="width:120px;height:50px;margin-left:40px;margin-top:10px;margin-bottom:25px;color:black">Submit</button>
                                 </div>
                             </form>
                         </div>
                     
                 </div>
 
-
-
-           </div>
-             
-         </div>
-
-        
-    </div>      
-     
-
-   
-    
-
-    </div>
-     <div class="rowpage row" style="margin-left:570px;">
+<div class="rowpage row" style="margin-left:26%;margin-top:3%">
            <div style="text-align:center;vertical-align:center">
                     <iframe width="500" height="415" src="https://www.youtube.com/embed/WVNp6avC1Ig" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                    </div>
 
          </div>
+
+           </div>
+             
+         </div>
+
+         </div>
+  <!--  </div>    -->  
+     
+ 
+   
+    
+
+   
+    
    <script type="text/javascript">
 
 
@@ -261,7 +279,9 @@ $(document).ready(function() {
 </script>
  
 </body>
+<footer class="container-fluid text-center footerContent" >
+       <p id="footerp">  <span class="glyphicon glyphicon-copyright-mark"> </span> Yeda 2020</p> 
+      </footer> 
 
 
-</script>
 </html>

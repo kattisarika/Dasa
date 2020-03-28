@@ -32,63 +32,52 @@
 
   <div id="page">
 
-       <header>
-                <div id="heading"> 
-                  <h1>Yeda -- Holistic App</h1>
-                 <p>Rejuvenate and Re-energize</p>
-            </div>   
-                <div id="svg" > 
-                <h1>A practical guide to growth</h1>
-               </div>        
-        </header>
-
-
-
-<div class="topheading">
-<div class="homebtn">
-    <a  href="/selfhelp" class="btn btn-dark btn-lg" >Home</a>
-</div>
-
-    <div class="navbtn">
-    <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
-                        <p style="font-size:14px;color:black">
-                            <% if(user.google.email) { %>
-                            <b><%=user.google.email%></b>
+      
+        <header >
+        <div class="row"  >
+                <a href="/selfhelp" class="homebutton" id="songs">Home</a>  
+             <p class="headingContent">  Yeda - A practical guide to growth  </p> 
+              <div class="row">
+               <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
+              <p style="text-align:right;font-size:12px;margin-right:2%;"> <% if(user.google.email) { %>
+                            <%=user.google.email%>
                              <% } %>
 
                               <% if(user.facebook.email) { %>
-                            <b><%=user.facebook.email%></b>
+                           <%=user.facebook.email%>
                              <% } %>
 
                                <% if(user.local.email) { %>
-                            <b><%=user.local.email%></b>
-                             <% } %>
-                        </p>
+                          <%=user.local.email%>
+                             <% } %></p>
+              </div>
+        </div>
 
-      </div>
-</div>
+    </header>
 
 
 
-   <div class="jumbotron" style="padding:0;margin-left:10px">
-  <div class="rowpage row" style="padding:0;">
-                <div class="col-sm-2 col-xs-2" style="padding:0;">
-                       <a href="/dashboard" class="btn btn-info  btn1" id="dashboard">Dashboard</a>
-                      <a href="/dailyplanner" class="btn btn-info  btn1" id="dplanner"> Daily Planner</a>
+
+
+   <!--<div class="jumbotron" style="padding:0;margin-left:10px">-->
+  <div class="row" >
+                <div class="col-sm-2 " >
+                     <!--  <a href="/dashboard" class="btn btn-info  btn1" id="dashboard">Dashboard</a>-->
+                      <a href="/dailyplanner" class="btn btn-info  btn1" id="dplanner"> Whats Your Day Like</a>
                       <a href="#" class="btn btn-info  btn1" id="oaffirmations">Other Affirmations </a>
-                      <a href="#" class="btn btn-info  btn1" id="emile"> Going an extra mile</a>
+                      <!--<a href="#" class="btn btn-info  btn1" id="emile"> Going an extra mile</a>-->
                      
                  
               </div>
              
              
-                 <div class="col-sm-9 col-xs-9" >
+                 <div class="col-sm-9" >
                    <div ><h3>Thanks, lets work together to achieve your goals </h3></div>
                    <div class="affirmations">
                    
 
                       <h3> Few Affirmations, to say everyday</h3>
-                      <div style="margin-left:10px;">
+                      <div >
                       <p>I am so grateful and thankful for me being me</p>
                       <p>I am so grateful and thankful for all the opportunity the universe has given me to experience life as me</p>
                       <p>I approach each day with  passion and excitement and open my arms for all good things that are coming in my way</p>
@@ -98,7 +87,7 @@
                        <p>I am a very confident , strong, smart and have the ability to work hard to achieve my goals.</p>
 
                        </div>
-                       <div style="margin-left:10px;" id="oprahaffirmations">
+                       <div  id="oprahaffirmations">
                         <p>Nuggets of practical wisdom (<a href="https://www.inc.com/betsy-mikel/oprah-just-gave-new-grads-1-piece-of-remarkably-insightful-advice-for-career-success.html">Oprah's Nuggets of Practical Wisdom</a> )</p>
                         <p>Oprah  squeezed in a few pieces of practical advice about life in general.</p>
 
@@ -124,10 +113,10 @@
 
                        </div> 
 
-                         <div style="margin-left:10px;"  id="vidos">
-                        <iframe width="460" height="315" src="https://www.youtube.com/embed/nH5K0yo-o1A?rel=0&autoplay=0&showinfo=0&controls=0" allow="encrypted-media" allowfullscreen></iframe>
+                         <div   id="vidos">
+                        <iframe width="260" height="155" src="https://www.youtube.com/embed/nH5K0yo-o1A?rel=0&autoplay=0&showinfo=0&controls=0" allow="encrypted-media" allowfullscreen></iframe>
 
-                          <iframe width="460" height="315" src="https://www.youtube.com/embed/EwU-ePbWue0?rel=0&autoplay=0&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          <iframe width="260" height="155" src="https://www.youtube.com/embed/EwU-ePbWue0?rel=0&autoplay=0&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
                </div>
 
@@ -135,12 +124,10 @@
                 </div>
               </div>
           </div>
-        </div>
-            <footer class="footer" style="height:15%">
-        <p> <span>&copy; Copyright 2018
-            </span></p>
-    </footer>        
-
+      <!--  </div>-->
+          <footer class="container-fluid text-center footerContent" >
+       <p id="footerp">  <span class="glyphicon glyphicon-copyright-mark"> </span> Yeda 2020</p> 
+      </footer> 
     <script type="text/javascript">
 
     $(function(){

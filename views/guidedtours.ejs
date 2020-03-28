@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Dasa</title>
+    <title>Yeda</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
@@ -14,43 +14,43 @@
 </head>
 <body>
 
-   <header>
-        <div class="container">
-            <h1>Events</h1>
-          
+
+  <header >
+        <div class="row"  >
+                <a href="/dailyroutine" class="btn btn-dark btn-lg homebutton" >Home</a>  
+              <p style="margin-left:auto; margin-right:auto;text-align:center;">  Yeda-A practical guide to growth </p> 
+              <div class="row">
+               <a  id="logout" class="logout" href="/logout">logout</a>
+              <p style="text-align:right;font-size:12px;margin-right:2%;"> <% if(user.google.email) { %>
+                            <%=user.google.email%>
+                             <% } %>
+
+                              <% if(user.facebook.email) { %>
+                           <%=user.facebook.email%>
+                             <% } %>
+
+                               <% if(user.local.email) { %>
+                          <%=user.local.email%>
+                             <% } %></p>
+              </div>
         </div>
 
     </header>
 
+  <!-- <div class="jumbotron jumbotron-billboard" style="padding:0;">-->
 
-   <div class="jumbotron jumbotron-billboard" style="padding:0;">
-
-        <!--Who are Dasas-->
-
-         <!-- <div class="row" style="padding:0;">-->
-         <div style="margin-left:20px">
-        <a href="/mywelcomepage" class="btn btn-dark btn-lg" id="songs" style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:white">Home </a>   
-        
-        
-            <nav style="display:inline-block;float:right;margin-right:20px">
- 
-                      
-                        <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
-                        <p style="font-size:14px;color:black">
-                            <b><%=user.username%></b>
-                        </p>
-                   
-              </nav>
-
-          </div>
-
-                <div style="margin-left:20px;padding:0;padding:50px">Events Section Coming Soon!</div>
+    
+                  <div  class="headingContent">   
+                    <h1 >Guided Tours</h1>
+                  </div>
+                <div class="contentDescription" > <p>A break from your routine to help you get away from the mundane life . We team up with guided tour packages to help you find your vacation time to a near by place.  </p> 
+                  <p>Guided Tours Coming Soon! </p>
+                 </div>
                 <div class="push1"  style="height:500px"></div>
-            </div>
 
-             <footer class="container-fluid bg-4 text-center footer" >
-        <p> <span>&copy; Copyright 2018
-            </span></p>
-    </footer>        
+
+      <footer class="container-fluid text-center" style="position:fixed;margin-top:3%;bottom:0;background-color:#4b0000;width:100%;height:3%;color:ghostwhite;">
+       <p id="footerp">  <span class="glyphicon glyphicon-copyright-mark"> </span> Yeda 2020</p> 
+      </footer>
 </body>
 </html>

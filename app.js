@@ -151,7 +151,7 @@ passport.use(new FacebookStrategy({
 
   },
   function(token, refreshToken, profile, done) {
-   console.log(token);
+  // //console.log(token);
        process.nextTick(function() {
 
 	    	//Search for user with concerned profile-ID
@@ -185,9 +185,9 @@ passport.use(new FacebookStrategy({
                             throw err;
                         }
 
-                        console.log('facebook');
-                        console.log('finalResult');
-                        console.log(newUser);
+                        ////console.log('facebook');
+                        ////console.log('finalResult');
+                        ////console.log(newUser);
                         return done(null, newUser);
                     });
                 }
@@ -206,7 +206,7 @@ passport.use(
     'callbackURL': authConfig.googleAuth.callbackURL
     }, (token, refreshToken, profile, done) => {
         // passport callback function
-         console.log(token);
+       //  //console.log(token);
        process.nextTick(function() {
 
 	    	//Search for user with concerned profile-ID
@@ -245,9 +245,9 @@ passport.use(
                             throw err;
                         }
 
-                        console.log('google');
-                        console.log('finalResult');
-                        console.log(newUser);
+                        //console.log('google');
+                       // //console.log('finalResult');
+                       // //console.log(newUser);
                         return done(null, newUser);
                     });
                 }
@@ -266,8 +266,8 @@ passport.use('local-signup',new LocalStrategy({
 	    passReqToCallback:true
 	  },
 	  function(req,username, password, done){
-	  	console.log(username);
-	  	console.log(password);
+	  //	//console.log(username);
+	  //	//console.log(password);
 	  	 process.nextTick(function() {
 	    
 
@@ -280,7 +280,7 @@ passport.use('local-signup',new LocalStrategy({
 
 			    	else if(user){
 
-			    		console.log("NULL");
+			    		//console.log("NULL");
 			    		return done(null,false,req.flash("signupMessage","E-Mail already Taken"));
 			    	}
 
@@ -299,8 +299,8 @@ passport.use('local-signup',new LocalStrategy({
 		                		else{
 		                			
 		                			// Returns user and jumbs back to the route
-		                			console.log(newUser.local);
-		                			console.log("jjashf");
+		                		//	//console.log(newUser.local);
+		                			//console.log("jjashf");
 		                			return done(null,newUser);
 		                		}
 		                	})
@@ -319,8 +319,8 @@ passport.use('local-login',new LocalStrategy({
 	    passReqToCallback:true
 	  },
 	  function(req,username, password, done){
-	    console.log(username);
-	  	console.log(password);
+	   // //console.log(username);
+	  	////console.log(password);
 
 	    	//Dont search by password field also, since we have not hashed it yet.
 		    User.findOne({"local.email":username},function(err,user){
@@ -382,8 +382,8 @@ res.render('sign.ejs');
 
 
 app.get('/login', function (req, res) {
-console.log("In /login", req.isAuthenticated());
-console.log("In /login", req.body);
+//console.log("In /login", req.isAuthenticated());
+//console.log("In /login", req.body);
 res.render('login.ejs');
 
 });
@@ -417,11 +417,11 @@ app.get('/auth/google/', passport.authenticate('google', {
                     failureRedirect : 'http://localhost:3000/login'
             }),function(req,res){
 
-    	console.log(req);
+    	//console.log(req);
 
     var username1= req.user.google.email;
 
-	console.log("In POST GOOGLE LOGIN /login", username1);
+	//console.log("In POST GOOGLE LOGIN /login", username1);
 	res.redirect("/mywelcomepage");
 });
 
@@ -448,13 +448,13 @@ app.post('/login', passport.authenticate('local-login', {
 failureRedirect: '/login'
 }), function (req, res) {
 
-console.log("In POST LOGIN /login", req.isAuthenticated());
+//console.log("In POST LOGIN /login", req.isAuthenticated());
 //console.log("In  POST LOGIN /login", req.body);
 retStatus = 'Success';
 var username1="";
-console.log(req.user);
+//console.log(req.user);
 username1= req.user.local.email;
-console.log("In POST LOGIN /login", username1);
+//console.log("In POST LOGIN /login", username1);
 res.redirect("mywelcomepage");
 });
 
@@ -467,7 +467,7 @@ app.get('/forgotpassword',function(req,res){
 });
 
 app.post('/forgotpassword',function(req,res){
-console.log("Am I coming in Forgot Password!");
+//console.log("Am I coming in Forgot Password!");
 //console.log(req);
 
 var username= req.body.username;
@@ -486,17 +486,17 @@ if (err) throw err;
 // set hashed pwd
 password = hash;
 // create user
-console.log("------------");
-console.log(password);
+//console.log("------------");
+//console.log(password);
 
 db.collection('users').findOne({email: username}, function(err,obj) {   
-console.log(obj); 
+//console.log(obj); 
 if(err || (obj === null)){
 res.render('forgotpassword.ejs',{
 data : "Email does not exist"
 });
 }else{
-console.log(obj); 
+//console.log(obj); 
 db.collection('users').findAndModify(
 {email: username}, // query
 [['_id','asc']],
@@ -512,10 +512,10 @@ res.render('forgotpassword.ejs',{
 data : "Something went wrong, try again"
 });
 }else{
-console.log("--------------");
-console.log(user.value.username);
-console.log("--------------");
-console.log(user.email);
+//console.log("--------------");
+//console.log(user.value.username);
+//console.log("--------------");
+//console.log(user.email);
 res.render('passwordresetsuccess.ejs');
 }
 })
@@ -552,6 +552,22 @@ res.render('mywelcomepage',{
 });
 
 });
+
+
+app.get('/yourdiary',auth.checkLogin,function(req, res){
+	var username="";
+if(req.user.google.email !='' || req.user.google.email != null)
+  username= req.user.google.email;
+if(req.user.facebook.email !='' || req.user.facebook.email != null)
+  username= req.user.google.email;
+if(req.user.local.email !='' || req.user.local.email != null)
+  username= req.user.google.email;
+	res.render('yourdiary',{
+		  isAuthenticated:req.isAuthenticated(),
+		  user:req.user
+		});
+});
+
 
 
 app.get('/selfhelp',auth.checkLogin,function(req,res){
@@ -606,33 +622,33 @@ user: req.user
 
 
 app.post('/userdetails',auth.checkLogin,function(req, res){
-console.log("----------------Am I in the Users Details Post---------");
+//console.log("----------------Am I in the Users Details Post---------");
 
-console.log("----------------kooooooooo---------");
-//console.log(req);
+//console.log("----------------kooooooooo---------");
+////console.log(req);
 var username1=req.body.username;
 username1=username1.trim();
-console.log("Yummy"+ username1);
-//	console.log("In POST GOOGLE LOGIN /login", username1);
+//console.log("Yummy"+ username1);
+//	//console.log("In POST GOOGLE LOGIN /login", username1);
 //db.collection('userdetails').find({email:username1}, function(err, data)  {   
 UserDetails.find({"email":username1},function(err,data) {
 	if (err) throw err;
 	
-	console.log(data);
-	console.log(data.length);
+	//console.log(data);
+	//console.log(data.length);
 if(data.length !== 0 &&  data !== undefined){
 
 	
-	console.log('Username exists.');
+	//console.log('Username exists.');
 	var agegroup = req.body.ageradio;
 	var purpose= req.body.selectGoal;
 	var email = req.body.username;
 	email = email.trim();
 
 
-	console.log(agegroup);
-	console.log(purpose);
-	console.log(email.trim());
+	//console.log(agegroup);
+	//console.log(purpose);
+	//console.log(email.trim());
 
 	db.collection('userdetails').update(
 		{email: email}, 
@@ -645,8 +661,8 @@ if(data.length !== 0 &&  data !== undefined){
 			if (err){
 			console.warn(err.message); 
 		}
-		console.log('Am i coming here 2, existing user');
-		//console.log(userresult);
+		//console.log('Am i coming here 2, existing user');
+		////console.log(userresult);
 		switch(agegroup && purpose){
 					case ('teens' && 'Just exploring'): 
 					res.redirect('thanks');
@@ -774,19 +790,19 @@ if(data.length !== 0 &&  data !== undefined){
 		purpose: req.body.selectGoal,  
 		created :Date.now()
 		});
-		console.log("All data captured in backend" + uDetails.agegroup + "," + uDetails.purpose + "," + uDetails.email + Date.now());
+		//console.log("All data captured in backend" + uDetails.agegroup + "," + uDetails.purpose + "," + uDetails.email + Date.now());
 
 		UserDetails.createuserdetails(uDetails, function (err, user) {
 		if (err) throw err;
-		console.log("______________ Inside User Details")
-		console.log(user);
+		//console.log("______________ Inside User Details")
+		//console.log(user);
 
 		db.collection('userdetails').findOne({email:  email}, function(err,data) {   
 			if (err) throw err;
 			
-			console.log('Am i coming here 1, existing user');
-			console.log(data.agegroup);
-			console.log(data.purpose);
+			//console.log('Am i coming here 1, existing user');
+			//console.log(data.agegroup);
+			//console.log(data.purpose);
 
 
 
@@ -955,11 +971,11 @@ app.get('/teenselfesteemthanks',function(req,res){
 
 app.post('/teenselfesteemthanks/tasklist',function(req,res){
 
-console.log(req.body.task1);
-console.log(req.body.task2);
-console.log(req.body.task3);
-console.log(req.body.usermind);
-console.log(req.body.user);
+//console.log(req.body.task1);
+//console.log(req.body.task2);
+//console.log(req.body.task3);
+//console.log(req.body.usermind);
+//console.log(req.body.user);
 
 var userTaskList = new UserTasks({
 // username: req.body.name,
@@ -977,7 +993,7 @@ created :Date.now()
 
 UserTasks.createusertasks(userTaskList, function (err) {
 if (err) throw err;
-console.log('User tasks created!');
+//console.log('User tasks created!');
 
 retStatus = 'Success';
 
@@ -1007,7 +1023,7 @@ usermind: req.body.usermind,
 created :Date.now()
 }, function (err, result) {
 if (err) {
-console.log(err.toString());
+//console.log(err.toString());
 } else {
 // handle document
 retStatus = 'Success';
@@ -1075,7 +1091,7 @@ app.get('/connect2careercoaches',auth.checkLogin,function(req,res){
 
 	db.collection('careercoaches').find().toArray(function(err, data) { 
 		if(err) throw error;
-		console.log(data);
+		//console.log(data);
 		if(data.length < 1 || data == undefined){
 		res.render('connect2careercoaches', {
 		isAuthenticated: req.isAuthenticated(),
@@ -1099,11 +1115,11 @@ app.get('/connect2careercoaches',auth.checkLogin,function(req,res){
 app.post('/connect2careercoaches',isLoggedIn,function(req,res){
 
 var searchdata=req.body.inputsearch;
-console.log(searchdata);
+//console.log(searchdata);
 var query = { zipcode: req.body.inputsearch };
 db.collection('careercoaches').find(query).toArray(function(err, data) { 
 if(err) throw error;
-console.log(data);
+//console.log(data);
 if(data.length < 1 || data == undefined){
 res.render('connect2careercoaches', {
 isAuthenticated: req.isAuthenticated(),
@@ -1138,11 +1154,11 @@ user: req.user
 app.post('/connect2therapist',isLoggedIn,function(req,res){
 
 var searchdata=req.body.inputsearch;
-console.log(searchdata);
+//console.log(searchdata);
 var query = { zipcode: req.body.inputsearch };
 db.collection('careercoaches').find(query).toArray(function(err, data) { 
 if(err) throw error;
-console.log(data);
+//console.log(data);
 if(data.length < 1 || data == undefined){
 res.render('connect2therapist', {
 isAuthenticated: req.isAuthenticated(),
@@ -1191,8 +1207,8 @@ user: req.user
 app.post('/userdayevents',function(req,res){
 
 var daygoal= req.body.selecttodaysGoal;
-console.log("_____________________________");
-console.log(daygoal);
+//console.log("_____________________________");
+//console.log(daygoal);
 
 if(daygoal =="I am happy"){
 res.render('dailyevents', {
@@ -1203,6 +1219,7 @@ data2:"",
 data3:"",
 data4:"",
 data5:"",
+data6:daygoal,
 user: req.user
 });
 }else if(daygoal =="I am very angry and upset"){
@@ -1215,6 +1232,7 @@ data2: "Did you go for your exercise today? , Did you take time and read your af
 data3: "If you have not done them, please do it now",
 data4: "Does being angry , solve your problem?  If the answer is No , then stop being angry",
 data5: "Then lets  play some nice music or drink a glass of cold water and cool down.",
+data6:daygoal,
 user: req.user
 });
 } else if(daygoal =="I feel anxious"){
@@ -1227,6 +1245,7 @@ data2: "Did you go for your exercise today? , Did you take time and read your af
 data3: "If you have not done them, please do it now",
 data4: "Watch the videos in my spiritual talk section on how to be less anxious",
 data5: "Then lets  play some nice music or drink a glass of cold water and cool down.",
+data6:daygoal,
 user: req.user
 });
 }else if(daygoal =="I dislike my friends as they are mean"){
@@ -1239,6 +1258,7 @@ data2: "My friends in the neighborhood have no friends, as no one talks to them"
 data3: "Now pray the universe and tell out loud, I would love my friends to love me",
 data4: "Oh! Lord of the universe, let my friends love me and let me talk and act and behave nicely with them",
 data5: "I cannot force them to like me, but can wait long enough and courageously and keep doing my work sincerely till they come back to me",
+data6:daygoal,
 user: req.user
 });
 }else if(daygoal =="I dislike the food I am eating"){
@@ -1251,6 +1271,7 @@ data2: "Did you look at the homeless guy who had nothing to eat and was eyeing o
 data3: "Now pray the universe and tell out loud, I will not complain and rather enjoy the little lunch I get from home or buy outside",
 data4: "Oh! Lord of the universe, let me thank God that I have food to eat and thats what matters",
 data5: "I cannot force myself to eat this food so I choose to go hungry",
+data6:daygoal,
 user: req.user
 });
 }else if(daygoal =="I dont have anyone to talk to"){
@@ -1263,6 +1284,7 @@ data2: "Do you have a hobby? like reading, watching TV, listening to music,  dra
 data3: "Did you go for your exercise? Can you  scream , shout, shake your head , turn backwards and forwards",
 data4: "Do all that , then see yourself getting charged up to work on some hobby you like",
 data5: "Otherwise you can talk to me, I will listen to your tales ",
+data6:daygoal,
 user: req.user
 });
 }else if(daygoal =="I am bored"){
@@ -1275,6 +1297,7 @@ data2: "Do you have a hobby? like reading, watching TV, listening to music,  dra
 data3: "Did you go for your exercise? Can you  scream , shout, shake your head , turn backwards and forwards",
 data4: "Do all that , then see yourself getting charged up to work on some hobby you like",
 data5: "Otherwise you can talk to me, I will listen to your tales ",
+data6:daygoal,
 user: req.user
 });
 }else if(daygoal =="I am nervous as I dont have a boyfriend"){
@@ -1287,6 +1310,7 @@ data2: "Drink 10 glasses of water a day",
 data3: "Don't forget your walks atleast 1 hour a day, suppose 5 miles ",
 data4: "Read the latest novels, talk about them, go to the parlor and get a nice haircut , put on a facemask",
 data5: "Relax and enjoy the time you have now, when you get a boyfriend, your freedom is lost!",
+data6:daygoal,
 user: req.user
 });
 }else if(daygoal =="I dont feel loved"){
@@ -1299,6 +1323,7 @@ data2: "Bright side! I love myself, I dont care if others love me",
 data3: "I dont care if others appreciate what I do to help them, but I feel happy and satisfied when I do it, so I go for it ",
 data4: "You are lucky as you can vent out to me, some people have no one, not even me! ",
 data5: "When you truly love, that gives inner strength and satisfaction, so dont stop loving people",
+data6:daygoal,
 user: req.user
 });
 }else if(daygoal =="It was very normal"){
@@ -1311,6 +1336,7 @@ data2: "Drink 8-10 glasses of water, dont forget",
 data3: "Go for your exercise",
 data4: "You are lucky as you can vent out to me, some people have no one, not even me! ",
 data5: "",
+data6:daygoal,
 user: req.user
 });
 }else if(daygoal =="I dont have enough money"){
@@ -1323,6 +1349,7 @@ data2: "Money is never enough , the only money you save will save your rainy day
 data3: "Go for your exercise",
 data4: "You are lucky as you can vent out to me, some people have no one, not even me! ",
 data5: "",
+data6:daygoal,
 user: req.user
 });
 }else if(daygoal =="I lost my job"){
@@ -1335,6 +1362,7 @@ data2: "Money is never enough , the only money you save will save your rainy day
 data3: "Go for your exercise",
 data4: "Keep applying for jobs till you find one, ask help, there is nothing wrong in asking for help",
 data5: "Congratulations! Today may be the day you would find your new job, be hopeful and read your affirmations",
+data6:daygoal,
 user: req.user
 });
 }else{
@@ -1346,6 +1374,7 @@ data2:"",
 data3:"",
 data4:"",
 data5:"",
+data6:daygoal,
 user: req.user
 });   
 }
@@ -1399,7 +1428,7 @@ user: req.user
 app.post('/devlanguagedetails', function(req,res){
 
 var language = req.body.selectlanguage;
-console.log("Language is ----" , language);
+//console.log("Language is ----" , language);
 if(language == "Kannada"){
 res.render('songlist-working.ejs', {
 isAuthenticated: req.isAuthenticated(),
@@ -1526,17 +1555,17 @@ httpsServer.listen(8443);
 //var port = process.env.PORT || 3000;
 var port = process.env.PORT || 3000;
 var server = app.listen(port, function () {
-console.log("local host" + port);
+//console.log("local host" + port);
 });
 
 var io = socket(server);
 
 io.on('connection',function(socket){
-	console.log("made socket connection", socket.id);
+	//console.log("made socket connection", socket.id);
 
 	// Handle chat event
     socket.on('chat', function(data){
-        // console.log(data);
+        // //console.log(data);
         io.sockets.emit('chat', data);
     });
 
