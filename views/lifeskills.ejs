@@ -12,10 +12,12 @@
 </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Citta -- Holistic App</title>
+    <title>Citta -- Inflection Point</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
    <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" type="text/css" href="css/mainpage.css">
+    <link rel="stylesheet" type="text/css" href="css/commonStyles.css">
 
   
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -27,19 +29,17 @@
     <script src="../js/script.js"></script>
 </head>
 <body>
-
-
-
   <div id="page">
 
 
-     <header >
-        <div class="row"  >
-                <a href="/mywelcomepage" class="homebutton">Home</a>  
-              <p style="margin-left:auto; margin-right:auto;text-align:center;">  Citta - A practical guide to growth  </p> 
-              <div class="row">
-               <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
-              <p style="text-align:right;font-size:12px;margin-right:2%;"> <% if(user.google.email) { %>
+  <header class="headerSection">
+        <a href="/mywelcomepage" class="buttonHome">Home</a>  
+        <div class="headerContent1">
+           <h2> Citta -- Holistic App</h2>
+         </div>
+         <div  class="headerRight">
+          <a class="headerRightLogout" id="logout"  href="/logout">logout</a></div>
+          <p class="headerRightUserName"> <% if(user.google.email) { %>
                             <%=user.google.email%>
                              <% } %>
 
@@ -50,23 +50,20 @@
                                <% if(user.local.email) { %>
                           <%=user.local.email%>
                              <% } %></p>
-              </div>
-        </div>
-
-    </header>
-
-
+      <div>
+ </header>
  <!--<div class="jumbotron" style="padding:0;margin-left:10px;">-->
-  <div class="row" >
-                <div class="col-sm-2 " >
+  <div class="row">
+                <div class="col-sm-2">
                        <a href="/selfhelp" class="btn btn-info btn1" id="counsellors" >Self Help </a>
-                        <a href="/connect2careercoaches" class="btn btn-info btn1" id="counsellors" >Career Coaches </a>
-                       <a href="/connect2therapist" class="btn btn-info btn1" id="counsellors" >Life Coaches </a>
+                       <a href="/connect2careercoaches" class="btn btn-info btn1" id="counsellors" >Assigned Mentors </a>
+                        <!--<a href="/connect2careercoaches" class="btn btn-info btn1" id="counsellors" >Career Coaches </a>
+                       <a href="/connect2therapist" class="btn btn-info btn1" id="counsellors" >Life Coaches </a>-->
                     </div>   
 
-                      <div class="col-sm-9 col-xs-9" >
+                      <div class="col-sm-9">
                         <div>
-                       <h3 style="text-align:center">Self Help</h3>
+                       <h4 style="text-align:center">Self Help</h4>
                        
                         <p>Self help is a need when you want to go an extra mile  yourself and are motivating yourself to reach your goals and head yourself to success. We provide you tools for reaching your goals by using :- </p>
                                  <p style="line-height:0.8em">Positive Affirmations </p> 
@@ -75,19 +72,19 @@
                                </div>
 
                             <div>
-                            <h3 style="text-align:center">Career Coaches</h3>
+                            <h4 style="text-align:center">Career Coaches</h4>
                           <p>When you’re in the midst of a mid-career crisis or professional reinvention, the right career coach can be a lifesaver, helping you identify potential future directions and the path to reach them. But how do you find the right one? As an unregulated industry, anyone can hang a shingle and declare themselves a “career coach,” an “executive coach,” or even a “life coach.” 
                             We help you find the  list of career coach with the right credentials </p>
                         </div>
                         
                            <div>
-                          <h3 style="text-align:center">Life Coaches</h3>
+                          <h4 style="text-align:center">Life Coaches</h4>
                           <p>Life coaching is a synergistic relationship between an accredited life coach and a client designed to tap into your full potential</p>
                           <p>Coaches have the ability to view things from afar — in what some call ‘helicopter vision’ — and to shed new light on difficult situations. Often they can act as a sounding board through tough decisions, help sharpen skills, and motivate -- CFO Magazine</p>
                         </div>
 
                            <div>
-                          <h3 style="text-align:center">General Experts</h3>
+                          <h4 style="text-align:center">General Experts</h4>
                           <p>General Experts are trained in any of the above , through various life experience and training and are ready to share their piece of information and guide you to the next level. Posting questions in this forum gives the flexibility for anyone with the right knowledge to come forward to guide you.</p>
                           <p></p>
                         </div>

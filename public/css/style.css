@@ -3,8 +3,43 @@
     margin: 0px;
     padding: 0px;
     font-family: 'OpenSansSemiBold';
-     font-family:"Open Sans", sans-serif;
+    font-family:"Open Sans", sans-serif;
      font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+     -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+    /*reset Firefox user agent styles*/
+    -moz-margin-before: 0px;
+    -moz-margin-after: 0px;
+    -moz-margin-start: 0px;
+    -moz-margin-end: 0px;
+    -moz-padding-before: 0px;
+    -moz-padding-after: 0px;
+    -moz-padding-start: 0px;
+    -moz-padding-end: 0px;
+    /*reset Internet Explorer user agent styles*/
+    -ms-margin-before: 0px;
+    -ms-margin-after: 0px;
+    -ms-margin-start: 0px;
+    -ms-margin-end: 0px;
+    -ms-padding-before: 0px;
+    -ms-padding-after: 0px;
+    -ms-padding-start: 0px;
+    -ms-padding-end: 0px;
+    /*reset Opera user agent styles*/
+    -o-margin-before: 0px;
+    -o-margin-after: 0px;
+    -o-margin-start: 0px;
+    -o-margin-end: 0px;
+    -o-padding-before: 0px;
+    -o-padding-after: 0px;
+    -o-padding-start: 0px;
+    -o-padding-end: 0px;
 }
 
 body {
@@ -18,7 +53,7 @@ body {
 }
 
 header {
-    background:#4b0000;
+    background:#557f8e;
     width:100%;
     border-bottom: 1px solid white;
     color:#fff; 
@@ -88,6 +123,7 @@ a.homebutton{
   margin-top:10px;
   color:white;
   text-decoration: none;
+  font-size:20px;
 }
 
 
@@ -124,9 +160,10 @@ text-decoration: none;
 }
 
 a.menubutton:hover,a.logout:hover, a.homebutton:hover{
-  background-color:#d4a2a2;
+  background-color:#b7c8ce;
    color:#4b0000;
    text-decoration: none;
+   text-align:center;
 }
 
 a.linkbutton:hover{
@@ -148,6 +185,15 @@ a.linkbutton:hover{
   height:60%;
 }
 
+.logout{
+  font-size:20px;
+}
+
+.usernameData{
+ text-align:right;
+ font-size:12px;
+ margin-right:2%;
+}
 
 
 .spiritualTalkContent{
@@ -174,8 +220,14 @@ a.linkbutton:hover{
     margin-bottom:10px;
     width:100%;
     overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn1:hover{
+  background-color: #b7c8ce;
+  color:black;
+  text-decoration: none;
 }
 
 iframe{
@@ -201,6 +253,13 @@ iframe{
   width: 100%;
 }
 
+.userdetails{
+   width: 100%;
+   background:grey;
+   height:300px;
+   margin-left:5%;
+}
+
 .userdetails-form {
     width: 100%;
    background: white;
@@ -218,7 +277,7 @@ iframe{
     text-align: center;
     padding-left: 15px;
     padding-right: 15px;
-    background:white;
+    
 }
 
 .affirmations{
@@ -325,14 +384,28 @@ ul li{
     padding: 10px;
 }
 
+#footerp,
+span {
+
+    display: inline-block;
+    width: 13%;
+}
+
+
 .footerContent{
   position:fixed;
   bottom:0;
-  background-color:#4b0000;
+  background-color:#557f8e;
   width:100%;
   color:ghostwhite;
-  height:2%;
+ /* height:2%;*/
   margin-top:4%;
+}
+
+.displayVideos{
+  margin-left:40%;
+  vertical-align:center;
+  padding:0;
 }
 
 

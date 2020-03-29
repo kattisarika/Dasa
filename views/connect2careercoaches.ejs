@@ -12,10 +12,11 @@
 </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Citta- Rejuvenate and Re-energize</title>
+    <title>Citta- Inflection Point</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" type="text/css" href="css/mainpage.css">
+    <link rel="stylesheet" type="text/css" href="css/commonStyles.css">
 
   
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -31,50 +32,33 @@
 </head>
 <div id="page">
 
-       <header>
-                <div id="heading"> 
-                  <h1>Citta -- Holistic App</h1>
-                 <p>Rejuvenate and Re-energize</p>
-            </div>   
-                <div id="svg" > 
-                <h1>A practical guide to growth</h1>
-               </div>        
-        </header>
-
-
-
-<div class="topheading">
-<div class="homebtn">
-    <a  href="/lifeskills" class="btn btn-dark btn-lg" >Home</a>
-</div>
-
-    <div class="navbtn">
-    <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
-                        <p style="font-size:14px;color:black">
-                            <% if(user.google.email) { %>
+      <header class="headerSection">
+        <a href="/mywelcomepage" class="buttonHome">Home</a>  
+        <div class="headerContent1">
+           <p> Citta -- Holistic App</p>
+         </div>
+         <div  class="headerRight">
+          <a style="display:block;font-size:20px;float:right;text-align:right;margin-right:2%;color:white;text-decoration:none;" id="logout" class="logout" href="/logout">logout</a>
+          <p style="display:block;float:right;text-align:right;font-size:20px;margin-right:2%;color:white;text-decoration:none;"> <% if(user.google.email) { %>
                             <%=user.google.email%>
                              <% } %>
 
                               <% if(user.facebook.email) { %>
-                            <%=user.facebook.email%>
+                           <%=user.facebook.email%>
                              <% } %>
 
                                <% if(user.local.email) { %>
-                            <%=user.local.email%>
-                             <% } %>
-                        </p>
+                          <%=user.local.email%>
+                             <% } %></p>
+      <div>
+ </header>
 
-      </div>
-</div>
-
-               
-
-         <div class="jumbotron" style="padding:0;margin-left:10px">
-    <div class="rowpage row" style="padding:0;">
-      <div class="col-sm-2 col-xs-2" style="padding:0;margin-left:20px">
+<!--<div class="jumbotron" style="padding:0;margin-left:10px">-->
+    <div class="row">
+      <div class="col-sm-2 col-xs-2">
           <ul class="nav nav-list">
             <li><label class="tree-toggler nav-header">Career Coaches</label>
-                <ul class="menu vertical"  style="line-height:2em">
+                <ul class="menu vertical"  style="line-height:2em;margin-left:6%">
                     <%if (typeof results !== 'undefined' && results ){%>
                     <% for(var i=0; i<results.length; i++) {%>
                     <li ><%=results[i].name%><br></li>
@@ -88,31 +72,19 @@
                </li>
            </ul>
       </div>
-     <div class="col-sm-9 col-xs-9">
+     <div class="col-sm-9 ">
         <div id="Leave message to any of the coaches">
-          <h2>Drop a Message </h2>
-         <div id="chat-window">
-          <div id="output"></div>
-          <div id="feedback"></div>
-       </div>
-            <input id="handle" type="text" placeholder="Handle" value= "<% if(user.google.email) { %>
-                           <%=user.google.name%>
-                             <% } %>
-
-                              <% if(user.facebook.email) { %>
-                           <%=user.facebook.name%>
-                             <% } %>
-
-                               <% if(user.local.email) { %>
-                                  <%=user.local.email.substring(0,2).trim()%>
-
-                             <% } %>"/>
-            <input id="message" type="text" placeholder="Message" />
-            <button id="send">Send</button>
-          </div>
-      </div>   
-               
-</div>
+          <h4>Drop a Message </h4>
+                        <div id="userdetails-form">
+                            <form action="/connect2careercoach" method="post" >
+                               <div>   
+                                  <textarea class="form-element"  name="activity1"></textarea>        
+                                    <button type="submit" id="sendCoachMessage">Send</button>
+                                </div>
+                            </form>
+                       </div>
+           </div>               
+     </div>
 
          
 

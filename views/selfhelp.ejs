@@ -54,44 +54,8 @@
 
     </header>
 
-    <!--   <header>
-                <div id="heading"> 
-                  <h1>Citta -- Holistic App</h1>
-                 <p>Rejuvenate and Re-energize</p>
-            </div>   
-                <div id="svg" > 
-                <h1>A practical guide to growth</h1>
-               </div>        
-        </header>
 
-
-
-<div class="topheading">
-<div class="homebtn">
-    <a  href="/mywelcomepage" class="btn btn-dark btn-lg" >Home</a>
-</div>
-
-    <div class="navbtn">
-    <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
-                        <p style="font-size:14px;color:black">
-                            <% if(user.google.email) { %>
-                            <b><%=user.google.email%></b>
-                             <% } %>
-
-                              <% if(user.facebook.email) { %>
-                            <b><%=user.facebook.email%></b>
-                             <% } %>
-
-                               <% if(user.local.email) { %>
-                            <b><%=user.local.email%></b>
-                             <% } %>
-                        </p>
-
-      </div>
-</div>-->
- <!--<div class="jumbotron" style="padding:0;margin-left:10px;height:100%">-->
-
-  <div class="row">
+<div class="row">
                  <div class="col-sm-2" >        
                    <a class="btn btn-info btn1" href="/dailyevents" > How do you feel today?  </a>
                 
@@ -117,7 +81,7 @@
                         <!--    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>-->
                             <form action="/userdetails" method="post">
 
-                                <h2 class="text-center">User Details</h2>
+                                <h2 class="text-center;">User Details</h2>
                                 <div><li style="display:none"> <input type="text"  id="username" name="username" value=" <% if(user.google.email) { %>
                              <%=user.google.email%>
                              <% } %>
@@ -201,16 +165,10 @@
    
     
    <script type="text/javascript">
-
-
 $(document).ready(function() {
-
-
-
     $("input.radio-button-selector").change(function(){ 
                console.log("hi" + $(this).val()) ;                
         if ( $(this).val() === "teens" ) {
-
             $("#selectGoal option[value='Just exploring']").show();
             $("#selectGoal option[value='Improve my life']").show();
             
@@ -220,7 +178,6 @@ $(document).ready(function() {
            
             $("#selectGoal option[value='Anxious or Depressed']").show();
             $("#selectGoal option[value='Improve my grades']").show();
-
             $("#selectGoal option[value='Manage my finances']").hide();
             $("#selectGoal option[value='Stuck mid way in career and looking inward']").hide();
             $("#selectGoal option[value='Anger management']").hide();
@@ -230,7 +187,6 @@ $(document).ready(function() {
         }
         else if ( $(this).val() == "thirty" ) {
             $("#selectGoal option[value='Just exploring']").show();
-
             $("#selectGoal option[value='Improve my life']").show();
             $("#selectGoal option[value='Stuck mid way in career and looking inward']").show();
             $("#selectGoal option[value='Improve my self esteem']").show();
@@ -285,3 +241,5 @@ $(document).ready(function() {
 
 
 </html>
+
+

@@ -12,7 +12,7 @@ html,
 body {
     width: 100%;
    /* height: 100%;*/
-   background:#4d0000;
+   /*background:#4d0000;*/
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -20,8 +20,8 @@ body {
     width: 100%;
     /*height: 100%;*/
     margin: auto;
-  
-    opacity: 1;
+    background:#557f8e;
+   /* opacity: 1;*/
     display: block;
     /* top: 0; */
     background-size: cover;
@@ -97,8 +97,8 @@ body {
 }
 
 .midcolcont{
-     background: rgba(0,0,0,0.3);
-     display:flex;
+    background: rgba(0,0,0,0.3);
+    display:flex;
 }
 
 
@@ -603,7 +603,7 @@ Even if this approach requires more work in the long run, it is used often in or
         color: red;
     }
 
-    .headingh2{
+.headingh2{
    color:white;
    text-align:center;
    padding-top:4%;
@@ -703,7 +703,7 @@ fieldset input[type="email"] {
     height: 40px;
    width: 250px;
     text-align: center;
-}
+  }
 }
 
 

@@ -1,9 +1,6 @@
 $(document).ready(function() { 
 
-  
- 
     $('#submit').click(function() {  
- 
         $(".error").hide();
         var hasError = false;
         var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -16,10 +13,7 @@ $(document).ready(function() {
             $("#username").after('<span class="error">Enter a valid email address.</span>');
             hasError = true;
         }
-
-
-        if(hasError == true) { return false; }
- 
+        if(hasError == true) { return false; } 
     });
 
 
@@ -33,8 +27,6 @@ $(document).ready(function() {
             $("#username").after('<span class="error">Enter a valid email address.</span>');
             hasError = true;
         }
-
-
         if(hasError == true) { return false; }
     })
 
@@ -47,24 +39,19 @@ $(document).ready(function() {
 
         var emailaddressVal = $("#username").val();
         if(emailaddressVal == '') {
-            $("#username").after('<span class="error">Please enter your email address.</span>');
+            $("#username").after('<span class="error" >Please enter your email address.</span>');
             hasError = true;
         }else if(!emailReg.test(emailaddressVal)) {
             $("#username").after('<span class="error">Enter a valid email address.</span>');
             hasError = true;
         }
-
-
-        if(hasError == true) { return false; }
- 
+        if(hasError == true) { return false; } 
     });
 
 
     $('#userdetailsbtn').click(function() {
-
     	$(".error").hide();
         var hasError = false;
-
          var isChecked = $('#rdSelect').prop('checked');
 
     });
@@ -72,7 +59,6 @@ $(document).ready(function() {
     $('#resetbtn').click(function(){
     	  $(".error").hide();
        	  var hasError = false;
-
        	  var emailaddressVal = $("#username").val();
         if(emailaddressVal == '') {
             $("#username").after('<span class="error">Please enter your email address.</span>');
