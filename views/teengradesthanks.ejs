@@ -15,8 +15,9 @@
     <title>Citta -- Holistic App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="css/style.css">
-
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" type="text/css" href="css/mainpage.css">
+    <link rel="stylesheet" type="text/css" href="css/commonStyles.css">
   
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
@@ -32,13 +33,14 @@
 
   <div id="page">
 
-      <header >
-        <div class="row"  >
-                <a href="/selfhelp" class="btn btn-dark btn-lg homebutton" >Home</a>  
-              <p style="margin-left:auto; margin-right:auto;text-align:center;"> Citta - A practical guide to growth</p> 
-              <div class="row">
-               <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
-              <p style="text-align:right;font-size:12px;margin-right:2%;"> <% if(user.google.email) { %>
+     <header class="headerSection">
+        <a href="/mywelcomepage" class="buttonHome">Home</a>  
+        <div class="headerContent1">
+           <h2> Citta -- Holistic App</h2>
+         </div>
+         <div  class="headerRight">
+          <a class="headerRightLogout" id="logout"  href="/logout">logout</a></div>
+          <p class="headerRightUserName"> <% if(user.google.email) { %>
                             <%=user.google.email%>
                              <% } %>
 
@@ -49,23 +51,21 @@
                                <% if(user.local.email) { %>
                           <%=user.local.email%>
                              <% } %></p>
-              </div>
-        </div>
-
-    </header>
+      <div>
+ </header>
 
 
 
 
 
-   <div class="jumbotron" style="padding:0;margin-left:10px">
+  <!-- <div class="jumbotron" style="padding:0;margin-left:10px">-->
     <div class="rowpage row" style="padding:0;">
       <div class="col-sm-2 col-xs-2" style="padding:0;">
        
       </div>
                
-         <div class="col-sm-9 col-xs-9" >
-                  <h3> Few Affirmations, to say everyday to improve my grades</h3>
+         <div class="col-sm-9" >
+                  <h4> Few Affirmations, to say everyday to improve my grades</h4>
                       <div style="margin-left:10px;">
                       <p>I will read till I understand the subject and will not give up</p>
                       <p>If my friend has done it and my teacher can teach that means I can do it.</p>
@@ -80,7 +80,7 @@
                    </div> 
                 </div>
             
-              </div>
+           <!--   </div>-->
          
 
              <footer class="container-fluid text-center" style="position:fixed;bottom:0;background-color:#4b0000;width:100%;color:ghostwhite">

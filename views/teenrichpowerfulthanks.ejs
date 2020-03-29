@@ -15,7 +15,9 @@
     <title>Citta- Rejuvenate and Re-energize</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" type="text/css" href="css/mainpage.css">
+    <link rel="stylesheet" type="text/css" href="css/commonStyles.css">
 
   
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -33,14 +35,14 @@
   <div id="page">
 
 
-
-     <header >
-        <div class="row"  >
-                <a href="/selfhelp" class="btn btn-dark btn-lg homebutton"  style="width:120px;height:50px;margin-right:10px;margin-top:10px;color:black">Home</a>  
-              <p style="margin-left:auto; margin-right:auto;text-align:center;">  Citta-A practical guide to growth </p> 
-              <div class="row">
-               <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
-              <p style="text-align:right;font-size:12px;margin-right:2%;"> <% if(user.google.email) { %>
+<header class="headerSection">
+        <a href="/mywelcomepage" class="buttonHome">Home</a>  
+        <div class="headerContent1">
+           <h2> Citta -- Holistic App</h2>
+         </div>
+         <div  class="headerRight">
+          <a class="headerRightLogout" id="logout"  href="/logout">logout</a></div>
+          <p class="headerRightUserName"> <% if(user.google.email) { %>
                             <%=user.google.email%>
                              <% } %>
 
@@ -51,10 +53,8 @@
                                <% if(user.local.email) { %>
                           <%=user.local.email%>
                              <% } %></p>
-              </div>
-        </div>
-
-    </header>
+      <div>
+ </header>
 
   
 
@@ -71,7 +71,7 @@
                    <div >
                    
 
-                      <h3> Few Affirmations, to say everyday to become rich and powerful</h3>
+                      <h4> Few Affirmations, to say everyday to become rich and powerful</h4>
                       <div style="margin-left:10px;">
                       <p>I have a passion so strong , that I want to dedicate my life in my passion</p>
                       <p>I would be the best in what I am interested in, rather than taking up a subject which leads to superficial money and lesser interest.</p>
