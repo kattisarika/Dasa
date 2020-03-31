@@ -18,7 +18,6 @@ var bodyParser = require('body-parser');
 var flash = require('connect-flash');
 var request = require('request');
 var parser = require('xml2json');
-
 var socket= require('socket.io');
 
 
@@ -26,7 +25,6 @@ var methodOverride = require('method-override');
 //var configAuth= require('./app/models/auth');
 
 var app = express();
-
 
 var mongoose = require('mongoose');
 
@@ -151,7 +149,7 @@ passport.use(new FacebookStrategy({
 
   },
   function(token, refreshToken, profile, done) {
-  // //console.log(token);
+  ////console.log(token);
        process.nextTick(function() {
 
 	    	//Search for user with concerned profile-ID
@@ -185,9 +183,9 @@ passport.use(new FacebookStrategy({
                             throw err;
                         }
 
-                        ////console.log('facebook');
-                        ////console.log('finalResult');
-                        ////console.log(newUser);
+                        //console.log('facebook');
+                        //console.log('finalResult');
+                        //console.log(newUser);
                         return done(null, newUser);
                     });
                 }
@@ -247,7 +245,7 @@ passport.use(
 
                         //console.log('google');
                        // //console.log('finalResult');
-                       // //console.log(newUser);
+                       //console.log(newUser);
                         return done(null, newUser);
                     });
                 }
@@ -320,7 +318,7 @@ passport.use('local-login',new LocalStrategy({
 	  },
 	  function(req,username, password, done){
 	   // //console.log(username);
-	  	////console.log(password);
+	  	//console.log(password);
 
 	    	//Dont search by password field also, since we have not hashed it yet.
 		    User.findOne({"local.email":username},function(err,user){
@@ -434,7 +432,7 @@ res.render('sign.ejs');
 });
 
 
- app.post('/sign', passport.authenticate('local-signup', {
+app.post('/sign', passport.authenticate('local-signup', {
         successRedirect: '/login',
         failureRedirect: '/sign',
         failureFlash: true
@@ -625,7 +623,7 @@ app.post('/userdetails',auth.checkLogin,function(req, res){
 //console.log("----------------Am I in the Users Details Post---------");
 
 //console.log("----------------kooooooooo---------");
-////console.log(req);
+//console.log(req);
 var username1=req.body.username;
 username1=username1.trim();
 //console.log("Yummy"+ username1);
@@ -662,7 +660,7 @@ if(data.length !== 0 &&  data !== undefined){
 			console.warn(err.message); 
 		}
 		//console.log('Am i coming here 2, existing user');
-		////console.log(userresult);
+		//console.log(userresult);
 		switch(agegroup && purpose){
 					case ('teens' && 'Just exploring'): 
 					res.redirect('thanks');
@@ -761,7 +759,7 @@ if(data.length !== 0 &&  data !== undefined){
 					break; 
 
 					case ('oldage' &&  'Anxiety or Depression'): 
-					res.redirect('oldagedepressedthanks');
+					res.redirect('quotesForYou');
 					break;  
 
 					default:
@@ -769,7 +767,7 @@ if(data.length !== 0 &&  data !== undefined){
 					break;         
 
 					}
-
+					
 	});
 
 	
@@ -825,9 +823,6 @@ if(data.length !== 0 &&  data !== undefined){
 					case ('teens' &&  'Anxious or Depressed'): 
 					res.redirect('teenanxiousthanks');
 					break;  
-					
-
-
 					case ('thirty' && 'Just exploring'): 
 					res.redirect('thanks');
 					break;  
@@ -853,8 +848,6 @@ if(data.length !== 0 &&  data !== undefined){
 					case ('thirty' && 'Anxious or Depressed'): 
 					res.redirect('thirtyanxiousthanks');
 					break;     
-
-
 					case ('midforty' && 'Just exploring'): 
 					res.redirect('thanks');
 					break; 
@@ -881,11 +874,11 @@ if(data.length !== 0 &&  data !== undefined){
 					break;     
 
 					case ('oldage' && 'Just exploring'): 
-					res.redirect('oldagethanks');
+					res.redirect('quotesForYou');
 					break;  
 
 					case ('oldage' &&  'Anxiety or Depression'): 
-					res.redirect('oldagedepressedthanks');
+					res.redirect('quotesForYou');
 					break; 
 
 					default:
@@ -921,11 +914,11 @@ user: req.user
 
 
 
-app.get('/oldagedepressedthanks',function(req,res){
-res.render('oldagedepressedthanks', {
+app.get('/quotesForYou',function(req,res){
+res.render('quotesForYou', {
 isAuthenticated: req.isAuthenticated(),
 user: req.user
-});
+   });
 });   
 
 
@@ -1190,6 +1183,18 @@ user: req.user
 });     
 
 });
+
+
+app.get('/todoList',function(req,res){
+res.render('todoList', {
+isAuthenticated: req.isAuthenticated(),
+user: req.user
+
+});     
+
+});
+
+
 
 app.get('/dailyevents',function(req, res){
 res.render('dailyevents', {

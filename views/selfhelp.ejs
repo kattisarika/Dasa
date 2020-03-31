@@ -16,8 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-  
+   <link rel="stylesheet" type="text/css" href="css/basicstyles.css">
+   <link rel="stylesheet" type="text/css" href="css/mainpage.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -32,10 +32,10 @@
 
   <div id="page">
 
-    <header >
+     <header >
         <div class="row"  >
-                <a href="/mywelcomepage" class="homebutton" >Home</a>  
-              <p style="margin-left:auto; margin-right:auto;text-align:center;">  Self Help </p> 
+                <a href="/mywelcomepage" class="homebutton">Home</a>  
+              <p class="headingContent">  Citta - A practical guide to growth  </p> 
               <div class="row">
                <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
               <p style="text-align:right;font-size:12px;margin-right:2%;"> <% if(user.google.email) { %>
@@ -54,12 +54,10 @@
 
     </header>
 
-
 <div class="row">
                  <div class="col-sm-2" >        
                    <a class="btn btn-info btn1" href="/dailyevents" > How do you feel today?  </a>
-                
-                        
+            
                  </div>       
               <div class="col-sm-9 col-xs-9" >   
                <p>Welcome  <% if(user.google.email) { %>
@@ -76,11 +74,10 @@
              
 
                <div class="userdetails" >
-                    
+                   
                         <div id="userdetails-form">
                         <!--    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>-->
                             <form action="/userdetails" method="post">
-
                                 <h2 class="text-center;">User Details</h2>
                                 <div><li style="display:none"> <input type="text"  id="username" name="username" value=" <% if(user.google.email) { %>
                              <%=user.google.email%>

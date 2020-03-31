@@ -1,6 +1,4 @@
 
-
-
 #loginSection{
 	width:70%;
 	height:70%;
@@ -10,6 +8,24 @@
 	border:4px solid #557f8e;
 	background-color: white;
 }
+
+.form-control,.btn-block{
+  text-align:center;
+  width:70%;
+  margin-left:14%;
+}
+
+
+/*.signup-form, .userForm{
+  width:70%;
+  height:70%;
+  margin-left:14%;
+  margin-top:4%;
+  margin-bottom:4%;
+  border:4px solid #557f8e;
+  background-color: white;
+}*/
+
 
 
 .innerwrapper{
@@ -67,7 +83,7 @@
 
 .colcont{
     display:flex;
-    background:olivedrab;
+    background:#557f8e;
     color:#fff;
 }
 
@@ -132,6 +148,5 @@
 	margin-bottom:2%;
 	border:3px solid #557f8e;
 }
-
 
 

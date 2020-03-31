@@ -13,14 +13,13 @@
 <body>
   <div id="page">
 
-        <header >
+
+     <header >
         <div class="row"  >
-                <a href="/oldagedepressedthanks" class="menubutton"  >Home</a>  
-                <a href="/spiritualtalks" class="menubutton">Spiritual Talks</a>
-                <a href="/spiritualbooks" class="menubutton" >Spiritual Books</a>
-                <a href="/guidedtours" class="menubutton">Events </a>
-              <p style="margin-left:auto; margin-right:auto;text-align:center;"> Citta--Holistic App </p> 
-               <div class="row">
+                <a href="/quotesForYou" class="homebutton">Home</a>  
+              
+               <p class="headingContent">  Citta - A practical guide to growth  </p> 
+              <div class="row">
                <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
               <p style="text-align:right;font-size:12px;margin-right:2%;"> <% if(user.google.email) { %>
                             <%=user.google.email%>
@@ -37,23 +36,24 @@
         </div>
 
     </header>
+
+
  
   <!-- <div class="jumbotron jumbotron-billboard" style="padding:0;">-->
-             <div class="row" style="margin-left:20px;padding:0;" id="thanks">
-                <section class="col-sm-3"  >
+             <div class="row" >
+                 <div class="col-sm-2" style="margin-left:2%">
                     <ul  class="sidelist">
-                       <li class="active"> <a class="linkbutton" href="/yourdiary">Your daily diary</a></li>
-                        <li> <a class="linkbutton" href="/dailyroutine"> Your daily routine</a></li>
-                       <li> <a class="linkbutton" href="/chat"> Want to talk</a></li>
+                       <li class="active"> <a class="btn btn-info  btn1"   href="/yourdiary">Your daily diary</a></li>
+                        <li> <a class="btn btn-info  btn1" href="/dailyroutine"> Your daily routine</a></li>
+                       <li> <a class="btn btn-info  btn1"  href="/chat"> Want to talk</a></li>
+                       <li> <a href="/spiritualbooks" class="btn btn-info  btn1" >Spiritual Books</a>  </li> 
+                       <li><a href="/spiritualtalks" class="btn btn-info  btn1" >Spiritual Talks</a>  </li>
+                       <li><a href="/guidedtours" class="btn btn-info  btn1" >Events</a>  </li>
                     </ul>
-              </section>
+              </div>
              
-             
-                <section class="col-sm-7" >
-                 
-                   <!--<div style="margin-left:20px;background:#EFF2FA;">-->
-                  
-                     
+                 <div class="col-sm-8" >
+                   
                       <h3> Your daily routine-</h3>
                       
                       <p>Goood Morning buddy! It's the best morning you have started out</p>
@@ -82,7 +82,7 @@
                      
                       <!-- </div>-->
                    
-                </section>
+                </div>
            
 
             </div>

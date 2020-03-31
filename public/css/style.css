@@ -99,6 +99,17 @@ header {
 
 }
 
+/*a.linkbutton { 
+    width: 150px;
+    height: 80px;
+    padding: 4%;
+    margin-left: 2%;
+    margin-top: 10px;
+    color: black;
+    line-height: 2.5;
+    text-decoration: none;
+}*/
+
 .contentDescription{
   margin-left:20px;
   padding:50px;
@@ -117,8 +128,8 @@ header {
 }
 
 a.homebutton{
-  width:120px;
-  height:50px;
+  width:12%;
+  height:3%;
   margin-left:2%;
   margin-top:10px;
   color:white;
@@ -126,7 +137,17 @@ a.homebutton{
   font-size:20px;
 }
 
-
+a.mainpagebutton{
+  width:12%;
+  height:6%;
+  margin-left:2%;
+  color:#4b0000;
+  text-decoration: none;
+  font-size:20px;
+  text-decoration: none;
+   text-align:center;
+   background:rgba(255,255,255, 0.4);
+}
 
 a.menubutton{
    width:10%;
@@ -142,16 +163,18 @@ a.menubutton{
   text-align:center;
 }
 
-a.linkbutton{
-  width:150px;
+/*a.linkbutton{
+  width:15%;
   height:80px;
   padding:4%;
   margin-left:2%;
   margin-top:10px;
   color:black;
-  line-height:2.5;
+  line-height:3.0;
   text-decoration: none;
-}
+  background-color:#557f8e;
+}*/
+
 
 a.logout{
 font-size:20px;
@@ -159,18 +182,20 @@ color:white;
 text-decoration: none;
 }
 
-a.menubutton:hover,a.logout:hover, a.homebutton:hover{
-  background-color:#b7c8ce;
+a.menubutton:hover,a.logout:hover, a.homebutton:hover, a.mainpagebutton:hover{
+  /* background:rgba(255,255,255, 0.4);*/
    color:#4b0000;
-   text-decoration: none;
-   text-align:center;
+  text-decoration: none;
+ 
+  background:rgba(255,255,255, 0.4);
+  /* text-align:center;*/
 }
 
-a.linkbutton:hover{
+/*a.linkbutton:hover{
    background-color:#d4a2a2;
    color:#4b0000;
    text-decoration: none;
-}
+}*/
 
 .dailydiary{
   margin:auto;
@@ -222,6 +247,7 @@ a.linkbutton:hover{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-transform: uppercase;
 }
 
 .btn1:hover{
@@ -253,32 +279,33 @@ iframe{
   width: 100%;
 }
 
-.userdetails{
-   width: 100%;
-   background:grey;
-   height:300px;
+/*.userdetails{
+   width: 70%;
+   background: rgba(0,0,0,0.1);
+   height:2%;
    margin-left:5%;
-}
+}*/
 
-.userdetails-form {
+/*.userdetails-form {
     width: 100%;
    background: white;
     color:black;
     line-height:1.5rem;
     margin-left: auto;
     margin-top: 3%;
+    margin-right: 3%;*/
     /* float: left; */
-    margin-right: 3%;
+    
     /*  -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px; */
     /* box-shadow: 0px 0px 25px white;*/
-    border: 1px solid green;
+   /* border: 1px solid green;
     text-align: center;
     padding-left: 15px;
     padding-right: 15px;
     
-}
+}*/
 
 .affirmations{
     background: rgba(270, 400, 300, 0.5);
@@ -290,7 +317,7 @@ iframe{
     line-height:1.5rem;
     width:500px;
     height:300px;
-    text-align:center;
+    text-align:left;
     vertical-align:center;
     margin-left:300px;
     margin-right:300px;
@@ -411,6 +438,27 @@ span {
 
 @media only screen and (max-width: 796px) {
 
+  .mainpagebutton{
+    display:block;
+    width:12%;
+    height:6%;
+    padding:2%;
+    margin-bottom:3%;
+     background:rgba(255,255,255, 0.4);
+   color:#4b0000;
+  }
+
+
+  a.menubutton:hover,a.logout:hover, a.homebutton:hover, a.mainpagebutton:hover{
+   background:rgba(255,255,255, 0.4);
+   color:#4b0000;
+   text-decoration: none;
+   text-align:center;
+    margin-bottom:3%;
+    width:8%;
+    height:4%;
+}
+
  #svg {
   float:left;
   width:50%;
@@ -450,16 +498,15 @@ span {
   height:340px;
 }
 
-    .homebtn {
+.homebtn {
   float:left;
-   width:20%;
+  width:20%;
   padding:0;
   margin-left:10px;
 }
 
 .navbtn{
   float:right;
-  
   margin-right:10px;
 } 
 

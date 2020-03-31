@@ -32,11 +32,11 @@
 
   <div id="page">
 
-
-      <header class="headerSection">
-       
-                <a href="/selfhelp" class="buttonehome">Home</a>  
-              <p style="margin-left:auto; margin-right:auto;text-align:center;"> Teen Anxious </p> 
+      
+        <header>
+        <div class="row"  >
+                <a href="/selfhelp" class="homebutton" id="songs">Home</a>  
+             <p class="headingContent">  Citta - A practical guide to growth  </p> 
               <div class="row">
                <a style="font-size:20px;" id="logout" class="logout" href="/logout">logout</a>
               <p style="text-align:right;font-size:12px;margin-right:2%;"> <% if(user.google.email) { %>
@@ -51,42 +51,14 @@
                           <%=user.local.email%>
                              <% } %></p>
               </div>
-      
+        </div>
 
     </header>
 
-    
+     <h4>Coming Soon!</h4>
 
-
-
-   <!--<div class="jumbotron" style="padding:0;margin-left:10px">-->
-    <div class="rowpage row" style="padding:0;">
-      <div class="col-sm-2 col-xs-2" style="padding:0;">
-       
-      </div>
-             
-               <div class="col-sm-9 col-xs-9" >
-                 
-                      <h3> Few Affirmations, to say everyday to reduce anxiety and depression</h3>
-                      <div style="margin-left:10px;">
-                      <p>I got bad grades , I will not worry for what went wrong, I will focus from today to do better.</p>
-                      <p>I have no friends today, but tomorrow I will have my friends talking to me</p>
-                      <p>I will read books, develop new hobbies, till I have my friends talk to me</p>
-                      <p>I am a nice person and I deserve everyone talk to me nicely</p>
-                      <p>I have the ability to focus and study and not care about what others think, as I don't like to gossip nor be a part of the gossip.</p>
-                       <p>I will not compromise my character to have my friends</p>
-                       <p>I will not say a yes, when my heart is actually saying a No and I will politely refuse what I don't like</p>
-
-                       </div>
-                    
-            </div>
-          </div>
-       <!--   </div>  -->
-           
-
-         
-       <footer class="container-fluid text-center" style="position:fixed;bottom:0;background-color:#4b0000;width:100%;color:ghostwhite">
+      <footer class="container-fluid text-center footerContent">
        <p id="footerp">  <span class="glyphicon glyphicon-copyright-mark"> </span> Citta 2020</p> 
-      </footer>   
+ </footer>   
 </body>
 </html>

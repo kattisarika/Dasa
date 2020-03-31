@@ -30,27 +30,26 @@ body {
 .intro .inner {
     display: block;
     vertical-align: top;
-
     width: 100%;
     max-width: none;
     border-bottom: 1px solid white;
 }
-#content {
+
+/*#content {
     display: block;
     width: 100%;
-    
-    padding: 1%;
     margin-left:20px;
+}*/
 
-}
 
-.content {
+
+/*.content {
     display: block;
     width: 100%;
     background: #4b0000;
     padding: 1%;
 
-}
+}*/
 
 .videosettings{
    width: 100%;
@@ -62,8 +61,7 @@ body {
     display:block;
     text-align:center;
     position:relative;
-    overflow: hidden;
-   
+    overflow: hidden; 
     height:810px;
      background: rgba(0,0,0,0.3);
      opacity:0.3;
@@ -72,7 +70,7 @@ body {
     -o-transition:.4s background ease;
     transition:.4s background ease;
 }
-    #home-top-video{
+ #home-top-video{
         left:0%;
         top:0%;
        /* height:100%;*/
@@ -81,7 +79,7 @@ body {
         position: absolute;
         z-index: -1;
     }
-    #home-text{
+ #home-text{
        
         width:100%;
         position: absolute;
@@ -89,14 +87,12 @@ body {
         color:white
     }
 
-    .smallwrites {
+.smallwrites {
     background: #ffffff;
-     /*margin: 5px 100px 5px 100px;*/
-   
-   
+     /*margin: 5px 100px 5px 100px;*/     
 }
 
-.midcolcont{
+/*.midcolcont{
     background: rgba(0,0,0,0.3);
     display:flex;
 }
@@ -131,7 +127,7 @@ body {
 .col{
     list-style-type: none;
     color:#fff;
-}
+}*/
 
 
 h1,
@@ -714,6 +710,25 @@ fieldset input[type="email"] {
         color: green;
     }
 
+a.mainpagebutton{
+    display:block;
+    width:12%;
+    height:6%;
+    padding:2%;
+    margin-bottom:3%;
+  }
+
+
+  a.menubutton:hover,a.logout:hover, a.homebutton:hover, a.mainpagebutton:hover{
+   background:rgba(255,255,255, 0.4);
+   color:#4b0000;
+   text-decoration: none;
+   text-align:center;
+    margin-bottom:3%;
+    width:8%;
+    height:4%;
+}
+
    
 }
 
@@ -721,8 +736,29 @@ fieldset input[type="email"] {
 /*iPhone portrait*/
 
 @media only screen and (max-width: 320px) {
+
+
     body {
         color: purple;
     }
+
+     .mainpagebutton{
+    display:block;
+    width:12%;
+    height:6%;
+    padding:2%;
+    margin-bottom:3%;
+  }
+
+
+  a.menubutton:hover,a.logout:hover, a.homebutton:hover, a.mainpagebutton:hover{
+   background:rgba(255,255,255, 0.4);
+   color:#4b0000;
+   text-decoration: none;
+   text-align:center;
+    margin-bottom:3%;
+    width:8%;
+    height:4%;
+}
 }
 

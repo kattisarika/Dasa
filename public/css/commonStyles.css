@@ -140,8 +140,7 @@ span {
     text-decoration: none;
     text-align:center;
     vertical-align:center;
-    background:blue;
-    color:#4d0000;
+    color:white;
     text-transform:uppercase;
 }
 
@@ -149,6 +148,7 @@ span {
    text-align:center;
   vertical-align:center;
   text-decoration: none;
+  color:white;
 }
 
 .headerRightLogout{
@@ -202,12 +202,19 @@ span {
   color:black;
 }
 
-#formSection{
-    width:60%;
+#formSection,#signup-form{
+    /*width:60%;
     margin:4% 4% 4% 4%;
     background:white;
     height:60%;
-    border:4px solid #557f8e;
+    border:4px solid #557f8e;*/
+  width:70%;
+  height:60%;
+  margin-left:14%;
+  margin-top:4%;
+  margin-bottom:4%;
+  border:4px solid #557f8e;
+  background-color: white;
 }
 
 #userForm{
@@ -238,12 +245,10 @@ span {
   height:30%;
 }
 
-
-
 .headerContent1 {
-  margin-left: 30%;
-  
+  margin-left: 30%; 
 }
+
 .headerContent1 p{
    text-align:center;
     font-size: 40px;
@@ -252,9 +257,9 @@ span {
     padding:0;
     color:white;
 }
+
 .headerRight{
    float:right;
-
 }
 
 #userdetails-form{
@@ -272,3 +277,62 @@ span {
   width:20%;
   height:30%;
 }
+
+
+
+@media only screen and (max-width: 796px) {
+
+ #svg {
+  float:left;
+  width:50%;
+  margin:20px auto;
+  font-size: 12px;
+  display:none;
+    }
+
+   #heading{
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  float:left;
+   margin:5px auto;
+   
+    }  
+
+  #heading h1{
+    font-size: 24px;
+  }  
+
+  #heading p{
+    font-size: 14px;
+    margin-bottom:2px;
+  }  
+
+  .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top:25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:340px;
+}
+
+    .homebtn {
+  float:left;
+   width:20%;
+  padding:0;
+  margin-left:10px;
+}
+
+.navbtn{
+  float:right;
+  
+  margin-right:10px;
+} 
+
+
+  }
